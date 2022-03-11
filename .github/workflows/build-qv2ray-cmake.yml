@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - l10n_dev
   release:
-    types: [prereleased]
+    types: [ published ]
 
 jobs:
   check_commit_msg:
