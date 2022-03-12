@@ -1,11 +1,9 @@
-name: Qv2ray Windows Installer
+name: build Windows Installer
 
 on:
   push:
-    branches-ignore:
-      - l10n_dev
   release:
-    types: [prereleased]
+    types: [ published ]
 
 jobs:
   check_commit_msg:
