@@ -1,11 +1,9 @@
-name: Qv2ray build matrix - Qt6
+name: build Qt6
 
 on:
   push:
-    branches-ignore:
-      - l10n_dev
   release:
-    types: [prereleased]
+    types: [ published ]
 
 jobs:
   check_commit_msg:
