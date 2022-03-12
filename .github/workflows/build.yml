@@ -1,4 +1,4 @@
-name: build Qt6
+name: build
 
 on:
   push:
