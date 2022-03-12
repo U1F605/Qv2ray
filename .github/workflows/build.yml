@@ -193,7 +193,7 @@ jobs:
               -extra-plugins=iconengines,imageformats,platforminputcontexts
           mv ./Qv2ray*.AppImage ./Qv2ray.AppImage
       - name: Linux - ${{ matrix.qt_version }} - Uploading Artifact
-        if: matrix.platform == 'ubuntu-16.04'
+        if: matrix.platform == 'ubuntu-latest'
         uses: actions/upload-artifact@master
         with:
           name: Qv2ray-${{ github.sha }}.linux-${{ matrix.arch }}.qt${{ matrix.qt_version }}-${{ matrix.build_type }}.AppImage
