@@ -106,7 +106,7 @@ jobs:
           ./setup-libs.sh windows x64
       # ========================================================================================================= Generate MakeFile and Build
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         if: matrix.platform == 'macos-latest'
         with:
           node-version: "12.x"
