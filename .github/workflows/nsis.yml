@@ -50,7 +50,7 @@ jobs:
         with:
           submodules: 'recursive'
       - name: Install Python 3.7 version
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v3
         with:
           python-version: "3.7"
           architecture: ${{ matrix.arch }}
