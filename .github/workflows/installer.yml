@@ -73,18 +73,18 @@ jobs:
           mirror: "http://mirrors.ocf.berkeley.edu/qt/"
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
       # =========================================================================================================
-      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Setup Ninja
+      - name: Windows - ${{ matrix.arch }} - Setup Ninja
         uses: ashutoshvarma/setup-ninja@master
         with:
           # ninja version to download. Default: 1.10.0
           version: 1.10.0
-      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Build preparation - Download Dependencies
+      - name: Windows - ${{ matrix.arch }} - Build preparation - Download Dependencies
         shell: bash
         run: |
           cd libs
           ./setup-libs.sh windows ${{ matrix.arch }}
       # ========================================================================================================= Generate MakeFile and Build
-      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Generate Dependencies and Build
+      - name: Windows - ${{ matrix.arch }} - Generate Dependencies and Build
         shell: bash
         env:
           CC: cl.exe
@@ -99,12 +99,12 @@ jobs:
         id: get_package
         run: |
           echo ::set-output name=NAME::$(basename build/qv2ray-*.exe)
-      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - uploading artifact
+      - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
           name: Qv2ray-${{ github.sha }}.Windows-${{ matrix.arch }}.qt${{ matrix.qt_version }}.exe
           path: build/${{ steps.get_package.outputs.NAME }}
-      - name: Win-${{ matrix.arch }} - ${{ matrix.qt_version }} - Upload binaries to release
+      - name: Windows - ${{ matrix.arch }} - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
         if: github.event_name == 'release'
         with:
