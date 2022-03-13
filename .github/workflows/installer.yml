@@ -50,7 +50,6 @@ jobs:
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
-          mirror: "http://mirrors.ocf.berkeley.edu/qt/"
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
       - name: Windows - ${{ matrix.arch }} - Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
@@ -77,7 +76,7 @@ jobs:
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
-          name: Qv2ray-${{ github.sha }}.Windows-${{ matrix.arch }}.qt${{ matrix.qt_version }}.exe
+          name: Qv2ray-Windows-${{ matrix.arch }}.qt${{ matrix.qt_version }}.exe
           path: build/${{ steps.get_package.outputs.NAME }}
       - name: Windows - ${{ matrix.arch }} - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
