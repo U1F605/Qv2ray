@@ -6,7 +6,7 @@ AppDir:
   app_info:
     id: Qv
     name: Qv
-    icon: applications/qv2ray.ico
+    icon: AppDir/usr/share/applications/qv2ray.desktop
     version: 3.0.0
     exec: /bin/bash
     exec_args: $@
