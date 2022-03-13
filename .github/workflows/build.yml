@@ -69,9 +69,7 @@ jobs:
           cp -v ./macdeployqt ${Qt6_DIR}/bin/macdeployqt
       - name: Windows - Setup Ninja
         if: matrix.platform == 'windows-latest'
-        uses: ashutoshvarma/setup-ninja@master
-        with:
-          version: 1.10.0
+        uses: seanmiddleditch/gha-setup-ninja@master
       - name: Windows - Build preparation - Download Dependencies
         shell: bash
         if: matrix.platform == 'windows-latest'
