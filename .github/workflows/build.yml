@@ -40,6 +40,8 @@ jobs:
         with:
           python-version: "3.7"
           architecture: x64
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
       - name: Cache Qt
         id: cache-qt
         uses: actions/cache@v2.1.7
@@ -67,9 +69,6 @@ jobs:
           mkdir build; cd build;
           cmake .. -DCMAKE_BUILD_TYPE=Release; cmake --build .
           cp -v ./macdeployqt ${Qt6_DIR}/bin/macdeployqt
-      - name: Windows - Setup Ninja
-        if: matrix.platform == 'windows-latest'
-        uses: seanmiddleditch/gha-setup-ninja@master
       - name: Windows - Build preparation - Download Dependencies
         shell: bash
         if: matrix.platform == 'windows-latest'
