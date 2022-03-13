@@ -39,12 +39,6 @@ jobs:
         with:
           toolset: 14.2
           arch: ${{ matrix.arch }}
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v2.1.7
-        with:
-          path: ../Qt
-          key: QtCache-${{ matrix.platform }}-${{ matrix.arch }}-${{ matrix.qt_version }}
       - name: Setup Qt - ${{ matrix.arch }}
         uses: jurplel/install-qt-action@v2
         with:
