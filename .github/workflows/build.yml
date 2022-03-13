@@ -132,6 +132,7 @@ jobs:
             -DQV2RAY_TRANSLATION_PATH=QApplication::applicationDirPath\(\)+"/../share/qv2ray/lang"
           cmake --build . --parallel $(nproc)
           cmake --install .
+          find / qv2ray.desktop
       - name: Linux - Build AppImage
         if: matrix.platform == 'ubuntu-20.04'
         uses: AppImageCrafters/build-appimage@v1
