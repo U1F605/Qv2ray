@@ -8,7 +8,7 @@ AppDir:
     name: Qv
     icon: ./assets/icons/qv2ray.ico
     version: 3.0.0
-    exec: bin/bash
+    exec: /bin/bash
     exec_args: $@
 
 AppImage:
