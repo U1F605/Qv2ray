@@ -42,12 +42,6 @@ jobs:
           architecture: x64
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v2.1.7
-        with:
-          path: ../Qt
-          key: QtCache-${{ matrix.platform }}-${{ matrix.qt_version }}
       - name: Setup Qt
         uses: jurplel/install-qt-action@v2
         with:
