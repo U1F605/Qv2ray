@@ -42,12 +42,6 @@ jobs:
           architecture: x64
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v2.1.7
-        with:
-          path: ../Qt
-          key: QtCache-${{ matrix.platform }}-${{ matrix.qt_version }}
       - name: Setup Qt
         uses: jurplel/install-qt-action@v2
         with:
@@ -63,7 +57,7 @@ jobs:
       - name: macOS - Install Packages
         if: matrix.platform == 'macos-latest'
         run: |
-          brew install protobuf grpc ninja pkg-config openssl
+          brew install protobuf grpc pkg-config openssl
           git clone https://github.com/Qv2ray/macdeployqt-patched
           cd macdeployqt-patched
           mkdir build; cd build;
