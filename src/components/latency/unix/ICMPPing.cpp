@@ -18,7 +18,7 @@
 #define SOL_IP 0
 #endif
 
-namespace Qv2ray::components::latency::icmping
+namespace Qvmessocket::components::latency::icmping
 {
     /// 1s complementary checksum
     uint16_t ping_checksum(const char *buf, size_t size)
