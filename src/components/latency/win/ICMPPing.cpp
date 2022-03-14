@@ -22,7 +22,7 @@ typedef VOID(NTAPI *PIO_APC_ROUTINE)(IN PVOID ApcContext, IN PIO_STATUS_BLOCK Io
 //
 #include <QString>
 
-namespace Qv2ray::components::latency::icmping
+namespace Qvmessocket::components::latency::icmping
 {
     ICMPPing ::~ICMPPing()
     {
