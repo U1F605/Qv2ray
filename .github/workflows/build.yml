@@ -52,7 +52,7 @@ jobs:
         if: matrix.platform == 'ubuntu-20.04'
         run: |
           sudo apt update
-          sudo apt install -y libxcb-image0-dev libxcb-icccm4-dev libssl-dev libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
+          sudo apt install -y libxcb-icccm4-dev libssl-dev libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
           sudo apt install -y libprotobuf-dev protobuf-compiler protobuf-c-compiler libgrpc++-dev protobuf-compiler-grpc libcurl4-openssl-dev
       - name: macOS - Install Packages
         if: matrix.platform == 'macos-latest'
