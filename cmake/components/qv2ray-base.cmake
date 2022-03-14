@@ -1,4 +1,4 @@
-set(QV2RAY_BASEDIR_COMPONENTS ${CMAKE_SOURCE_DIR}/src/components)
+set(QVMESSOCKET_BASEDIR_COMPONENTS ${CMAKE_SOURCE_DIR}/src/components)
 set(QV2RAY_BASEDIR_CORE ${CMAKE_SOURCE_DIR}/src/core)
 set(QV2RAY_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
 
@@ -28,42 +28,42 @@ set(QV2RAY_BASE_SOURCES
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/LatencyTest.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/translations/QvTranslator.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/translations/QvTranslator.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/LatencyTestThread.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/LatencyTestThread.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/TCPing.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/TCPing.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/RealPing.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/RealPing.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/DNSBase.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/win/ICMPPing.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/win/ICMPPing.hpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/translations/QvTranslator.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/translations/QvTranslator.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTestThread.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTestThread.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/TCPing.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/TCPing.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/RealPing.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/RealPing.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/DNSBase.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/win/ICMPPing.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/win/ICMPPing.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/ntp/QvNTPClient.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/ntp/QvNTPClient.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/plugins/QvPluginHost.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/plugins/QvPluginHost.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/port/QvPortDetector.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/port/QvPortDetector.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/port/QvPortDetector.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/port/QvPortDetector.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/route/RouteSchemeIO.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/route/RouteSchemeIO.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/route/RouteSchemeIO.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/route/RouteSchemeIO.hpp
     #
-    ${QV2RAY_BASEDIR_COMPONENTS}/update/UpdateChecker.cpp
-    ${QV2RAY_BASEDIR_COMPONENTS}/update/UpdateChecker.hpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/update/UpdateChecker.cpp
+    ${QVMESSOCKET_BASEDIR_COMPONENTS}/update/UpdateChecker.hpp
     #
     ${QV2RAY_BASEDIR_CORE}/connection/ConnectionIO.cpp
     ${QV2RAY_BASEDIR_CORE}/connection/ConnectionIO.hpp
