@@ -7,7 +7,7 @@
 #include <QString>
 #include <QtCore>
 
-namespace Qv2ray::base
+namespace Qvmessocket::base
 {
     template<typename T>
     class IDType
