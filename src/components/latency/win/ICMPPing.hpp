@@ -7,7 +7,7 @@
 
 #include <memory>
 
-namespace Qv2ray::components::latency::icmping
+namespace Qvmessocket::components::latency::icmping
 {
     class ICMPPing : public DNSBase<ICMPPing>
     {
