@@ -20,10 +20,10 @@ list(GET VERSION_LIST 1 CMAKE_PROJECT_VERSION_MINOR)
 list(GET VERSION_LIST 2 CPACK_PACKAGE_VERSION_PATCH)
 
 add_definitions(-DQVMESSOCKET_VERSION_MAJOR=${CMAKE_PROJECT_VERSION_MAJOR})
-add_definitions(-DQV2RAY_VERSION_MINOR=${CMAKE_PROJECT_VERSION_MINOR})
-add_definitions(-DQV2RAY_VERSION_BUGFIX=${CPACK_PACKAGE_VERSION_PATCH})
-add_definitions(-DQV2RAY_VERSION_BUILD=${QVMESSOCKET_BUILD_VERSION})
-add_definitions(-DQV2RAY_VERSION_STRING="${QVMESSOCKET_VERSION_STRING}")
+add_definitions(-DQVMESSOCKET_VERSION_MINOR=${CMAKE_PROJECT_VERSION_MINOR})
+add_definitions(-DQVMESSOCKER_VERSION_BUGFIX=${CPACK_PACKAGE_VERSION_PATCH})
+add_definitions(-DQVMESSOCKET_VERSION_BUILD=${QVMESSOCKET_BUILD_VERSION})
+add_definitions(-DQVMESSOCKET_VERSION_STRING="${QVMESSOCKET_VERSION_STRING}")
 
 # Tweaks and other defaults
 # Setting CMAKE to use loose block and search for find modules in source directory
@@ -50,7 +50,7 @@ if(WIN32)
     generate_product_version(
         QV2RAY_RC
         NAME               "Qvmessocket"
-        BUNDLE             "VMESSOCKET Project Family"
+        BUNDLE             "VMESSOCKET Project "
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.ico"
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
@@ -415,18 +415,13 @@ target_link_libraries(qv2ray PUBLIC
     ${QV2RAY_QRENCODE_LIBRARY}
     )
 
-
-# ==================================================================================
-# Qv2ray Unit Tests
-# ==================================================================================
+# Unit Tests
 if (BUILD_TESTING)
     include(CTest)
     add_subdirectory(test)
 endif()
 
-# ==================================================================================
 # Platform-dependent installation process and deployment
-# ==================================================================================
 if(APPLE)
     include(cmake/platforms/macos.cmake)
 elseif(UNIX AND NOT APPLE AND NOT WIN32 AND NOT ANDROID)
@@ -435,10 +430,7 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-
-# ==================================================================================
-# Print Qv2ray Build Statistics
-# ==================================================================================
+# Print Build Statistics
 get_target_property(QV2RAY_BASE_LINK_LIBS qv2ray_baselib LINK_LIBRARIES)
 get_target_property(QV2RAY_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
 QVLOG(QV2RAY_BUILD_VERSION)
