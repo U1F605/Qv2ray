@@ -4,7 +4,7 @@
 #include "QvConfigIdentifier.hpp"
 #include "QvSafeType.hpp"
 
-namespace Qv2ray::base::objects::complex
+namespace Qvmessocket::base::objects::complex
 {
     /*****************************************************************
      *   ROOT
