@@ -92,8 +92,8 @@ message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 # ==================================================================================
 # Qv2ray compile arguments
 # ==================================================================================
-option(QV2RAY_AUTO_DEPLOY "Automatically run deploy command after build" ON)
-QVLOG(QV2RAY_AUTO_DEPLOY)
+option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
+QVLOG(QVMESSOCKET_AUTO_DEPLOY)
 
 option(BUILD_TESTING "Build Tests" OFF)
 QVLOG(BUILD_TESTING)
@@ -441,8 +441,8 @@ endif()
 # ==================================================================================
 get_target_property(QV2RAY_BASE_LINK_LIBS qv2ray_baselib LINK_LIBRARIES)
 get_target_property(QV2RAY_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
-QVLOG(QV2RAY_BUILD_VERSION)
-QVLOG(QV2RAY_VERSION_STRING)
+QVLOG(QVMESSOCKET_BUILD_VERSION)
+QVLOG(QVMESSOCKET_VERSION_STRING)
 QVLOG(CMAKE_INSTALL_PREFIX)
 QVLOG(CMAKE_BINARY_DIR)
 QVLOG(QV2RAY_BASE_LINK_LIBS)
