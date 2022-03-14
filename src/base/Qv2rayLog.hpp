@@ -39,7 +39,7 @@ enum QvLogType
 
 Q_DECLARE_METATYPE(const char *)
 
-namespace Qv2ray::base
+namespace Qvmessocket::base
 {
     inline QString logBuffer;
     inline QString tempBuffer;
