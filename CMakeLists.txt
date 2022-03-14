@@ -4,7 +4,7 @@ file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSION" QVMESSOCKET_VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QVMESSOCKET_BUILD_VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QVMESSOCKET_VERSION_SUFFIX)
 
-set(QV2RAY_VERSION_STRING "${QVMESSOCKET_VERSION}${QVMESSOCKET_VERSION_SUFFIX}")
+set(QVMESSOCKET_VERSION_STRING "${QVMESSOCKET_VERSION}${QVMESSOCKET_VERSION_SUFFIX}")
 project(qv2ray)
 
 macro(QVLOG MSG)
@@ -49,16 +49,16 @@ if(WIN32)
     include(cmake/versioninfo/generate_product_version.cmake)
     generate_product_version(
         QV2RAY_RC
-        NAME               "Qv2ray"
-        BUNDLE             "Qv2ray Project Family"
+        NAME               "Qvmessocket"
+        BUNDLE             "VMESSOCKET Project Family"
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.ico"
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
         VERSION_PATCH      ${CPACK_PACKAGE_VERSION_PATCH}
         VERSION_REVISION   ${QV2RAY_BUILD_VERSION}
-        COMPANY_NAME       "Qv2ray Workgroup"
-        COMPANY_COPYRIGHT  "Qv2ray Workgroup 2021"
-        FILE_DESCRIPTION   "Qv2ray Main Application"
+        COMPANY_NAME       "VMESSOCKET BDFL-U1F605"
+        COMPANY_COPYRIGHT  "VMESSOCKET BDFL-U1F605"
+        FILE_DESCRIPTION   "Qvmessocket Main Application"
         )
     add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX)
     set(GUI_TYPE WIN32)
@@ -86,22 +86,8 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.17.0")
     cmake_policy(SET CMP0100 NEW)
 endif()
 
-message(" ")
-message("Qv2ray Version: ${QV2RAY_VERSION_STRING}")
-message("Qv2ray Build Version: ${QV2RAY_BUILD_VERSION}")
-message("|-------------------------------------------------|")
-message("| Qv2ray, A Cross Platform v2ray Qt GUI Client.   |")
-message("| Licenced under GPLv3                            |")
-message("|                                                 |")
-message("| You may only use this program to the extent     |")
-message("| permitted by local law.                         |")
-message("|                                                 |")
-message("| See: https://www.gnu.org/licenses/gpl-3.0.html  |")
-message("|-------------------------------------------------|")
-message("| Project Homepage: https://github.com/Qv2ray     |")
-message("| Welcome to contribute!                          |")
-message("|-------------------------------------------------|")
-message(" ")
+message("Qvmessocket Version: ${QVMESSOCKET_VERSION_STRING}")
+message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 
 # ==================================================================================
 # Qv2ray compile arguments
@@ -461,8 +447,4 @@ QVLOG(CMAKE_INSTALL_PREFIX)
 QVLOG(CMAKE_BINARY_DIR)
 QVLOG(QV2RAY_BASE_LINK_LIBS)
 QVLOG(QV2RAY_EXEC_LINK_LIBS)
-message("")
-message("======== Qv2ray Build Statistics ========")
 message("${QV2RAY_BUILD_STATS}")
-message("=========================================")
-message("")
