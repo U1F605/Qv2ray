@@ -2,7 +2,7 @@
 #include "QJsonStruct.hpp"
 #include "base/models/CoreObjectModels.hpp"
 
-namespace Qv2ray::base::config
+namespace Qvmessocket::base::config
 {
     struct QvConfig_Route
     {
