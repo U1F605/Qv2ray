@@ -16,8 +16,8 @@ Qv2rayApplicationInterface::Qv2rayApplicationInterface()
     QvCoreApplication = this;
     LOG("Qv2ray", QV2RAY_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
     DEBUG("Qv2ray Start Time: ", QTime::currentTime().msecsSinceStartOfDay());
-    DEBUG("QV2RAY_BUILD_INFO", QV2RAY_BUILD_INFO);
-    DEBUG("QV2RAY_BUILD_EXTRA_INFO", QV2RAY_BUILD_EXTRA_INFO);
+    DEBUG("QV2RAY_BUILD_INFO", QVMESSOCKET_BUILD_INFO);
+    DEBUG("QV2RAY_BUILD_EXTRA_INFO", QVMESSOCKET_BUILD_EXTRA_INFO);
     DEBUG("QV2RAY_BUILD_NUMBER", QSTRN(QV2RAY_VERSION_BUILD));
     QStringList licenseList;
     licenseList << "This program comes with ABSOLUTELY NO WARRANTY.";
