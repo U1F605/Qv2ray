@@ -5,7 +5,7 @@
 #include <QCoreApplication>
 #include <QObject>
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     enum MessageOpt
     {
