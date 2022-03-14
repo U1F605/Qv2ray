@@ -3,7 +3,7 @@
 #include "coroutine.hpp"
 #include "uvw.hpp"
 
-namespace Qv2ray::components::latency
+namespace Qvmessocket::components::latency
 {
     template<typename T>
     class DNSBase
