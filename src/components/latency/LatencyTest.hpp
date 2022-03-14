@@ -5,7 +5,7 @@ namespace uvw
     class Loop;
 }
 struct sockaddr_storage;
-namespace Qv2ray::components::latency
+namespace Qvmessocket::components::latency
 {
     class LatencyTestThread;
     struct LatencyTestResult
