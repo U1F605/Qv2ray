@@ -1,10 +1,10 @@
-set(QV2RAY_QML_BASEDIR ${CMAKE_SOURCE_DIR}/src/ui/qml)
-set(QV2RAY_QML_SOURCES
-    ${QV2RAY_QML_BASEDIR}/qmlresx.qrc
-    ${QV2RAY_QML_BASEDIR}/Qv2rayQMLApplication.hpp
-    ${QV2RAY_QML_BASEDIR}/Qv2rayQMLApplication.cpp
-    ${QV2RAY_QML_BASEDIR}/Qv2rayQMLProperty.cpp
-    ${QV2RAY_QML_BASEDIR}/Qv2rayQMLProperty.hpp
+set(QVMESSOCKET_QML_BASEDIR ${CMAKE_SOURCE_DIR}/src/ui/qml)
+set(QVMESSOCKET_QML_SOURCES
+    ${QVMESSOCKET_QML_BASEDIR}/qmlresx.qrc
+    ${QVMESSOCKET_QML_BASEDIR}/Qv2rayQMLApplication.hpp
+    ${QVMESSOCKET_QML_BASEDIR}/Qv2rayQMLApplication.cpp
+    ${QVMESSOCKET_QML_BASEDIR}/Qv2rayQMLProperty.cpp
+    ${QVMESSOCKET_QML_BASEDIR}/Qv2rayQMLProperty.hpp
     )
 
 if(QV2RAY_QML_LIVE_UPDATE)
