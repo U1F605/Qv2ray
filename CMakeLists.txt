@@ -210,12 +210,12 @@ endif()
 # ==================================================================================
 # Qv2ray Build Info
 # ==================================================================================
-if(QV2RAY_BUILD_INFO)
-    set(_QV2RAY_BUILD_INFO_STR_ "${QV2RAY_BUILD_INFO}")
-elseif(DEFINED ENV{_QV2RAY_BUILD_INFO_})
-    set(_QV2RAY_BUILD_INFO_STR_ "$ENV{_QV2RAY_BUILD_INFO_}")
+if(QVMESSOCKET_BUILD_INFO)
+    set(_QVMESSOCKET_BUILD_INFO_STR_ "${QVMESSOCKET_BUILD_INFO}")
+elseif(DEFINED ENV{_QVMESSOCKET_BUILD_INFO_})
+    set(_QVMESSOCKET_BUILD_INFO_STR_ "$ENV{_QVMESSOCKET_BUILD_INFO_}")
 else()
-    set(_QV2RAY_BUILD_INFO_STR_ "Qv2ray from manual build")
+    set(_QVMESSOCKET_BUILD_INFO_STR_ "Qv2ray from manual build")
 endif()
 
 if(QV2RAY_BUILD_EXTRA_INFO)
@@ -226,12 +226,12 @@ else()
     set(_QV2RAY_BUILD_EXTRA_INFO_STR_ "${QV2RAY_VERSION_STRING}:${QV2RAY_BUILD_VERSION}")
 endif()
 
-set(QV2RAY_BUILD_INFO ${_QV2RAY_BUILD_INFO_STR_})
+set(QVMESSOCKET_BUILD_INFO ${_QVMESSOCKET_BUILD_INFO_STR_})
 set(QV2RAY_BUILD_EXTRA_INFO ${_QV2RAY_BUILD_EXTRA_INFO_STR_})
 
-add_definitions(-D_QV2RAY_BUILD_INFO_STR_="${_QV2RAY_BUILD_INFO_STR_}")
+add_definitions(-D_QVMESSOCKET_BUILD_INFO_STR_="${_QVMESSOCKET_BUILD_INFO_STR_}")
 add_definitions(-D_QV2RAY_BUILD_EXTRA_INFO_STR_="${_QV2RAY_BUILD_EXTRA_INFO_STR_}")
-message("Qv2ray Version: ${_QV2RAY_BUILD_INFO_STR_} - ${_QV2RAY_BUILD_EXTRA_INFO_STR_}")
+message("Version: ${_QVMESSOCKET_BUILD_INFO_STR_} - ${_QV2RAY_BUILD_EXTRA_INFO_STR_}")
 
 # ==================================================================================
 # 3rdparty Sources
