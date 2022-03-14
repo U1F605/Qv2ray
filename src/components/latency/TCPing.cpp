@@ -4,7 +4,7 @@
 
 #define QV_MODULE_NAME "TCPingWorker"
 
-namespace Qv2ray::components::latency::tcping
+namespace Qvmessocket::components::latency::tcping
 {
     constexpr int conn_timeout_sec = 5;
 
