@@ -20,13 +20,13 @@
 #include "base/models/QvSettingsObject.hpp"
 #include "base/models/QvStartupConfig.hpp"
 
-using namespace Qv2ray;
-using namespace Qv2ray::base;
-using namespace Qv2ray::base::safetype;
-using namespace Qv2ray::base::config;
-using namespace Qv2ray::base::objects;
-using namespace Qv2ray::base::objects::protocol;
-using namespace Qv2ray::base::objects::transfer;
+using namespace Qvmessocket;
+using namespace Qvmessocket::base;
+using namespace Qvmessocket::base::safetype;
+using namespace Qvmessocket::base::config;
+using namespace Qvmessocket::base::objects;
+using namespace Qvmessocket::base::objects::protocol;
+using namespace Qvmessocket::base::objects::transfer;
 
 #define QV2RAY_BUILD_INFO QString(_QV2RAY_BUILD_INFO_STR_)
 #define QV2RAY_BUILD_EXTRA_INFO QString(_QV2RAY_BUILD_EXTRA_INFO_STR_)
