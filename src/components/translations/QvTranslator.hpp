@@ -4,7 +4,7 @@
 #include <memory>
 #include <optional>
 
-namespace Qv2ray::common
+namespace Qvmessocket::common
 {
     class QvTranslator
     {
