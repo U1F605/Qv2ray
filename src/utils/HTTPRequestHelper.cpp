@@ -7,7 +7,7 @@
 
 #define QV_MODULE_NAME "NetworkCore"
 
-namespace Qv2ray::common::network
+namespace Qvmessocket::common::network
 {
     void NetworkRequestHelper::setHeader(QNetworkRequest &request, const QByteArray &key, const QByteArray &value)
     {
