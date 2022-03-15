@@ -3,7 +3,7 @@
 
 static const inline QStringList V2RayLogLevel = { "none", "debug", "info", "warning", "error" };
 
-namespace Qv2ray::core::connection::generation
+namespace Qvmessocket::core::connection::generation
 {
     namespace routing
     {
@@ -67,11 +67,11 @@ namespace Qv2ray::core::connection::generation
 
 } // namespace Qv2ray::core::connection::generation
 
-using namespace Qv2ray::core;
-using namespace Qv2ray::core::connection;
-using namespace Qv2ray::core::connection::generation;
-using namespace Qv2ray::core::connection::generation::filters;
-using namespace Qv2ray::core::connection::generation::inbounds;
-using namespace Qv2ray::core::connection::generation::outbounds;
-using namespace Qv2ray::core::connection::generation::routing;
-using namespace Qv2ray::core::connection::generation::misc;
+using namespace Qvmessocket::core;
+using namespace Qvmessocket::core::connection;
+using namespace Qvmessocket::core::connection::generation;
+using namespace Qvmessocket::core::connection::generation::filters;
+using namespace Qvmessocket::core::connection::generation::inbounds;
+using namespace Qvmessocket::core::connection::generation::outbounds;
+using namespace Qvmessocket::core::connection::generation::routing;
+using namespace Qvmessocket::core::connection::generation::misc;
