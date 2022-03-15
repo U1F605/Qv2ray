@@ -13,7 +13,7 @@ const inline QMap<int, QString> UpdateChannelLink //
     };
 #define QV_MODULE_NAME "Update"
 
-namespace Qv2ray::components
+namespace Qvmessocket::components
 {
     QvUpdateChecker::QvUpdateChecker(QObject *parent) : QObject(parent)
     {
