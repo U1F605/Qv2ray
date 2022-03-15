@@ -50,5 +50,5 @@ namespace Qvmessocket::components::latency
     };
 } // namespace Qv2ray::components::latency
 
-using namespace Qv2ray::components::latency;
+using namespace Qvmessocket::components::latency;
 Q_DECLARE_METATYPE(LatencyTestResult)
