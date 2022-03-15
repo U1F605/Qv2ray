@@ -87,4 +87,4 @@ namespace Qvmessocket::base::safetype
 
 } // namespace Qv2ray::base::safetype
 
-using namespace Qv2ray::base::safetype;
+using namespace Qvmessocket::base::safetype;
