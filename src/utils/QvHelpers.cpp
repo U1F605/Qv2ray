@@ -9,7 +9,7 @@
 
 #define QV_MODULE_NAME "Utils"
 
-namespace Qv2ray::common
+namespace Qvmessocket::common
 {
     const QString GenerateRandomString(int len)
     {
