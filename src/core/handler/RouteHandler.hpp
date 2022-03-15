@@ -2,7 +2,7 @@
 
 #include "base/Qv2rayBase.hpp"
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     class RouteHandler : public QObject
     {
@@ -35,5 +35,5 @@ namespace Qv2ray::core::handler
       private:
         QHash<GroupRoutingId, GroupRoutingConfig> configs;
     };
-    inline ::Qv2ray::core::handler::RouteHandler *RouteManager = nullptr;
+    inline ::Qvmessocket::core::handler::RouteHandler *RouteManager = nullptr;
 } // namespace Qv2ray::core::handler
