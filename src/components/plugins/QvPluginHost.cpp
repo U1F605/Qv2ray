@@ -8,7 +8,7 @@
 #include <QPluginLoader>
 
 #define QV_MODULE_NAME "PluginHost"
-namespace Qv2ray::components::plugins
+namespace Qvmessocket::components::plugins
 {
     QvPluginHost::QvPluginHost(QObject *parent) : QObject(parent)
     {
