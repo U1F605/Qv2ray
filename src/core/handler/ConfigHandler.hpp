@@ -5,7 +5,7 @@
 #include "core/connection/ConnectionIO.hpp"
 #include "core/handler/KernelInstanceHandler.hpp"
 
-namespace Qv2ray::common::network
+namespace Qvmessocket::common::network
 {
     class NetworkRequestHelper;
 }
@@ -179,4 +179,4 @@ namespace Qv2ray::core::handler
     inline ::Qv2ray::core::handler::QvConfigHandler *ConnectionManager = nullptr;
 } // namespace Qv2ray::core::handler
 
-using namespace Qv2ray::core::handler;
+using namespace Qvmessocket::core::handler;
