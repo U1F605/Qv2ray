@@ -2,7 +2,7 @@
 #include "base/Qv2rayBase.hpp"
 #include "utils/QvHelpers.hpp"
 
-namespace Qv2ray::core::connection::serialization
+namespace Qvmessocket::core::connection::serialization
 {
     const inline QString QV2RAY_SERIALIZATION_COMPLEX_CONFIG_PLACEHOLDER = "(N/A)";
     /**
@@ -47,6 +47,6 @@ namespace Qv2ray::core::connection::serialization
 
 } // namespace Qv2ray::core::connection::serialization
 
-using namespace Qv2ray::core;
-using namespace Qv2ray::core::connection;
-using namespace Qv2ray::core::connection::serialization;
+using namespace Qvmessocket::core;
+using namespace Qvmessocket::core::connection;
+using namespace Qvmessocket::core::connection::serialization;
