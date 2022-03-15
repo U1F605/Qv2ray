@@ -74,4 +74,4 @@ namespace Qvmessocket
     inline Qv2rayApplicationInterface *QvCoreApplication = nullptr;
 } // namespace Qv2ray
 
-#define GlobalConfig (*Qmessocket::QvCoreApplication->ConfigObject)
+#define GlobalConfig (*Qv2ray::QvCoreApplication->ConfigObject)
