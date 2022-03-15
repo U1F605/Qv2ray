@@ -4,7 +4,7 @@
 
 #include <QQuickView>
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     class Qv2rayQMLApplication : public Qv2rayPlatformApplication
     {
