@@ -10,7 +10,7 @@
 
 #define UPGRADELOG(msg) LOG("[" + QSTRN(fromVersion) + "-" + QSTRN(fromVersion + 1) + "] --> " + msg)
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     // Private member
     QJsonObject UpgradeConfig_Inc(int fromVersion, const QJsonObject &original)
