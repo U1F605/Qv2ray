@@ -5,7 +5,7 @@
 
 #define QV_MODULE_NAME "VLESSImporter"
 
-namespace Qv2ray::core::connection
+namespace Qvmessocket::core::connection
 {
     namespace serialization::vless
     {
