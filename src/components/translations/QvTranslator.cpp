@@ -23,7 +23,7 @@ QStringList getLanguageSearchPaths()
     return list;
 }
 
-namespace Qv2ray::common
+namespace Qvmessocket::common
 {
     QvTranslator::QvTranslator()
     {
