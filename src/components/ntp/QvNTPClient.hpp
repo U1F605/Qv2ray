@@ -26,7 +26,7 @@
 #include <QtEndian>
 #include <QtGlobal>
 
-namespace Qv2ray::components::ntp
+namespace Qvmessocket::components::ntp
 {
     const qint64 january_1_1900 = -2208988800000ll;
 
