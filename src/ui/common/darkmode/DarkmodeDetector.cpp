@@ -12,7 +12,7 @@
 #include <CoreServices/CoreServices.h>
 #endif
 
-namespace Qv2ray::components::darkmode
+namespace Qvmessocket::components::darkmode
 {
     // Referenced from github.com/keepassxreboot/keepassxc. Licensed under GPL2/3.
     // Copyright (C) 2020 KeePassXC Team <team@keepassxc.org>
