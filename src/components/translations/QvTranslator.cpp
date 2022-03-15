@@ -5,7 +5,7 @@
 
 #define QV_MODULE_NAME "Translator"
 
-using namespace Qv2ray::base;
+using namespace Qvmessocket::base;
 
 // path searching list.
 QStringList getLanguageSearchPaths()
