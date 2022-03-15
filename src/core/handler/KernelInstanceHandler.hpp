@@ -6,7 +6,7 @@
 #include <QObject>
 #include <optional>
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     class KernelInstanceHandler : public QObject
     {
