@@ -5,7 +5,7 @@
 
 #include <QImage>
 
-namespace Qv2ray::ui
+namespace Qvmessocket::ui
 {
     QString DecodeQRCode(const QImage &)
     {
