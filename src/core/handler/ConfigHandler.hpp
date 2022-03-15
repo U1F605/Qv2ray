@@ -14,7 +14,7 @@ namespace Qvmessocket::common::network
     if (!IsValidId(id))                                                                                                                              \
         return returnValue;
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     class QvConfigHandler : public QObject
     {
