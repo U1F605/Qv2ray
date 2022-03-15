@@ -6,7 +6,7 @@
 #include <QObject>
 #include <functional>
 
-namespace Qv2ray::common::network
+namespace Qvmessocket::common::network
 {
     class NetworkRequestHelper : QObject
     {
@@ -24,4 +24,4 @@ namespace Qv2ray::common::network
     };
 } // namespace Qv2ray::common::network
 
-using namespace Qv2ray::common::network;
+using namespace Qvmessocket::common::network;
