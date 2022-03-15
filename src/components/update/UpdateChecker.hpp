@@ -29,7 +29,7 @@ namespace Qvmessocket::components
         void OnCheckUpdateCompleted(bool hasUpdate, const QvUpdateInfo &updateInfo);
 
       private:
-        Qv2ray::common::network::NetworkRequestHelper *requestHelper;
+        Qvmessocket::common::network::NetworkRequestHelper *requestHelper;
         void static VersionUpdate(const QByteArray &data);
     };
 } // namespace Qv2ray::components
