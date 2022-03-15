@@ -9,7 +9,7 @@
 class QPluginLoader;
 
 using namespace Qv2rayPlugin;
-namespace Qv2ray::components::plugins
+namespace Qvmessocket::components::plugins
 {
     struct QvPluginInfo
     {
