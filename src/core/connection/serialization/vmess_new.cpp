@@ -6,7 +6,7 @@
 #include <QUrl>
 #include <QUrlQuery>
 
-namespace Qv2ray::core::connection
+namespace Qvmessocket::core::connection
 {
     namespace serialization::vmess_new
     {
