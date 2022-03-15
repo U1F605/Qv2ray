@@ -2,12 +2,12 @@
 
 #include <QObject>
 
-namespace Qv2ray::common::network
+namespace Qvmessocket::common::network
 {
     class NetworkRequestHelper;
 }
 
-namespace Qv2ray::components
+namespace Qvmessocket::components
 {
     struct QvUpdateInfo
     {
@@ -33,4 +33,4 @@ namespace Qv2ray::components
         void static VersionUpdate(const QByteArray &data);
     };
 } // namespace Qv2ray::components
-using namespace Qv2ray::components;
+using namespace Qvmessocket::components;
