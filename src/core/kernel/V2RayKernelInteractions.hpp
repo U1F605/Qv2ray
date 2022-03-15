@@ -40,4 +40,4 @@ namespace Qvmessocket::core::kernel
     };
 } // namespace Qv2ray::core::kernel
 
-using namespace Qv2ray::core::kernel;
+using namespace Qvmessocket::core::kernel;
