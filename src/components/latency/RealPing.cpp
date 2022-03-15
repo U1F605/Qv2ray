@@ -16,7 +16,7 @@ struct RealPingContext
 };
 struct RealPingGlobalInfo
 {
-    std::shared_ptr<Qvmessocket::components::latency::realping::RealPing> _preserve_life_time;
+    std::shared_ptr<Qv2ray::components::latency::realping::RealPing> _preserve_life_time;
     CURLM *multiHandle;
     std::shared_ptr<uvw::TimerHandle> timer;
     int *successCountPtr;
