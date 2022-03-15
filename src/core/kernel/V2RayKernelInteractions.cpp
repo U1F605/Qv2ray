@@ -9,7 +9,7 @@
 #define QV2RAY_GENERATED_FILE_PATH (QV2RAY_GENERATED_DIR + "config.gen.json")
 #define QV_MODULE_NAME "V2RayInteraction"
 
-namespace Qv2ray::core::kernel
+namespace Qvmessocket::core::kernel
 {
 #if QV2RAY_FEATURE(kernel_check_permission)
     std::pair<bool, std::optional<QString>> V2RayKernelInstance::CheckAndSetCoreExecutableState(const QString &vCorePath)
