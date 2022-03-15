@@ -12,7 +12,7 @@
 
 #define QV_MODULE_NAME "SSDConverter"
 
-namespace Qv2ray::core::connection::serialization
+namespace Qvmessocket::core::connection::serialization
 {
 
     namespace ssd
