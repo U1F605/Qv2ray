@@ -6,7 +6,7 @@
 
 #define QV_MODULE_NAME "KernelHandler"
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
 #define isConnected (vCoreInstance->IsKernelRunning() || !activeKernels.empty())
     KernelInstanceHandler::KernelInstanceHandler(QObject *parent) : QObject(parent)
