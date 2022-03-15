@@ -254,7 +254,7 @@ namespace Qvmessocket::base
     {
         return ::qHash(key.toString());
     }
-    inline size_t qHash(const Qv2ray::base::ConnectionGroupPair &pair)
+    inline size_t qHash(const Qvmessocket::base::ConnectionGroupPair &pair)
     {
         return ::qHash(pair.connectionId.toString() + pair.groupId.toString());
     }
