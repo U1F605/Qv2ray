@@ -15,7 +15,7 @@
 
 #define QV_MODULE_NAME "SystemProxy"
 
-namespace Qv2ray::components::proxy
+namespace Qvmessocket::components::proxy
 {
 
     using ProcessArgument = QPair<QString, QStringList>;
