@@ -1,5 +1,5 @@
 #include "core/connection/Generation.hpp"
-namespace Qv2ray::core::connection::generation::outbounds
+namespace Qvmessocket::core::connection::generation::outbounds
 {
 
     OUTBOUNDSETTING GenerateFreedomOUT(const QString &domainStrategy, const QString &redirect)
