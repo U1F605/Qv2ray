@@ -95,4 +95,4 @@ namespace Qvmessocket::components::plugins
     inline ::Qv2ray::components::plugins::QvPluginHost *PluginHost = nullptr;
 
 } // namespace Qv2ray::components::plugins
-using namespace Qv2ray::components::plugins;
+using namespace Qvmessocket::components::plugins;
