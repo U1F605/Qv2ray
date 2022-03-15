@@ -8,7 +8,7 @@
 
 #define QV_MODULE_NAME "RouteHandler"
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     RouteHandler::RouteHandler(QObject *parent) : QObject(parent)
     {
