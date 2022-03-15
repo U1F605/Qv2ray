@@ -6,7 +6,7 @@
 #define QV_MODULE_NAME "SettingsBackend"
 constexpr auto QV2RAY_CONFIG_PATH_ENV_NAME = "QV2RAY_CONFIG_PATH";
 
-namespace Qv2ray::core::config
+namespace Qvmessocket::core::config
 {
     void SaveGlobalSettings()
     {
@@ -265,4 +265,4 @@ namespace Qv2ray::core::config
 
 } // namespace Qv2ray::core::config
 
-using namespace Qv2ray::core::config;
+using namespace Qvmessocket::core::config;
