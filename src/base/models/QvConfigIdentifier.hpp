@@ -260,7 +260,7 @@ namespace Qvmessocket::base
     }
 } // namespace Qv2ray::base
 
-using namespace Qv2ray::base;
+using namespace Qvmessocket::base;
 Q_DECLARE_METATYPE(ConnectionGroupPair)
 Q_DECLARE_METATYPE(ConnectionId)
 Q_DECLARE_METATYPE(GroupId)
