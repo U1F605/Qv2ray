@@ -176,7 +176,7 @@ namespace Qvmessocket::core::handler
         KernelInstanceHandler *kernelHandler;
     };
 
-    inline ::Qv2ray::core::handler::QvConfigHandler *ConnectionManager = nullptr;
+    inline ::Qvmessocket::core::handler::QvConfigHandler *ConnectionManager = nullptr;
 } // namespace Qv2ray::core::handler
 
 using namespace Qvmessocket::core::handler;
