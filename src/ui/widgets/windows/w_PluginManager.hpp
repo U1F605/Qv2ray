@@ -6,7 +6,7 @@
 
 #include <memory>
 
-namespace Qv2ray::components::plugins
+namespace Qvmessocket::components::plugins
 {
     struct QvPluginInfo;
 }
@@ -50,6 +50,6 @@ class PluginManageWindow
     void updateColorScheme() override{};
 
     std::shared_ptr<Qv2rayPlugin::QvPluginSettingsWidget> currentSettingsWidget;
-    Qv2ray::components::plugins::QvPluginInfo *currentPluginInfo;
+    Qvmessocket::components::plugins::QvPluginInfo *currentPluginInfo;
     bool isLoading = true;
 };
