@@ -44,7 +44,7 @@ void QvNodeRuleWidget::setValue(std::shared_ptr<RuleObject> _ruleptr)
     this->ruleptr = _ruleptr;
     // Switch to the detailed page.
     ruleEnableCB->setEnabled(true);
-    ruleEnableCB->setChecked(rule.QV2RAY_RULE_ENABLED);
+    ruleEnableCB->setChecked(rule.QVMESSOCKET_RULE_ENABLED);
     ruleTagLineEdit->setEnabled(true);
     LOAD_FLAG_BEGIN
     ruleTagLineEdit->setText(rule.QVMESSOCKET_RULE_TAG);
