@@ -149,7 +149,7 @@ namespace
         return addr.s_addr == INADDR_ANY;
     }
 } // namespace
-namespace Qv2ray::components::latency::realping
+namespace Qvmessocket::components::latency::realping
 {
     RealPing::RealPing(std::shared_ptr<uvw::Loop> loopin, LatencyTestRequest &req, LatencyTestHost *testHost)
         : req(std::move(req)), testHost(testHost), loop(std::move(loopin)), timeout(loop->resource<uvw::TimerHandle>())
