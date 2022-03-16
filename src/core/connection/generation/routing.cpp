@@ -6,7 +6,7 @@ namespace Qvmessocket::core::connection::generation::routing
         QJsonObject root = dnsServer.toJson();
         QJsonArray servers;
         for (const auto &serv : dnsServer.servers)
-            servers << (serv.QV2RAY_DNS_IS_COMPLEX_DNS ? serv.toJson() : QJsonValue(serv.address));
+            servers << (serv.QVMESSOCKET_DNS_IS_COMPLEX_DNS ? serv.toJson() : QJsonValue(serv.address));
         root["servers"] = servers;
         return root;
     }
@@ -84,4 +84,4 @@ namespace Qvmessocket::core::connection::generation::routing
         return root;
     }
 
-} // namespace Qv2ray::core::connection::generation::routing
+}
