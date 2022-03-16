@@ -5,12 +5,12 @@
 
 #define CurrentStatAPIType (GlobalConfig.uiConfig.graphConfig.useOutboundStats ? API_OUTBOUND_PROXY : API_INBOUND)
 
-namespace Qv2ray::core
+namespace Qvmessocket::core
 {
     const inline GroupId DefaultGroupId{ "000000000000" };
-    using namespace Qv2ray::base;
-    using namespace Qv2ray::base::safetype;
-    using namespace Qv2ray::base::objects;
+    using namespace Qvmessocket::base;
+    using namespace Qvmessocket::base::safetype;
+    using namespace Qvmessocket::base::objects;
     inline const QString getTag(const INBOUND &in)
     {
         return in["tag"].toString();
@@ -62,4 +62,4 @@ namespace Qv2ray::core
     const QMap<QString, ProtocolSettingsInfoObject> GetInboundInfo(const ConnectionId &id);
 } // namespace Qv2ray::core
 
-using namespace Qv2ray::core;
+using namespace Qvmessocket::core;

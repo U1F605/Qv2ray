@@ -3,7 +3,7 @@
 #include <QHostAddress>
 #include <QTcpServer>
 
-namespace Qv2ray::components::port
+namespace Qvmessocket::components::port
 {
     bool CheckTCPPortStatus(const QString &addr, int port)
     {

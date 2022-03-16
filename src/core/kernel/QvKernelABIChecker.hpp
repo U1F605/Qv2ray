@@ -10,7 +10,7 @@
 #include <QtGlobal>
 #include <optional>
 
-namespace Qv2ray::core::kernel
+namespace Qvmessocket::core::kernel
 {
     namespace abi
     {

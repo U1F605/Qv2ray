@@ -6,7 +6,7 @@
 #define QV_MODULE_NAME "SettingsBackend"
 constexpr auto QV2RAY_CONFIG_PATH_ENV_NAME = "QV2RAY_CONFIG_PATH";
 
-namespace Qv2ray::core::config
+namespace Qvmessocket::core::config
 {
     void SaveGlobalSettings()
     {
@@ -253,7 +253,7 @@ namespace Qv2ray::core::config
             else if (configVersion < QV2RAY_CONFIG_VERSION)
             {
                 // That is the config file needs to be upgraded.
-                conf = Qv2ray::UpgradeSettingsVersion(configVersion, QV2RAY_CONFIG_VERSION, conf);
+                conf = Qvmessocket::UpgradeSettingsVersion(configVersion, QV2RAY_CONFIG_VERSION, conf);
             }
 
             // Let's save the config.
@@ -265,4 +265,4 @@ namespace Qv2ray::core::config
 
 } // namespace Qv2ray::core::config
 
-using namespace Qv2ray::core::config;
+using namespace Qvmessocket::core::config;

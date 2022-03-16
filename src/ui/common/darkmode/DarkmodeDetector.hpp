@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Qv2ray::components::darkmode
+namespace Qvmessocket::components::darkmode
 {
     bool isDarkMode();
 }

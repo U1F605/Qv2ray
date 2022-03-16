@@ -8,7 +8,7 @@ using grpc::Status;
 
 #define QV_MODULE_NAME "gRPCBackend"
 
-namespace Qv2ray::core::kernel
+namespace Qvmessocket::core::kernel
 {
     constexpr auto Qv2ray_GRPC_ERROR_RETCODE = -1;
     static QvAPIDataTypeConfig DefaultInboundAPIConfig{ { API_INBOUND, { "dokodemo-door", "http", "socks" } } };

@@ -22,10 +22,10 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-using Qv2ray::common::validation::IsIPv4Address;
-using Qv2ray::common::validation::IsIPv6Address;
-using Qv2ray::common::validation::IsValidDNSServer;
-using Qv2ray::common::validation::IsValidIPAddress;
+using Qvmessocket::common::validation::IsIPv4Address;
+using Qvmessocket::common::validation::IsIPv6Address;
+using Qvmessocket::common::validation::IsValidDNSServer;
+using Qvmessocket::common::validation::IsValidIPAddress;
 
 #define LOADINGCHECK                                                                                                                                 \
     if (!finishedLoading)                                                                                                                            \

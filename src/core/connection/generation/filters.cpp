@@ -1,7 +1,7 @@
 #include "core/connection/Generation.hpp"
 #include "utils/QvHelpers.hpp"
 
-namespace Qv2ray::core::connection::generation::filters
+namespace Qvmessocket::core::connection::generation::filters
 {
     void OutboundMarkSettingFilter(CONFIGROOT &root, const int mark)
     {

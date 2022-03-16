@@ -1,7 +1,7 @@
 #include "base/Qv2rayBaseApplication.hpp"
 #include "src/ui/Qv2rayPlatformApplication.hpp"
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     class Qv2rayCliApplication : public Qv2rayPlatformApplication
     {

@@ -11,7 +11,7 @@
 #endif
 #include "uvw.hpp"
 
-namespace Qv2ray::components::latency
+namespace Qvmessocket::components::latency
 {
 
     LatencyTestThread::LatencyTestThread(QObject *parent) : QThread(parent)

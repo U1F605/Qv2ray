@@ -109,7 +109,7 @@ class QvDialog
     }
 };
 
-namespace Qv2ray::ui
+namespace Qvmessocket::ui
 {
     inline QPixmap ApplyEffectToImage(QPixmap src, QGraphicsEffect *effect, int extent = 0)
     {
@@ -155,4 +155,4 @@ namespace Qv2ray::ui
     }
 } // namespace Qv2ray::ui
 
-using namespace Qv2ray::ui;
+using namespace Qvmessocket::ui;

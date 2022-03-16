@@ -5,7 +5,7 @@
 #include <QCoreApplication>
 #include <QObject>
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     enum MessageOpt
     {
@@ -55,7 +55,7 @@ namespace Qv2ray
     class Qv2rayApplicationInterface
     {
       public:
-        Qv2ray::base::config::Qv2rayConfigObject *ConfigObject;
+        Qvmessocket::base::config::Qv2rayConfigObject *ConfigObject;
         QString ConfigPath;
         Qv2rayStartupArguments StartupArguments;
 
@@ -74,4 +74,4 @@ namespace Qv2ray
     inline Qv2rayApplicationInterface *QvCoreApplication = nullptr;
 } // namespace Qv2ray
 
-#define GlobalConfig (*Qv2ray::QvCoreApplication->ConfigObject)
+#define GlobalConfig (*Qvmessocket::QvCoreApplication->ConfigObject)

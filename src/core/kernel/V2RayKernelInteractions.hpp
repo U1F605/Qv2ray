@@ -4,7 +4,7 @@
 
 class QProcess;
 
-namespace Qv2ray::core::kernel
+namespace Qvmessocket::core::kernel
 {
     class APIWorker;
     class V2RayKernelInstance : public QObject
@@ -40,4 +40,4 @@ namespace Qv2ray::core::kernel
     };
 } // namespace Qv2ray::core::kernel
 
-using namespace Qv2ray::core::kernel;
+using namespace Qvmessocket::core::kernel;

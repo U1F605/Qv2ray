@@ -1,5 +1,5 @@
 #include "core/connection/Generation.hpp"
-namespace Qv2ray::core::connection::generation::routing
+namespace Qvmessocket::core::connection::generation::routing
 {
     QJsonObject GenerateDNS(const QvConfig_DNS &dnsServer)
     {

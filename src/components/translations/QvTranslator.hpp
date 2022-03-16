@@ -4,7 +4,7 @@
 #include <memory>
 #include <optional>
 
-namespace Qv2ray::common
+namespace Qvmessocket::common
 {
     class QvTranslator
     {
@@ -35,4 +35,4 @@ namespace Qv2ray::common
     inline std::unique_ptr<common::QvTranslator> Qv2rayTranslator;
 } // namespace Qv2ray::common
 
-using namespace Qv2ray::common;
+using namespace Qvmessocket::common;

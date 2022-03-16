@@ -11,7 +11,7 @@ namespace uvw
     class Loop;
     class TimerHandle;
 } // namespace uvw
-namespace Qv2ray::components::latency
+namespace Qvmessocket::components::latency
 {
     class LatencyTestThread : public QThread
     {

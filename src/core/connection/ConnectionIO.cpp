@@ -3,7 +3,7 @@
 #include "Serialization.hpp"
 #include "utils/QvHelpers.hpp"
 
-namespace Qv2ray::core::connection::connectionIO
+namespace Qvmessocket::core::connection::connectionIO
 {
     CONFIGROOT ConvertConfigFromFile(const QString &sourceFilePath, bool importComplex)
     {

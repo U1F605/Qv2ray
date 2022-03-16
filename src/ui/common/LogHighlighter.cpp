@@ -4,7 +4,7 @@
 
 #define TO_EOL "(([\\s\\S]*)|([\\d\\D]*)|([\\w\\W]*))$"
 
-namespace Qv2ray::ui
+namespace Qvmessocket::ui
 {
     SyntaxHighlighter::SyntaxHighlighter(bool darkMode, QTextDocument *parent) : QSyntaxHighlighter(parent)
     {

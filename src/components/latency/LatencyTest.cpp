@@ -3,7 +3,7 @@
 #include "LatencyTestThread.hpp"
 #include "core/handler/ConfigHandler.hpp"
 
-namespace Qv2ray::components::latency
+namespace Qvmessocket::components::latency
 {
     LatencyTestHost::LatencyTestHost(const int defaultCount, QObject *parent) : QObject(parent)
     {

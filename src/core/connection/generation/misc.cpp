@@ -1,6 +1,6 @@
 #include "core/connection/Generation.hpp"
 
-namespace Qv2ray::core::connection::generation::misc
+namespace Qvmessocket::core::connection::generation::misc
 {
     QJsonObject GenerateAPIEntry(const QString &tag, bool withHandler, bool withLogger, bool withStats)
     {

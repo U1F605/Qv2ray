@@ -6,7 +6,7 @@
 #include <QMap>
 #include <QString>
 
-namespace Qv2ray::base::objects
+namespace Qvmessocket::base::objects
 {
     struct DNSObject
     {

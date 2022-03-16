@@ -7,7 +7,7 @@
 #include <QString>
 #include <QtCore>
 
-namespace Qv2ray::base
+namespace Qvmessocket::base
 {
     template<typename T>
     class IDType
@@ -254,13 +254,13 @@ namespace Qv2ray::base
     {
         return ::qHash(key.toString());
     }
-    inline size_t qHash(const Qv2ray::base::ConnectionGroupPair &pair)
+    inline size_t qHash(const Qvmessocket::base::ConnectionGroupPair &pair)
     {
         return ::qHash(pair.connectionId.toString() + pair.groupId.toString());
     }
 } // namespace Qv2ray::base
 
-using namespace Qv2ray::base;
+using namespace Qvmessocket::base;
 Q_DECLARE_METATYPE(ConnectionGroupPair)
 Q_DECLARE_METATYPE(ConnectionId)
 Q_DECLARE_METATYPE(GroupId)

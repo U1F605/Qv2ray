@@ -5,7 +5,7 @@
 #include "core/connection/ConnectionIO.hpp"
 #include "core/handler/KernelInstanceHandler.hpp"
 
-namespace Qv2ray::common::network
+namespace Qvmessocket::common::network
 {
     class NetworkRequestHelper;
 }
@@ -14,7 +14,7 @@ namespace Qv2ray::common::network
     if (!IsValidId(id))                                                                                                                              \
         return returnValue;
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     class QvConfigHandler : public QObject
     {
@@ -176,7 +176,7 @@ namespace Qv2ray::core::handler
         KernelInstanceHandler *kernelHandler;
     };
 
-    inline ::Qv2ray::core::handler::QvConfigHandler *ConnectionManager = nullptr;
+    inline ::Qvmessocket::core::handler::QvConfigHandler *ConnectionManager = nullptr;
 } // namespace Qv2ray::core::handler
 
-using namespace Qv2ray::core::handler;
+using namespace Qvmessocket::core::handler;

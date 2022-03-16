@@ -9,7 +9,7 @@
 class QPluginLoader;
 
 using namespace Qv2rayPlugin;
-namespace Qv2ray::components::plugins
+namespace Qvmessocket::components::plugins
 {
     struct QvPluginInfo
     {
@@ -92,7 +92,7 @@ namespace Qv2ray::components::plugins
 
     const QStringList GetPluginComponentsString(const QList<PluginGuiComponentType> &types);
     const QStringList GetPluginComponentsString(const QList<PluginComponentType> &types);
-    inline ::Qv2ray::components::plugins::QvPluginHost *PluginHost = nullptr;
+    inline ::Qvmessocket::components::plugins::QvPluginHost *PluginHost = nullptr;
 
 } // namespace Qv2ray::components::plugins
-using namespace Qv2ray::components::plugins;
+using namespace Qvmessocket::components::plugins;

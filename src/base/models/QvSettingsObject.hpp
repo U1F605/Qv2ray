@@ -7,7 +7,7 @@
 
 constexpr int QV2RAY_CONFIG_VERSION = 14;
 
-namespace Qv2ray::base::config
+namespace Qvmessocket::base::config
 {
     struct QvGraphPenConfig
     {

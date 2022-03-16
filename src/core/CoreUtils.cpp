@@ -6,7 +6,7 @@
 
 #define QV_MODULE_NAME "CoreUtils"
 
-namespace Qv2ray::core
+namespace Qvmessocket::core
 {
     bool IsComplexConfig(const ConnectionId &id)
     {

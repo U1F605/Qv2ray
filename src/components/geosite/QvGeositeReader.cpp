@@ -6,7 +6,7 @@
 
 #define QV_MODULE_NAME "GeositeReader"
 
-namespace Qv2ray::components::geosite
+namespace Qvmessocket::components::geosite
 {
     QMap<QString, QStringList> GeositeEntries;
     QStringList ReadGeoSiteFromFile(const QString &filepath)

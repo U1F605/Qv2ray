@@ -9,7 +9,7 @@
 
 #define QV_MODULE_NAME "ConfigHandler"
 
-namespace Qv2ray::core::handler
+namespace Qvmessocket::core::handler
 {
     QvConfigHandler::QvConfigHandler(QObject *parent) : QObject(parent)
     {

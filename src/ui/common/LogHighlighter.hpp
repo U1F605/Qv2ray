@@ -54,7 +54,7 @@
 #include <QTextCharFormat>
 #include <QTextDocument>
 
-namespace Qv2ray::ui
+namespace Qvmessocket::ui
 {
     class SyntaxHighlighter : public QSyntaxHighlighter
     {
@@ -91,4 +91,4 @@ namespace Qv2ray::ui
     };
 } // namespace Qv2ray::ui
 
-using namespace Qv2ray::ui;
+using namespace Qvmessocket::ui;

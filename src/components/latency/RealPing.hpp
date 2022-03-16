@@ -10,7 +10,7 @@ namespace uvw
     class Loop;
     class TimerHandle;
 } // namespace uvw
-namespace Qv2ray::components::latency::realping
+namespace Qvmessocket::components::latency::realping
 {
     class RealPing : public std::enable_shared_from_this<RealPing>
     {

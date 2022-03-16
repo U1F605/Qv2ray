@@ -4,7 +4,7 @@
 
 #if QV2RAY_FEATURE(kernel_check_abi)
 
-namespace Qv2ray::core::kernel::abi
+namespace Qvmessocket::core::kernel::abi
 {
     QvKernelABICompatibility checkCompatibility(QvKernelABIType hostType, QvKernelABIType targetType)
     {

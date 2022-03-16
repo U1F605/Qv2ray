@@ -3,7 +3,7 @@
 #include "Generation.hpp"
 #include "core/handler/ConfigHandler.hpp"
 
-namespace Qv2ray::core::connection
+namespace Qvmessocket::core::connection
 {
     namespace serialization
     {

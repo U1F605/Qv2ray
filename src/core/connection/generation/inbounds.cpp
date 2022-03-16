@@ -2,7 +2,7 @@
 
 #define QV_MODULE_NAME "InboundGenerator"
 
-namespace Qv2ray::core::connection::generation::inbounds
+namespace Qvmessocket::core::connection::generation::inbounds
 {
     INBOUNDSETTING GenerateDokodemoIN(const QString &address, int port, const QString &network, int timeout, bool followRedirect)
     {

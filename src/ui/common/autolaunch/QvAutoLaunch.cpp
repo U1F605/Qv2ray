@@ -12,7 +12,7 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreServices/CoreServices.h>
 #endif
-namespace Qv2ray::components::autolaunch
+namespace Qvmessocket::components::autolaunch
 {
     //
     //  launchatlogin.cpp
