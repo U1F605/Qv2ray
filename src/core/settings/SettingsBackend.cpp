@@ -253,7 +253,7 @@ namespace Qvmessocket::core::config
             else if (configVersion < QV2RAY_CONFIG_VERSION)
             {
                 // That is the config file needs to be upgraded.
-                conf = Qv2ray::UpgradeSettingsVersion(configVersion, QV2RAY_CONFIG_VERSION, conf);
+                conf = Qvmessocket::UpgradeSettingsVersion(configVersion, QV2RAY_CONFIG_VERSION, conf);
             }
 
             // Let's save the config.
