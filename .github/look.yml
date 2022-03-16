@@ -1,0 +1,10 @@
+name: look
+on:
+   workflow_dispatch:
+   
+jobs:
+   find: 
+   runs-on: ubuntu-latest
+   steps: 
+   - name: find
+     run: grep -rni "QV2RAY_RULE_TAG"   
