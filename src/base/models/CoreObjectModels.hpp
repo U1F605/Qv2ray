@@ -57,7 +57,7 @@ namespace Qvmessocket::base::objects
             {
                 QJsonObject ___json_object_;
                 DNSServerObject ___qjsonstruct_default_check;
-                FOREACH_CALL_FUNC(___SERIALIZE_TO_JSON_EXTRACT_B_F, F(QV2RAY_DNS_IS_COMPLEX_DNS, address, port, domains, expectIPs));
+                FOREACH_CALL_FUNC(___SERIALIZE_TO_JSON_EXTRACT_B_F, F(QVMESSOCKET_DNS_IS_COMPLEX_DNS, address, port, domains, expectIPs));
                 return ___json_object_;
             }
         };
