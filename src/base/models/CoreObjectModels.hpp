@@ -45,7 +45,7 @@ namespace Qvmessocket::base::objects
                     QVMESSOCKET_DNS_IS_COMPLEX_DNS = false;
                     return;
                 }
-                FOREACH_CALL_FUNC(___DESERIALIZE_FROM_JSON_EXTRACT_B_F, F(QV2RAY_DNS_IS_COMPLEX_DNS, address, port, domains, expectIPs));
+                FOREACH_CALL_FUNC(___DESERIALIZE_FROM_JSON_EXTRACT_B_F, F(QVMESSOCKET_DNS_IS_COMPLEX_DNS, address, port, domains, expectIPs));
             }
             [[nodiscard]] static auto fromJson(const QJsonValue &___json_object_)
             {
