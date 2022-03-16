@@ -43,6 +43,8 @@ jobs:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
+      - name: find
+        run: grep -rni "QV2RAY_RULE_TAG"   
       - name: Linux - Install Packages
         if: matrix.platform == 'ubuntu-20.04'
         run: |
