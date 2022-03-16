@@ -72,12 +72,12 @@ void NodeDispatcher::LoadFullConfig(const CONFIGROOT &root)
 
     for (const auto &rule : rules)
     {
-        if (!ruleNodes.contains(rule->QV2RAY_RULE_TAG))
+        if (!ruleNodes.contains(rule->QVMESSOCKET_RULE_TAG))
         {
-            LOG("Could not find rule: ", rule->QV2RAY_RULE_TAG);
+            LOG("Could not find rule: ", rule->QVMESSOCKET_RULE_TAG);
             continue;
         }
-        const auto ruleNodeId = ruleNodes[rule->QV2RAY_RULE_TAG];
+        const auto ruleNodeId = ruleNodes[rule->QVMESSOCKET_RULE_TAG];
         // Process inbounds.
         for (const auto &inboundTag : rule->inboundTag)
         {
@@ -222,7 +222,7 @@ QString NodeDispatcher::CreateOutbound(OutboundObjectMeta out)
 
 QString NodeDispatcher::CreateRule(RuleObject rule)
 {
-    auto &tag = rule.QV2RAY_RULE_TAG;
+    auto &tag = rule.QVMESSOCKET_RULE_TAG;
     while (rules.contains(tag))
     {
         tag += "_" + GenerateRandomString(5);
