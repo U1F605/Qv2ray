@@ -139,7 +139,7 @@ void DnsSettingsWidget::ShowCurrentDnsServerDetails()
     ipListTxt->setPlainText(dns.servers[currentServerIndex].expectIPs.join(NEWLINE));
     //
     serverPortSB->setValue(dns.servers[currentServerIndex].port);
-    detailsSettingsGB->setChecked(dns.servers[currentServerIndex].QV2RAY_DNS_IS_COMPLEX_DNS);
+    detailsSettingsGB->setChecked(dns.servers[currentServerIndex].QVMESSOCKET_DNS_IS_COMPLEX_DNS);
     //
     if (serverAddressTxt->text().isEmpty() || IsValidDNSServer(serverAddressTxt->text()))
     {
