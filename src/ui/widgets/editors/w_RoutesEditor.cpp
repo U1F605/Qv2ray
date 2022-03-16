@@ -28,7 +28,7 @@
 #define QV_MODULE_NAME "RouteEditor"
 
 using namespace QtNodes;
-using namespace Qvmessocket::ui::nodemodels;
+using namespace Qv2ray::ui::nodemodels;
 
 namespace
 {
