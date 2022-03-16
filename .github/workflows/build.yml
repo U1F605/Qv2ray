@@ -35,11 +35,6 @@ jobs:
         with:
           toolset: 14.2
           arch: x64
-      - name: Setup Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: "3.7"
-          architecture: x64
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
