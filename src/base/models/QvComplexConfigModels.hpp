@@ -122,4 +122,4 @@ namespace Qvmessocket::base::objects::complex
     }
 } // namespace Qv2ray::base::objects::complex
 
-using namespace Qv2ray::base::objects::complex;
+using namespace Qvmessocket::base::objects::complex;
