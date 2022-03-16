@@ -12,7 +12,7 @@ namespace Qvmessocket::base::objects
     {
         struct DNSServerObject
         {
-            bool QV2RAY_DNS_IS_COMPLEX_DNS;
+            bool QVMESSOCKET_DNS_IS_COMPLEX_DNS;
             QString address;
             int port;
             QList<QString> domains;
@@ -42,7 +42,7 @@ namespace Qvmessocket::base::objects
                 if (___json_object_.isString())
                 {
                     address = ___json_object_.toString();
-                    QV2RAY_DNS_IS_COMPLEX_DNS = false;
+                    QVMESSOCKET_DNS_IS_COMPLEX_DNS = false;
                     return;
                 }
                 FOREACH_CALL_FUNC(___DESERIALIZE_FROM_JSON_EXTRACT_B_F, F(QV2RAY_DNS_IS_COMPLEX_DNS, address, port, domains, expectIPs));
@@ -398,5 +398,5 @@ namespace Qvmessocket::base::objects
             JSONSTRUCT_COMPARE(ShadowSocksServerObject, address, method, password)
             JSONSTRUCT_REGISTER(ShadowSocksServerObject, F(address, port, method, password))
         };
-    } // namespace protocol
-} // namespace Qv2ray::base::objects
+    }
+}
