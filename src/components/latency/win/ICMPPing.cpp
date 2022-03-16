@@ -117,7 +117,7 @@ namespace Qvmessocket::components::latency::icmping
             icmpReply->reply_buf, reply_buf_size, 10000);
     }
 
-    bool ICMPPing::notifyTestHost(LatencyTestHost *testHost, const ::Qv2ray::base::ConnectionId &id)
+    bool ICMPPing::notifyTestHost(LatencyTestHost *testHost, const ::Qvmessocket::base::ConnectionId &id)
     {
         if (data.failedCount + successCount == data.totalCount)
         {
