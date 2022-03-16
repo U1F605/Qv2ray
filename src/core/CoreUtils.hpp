@@ -23,7 +23,7 @@ namespace Qvmessocket::core
 
     inline const QString getTag(const RuleObject &in)
     {
-        return in.QV2RAY_RULE_TAG;
+        return in.QVMESSOCKET_RULE_TAG;
     }
     //
     int64_t GetConnectionLatency(const ConnectionId &id);
@@ -47,9 +47,6 @@ namespace Qvmessocket::core
     //
     const QString GetDisplayName(const ConnectionId &id, int limit = -1);
     const QString GetDisplayName(const GroupId &id, int limit = -1);
-    //
-    // const GroupId GetConnectionGroupId(const ConnectionId &id);
-    //
     bool GetInboundInfo(const INBOUND &in, QString *listen, int *port, QString *protocol);
     inline ProtocolSettingsInfoObject GetInboundInfo(const INBOUND &in)
     {
@@ -60,6 +57,6 @@ namespace Qvmessocket::core
 
     const QMap<QString, ProtocolSettingsInfoObject> GetInboundInfo(const CONFIGROOT &root);
     const QMap<QString, ProtocolSettingsInfoObject> GetInboundInfo(const ConnectionId &id);
-} // namespace Qv2ray::core
+}
 
 using namespace Qvmessocket::core;
