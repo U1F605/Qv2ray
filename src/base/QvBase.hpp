@@ -12,7 +12,7 @@
 #include "base/QvFeatures.hpp"
 #include "base/QvLog.hpp"
 // Code Models
-#include "base/Qv2rayBaseApplication.hpp"
+#include "base/QvBaseApplication.hpp"
 #include "base/models/CoreObjectModels.hpp"
 #include "base/models/QvConfigIdentifier.hpp"
 #include "base/models/QvRuntimeConfig.hpp"
