@@ -1,7 +1,7 @@
 #include "UpdateChecker.hpp"
 
 #include "3rdparty/libsemver/version.hpp"
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "core/settings/SettingsBackend.hpp"
 #include "utils/HTTPRequestHelper.hpp"
 #include "utils/QvHelpers.hpp"
