@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBaseApplication.hpp"
+#include "base/QvBaseApplication.hpp"
 #include "components/translations/QvTranslator.hpp"
 #include "core/handler/ConfigHandler.hpp"
 #include "core/handler/RouteHandler.hpp"
