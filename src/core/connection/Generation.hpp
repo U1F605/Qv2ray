@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 static const inline QStringList V2RayLogLevel = { "none", "debug", "info", "warning", "error" };
 
