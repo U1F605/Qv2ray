@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        ui_type: [QWidget, QML]
+        ui_type: [QWidget]
         platform: [ubuntu-20.04, windows-latest]
         build_type: [RelWithDebInfo, Release]
         qt_version: [6.0.0]
@@ -20,7 +20,7 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     env:
-      _QV2RAY_BUILD_INFO_: "Qv2ray built from Github Action"
+      _QV2RAY_BUILD_INFO_: "build from Github Action"
       _QV2RAY_BUILD_EXTRA_INFO_: "qt${{ matrix.qt_version }}-${{ github.sha }}-ci.${{ matrix.platform }}"
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "Qv2rayFeature"
+        run: grep -rni "Qv2ray::"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
