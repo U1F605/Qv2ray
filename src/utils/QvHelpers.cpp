@@ -1,7 +1,7 @@
 #include "QvHelpers.hpp"
 
 #include "3rdparty/puresource/src/PureJson.hpp"
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringConverter>
