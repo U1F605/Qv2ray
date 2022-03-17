@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "ui/common/QvMessageBus.hpp"
 #include "ui/widgets/node/NodeBase.hpp"
 #include "ui_RoutingEditorWidget.h"
