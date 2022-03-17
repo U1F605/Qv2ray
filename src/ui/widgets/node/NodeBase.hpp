@@ -140,4 +140,4 @@ namespace Qvmessocket::ui::nodemodels
 
 }
 
-using namespace Qv2ray::ui::nodemodels;
+using namespace Qvmessocket::ui::nodemodels;
