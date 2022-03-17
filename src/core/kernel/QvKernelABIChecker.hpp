@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayFeatures.hpp"
+#include "base/QvFeatures.hpp"
 
 #if QV2RAY_FEATURE(kernel_check_abi)
 

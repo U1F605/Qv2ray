@@ -9,7 +9,7 @@
 #include <vector>
 // Base support.
 #include "base/JsonHelpers.hpp"
-#include "base/Qv2rayFeatures.hpp"
+#include "base/QvFeatures.hpp"
 #include "base/QvLog.hpp"
 // Code Models
 #include "base/Qv2rayBaseApplication.hpp"
