@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBaseApplication.hpp"
+#include "base/QvBaseApplication.hpp"
 
 #include <QDateTime>
 #include <QDir>
