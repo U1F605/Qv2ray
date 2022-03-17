@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "base/models/QvComplexConfigModels.hpp"
 
 #include <nodes/FlowScene>
