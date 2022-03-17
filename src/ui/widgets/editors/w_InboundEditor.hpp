@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "components/plugins/QvPluginHost.hpp"
 #include "ui/common/QvMessageBus.hpp"
 #include "ui_w_InboundEditor.h"

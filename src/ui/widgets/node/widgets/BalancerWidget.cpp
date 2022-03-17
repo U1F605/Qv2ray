@@ -1,6 +1,6 @@
 #include "BalancerWidget.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 BalancerWidget::BalancerWidget(std::shared_ptr<NodeDispatcher> _dispatcher, QWidget *parent) : QvNodeWidget(_dispatcher, parent)
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "core/kernel/QvKernelABIChecker.hpp"
 
 class QProcess;

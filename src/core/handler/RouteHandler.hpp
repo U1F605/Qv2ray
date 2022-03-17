@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 namespace Qvmessocket::core::handler
 {

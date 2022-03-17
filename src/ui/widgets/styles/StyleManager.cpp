@@ -1,6 +1,6 @@
 #include "StyleManager.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "ui/widgets/common/WidgetUIBase.hpp"
 #include "utils/QvHelpers.hpp"
 

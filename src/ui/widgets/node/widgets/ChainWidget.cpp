@@ -1,6 +1,6 @@
 #include "ChainWidget.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 ChainWidget::ChainWidget(std::shared_ptr<NodeDispatcher> _dispatcher, QWidget *parent) : QvNodeWidget(_dispatcher, parent)
 {

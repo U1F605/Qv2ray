@@ -1,6 +1,6 @@
 #pragma once
 #include "QvAutoCompleteTextEdit.hpp"
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "ui_RouteSettingsMatrix.h"
 
 #include <QMenu>

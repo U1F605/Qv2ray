@@ -1,6 +1,6 @@
 #include "QvAutoLaunch.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #include <QCoreApplication>
 #include <QDir>

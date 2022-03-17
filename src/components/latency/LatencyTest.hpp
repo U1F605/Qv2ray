@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 namespace uvw
 {
     class Loop;

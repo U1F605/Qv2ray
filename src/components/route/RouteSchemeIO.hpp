@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 namespace Qv2ray::components::route
 {
     const inline QvConfig_Route emptyScheme;

@@ -1,6 +1,6 @@
 #include "QvPluginHost.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "base/Qv2rayLog.hpp"
 #include "core/settings/SettingsBackend.hpp"
 #include "utils/QvHelpers.hpp"

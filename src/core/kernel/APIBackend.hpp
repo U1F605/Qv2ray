@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "v2ray_api.grpc.pb.h"
 
 #include <grpc++/grpc++.h>
@@ -45,6 +45,6 @@ namespace Qvmessocket::core::kernel
         std::shared_ptr<::grpc::Channel> grpc_channel;
         std::unique_ptr<::v2ray::core::app::stats::command::StatsService::Stub> stats_service_stub;
     };
-} // namespace Qv2ray::core::kernel
+}
 
 using namespace Qvmessocket::core::kernel;

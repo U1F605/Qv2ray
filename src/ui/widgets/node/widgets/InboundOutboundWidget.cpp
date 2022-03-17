@@ -1,6 +1,6 @@
 #include "InboundOutboundWidget.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "core/CoreUtils.hpp"
 #include "core/handler/ConfigHandler.hpp"
 #include "ui/widgets/editors/w_InboundEditor.hpp"
