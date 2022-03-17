@@ -7,7 +7,7 @@ namespace Qvmessocket::core::config
     bool LocateConfiguration();
     void SetConfigDirPath(const QString &path);
     bool CheckSettingsPathAvailability(const QString &_path, bool checkExistingConfig);
-} // namespace Qv2ray::core::config
+}
 
 namespace Qvmessocket
 {
