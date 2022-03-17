@@ -1,7 +1,7 @@
 #pragma once
 #include "DNSBase.hpp"
 #include "LatencyTest.hpp"
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #include <type_traits>
 namespace Qvmessocket::components::latency::tcping
@@ -18,4 +18,4 @@ namespace Qvmessocket::components::latency::tcping
         void ping() override;
         void notifyTestHost();
     };
-} // namespace Qv2ray::components::latency::tcping
+}
