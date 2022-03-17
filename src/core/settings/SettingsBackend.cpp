@@ -1,6 +1,6 @@
 #include "SettingsBackend.hpp"
 
-#include "base/Qv2rayLog.hpp"
+#include "base/QvLog.hpp"
 #include "utils/QvHelpers.hpp"
 
 #define QV_MODULE_NAME "SettingsBackend"
