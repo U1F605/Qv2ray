@@ -1,6 +1,6 @@
 #include "DarkmodeDetector.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #include <QApplication>
 #include <QStyle>
