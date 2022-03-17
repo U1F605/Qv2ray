@@ -1,9 +1,4 @@
-//
-// This file handles some important migration
-// from old to newer versions of Qv2ray.
-//
-
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "utils/QvHelpers.hpp"
 
 #define QV_MODULE_NAME "SettingsUpgrade"
