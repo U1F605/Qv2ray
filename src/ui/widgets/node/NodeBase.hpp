@@ -19,7 +19,7 @@ using QtNodes::NodeValidationState;
 using QtNodes::PortIndex;
 using QtNodes::PortType;
 
-namespace Qv2ray::ui::nodemodels
+namespace Qvmessocket::ui::nodemodels
 {
     const auto NODE_TYPE_OUTBOUND = std::make_shared<NodeDataType>("outbound", QObject::tr("Out"));
     const auto NODE_TYPE_INBOUND = std::make_shared<NodeDataType>("inbound", QObject::tr("In"));
@@ -138,6 +138,6 @@ namespace Qv2ray::ui::nodemodels
     DECL_NODE_DATA_MODEL(RuleNodeModel, RuleObject);
     DECL_NODE_DATA_MODEL(ChainOutboundNodeModel, OutboundObjectMeta);
 
-} // namespace Qv2ray::ui::nodemodels
+}
 
 using namespace Qv2ray::ui::nodemodels;
