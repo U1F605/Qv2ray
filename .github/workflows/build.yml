@@ -44,7 +44,7 @@ jobs:
           arch: ${{ matrix.qtarch }}
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
       - name: find
-        run: grep -rni "QV2RAY_RULE_TAG"   
+        run: grep -rni "Qvmessocket::ui::nodemodels"   
       - name: Linux - Install Packages
         if: matrix.platform == 'ubuntu-20.04'
         run: |
