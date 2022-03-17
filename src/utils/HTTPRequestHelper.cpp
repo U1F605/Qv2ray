@@ -1,6 +1,6 @@
 #include "HTTPRequestHelper.hpp"
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #include <QByteArray>
 #include <QNetworkProxy>
