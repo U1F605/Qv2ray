@@ -1,5 +1,5 @@
 #pragma once
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 
 #include <QStandardItem>
 #include <QStandardItemModel>
@@ -53,7 +53,6 @@ namespace Qv2ray::ui::widgets::models
         QHash<ConnectionGroupPair, QStandardItem *> pairs;
         QHash<ConnectionId, QList<QStandardItem *>> connections;
     };
-
-} // namespace Qv2ray::ui::widgets::models
+}
 
 using namespace Qv2ray::ui::widgets::models;
