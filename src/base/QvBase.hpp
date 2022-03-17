@@ -10,7 +10,7 @@
 // Base support.
 #include "base/JsonHelpers.hpp"
 #include "base/Qv2rayFeatures.hpp"
-#include "base/Qv2rayLog.hpp"
+#include "base/QvLog.hpp"
 // Code Models
 #include "base/Qv2rayBaseApplication.hpp"
 #include "base/models/CoreObjectModels.hpp"
@@ -31,7 +31,6 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QV2RAY_BUILD_INFO QString(_QV2RAY_BUILD_INFO_STR_)
 #define QV2RAY_BUILD_EXTRA_INFO QString(_QV2RAY_BUILD_EXTRA_INFO_STR_)
 
-// Base folder suffix.
 #ifdef QT_DEBUG
 #define QV2RAY_CONFIG_DIR_SUFFIX "_debug/"
 #define _BOMB_ (static_cast<QObject *>(nullptr)->event(nullptr))
@@ -52,7 +51,6 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QV2RAY_LIBRARY_SUFFIX ".so"
 #endif
 
-// Get Configured Config Dir Path
 #define QV2RAY_CONFIG_DIR (QvCoreApplication->ConfigPath)
 #define QV2RAY_CONFIG_FILE (QV2RAY_CONFIG_DIR + "Qv2ray.conf")
 #define QV2RAY_CONNECTIONS_DIR (QV2RAY_CONFIG_DIR + "connections/")
@@ -65,7 +63,7 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QV2RAY_DEFAULT_VCORE_PATH (QV2RAY_CONFIG_DIR + "vcore/v2ray" QV2RAY_EXECUTABLE_SUFFIX)
 #define QV2RAY_DEFAULT_VCTL_PATH (QV2RAY_CONFIG_DIR + "vcore/v2ctl" QV2RAY_EXECUTABLE_SUFFIX)
 #elif defined(QV2RAY_DEFAULT_VCORE_PATH) && defined(QV2RAY_DEFAULT_VASSETS_PATH)
-// ---- Using user-specified VCore and VAssets path
+
 #else
 #error Both QV2RAY_DEFAULT_VCORE_PATH and QV2RAY_DEFAULT_VASSETS_PATH need to be presented when using manually specify the paths.
 #endif

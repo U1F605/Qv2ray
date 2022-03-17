@@ -21,7 +21,7 @@ set(QV2RAY_BASE_SOURCES
     #
     ${QVMESSOCKET_BASEDIR_BASE}/QvBase.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/Qv2rayFeatures.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/Qv2rayLog.hpp
+    ${QVMESSOCKET_BASEDIR_BASE}/QvLog.hpp
     #
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.hpp

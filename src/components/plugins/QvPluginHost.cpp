@@ -1,7 +1,7 @@
 #include "QvPluginHost.hpp"
 
 #include "base/QvBase.hpp"
-#include "base/Qv2rayLog.hpp"
+#include "base/QvLog.hpp"
 #include "core/settings/SettingsBackend.hpp"
 #include "utils/QvHelpers.hpp"
 
