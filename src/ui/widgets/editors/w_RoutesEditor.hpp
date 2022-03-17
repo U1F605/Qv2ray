@@ -1,6 +1,6 @@
 #pragma once
 
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "base/models/QvComplexConfigModels.hpp"
 #include "ui/common/QvMessageBus.hpp"
 #include "ui/widgets/common/WidgetUIBase.hpp"
