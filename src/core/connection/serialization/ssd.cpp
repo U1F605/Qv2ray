@@ -1,11 +1,4 @@
-/**
- * A Naive SSD Decoder for Qv2ray
- *
- * @author DuckSoft <realducksoft@gmail.com>
- * @copyright Licensed under GPLv3.
- */
-
-#include "base/Qv2rayBase.hpp"
+#include "base/QvBase.hpp"
 #include "core/connection/Generation.hpp"
 #include "core/connection/Serialization.hpp"
 #include "utils/QvHelpers.hpp"
