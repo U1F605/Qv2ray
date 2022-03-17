@@ -1,4 +1,4 @@
-#include "base/Qv2rayBaseApplication.hpp"
+#include "base/QvBaseApplication.hpp"
 #include "src/ui/Qv2rayPlatformApplication.hpp"
 
 namespace Qvmessocket
