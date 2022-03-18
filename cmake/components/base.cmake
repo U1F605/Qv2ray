@@ -5,10 +5,8 @@ set(QVMESSOCKET_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
 set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.cpp
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.hpp
-
     ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.cpp
     ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.hpp
-
     ${QVMESSOCKET_BASEDIR_BASE}/JsonHelpers.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/CoreObjectModels.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/QvComplexConfigModels.hpp
@@ -18,19 +16,15 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_BASE}/models/QvSafeType.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/QvSettingsObject.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/QvStartupConfig.hpp
-    #
     ${QVMESSOCKET_BASEDIR_BASE}/QvBase.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/QvFeatures.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/QvLog.hpp
-    #
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.hpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.hpp
-    #
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
-    #
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.hpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/translations/QvTranslator.cpp
@@ -46,10 +40,8 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/win/ICMPPing.hpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.hpp
-    #
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.hpp
-    #
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.hpp
     #
