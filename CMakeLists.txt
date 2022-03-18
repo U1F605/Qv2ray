@@ -266,8 +266,7 @@ elseif(QV2RAY_USE_QWIDGET)
 else()
 endif()
 
-# Qv2ray baselib sources
-include(cmake/components/qv2ray-base.cmake)
+include(cmake/components/base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
 if(QV2RAY_HAS_SINGLEAPPLICATION)
