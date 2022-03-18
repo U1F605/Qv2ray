@@ -45,11 +45,11 @@ const static inline QMap<MessageOpt, QMessageBox::StandardButton> MessageBoxButt
 
 class Qv2rayPlatformApplication
     : public QVBASEAPPLICATION
-    , public Qv2rayApplicationInterface
+    , public QvApplicationInterface
 {
     Q_OBJECT
   public:
-    Qv2rayPlatformApplication(int &argc, char *argv[]) : QVBASEAPPLICATION(QVBASEAPPLICATION_CTORARGS), Qv2rayApplicationInterface(){};
+    Qv2rayPlatformApplication(int &argc, char *argv[]) : QVBASEAPPLICATION(QVBASEAPPLICATION_CTORARGS), QvApplicationInterface(){};
     virtual ~Qv2rayPlatformApplication(){};
     virtual Qv2rayExitReason GetExitReason() const final
     {
