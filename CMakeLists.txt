@@ -410,9 +410,7 @@ endif()
 # ==================================================================================
 # Platform-dependent installation process and deployment
 # ==================================================================================
-if(APPLE)
-    include(cmake/platforms/macos.cmake)
-elseif(UNIX AND NOT APPLE AND NOT WIN32 AND NOT ANDROID)
+if(UNIX AND NOT APPLE AND NOT WIN32 AND NOT ANDROID)
     include(cmake/platforms/linux.cmake)
 elseif(WIN32)
     include(cmake/platforms/windows.cmake)
