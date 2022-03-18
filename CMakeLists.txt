@@ -25,8 +25,6 @@ add_definitions(-DQV2RAY_VERSION_BUGFIX=${CPACK_PACKAGE_VERSION_PATCH})
 add_definitions(-DQV2RAY_VERSION_BUILD=${QVMESSOCKET_BUILD_VERSION})
 add_definitions(-DQV2RAY_VERSION_STRING="${QVMESSOCKET_VERSION_STRING}")
 
-# Tweaks and other defaults
-# Setting CMAKE to use loose block and search for find modules in source directory
 set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
@@ -34,13 +32,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(MSVC)
     set(CMAKE_CXX_EXTENSIONS OFF)
-endif()
-
-if(ANDROID)
-    message("Android ABI: ${CMAKE_ANDROID_ARCH}")
-    message("Android SDK: ${ANDROID_SDK}")
-    include(cmake/platforms/android.cmake)
-    include(cmake/platforms/prefixes.cmake)
 endif()
 
 option(USE_MINGW "Use MinGW on Windows" OFF)
@@ -362,8 +353,6 @@ else()
     list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_CLI_SOURCES})
 endif()
 
-# Platform Dependent Sources
-include(cmake/components/qv2ray-platform.cmake)
 include(cmake/translations.cmake)
 
 list(APPEND QV2RAY_QRC_RESOURCES
@@ -393,12 +382,6 @@ else()
 endif()
 
 # set_target_properties(MAIN PROPERTIES OUTPUT_NAME "qv2ray")
-
-if(ANDROID)
-    qvlog(ANDROID_EXTRA_LIBS)
-    set_property(TARGET qv2ray PROPERTY QT_ANDROID_EXTRA_LIBS ${ANDROID_EXTRA_LIBS})
-    set_property(TARGET qv2ray PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/assets/android)
-endif()
 
 target_include_directories(qv2ray PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
