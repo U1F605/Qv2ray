@@ -23,7 +23,6 @@ set(QV2RAY_BASE_SOURCES
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.hpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.hpp
-    #
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
     ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
