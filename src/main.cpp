@@ -8,10 +8,6 @@
 #include "ui/widgets/Qv2rayWidgetApplication.hpp"
 #endif
 
-#ifdef QV2RAY_GUI_QML
-#include "ui/qml/Qv2rayQMLApplication.hpp"
-#endif
-
 #include "utils/QvHelpers.hpp"
 
 #include <csignal>
