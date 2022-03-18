@@ -232,7 +232,7 @@ if(QV2RAY_USE_QWIDGET)
     set(_QV2RAY_HAS_GUI_INTERNAL_ ON)
 endif()
 
-include(cmake/components/qv2ray-base.cmake)
+include(cmake/components/base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
 if(QV2RAY_HAS_SINGLEAPPLICATION)
