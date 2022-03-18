@@ -350,7 +350,7 @@ target_include_directories(qvmessocket PRIVATE
     )
 
 target_link_libraries(qvmessocket PUBLIC
-    qv2ray_baselib
+    qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QV2RAY_PLATFORM_LIBS}
     ${QV2RAY_QRENCODE_LIBRARY}
