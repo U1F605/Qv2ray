@@ -10,7 +10,7 @@ inline QString makeAbs(const QString &p)
     return QDir(p).absolutePath();
 }
 
-Qv2rayApplicationInterface::Qv2rayApplicationInterface()
+QvApplicationInterface::QvApplicationInterface()
 {
     ConfigObject = new Qv2rayConfigObject;
     QvCoreApplication = this;
@@ -28,13 +28,13 @@ Qv2rayApplicationInterface::Qv2rayApplicationInterface()
     LOG(licenseList.join(NEWLINE));
 }
 
-Qv2rayApplicationInterface::~Qv2rayApplicationInterface()
+QvApplicationInterface::~QvApplicationInterface()
 {
     delete ConfigObject;
     QvCoreApplication = nullptr;
 }
 
-QStringList Qv2rayApplicationInterface::GetAssetsPaths(const QString &dirName) const
+QStringList QvApplicationInterface::GetAssetsPaths(const QString &dirName) const
 {
     // Configuration Path
     QStringList list;
