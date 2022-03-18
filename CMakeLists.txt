@@ -238,7 +238,7 @@ else()
     add_definitions(-DQV2RAY_NO_SINGLEAPPLICATON)
 endif()
 
-add_library(qv2ray_baselib STATIC
+add_library(qvmessocket_baselib STATIC
     ${QV2RAY_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
@@ -249,7 +249,7 @@ add_library(qv2ray_baselib STATIC
     ${API_PROTO_SRCS}
     )
 
-target_link_libraries(qv2ray_baselib
+target_link_libraries(qvmessocket_baselib
     ${QV2RAY_QT_LIBS}
     ${QV2RAY_PROTOBUF_LIBRARY}
     ${QV2RAY_BACKEND_LIBRARY}
@@ -259,7 +259,7 @@ target_link_libraries(qv2ray_baselib
     Threads::Threads
     )
 
-target_include_directories(qv2ray_baselib PUBLIC
+target_include_directories(qvmessocket_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
     ${QV2RAY_BASEDIR_COMPONENTS}
     ${LibUV_INCLUDE_DIR}
@@ -341,7 +341,7 @@ endif()
 
 # set_target_properties(MAIN PROPERTIES OUTPUT_NAME "qv2ray")
 
-target_include_directories(qv2ray PRIVATE
+target_include_directories(qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -349,7 +349,7 @@ target_include_directories(qv2ray PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qv2ray PUBLIC
+target_link_libraries(qvmessocket PUBLIC
     qv2ray_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QV2RAY_PLATFORM_LIBS}
