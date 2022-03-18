@@ -1,7 +1,7 @@
 #pragma once
 #include "components/plugins/QvPluginHost.hpp"
 #include "core/CoreUtils.hpp"
-#include "core/kernel/V2RayKernelInteractions.hpp"
+#include "core/kernel/KernelInteractions.hpp"
 
 #include <QObject>
 #include <optional>
@@ -90,4 +90,4 @@ namespace Qvmessocket::core::handler
         ConnectionGroupPair currentId = {};
     };
     inline const KernelInstanceHandler *KernelInstance;
-} // namespace Qv2ray::core::handler
+}
