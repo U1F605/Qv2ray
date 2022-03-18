@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "Qv2raybaseapplication"
+        run: grep -rni "v2raykernelinteraction"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master

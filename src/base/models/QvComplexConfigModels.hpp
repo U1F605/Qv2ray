@@ -6,35 +6,6 @@
 
 namespace Qvmessocket::base::objects::complex
 {
-    /*****************************************************************
-     *   ROOT
-     *      | Original Structures
-     *      | ======================
-     *      | - Inbounds
-     *      | - Routing Rules
-     *      | - DNS /
-     *      |
-     *      | Qv2ray-only structures
-     *      | ======================
-     *      |
-     *      | - Outbounds
-     *      |   |
-     *      |   | - OUTBOUND
-     *      |   |   - Original Outbound Object
-     *      |   |   ==========================================
-     *      |   |   - "QV2RAY_OUTBOUND_METADATA" -> OutboundObjectMeta
-     *      |   |     - realOutbound                -> OUTBOUND A.K.A ref<OUTBOUND>
-     *      |   |     - chainId                     -> ChainID
-     *      |   |     - object                      -> OutboundObject
-     *      |   |     - metaType                    -> MetaOutboundObjectType
-     *      |   |       - ORIGINAL                      -> Enables realOutbound
-     *      |   |       - EXTERNAL                      -> Enables connectionId
-     *      |   |       - CHAINED                       -> Enables chainId
-     *      |   |       - BALANCER                      -> ?
-     *      |
-     *
-     *******************************************************************/
-
     enum ComplexTagNodeMode
     {
         NODE_INBOUND,
@@ -120,6 +91,6 @@ namespace Qvmessocket::base::objects::complex
         meta.displayName = outbound["tag"].toString();
         return meta;
     }
-} // namespace Qv2ray::base::objects::complex
+}
 
 using namespace Qvmessocket::base::objects::complex;

@@ -38,6 +38,6 @@ namespace Qvmessocket::core::kernel
         bool apiEnabled;
         bool kernelStarted = false;
     };
-} // namespace Qv2ray::core::kernel
+}
 
 using namespace Qvmessocket::core::kernel;

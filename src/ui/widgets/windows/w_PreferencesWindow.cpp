@@ -4,7 +4,7 @@
 #include "components/translations/QvTranslator.hpp"
 #include "core/connection/ConnectionIO.hpp"
 #include "core/handler/ConfigHandler.hpp"
-#include "core/kernel/V2RayKernelInteractions.hpp"
+#include "core/kernel/KernelInteractions.hpp"
 #include "core/settings/SettingsBackend.hpp"
 #include "src/plugin-interface/QvPluginInterface.hpp"
 #include "ui/common/autolaunch/QvAutoLaunch.hpp"
