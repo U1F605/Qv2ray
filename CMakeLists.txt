@@ -353,8 +353,6 @@ else()
     list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_CLI_SOURCES})
 endif()
 
-# Platform Dependent Sources
-include(cmake/components/qv2ray-platform.cmake)
 include(cmake/translations.cmake)
 
 list(APPEND QV2RAY_QRC_RESOURCES
