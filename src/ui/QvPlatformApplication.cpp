@@ -1,4 +1,4 @@
-#include "Qv2rayPlatformApplication.hpp"
+#include "QvPlatformApplication.hpp"
 
 #include "core/settings/SettingsBackend.hpp"
 
