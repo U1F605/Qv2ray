@@ -127,12 +127,7 @@ if(QV2RAY_HAS_SINGLEAPPLICATION)
     QVLOG(QV2RAY_SINGLEAPPLICATION_PROVIDER)
 endif()
 
-if(QV2RAY_USE_QML)
-    set(QV2RAY_QT6 ON)
-    message("-- Use Qt6 for QML build.")
-    option(QV2RAY_QML_LIVE_UPDATE "Use QMLLive for live updated QML" OFF)
-    QVLOG(QV2RAY_QML_LIVE_UPDATE)
-elseif(QV2RAY_USE_QWIDGET)
+if(QV2RAY_USE_QWIDGET)
     option(QV2RAY_HAS_BUILTIN_THEMES "Build with built-in themes" ON)
     set(QV2RAY_QNODEEDITOR_PROVIDER "module" CACHE STRING "QNodeEditor Provider")
     QVLOG(QV2RAY_HAS_BUILTIN_THEMES)
@@ -153,10 +148,6 @@ else()
     set(QV_QT_LIBNAME Qt5)
 endif()
 
-
-# ==================================================================================
-# Default Core/Assets Path
-# ==================================================================================
 if(QV2RAY_DEFAULT_VCORE_PATH AND NOT QV2RAY_DEFAULT_VCORE_PATH STREQUAL "unset")
     add_definitions(-DQV2RAY_DEFAULT_VCORE_PATH="${QV2RAY_DEFAULT_VCORE_PATH}")
 endif()
@@ -232,27 +223,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(QV2RAY_USE_QML)
-    find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Qml Quick Widgets Svg QuickControls2 Gui REQUIRED)
-    list(APPEND QV2RAY_QT_LIBS
-        ${QV_QT_LIBNAME}::Quick
-        ${QV_QT_LIBNAME}::Qml
-        ${QV_QT_LIBNAME}::Widgets
-        ${QV_QT_LIBNAME}::Svg
-        ${QV_QT_LIBNAME}::QuickControls2
-        ${QV_QT_LIBNAME}::Gui)
-    set(_QV2RAY_HAS_GUI_INTERNAL_ ON)
-elseif(QV2RAY_USE_QWIDGET)
+if(QV2RAY_USE_QWIDGET)
     find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Widgets Svg Gui REQUIRED)
     list(APPEND QV2RAY_QT_LIBS
         ${QV_QT_LIBNAME}::Widgets
         ${QV_QT_LIBNAME}::Svg
         ${QV_QT_LIBNAME}::Gui)
     set(_QV2RAY_HAS_GUI_INTERNAL_ ON)
-else()
 endif()
 
-# Qv2ray baselib sources
 include(cmake/components/qv2ray-base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
