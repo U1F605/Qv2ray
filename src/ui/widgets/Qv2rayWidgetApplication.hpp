@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ui/Qv2rayPlatformApplication.hpp"
+#include "ui/QvPlatformApplication.hpp"
 
 #include <QSystemTrayIcon>
 
