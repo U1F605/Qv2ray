@@ -111,14 +111,11 @@ option(QV2RAY_QT6 "Use Qt6" OFF)
 
 if(QV2RAY_UI_TYPE STREQUAL "QWidget")
     set(QV2RAY_USE_QWIDGET ON)
-    set(QV2RAY_USE_QML OFF)
 elseif(QV2RAY_UI_TYPE STREQUAL "CLI")
     set(QV2RAY_USE_QWIDGET OFF)
-    set(QV2RAY_USE_QML OFF)
 endif()
 
 QVLOG(QV2RAY_EMBED_TRANSLATIONS)
-QVLOG(QV2RAY_USE_QML)
 QVLOG(QV2RAY_USE_QWIDGET)
 QVLOG(QV2RAY_HAS_SINGLEAPPLICATION)
 
@@ -295,11 +292,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
     list(APPEND QV2RAY_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     
-    if(QV2RAY_USE_QML)
-        add_definitions(-DQV2RAY_GUI_QML)
-        include(cmake/components/qv2ray-ui-qml.cmake)
-        list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_QML_SOURCES})
-    elseif(QV2RAY_USE_QWIDGET)
+    if(QV2RAY_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/qv2ray-ui-widget.cmake)
         list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_UI_WIDGET_SOURCES})
@@ -381,10 +374,6 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-
-# ==================================================================================
-# Print Qv2ray Build Statistics
-# ==================================================================================
 get_target_property(QV2RAY_BASE_LINK_LIBS qv2ray_baselib LINK_LIBRARIES)
 get_target_property(QV2RAY_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
 QVLOG(QV2RAY_BUILD_VERSION)
