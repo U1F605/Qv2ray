@@ -3,9 +3,9 @@ set(QVMESSOCKET_BASEDIR_CORE ${CMAKE_SOURCE_DIR}/src/core)
 set(QVMESSOCKET_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
 
 set(QV2RAY_BASE_SOURCES
-    ${QVMESSOCKET_BASEDIR_BASE}/Qv2rayBaseApplication.cpp
-    ${QVMESSOCKET_BASEDIR_BASE}/Qv2rayBaseApplication.hpp
-    # Platform Dependent UI
+    ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.cpp
+    ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.hpp
+
     ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.cpp
     ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.hpp
     #
