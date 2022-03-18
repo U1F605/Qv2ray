@@ -18,4 +18,4 @@ namespace Qvmessocket::ui
         c.setData(content.toUtf8());
         return QtQrCodePainter(2.0).toImage(c, size);
     }
-} // namespace Qv2ray::ui
+}

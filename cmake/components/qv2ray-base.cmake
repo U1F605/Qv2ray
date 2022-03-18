@@ -6,9 +6,9 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.cpp
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.hpp
 
-    ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.cpp
-    ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.hpp
-    #
+    ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.cpp
+    ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.hpp
+
     ${QVMESSOCKET_BASEDIR_BASE}/JsonHelpers.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/CoreObjectModels.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/QvComplexConfigModels.hpp
@@ -81,24 +81,24 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess_new.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vless.cpp
-    #
+
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.hpp
-    #
+
     ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.hpp
-    #
+
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.hpp
-    #
+
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsUpgrade.cpp
