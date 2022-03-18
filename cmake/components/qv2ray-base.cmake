@@ -6,8 +6,8 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.cpp
     ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.hpp
 
-    ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.cpp
-    ${CMAKE_SOURCE_DIR}/src/ui/Qv2rayPlatformApplication.hpp
+    ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.cpp
+    ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.hpp
     #
     ${QVMESSOCKET_BASEDIR_BASE}/JsonHelpers.hpp
     ${QVMESSOCKET_BASEDIR_BASE}/models/CoreObjectModels.hpp
