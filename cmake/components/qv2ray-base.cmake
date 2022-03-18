@@ -96,8 +96,8 @@ set(QV2RAY_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/V2RayKernelInteractions.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/V2RayKernelInteractions.hpp
+    ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.cpp
+    ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.hpp
     #
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.hpp
