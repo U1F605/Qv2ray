@@ -52,7 +52,7 @@ namespace Qvmessocket
         JSONSTRUCT_REGISTER(Qv2rayStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
     };
 
-    class Qv2rayApplicationInterface
+    class QvApplicationInterface
     {
       public:
         Qvmessocket::base::config::Qv2rayConfigObject *ConfigObject;
@@ -60,8 +60,8 @@ namespace Qvmessocket
         Qv2rayStartupArguments StartupArguments;
 
       public:
-        explicit Qv2rayApplicationInterface();
-        ~Qv2rayApplicationInterface();
+        explicit QvApplicationInterface();
+        ~QvApplicationInterface();
 
       public:
         virtual QStringList GetAssetsPaths(const QString &dirName) const final;
@@ -71,7 +71,7 @@ namespace Qvmessocket
         virtual MessageOpt MessageBoxAsk(QWidget *parent, const QString &title, const QString &text, const QList<MessageOpt> &buttons) = 0;
         virtual void OpenURL(const QString &url) = 0;
     };
-    inline Qv2rayApplicationInterface *QvCoreApplication = nullptr;
-} // namespace Qv2ray
+    inline QvApplicationInterface *QvCoreApplication = nullptr;
+}
 
 #define GlobalConfig (*Qvmessocket::QvCoreApplication->ConfigObject)
