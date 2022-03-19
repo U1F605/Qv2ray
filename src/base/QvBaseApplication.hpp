@@ -46,7 +46,7 @@ namespace Qvmessocket
         bool noAutoConnection;
         bool debugLog;
         bool noPlugins;
-        bool exitQv2ray;
+        bool exitQv;
         //
         QString _qvNewVersionPath;
         JSONSTRUCT_REGISTER(Qv2rayStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
