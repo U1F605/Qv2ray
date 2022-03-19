@@ -4,7 +4,7 @@
 #include "core/handler/ConfigHandler.hpp"
 #include "core/settings/SettingsBackend.hpp"
 #include "plugin-interface/QvGUIPluginInterface.hpp"
-#include "ui/widgets/Qv2rayWidgetApplication.hpp"
+#include "ui/widgets/QvWidgetApplication.hpp"
 #include "ui/widgets/common/WidgetUIBase.hpp"
 #include "ui/widgets/editors/w_JsonEditor.hpp"
 #include "ui/widgets/editors/w_OutboundEditor.hpp"
