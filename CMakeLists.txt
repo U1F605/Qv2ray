@@ -53,22 +53,13 @@ if(WIN32)
         )
     add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX)
     set(GUI_TYPE WIN32)
-    if(USE_MINGW)
-        if(NOT DEFINED MinGW_ROOT)
-            set(MinGW_ROOT "C:/msys64/mingw64")
-        endif()
-        set(QV2RAY_PLATFORM_LIBS_BIN_PREFIX ${MinGW_ROOT}/bin)
-        set(QV2RAY_PLATFORM_LIBS_PREFIX ${MinGW_ROOT})
-        set(QV2RAY_PLATFORM_LIBS_NO_DEBUG_SUBDIR ON)
+    add_compile_options("/utf-8")
+    add_compile_options("/std:c++17")
+    add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
+    if(CMAKE_CL_64)
+        set(QV2RAY_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x64-windows/)
     else()
-        add_compile_options("/utf-8")
-        add_compile_options("/std:c++17")
-        add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
-        if(CMAKE_CL_64)
-            set(QV2RAY_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x64-windows/)
-        else()
-            set(QV2RAY_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x86-windows/)
-        endif()
+        set(QV2RAY_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x86-windows/)
     endif()
     include(cmake/platforms/prefixes.cmake)
 endif()
@@ -333,13 +324,9 @@ QVLOG(QV2RAY_QRC_RESOURCES)
 
 if(QV2RAY_QT6)
     qt6_add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
-    # For Qt5, Android
-    # add_library(qv2ray SHARED ${QV2RAY_FULL_SOURCES})
 else()
     add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
 endif()
-
-# set_target_properties(MAIN PROPERTIES OUTPUT_NAME "qv2ray")
 
 target_include_directories(qv2ray PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -355,7 +342,6 @@ target_link_libraries(qv2ray PUBLIC
     ${QV2RAY_PLATFORM_LIBS}
     ${QV2RAY_QRENCODE_LIBRARY}
     )
-
 
 # ==================================================================================
 # Qv2ray Unit Tests
