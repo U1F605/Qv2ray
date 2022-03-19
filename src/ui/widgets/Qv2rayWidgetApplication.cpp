@@ -48,7 +48,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
     if (!isInitialized)
         return;
 
-    const auto msg = Qv2rayStartupArguments::fromJson(JsonFromString(_msg));
+    const auto msg = QvStartupArguments::fromJson(JsonFromString(_msg));
     LOG("Client ID:", clientId, ", message received, version:", msg.buildVersion);
     DEBUG(_msg);
     //
@@ -77,30 +77,30 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
     {
         switch (argument)
         {
-            case Qv2rayStartupArguments::EXIT:
+            case QvStartupArguments::EXIT:
             {
                 SetExitReason(EXIT_NORMAL);
                 quit();
                 break;
             }
-            case Qv2rayStartupArguments::NORMAL:
+            case QvStartupArguments::NORMAL:
             {
                 mainWindow->show();
                 mainWindow->raise();
                 mainWindow->activateWindow();
                 break;
             }
-            case Qv2rayStartupArguments::RECONNECT:
+            case QvStartupArguments::RECONNECT:
             {
                 ConnectionManager->RestartConnection();
                 break;
             }
-            case Qv2rayStartupArguments::DISCONNECT:
+            case QvStartupArguments::DISCONNECT:
             {
                 ConnectionManager->StopConnection();
                 break;
             }
-            case Qv2rayStartupArguments::QV2RAY_LINK:
+            case QvStartupArguments::QV2RAY_LINK:
             {
                 for (const auto &link : msg.links)
                 {
@@ -134,7 +134,7 @@ QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
     // Show MainWindow
     UIStates = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME));
     mainWindow = new MainWindow();
-    if (StartupArguments.arguments.contains(Qv2rayStartupArguments::QV2RAY_LINK))
+    if (StartupArguments.arguments.contains(QvStartupArguments::QV2RAY_LINK))
     {
         for (const auto &link : StartupArguments.links)
         {

@@ -75,7 +75,7 @@ bool Qv2rayPlatformApplication::Initialize()
         StartupArguments.buildVersion = QV2RAY_VERSION_BUILD;
         StartupArguments.fullArgs = arguments();
         if (StartupArguments.arguments.isEmpty())
-            StartupArguments.arguments << Qv2rayStartupArguments::NORMAL;
+            StartupArguments.arguments << QvStartupArguments::NORMAL;
         bool status = sendMessage(JsonToString(StartupArguments.toJson(), QJsonDocument::Compact).toUtf8());
         if (!status)
             LOG("Cannot send message.");
@@ -223,7 +223,7 @@ bool Qv2rayPlatformApplication::parseCommandLine(QString *errorMessage, bool *ca
     {
         if (arg.startsWith(QV2RAY_URL_SCHEME + "://"))
         {
-            StartupArguments.arguments << Qv2rayStartupArguments::QV2RAY_LINK;
+            StartupArguments.arguments << QvStartupArguments::QV2RAY_LINK;
             StartupArguments.links << arg;
         }
     }
@@ -231,19 +231,19 @@ bool Qv2rayPlatformApplication::parseCommandLine(QString *errorMessage, bool *ca
     if (parser.isSet(exitOption))
     {
         DEBUG("disconnectOption is set.");
-        StartupArguments.arguments << Qv2rayStartupArguments::EXIT;
+        StartupArguments.arguments << QvStartupArguments::EXIT;
     }
 
     if (parser.isSet(disconnectOption))
     {
         DEBUG("disconnectOption is set.");
-        StartupArguments.arguments << Qv2rayStartupArguments::DISCONNECT;
+        StartupArguments.arguments << QvStartupArguments::DISCONNECT;
     }
 
     if (parser.isSet(reconnectOption))
     {
         DEBUG("reconnectOption is set.");
-        StartupArguments.arguments << Qv2rayStartupArguments::RECONNECT;
+        StartupArguments.arguments << QvStartupArguments::RECONNECT;
     }
 
 #define ProcessExtraStartupOptions(option)                                                                                                           \

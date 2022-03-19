@@ -25,7 +25,7 @@ namespace Qvmessocket
         EXIT_PRECONDITION_FAILED = -2,
     };
 
-    struct Qv2rayStartupArguments
+    struct QvStartupArguments
     {
         enum Argument
         {
@@ -49,7 +49,7 @@ namespace Qvmessocket
         bool exitQv;
         //
         QString _qvNewVersionPath;
-        JSONSTRUCT_REGISTER(Qv2rayStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
+        JSONSTRUCT_REGISTER(QvStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
     };
 
     class QvApplicationInterface
@@ -57,7 +57,7 @@ namespace Qvmessocket
       public:
         Qvmessocket::base::config::Qv2rayConfigObject *ConfigObject;
         QString ConfigPath;
-        Qv2rayStartupArguments StartupArguments;
+        QvStartupArguments StartupArguments;
 
       public:
         explicit QvApplicationInterface();
