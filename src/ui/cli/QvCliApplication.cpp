@@ -1,4 +1,4 @@
-#include "Qv2rayCliApplication.hpp"
+#include "QvCliApplication.hpp"
 
 Qv2rayCliApplication::Qv2rayCliApplication(int &argc, char *argv[]) : Qv2rayPlatformApplication(argc, argv)
 {
