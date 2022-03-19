@@ -1,7 +1,7 @@
 #include <QtGlobal>
 
 #ifdef QV2RAY_GUI_QWIDGETS
-#include "ui/widgets/Qv2rayWidgetApplication.hpp"
+#include "ui/widgets/QvWidgetApplication.hpp"
 #endif
 
 #include "utils/QvHelpers.hpp"
