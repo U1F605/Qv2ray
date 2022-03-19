@@ -64,7 +64,7 @@ class Qv2rayPlatformApplication
     virtual QStringList checkPrerequisitesInternal() = 0;
     virtual QvExitReason runQv2rayInternal() = 0;
     virtual void terminateUIInternal() = 0;
-    virtual void SetExitReason(Qv2rayExitReason r) final
+    virtual void SetExitReason(QvExitReason r) final
     {
         _exitReason = r;
     }
