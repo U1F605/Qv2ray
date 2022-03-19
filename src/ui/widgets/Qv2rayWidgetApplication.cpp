@@ -134,7 +134,7 @@ QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
     // Show MainWindow
     UIStates = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME));
     mainWindow = new MainWindow();
-    if (StartupArguments.arguments.contains(Qv2rayStartupArguments::QV2RAY_LINK))
+    if (StartupArguments.arguments.contains(QvStartupArguments::QV2RAY_LINK))
     {
         for (const auto &link : StartupArguments.links)
         {
