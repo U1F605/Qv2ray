@@ -332,16 +332,16 @@ QVLOG(QV2RAY_QM_FILES)
 QVLOG(QV2RAY_QRC_RESOURCES)
 
 if(QV2RAY_QT6)
-    qt6_add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
     # For Qt5, Android
     # add_library(qv2ray SHARED ${QV2RAY_FULL_SOURCES})
 else()
-    add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    add_executable(qvmessocket ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
 endif()
 
 # set_target_properties(MAIN PROPERTIES OUTPUT_NAME "qv2ray")
 
-target_include_directories(qv2ray PRIVATE
+target_include_directories(qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -349,8 +349,8 @@ target_include_directories(qv2ray PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qv2ray PUBLIC
-    qv2ray_baselib
+target_link_libraries(qvmessocket PUBLIC
+    qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QV2RAY_PLATFORM_LIBS}
     ${QV2RAY_QRENCODE_LIBRARY}
