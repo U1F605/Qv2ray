@@ -1,5 +1,5 @@
 #include "components/proxy/QvProxyConfigurator.hpp"
-#include "ui/widgets/Qv2rayWidgetApplication.hpp"
+#include "ui/widgets/QvWidgetApplication.hpp"
 #include "ui/widgets/common/WidgetUIBase.hpp"
 #include "utils/QvHelpers.hpp"
 #include "w_MainWindow.hpp"
@@ -259,7 +259,6 @@ void MainWindow::UpdateActionTranslations()
     //
     action_RCM_SwitchCoreLog->setText(tr("Switch to Core log"));
     action_RCM_SwitchQv2rayLog->setText(tr("Switch to Qv2ray log"));
-    //
     action_RCM_CopyGraph->setText(tr("Copy graph as image."));
     action_RCM_CopyRecentLogs->setText(tr("Copy latest logs."));
     action_RCM_CopySelected->setText(tr("Copy selected."));
