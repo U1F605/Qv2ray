@@ -1,4 +1,4 @@
-install(TARGETS qv2ray RUNTIME DESTINATION bin)
+install(TARGETS qvmessocket RUNTIME DESTINATION bin)
 install(FILES ${CMAKE_SOURCE_DIR}/assets/qv2ray.metainfo.xml DESTINATION share/metainfo)
 install(FILES ${CMAKE_SOURCE_DIR}/assets/qv2ray.desktop DESTINATION share/applications)
 install(FILES ${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.svg DESTINATION share/icons/hicolor/scalable/apps)
