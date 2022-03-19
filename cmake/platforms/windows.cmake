@@ -1,7 +1,7 @@
 find_package(OpenSSL REQUIRED)
 target_link_libraries(qvmessocket_baselib wininet wsock32 ws2_32 user32 Rasapi32 Iphlpapi OpenSSL::SSL OpenSSL::Crypto Dbghelp)
 
-install(TARGETS qv2ray RUNTIME DESTINATION .)
+install(TARGETS qvmessocket RUNTIME DESTINATION .)
 
 if(NOT QV2RAY_EMBED_TRANSLATIONS)
     install(FILES ${QV2RAY_QM_FILES} DESTINATION lang)
