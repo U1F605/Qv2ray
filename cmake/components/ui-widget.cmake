@@ -27,7 +27,7 @@ set(_QV2RAY_UI_FORMS
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/complex/RoutingEditorWidget.ui
     )
 
-set(_QVMESSOCKET_UI_NODEEDITOR_SOURCES
+set(_QV2RAY_UI_NODEEDITOR_SOURCES
     # NodeEditor Models
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/node/NodeBase.hpp
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/node/NodeBase.cpp
