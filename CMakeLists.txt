@@ -286,7 +286,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     add_definitions(-DQV2RAY_GUI)
     include(cmake/qrencode.cmake)
 
-    include(cmake/components/qv2ray-ui.cmake)
+    include(cmake/components/ui.cmake)
     list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_UI_COMMON_SOURCES})
 
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
@@ -294,7 +294,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     
     if(QV2RAY_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
-        include(cmake/components/qv2ray-ui-widget.cmake)
+        include(cmake/components/ui-widget.cmake)
         list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_UI_WIDGET_SOURCES})
         #
         if (QV2RAY_HAS_BUILTIN_THEMES)
