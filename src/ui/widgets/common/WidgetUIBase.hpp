@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ui/common/QvMessageBus.hpp"
-#include "ui/widgets/Qv2rayWidgetApplication.hpp"
+#include "ui/widgets/QvWidgetApplication.hpp"
 
 #include <QDialog>
 #include <QGraphicsEffect>
