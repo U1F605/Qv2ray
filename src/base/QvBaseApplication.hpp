@@ -25,7 +25,7 @@ namespace Qvmessocket
         EXIT_PRECONDITION_FAILED = -2,
     };
 
-    struct Qv2rayStartupArguments
+    struct QvStartupArguments
     {
         enum Argument
         {
@@ -57,7 +57,7 @@ namespace Qvmessocket
       public:
         Qvmessocket::base::config::Qv2rayConfigObject *ConfigObject;
         QString ConfigPath;
-        Qv2rayStartupArguments StartupArguments;
+        QvStartupArguments StartupArguments;
 
       public:
         explicit QvApplicationInterface();
