@@ -9,7 +9,7 @@ namespace Qvmessocket
       public:
         explicit Qv2rayCliApplication(int &argc, char *argv[]);
         QStringList checkPrerequisitesInternal() override;
-        Qv2rayExitReason runQv2rayInternal() override;
+        QvExitReason runQv2rayInternal() override;
 
       public:
         void MessageBoxWarn(QWidget *, const QString &, const QString &) override
@@ -40,4 +40,4 @@ namespace Qvmessocket
 #define Qv2rayApplication Qv2rayCliApplication
 #define QvCliApplication static_cast<Qv2rayCliApplication *>(qApp)
 
-} // namespace Qv2ray
+}

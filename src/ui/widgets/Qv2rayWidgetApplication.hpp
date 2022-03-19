@@ -29,7 +29,7 @@ namespace Qv2ray
 
       private:
         QStringList checkPrerequisitesInternal() override;
-        Qv2rayExitReason runQv2rayInternal() override;
+        QvExitReason runQv2rayInternal() override;
         bool isInitialized;
         void terminateUIInternal() override;
 #ifndef QV2RAY_NO_SINGLEAPPLICATON
@@ -38,7 +38,7 @@ namespace Qv2ray
         QSystemTrayIcon *hTray;
         MainWindow *mainWindow;
     };
-} // namespace Qv2ray
+}
 
 #ifdef Qv2rayApplication
 #undef Qv2rayApplication

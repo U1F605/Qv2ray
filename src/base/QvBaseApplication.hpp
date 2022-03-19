@@ -16,7 +16,7 @@ namespace Qvmessocket
         Ignore
     };
 
-    enum Qv2rayExitReason
+    enum QvExitReason
     {
         EXIT_NORMAL = 0,
         EXIT_NEW_VERSION_TRIGGER = EXIT_NORMAL,

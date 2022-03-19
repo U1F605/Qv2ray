@@ -125,7 +125,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
 }
 #endif
 
-Qv2rayExitReason Qv2rayWidgetApplication::runQv2rayInternal()
+QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
 {
     setQuitOnLastWindowClosed(false);
     hTray = new QSystemTrayIcon();
@@ -171,7 +171,7 @@ Qv2rayExitReason Qv2rayWidgetApplication::runQv2rayInternal()
     });
 #endif
     isInitialized = true;
-    return (Qv2rayExitReason) exec();
+    return (QvExitReason) exec();
 }
 
 void Qv2rayWidgetApplication::OpenURL(const QString &url)

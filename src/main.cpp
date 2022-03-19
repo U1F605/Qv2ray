@@ -242,7 +242,7 @@ int main(int argc, char *argv[])
     if (const auto list = app.CheckPrerequisites(); !list.isEmpty())
     {
         BootstrapMessageBox("Qv2ray Prerequisites Check Failed", list.join(NEWLINE));
-        return Qv2rayExitReason::EXIT_PRECONDITION_FAILED;
+        return QvExitReason::EXIT_PRECONDITION_FAILED;
     }
 
     if (!app.Initialize())
