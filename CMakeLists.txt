@@ -287,7 +287,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     include(cmake/qrencode.cmake)
 
     include(cmake/components/ui.cmake)
-    list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_UI_COMMON_SOURCES})
+    list(APPEND QV2RAY_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
 
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
     list(APPEND QV2RAY_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
