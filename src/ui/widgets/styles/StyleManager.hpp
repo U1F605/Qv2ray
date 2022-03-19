@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QStringList>
 
-namespace Qv2ray::ui::styles
+namespace Qvmessocket::ui::styles
 {
     struct QvStyle
     {
@@ -33,6 +33,6 @@ namespace Qv2ray::ui::styles
     };
 
     inline QvStyleManager *StyleManager = nullptr;
-} // namespace Qv2ray::ui::styles
+}
 
-using namespace Qv2ray::ui::styles;
+using namespace Qvmessocket::ui::styles;
