@@ -61,8 +61,8 @@ set(_QV2RAY_UI_NODEEDITOR_SOURCES
 
 set(_QV2RAY_UI_SOURCES
     # Style Manager
-    ${QV2RAY_QWIDGETS_UI_BASEDIR}/Qv2rayWidgetApplication.cpp
-    ${QV2RAY_QWIDGETS_UI_BASEDIR}/Qv2rayWidgetApplication.hpp
+    ${QV2RAY_QWIDGETS_UI_BASEDIR}/QvWidgetApplication.cpp
+    ${QV2RAY_QWIDGETS_UI_BASEDIR}/QvWidgetApplication.hpp
     ${QV2RAY_QWIDGETS_UI_BASEDIR}/common/WidgetUIBase.hpp
     ${QV2RAY_QWIDGETS_UI_BASEDIR}/common/QJsonModel.hpp
     ${QV2RAY_QWIDGETS_UI_BASEDIR}/common/QJsonModel.cpp
