@@ -75,7 +75,7 @@ bool Qv2rayPlatformApplication::Initialize()
         StartupArguments.buildVersion = QV2RAY_VERSION_BUILD;
         StartupArguments.fullArgs = arguments();
         if (StartupArguments.arguments.isEmpty())
-            StartupArguments.arguments << Qv2rayStartupArguments::NORMAL;
+            StartupArguments.arguments << QvStartupArguments::NORMAL;
         bool status = sendMessage(JsonToString(StartupArguments.toJson(), QJsonDocument::Compact).toUtf8());
         if (!status)
             LOG("Cannot send message.");
