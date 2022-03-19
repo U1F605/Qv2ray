@@ -1,5 +1,5 @@
 #include "components/proxy/QvProxyConfigurator.hpp"
-#include "ui/widgets/Qv2rayWidgetApplication.hpp"
+#include "ui/widgets/QvWidgetApplication.hpp"
 #include "ui/widgets/common/WidgetUIBase.hpp"
 #include "utils/QvHelpers.hpp"
 #include "w_MainWindow.hpp"
