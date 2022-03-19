@@ -51,18 +51,18 @@ class Qv2rayPlatformApplication
   public:
     Qv2rayPlatformApplication(int &argc, char *argv[]) : QVBASEAPPLICATION(QVBASEAPPLICATION_CTORARGS), QvApplicationInterface(){};
     virtual ~Qv2rayPlatformApplication(){};
-    virtual Qv2rayExitReason GetExitReason() const final
+    virtual QvExitReason GetExitReason() const final
     {
         return _exitReason;
     }
 
     virtual QStringList CheckPrerequisites() final;
     virtual bool Initialize() final;
-    virtual Qv2rayExitReason RunQv2ray() final;
+    virtual QvExitReason RunQv2ray() final;
 
   protected:
     virtual QStringList checkPrerequisitesInternal() = 0;
-    virtual Qv2rayExitReason runQv2rayInternal() = 0;
+    virtual QvExitReason runQv2rayInternal() = 0;
     virtual void terminateUIInternal() = 0;
     virtual void SetExitReason(Qv2rayExitReason r) final
     {
@@ -75,6 +75,6 @@ class Qv2rayPlatformApplication
 
   private:
     void quitInternal();
-    Qv2rayExitReason _exitReason;
+    QvExitReason _exitReason;
     bool parseCommandLine(QString *errorMessage, bool *canContinue);
 };
