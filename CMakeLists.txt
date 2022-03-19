@@ -39,7 +39,7 @@ option(USE_MINGW "Use MinGW on Windows" OFF)
 if(WIN32)
     include(cmake/versioninfo/generate_product_version.cmake)
     generate_product_version(
-        QV2RAY_RC
+        QVMESSOCKET_RC
         NAME               "Qvmessocket"
         BUNDLE             "VMESSOCKET Project Family"
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.ico"
@@ -319,7 +319,7 @@ list(APPEND QV2RAY_QRC_RESOURCES
     )
 
 set(QV2RAY_FULL_SOURCES
-    ${QV2RAY_RC}
+    ${QVMESSOCKET_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QV2RAY_UI_SOURCES}
     ${QV2RAY_PLATFORM_SOURCES}
