@@ -295,7 +295,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     if(QV2RAY_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
-        list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_UI_WIDGET_SOURCES})
+        list(APPEND QV2RAY_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
         #
         if (QV2RAY_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
