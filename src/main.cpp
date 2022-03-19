@@ -1,9 +1,5 @@
 #include <QtGlobal>
 
-#ifdef QV2RAY_CLI
-#include "ui/cli/Qv2rayCliApplication.hpp"
-#endif
-
 #ifdef QV2RAY_GUI_QWIDGETS
 #include "ui/widgets/Qv2rayWidgetApplication.hpp"
 #endif
