@@ -13,7 +13,7 @@
 constexpr auto QV2RAY_BUILT_IN_DARK_MODE_NAME = "Built-in Darkmode";
 #define QV_MODULE_NAME "StyleManager"
 
-namespace Qv2ray::ui::styles
+namespace Qvmessocket::ui::styles
 {
     QvStyleManager::QvStyleManager(QObject *parent) : QObject(parent)
     {
@@ -118,4 +118,4 @@ namespace Qv2ray::ui::styles
         qApp->processEvents();
         return true;
     }
-} // namespace Qv2ray::ui::styles
+}
