@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "exitqv2ray"
+        run: grep -rni "qv2raystartup"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
