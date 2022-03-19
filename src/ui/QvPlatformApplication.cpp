@@ -139,7 +139,7 @@ bool Qv2rayPlatformApplication::Initialize()
     return true;
 }
 
-Qv2rayExitReason Qv2rayPlatformApplication::RunQv2ray()
+QvExitReason Qv2rayPlatformApplication::RunQv2ray()
 {
     PluginHost = new QvPluginHost();
     RouteManager = new RouteHandler();
