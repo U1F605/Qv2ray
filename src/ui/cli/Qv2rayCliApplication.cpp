@@ -8,7 +8,7 @@ QStringList Qv2rayCliApplication::checkPrerequisitesInternal()
 {
     return {};
 }
-Qv2rayExitReason Qv2rayCliApplication::runQv2rayInternal()
+QvExitReason Qv2rayCliApplication::runQv2rayInternal()
 {
     return (Qv2rayExitReason) exec();
 }
