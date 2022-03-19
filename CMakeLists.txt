@@ -332,16 +332,16 @@ QVLOG(QV2RAY_QM_FILES)
 QVLOG(QV2RAY_QRC_RESOURCES)
 
 if(QV2RAY_QT6)
-    qt6_add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
     # For Qt5, Android
     # add_library(qv2ray SHARED ${QV2RAY_FULL_SOURCES})
 else()
-    add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    add_executable(qvmessocket ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
 endif()
 
 # set_target_properties(MAIN PROPERTIES OUTPUT_NAME "qv2ray")
 
-target_include_directories(qv2ray PRIVATE
+target_include_directories(qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -349,7 +349,7 @@ target_include_directories(qv2ray PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qv2ray PUBLIC
+target_link_libraries(qvmessocket PUBLIC
     qv2ray_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QV2RAY_PLATFORM_LIBS}
@@ -374,8 +374,8 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-get_target_property(QV2RAY_BASE_LINK_LIBS qv2ray_baselib LINK_LIBRARIES)
-get_target_property(QV2RAY_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
+get_target_property(QV2RAY_BASE_LINK_LIBS qvmessocket_baselib LINK_LIBRARIES)
+get_target_property(QV2RAY_EXEC_LINK_LIBS qvmessocket LINK_LIBRARIES)
 QVLOG(QV2RAY_BUILD_VERSION)
 QVLOG(QV2RAY_VERSION_STRING)
 QVLOG(CMAKE_INSTALL_PREFIX)
