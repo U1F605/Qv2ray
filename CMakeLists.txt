@@ -307,7 +307,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     endif()
 else()
     add_definitions(-DQV2RAY_CLI)
-    include(cmake/components/qv2ray-cli.cmake)
+    include(cmake/components/cli.cmake)
     list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_CLI_SOURCES})
 endif()
 
