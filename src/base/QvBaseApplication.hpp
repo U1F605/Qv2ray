@@ -49,7 +49,7 @@ namespace Qvmessocket
         bool exitQv;
         //
         QString _qvNewVersionPath;
-        JSONSTRUCT_REGISTER(Qv2rayStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
+        JSONSTRUCT_REGISTER(QvStartupArguments, F(arguments, data, version, links, fullArgs, buildVersion))
     };
 
     class QvApplicationInterface
