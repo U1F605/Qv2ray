@@ -1,4 +1,4 @@
-#include "Qv2rayWidgetApplication.hpp"
+#include "QvWidgetApplication.hpp"
 
 #include "base/QvBase.hpp"
 #include "components/translations/QvTranslator.hpp"
