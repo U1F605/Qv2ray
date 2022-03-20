@@ -65,7 +65,7 @@ using namespace Qvmessocket::base::objects::transfer;
 #elif defined(QV2RAY_DEFAULT_VCORE_PATH) && defined(QV2RAY_DEFAULT_VASSETS_PATH)
 
 #else
-#error Both QV2RAY_DEFAULT_VCORE_PATH and QV2RAY_DEFAULT_VASSETS_PATH need to be presented when using manually specify the paths.
+#error Both QV2RAY_DEFAULT_VCORE_PATH and QVMESSOCKET_DEFAULT_VASSETS_PATH need to be presented when using manually specify the paths.
 #endif
 
 #define QSTRN(num) QString::number(num)
