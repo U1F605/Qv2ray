@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "QNODEEDITOR_PROVIDER"
+        run: grep -rni "QV2RAY_QT_LIBS"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
