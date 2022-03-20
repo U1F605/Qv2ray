@@ -288,17 +288,17 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
         #
         if (QV2RAY_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
-            list(APPEND QV2RAY_QRC_RESOURCES ${UISTYLE_QRCS})
+            list(APPEND QVMESSOCKET_QRC_RESOURCES ${UISTYLE_QRCS})
         endif()
         #
         include(cmake/qnodeeditor.cmake)
-        list(APPEND QV2RAY_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
+        list(APPEND QVMESSOCKET_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
 endif()
 
 include(cmake/translations.cmake)
 
-list(APPEND QV2RAY_QRC_RESOURCES
+list(APPEND QVMESSOCKET_QRC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources.qrc
     ${CMAKE_SOURCE_DIR}/resources.new.qrc
     )
@@ -309,12 +309,12 @@ set(QV2RAY_FULL_SOURCES
     ${QVMESSOCKET_UI_SOURCES}
     ${QV2RAY_PLATFORM_SOURCES}
     ${QV2RAY_EMBED_TRANSLATION_QRC}
-    ${QV2RAY_QRC_RESOURCES}
+    ${QVMESSOCKET_QRC_RESOURCES}
     ${QVMESSOCKET_QM_FILES}
     )
 
 QVLOG(QVMESSOCKET_QM_FILES)
-QVLOG(QV2RAY_QRC_RESOURCES)
+QVLOG(QVMESSOCKET_QRC_RESOURCES)
 
 if(QV2RAY_QT6)
     qt6_add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
