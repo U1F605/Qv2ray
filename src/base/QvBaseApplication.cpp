@@ -14,7 +14,7 @@ QvApplicationInterface::QvApplicationInterface()
 {
     ConfigObject = new Qv2rayConfigObject;
     QvCoreApplication = this;
-    LOG("Qv2ray", QV2RAY_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
+    LOG("Qv2ray", QVMESSOCKET_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
     DEBUG("Qv2ray Start Time: ", QTime::currentTime().msecsSinceStartOfDay());
     DEBUG("QV2RAY_BUILD_INFO", QV2RAY_BUILD_INFO);
     DEBUG("QV2RAY_BUILD_EXTRA_INFO", QV2RAY_BUILD_EXTRA_INFO);
