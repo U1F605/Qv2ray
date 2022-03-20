@@ -20,7 +20,7 @@
 #include <QScrollBar>
 
 #define QV_MODULE_NAME "MainWindow"
-#define TRAY_TOOLTIP_PREFIX "Qv2ray " QV2RAY_VERSION_STRING
+#define TRAY_TOOLTIP_PREFIX "Qv2ray " QVMESSOCKET_VERSION_STRING
 
 #define CheckCurrentWidget                                                                                                                           \
     auto widget = GetIndexWidget(connectionTreeView->currentIndex());                                                                                \
