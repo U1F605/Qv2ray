@@ -66,13 +66,9 @@ namespace Qvmessocket::base
 #endif
 
         const auto logString = tempStream.readAll();
-#ifdef Q_OS_ANDROID
-        __android_log_write(ANDROID_LOG_INFO, "Qv2ray", logString.toStdString().c_str());
-#else
         std::cout << logString.toStdString() << std::endl;
-#endif
     }
-} // namespace Qv2ray::base
+}
 
 template<typename TKey, typename TVal>
 QTextStream &operator<<(QTextStream &stream, const QPair<TKey, TVal> &pair)
