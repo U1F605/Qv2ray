@@ -71,9 +71,6 @@ message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 
 option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 
-option(BUILD_TESTING "Build Tests" OFF)
-QVLOG(BUILD_TESTING)
-
 set(QV2RAY_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default V2Ray assets path")
 QVLOG(QV2RAY_DEFAULT_VASSETS_PATH)
 
