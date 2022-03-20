@@ -4,7 +4,7 @@
 #include "ui/common/QvMessageBus.hpp"
 #include "ui_DnsSettingsWidget.h"
 
-namespace Qv2ray::ui::widgets
+namespace Qvmessocket::ui::widgets
 {
     class AutoCompleteTextEdit;
 }
@@ -55,6 +55,6 @@ class DnsSettingsWidget
     FakeDNSObject fakeDNS;
     // int currentServerIndex;
     //
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *domainListTxt;
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *ipListTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *domainListTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *ipListTxt;
 };
