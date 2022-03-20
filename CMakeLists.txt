@@ -243,7 +243,7 @@ add_library(qv2ray_baselib STATIC
 target_link_libraries(qv2ray_baselib
     ${QV2RAY_QT_LIBS}
     ${QVMESSOCKET_PROTOBUF_LIBRARY}
-    ${QV2RAY_BACKEND_LIBRARY}
+    ${QVMESSOCKET_BACKEND_LIBRARY}
     ${LibUV_LIBRARIES}
     ${CURL_LIBRARIES}
     ${SINGLEAPPLICATION_LIBRARY}
