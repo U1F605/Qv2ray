@@ -23,7 +23,7 @@ class InternalSubscriptionSupportPlugin
                  "Qv2ray Core Workgroup",                 //
                  "builtin_subscription_support",          //
                  "Basic subscription support for Qv2ray", //
-                 QV2RAY_VERSION_STRING,                   //
+                 QVMESSOCKET_VERSION_STRING,                   //
                  "Qv2ray/Qv2ray",                         //
                  { COMPONENT_SUBSCRIPTION_ADAPTER },
                  UPDATE_NONE };
