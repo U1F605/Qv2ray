@@ -180,5 +180,5 @@ class MainWindow
     //
     QList<Qv2rayPlugin::QvPluginMainWindowWidget *> pluginWidgets;
     //
-    Qv2ray::ui::widgets::models::ConnectionListHelper *modelHelper;
+    Qvmessocket::ui::widgets::models::ConnectionListHelper *modelHelper;
 };

@@ -5,7 +5,7 @@
 #include <QStandardItemModel>
 #include <QTreeView>
 
-namespace Qv2ray::ui::widgets::models
+namespace Qvmessocket::ui::widgets::models
 {
     enum ConnectionInfoRole
     {
@@ -55,4 +55,4 @@ namespace Qv2ray::ui::widgets::models
     };
 }
 
-using namespace Qv2ray::ui::widgets::models;
+using namespace Qvmessocket::ui::widgets::models;
