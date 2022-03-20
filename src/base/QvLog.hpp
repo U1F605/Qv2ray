@@ -9,10 +9,6 @@
 #include <QTextStream>
 #include <iostream>
 
-#ifdef Q_OS_ANDROID
-#include <android/log.h>
-#endif
-
 #define NEWLINE "\r\n"
 #define ___LOG_EXPAND(___x) , QPair<std::string, decltype(___x)>(std::string(#___x), [&] { return ___x; }())
 #define A(...) FOREACH_CALL_FUNC(___LOG_EXPAND, __VA_ARGS__)
