@@ -148,10 +148,10 @@ set(QV2RAY_TRANSLATION_PATH "unset" CACHE STRING "Qv2ray translations path")
 if(QV2RAY_TRANSLATION_PATH AND NOT QV2RAY_TRANSLATION_PATH STREQUAL "unset")
     add_definitions(-DQV2RAY_TRANSLATION_PATH="${QV2RAY_TRANSLATION_PATH}")
 endif()
-if(QV2RAY_EMBED_TRANSLATIONS)
+if(QVMESSOCKET_EMBED_TRANSLATIONS)
     add_definitions(-DQV2RAY_EMBED_TRANSLATIONS)
     configure_file(translations/translations.qrc ${CMAKE_BINARY_DIR} COPYONLY)
-    set(QV2RAY_EMBED_TRANSLATION_QRC ${CMAKE_BINARY_DIR}/translations.qrc)
+    set(QVMESSOCKET_EMBED_TRANSLATION_QRC ${CMAKE_BINARY_DIR}/translations.qrc)
 endif()
 
 # ==================================================================================
@@ -308,7 +308,7 @@ set(QV2RAY_FULL_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QVMESSOCKET_UI_SOURCES}
     ${QV2RAY_PLATFORM_SOURCES}
-    ${QV2RAY_EMBED_TRANSLATION_QRC}
+    ${QVMESSOCKET_EMBED_TRANSLATION_QRC}
     ${QVMESSOCKET_QRC_RESOURCES}
     ${QVMESSOCKET_QM_FILES}
     )
