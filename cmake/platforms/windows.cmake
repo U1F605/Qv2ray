@@ -9,7 +9,7 @@ set(APPS "\${CMAKE_INSTALL_PREFIX}/qv2ray.exe")
 
 include(cmake/deployment.cmake)
 
-if(QV2RAY_AUTO_DEPLOY)
+if(QVMESSOCKET_AUTO_DEPLOY)
     if(QV2RAY_QT6)
         set(QV2RAY_QtX_DIR ${Qt6_DIR})
     else()
