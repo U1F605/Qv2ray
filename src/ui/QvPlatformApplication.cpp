@@ -71,7 +71,7 @@ bool Qv2rayPlatformApplication::Initialize()
     connect(this, &SingleApplication::receivedMessage, this, &Qv2rayPlatformApplication::onMessageReceived, Qt::QueuedConnection);
     if (isSecondary())
     {
-        StartupArguments.version = QV2RAY_VERSION_STRING;
+        StartupArguments.version = QVMESSOCKET_VERSION_STRING;
         StartupArguments.buildVersion = QV2RAY_VERSION_BUILD;
         StartupArguments.fullArgs = arguments();
         if (StartupArguments.arguments.isEmpty())
