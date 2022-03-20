@@ -276,15 +276,15 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     include(cmake/qrencode.cmake)
 
     include(cmake/components/ui.cmake)
-    list(APPEND QV2RAY_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
+    list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
 
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
-    list(APPEND QV2RAY_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
+    list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     
     if(QV2RAY_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
-        list(APPEND QV2RAY_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
+        list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
         #
         if (QV2RAY_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
@@ -306,7 +306,7 @@ list(APPEND QV2RAY_QRC_RESOURCES
 set(QV2RAY_FULL_SOURCES
     ${QVMESSOCKET_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
-    ${QV2RAY_UI_SOURCES}
+    ${QVMESSOCKET_UI_SOURCES}
     ${QV2RAY_PLATFORM_SOURCES}
     ${QV2RAY_EMBED_TRANSLATION_QRC}
     ${QV2RAY_QRC_RESOURCES}
