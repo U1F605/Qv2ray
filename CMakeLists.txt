@@ -250,7 +250,6 @@ target_link_libraries(qv2ray_baselib
 
 target_include_directories(qv2ray_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
     ${CURL_INCLUDE_DIRS}
