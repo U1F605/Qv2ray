@@ -20,7 +20,7 @@ if(NOT gRPC_FOUND)
         endif()
     endif()
 else()
-    set(QV2RAY_BACKEND_LIBRARY gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
+    set(QVMESSOCKET_BACKEND_LIBRARY gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
 endif()
 
 set(API_PROTO "${CMAKE_SOURCE_DIR}/assets/v2ray_api.proto")
