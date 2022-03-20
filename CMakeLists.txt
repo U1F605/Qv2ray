@@ -250,7 +250,6 @@ target_link_libraries(qv2ray_baselib
 
 target_include_directories(qv2ray_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
     ${CURL_INCLUDE_DIRS}
@@ -307,7 +306,6 @@ set(QV2RAY_FULL_SOURCES
     ${QVMESSOCKET_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QVMESSOCKET_UI_SOURCES}
-    ${QV2RAY_PLATFORM_SOURCES}
     ${QVMESSOCKET_EMBED_TRANSLATION_QRC}
     ${QVMESSOCKET_QRC_RESOURCES}
     ${QVMESSOCKET_QM_FILES}
@@ -333,7 +331,6 @@ target_include_directories(qv2ray PRIVATE
 target_link_libraries(qv2ray PUBLIC
     qv2ray_baselib
     ${QNODEEDITOR_LIBRARY}
-    ${QV2RAY_PLATFORM_LIBS}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
 
