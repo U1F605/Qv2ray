@@ -1,5 +1,5 @@
 add_definitions(-DNODE_EDITOR_SHARED -DNODE_EDITOR_EXPORTS)
-if(QV2RAY_QNODEEDITOR_PROVIDER STREQUAL "module")
+if(QVMESSOCKET_QNODEEDITOR_PROVIDER STREQUAL "module")
     set(QNODEEDITOR_DIR ${CMAKE_SOURCE_DIR}/3rdparty/QNodeEditor)
     set(QNODEEDITOR_SOURCES
         ${QNODEEDITOR_DIR}/src/Connection.cpp
@@ -60,11 +60,6 @@ if(QV2RAY_QNODEEDITOR_PROVIDER STREQUAL "module")
         ${QNODEEDITOR_DIR}/include/nodes/internal/TypeConverter.hpp
         )
 
-    #    qt5_wrap_cpp(QNODEEDITOR_SOURCES
-    #        ${HEADERS_TO_MOC}
-    #        TARGET qv2ray
-    #        OPTIONS --no-notes # Don't display a note for the headers which don't produce a moc_*.cpp
-    #    )
     set(QNODEEDITOR_LIBRARY qv2ray_nodeeditor)
     add_library(${QNODEEDITOR_LIBRARY} STATIC
         ${QNODEEDITOR_SOURCES}
@@ -79,7 +74,7 @@ if(QV2RAY_QNODEEDITOR_PROVIDER STREQUAL "module")
         ${QV_QT_LIBNAME}::Gui
         )
     set(QNODEEDITOR_QRC_RESOURCES ${QNODEEDITOR_DIR}/resources/resources.qrc)
-elseif(QV2RAY_QNODEEDITOR_PROVIDER STREQUAL "package")
+elseif(QVMESSOCKET_QNODEEDITOR_PROVIDER STREQUAL "package")
     find_package(NodeEditor REQUIRED CONFIG)
     find_path(QNODEEDITOR_INCLUDE_PATH NAMES Node.hpp PATH_SUFFIXES nodes/internal)
     set(QNODEEDITOR_LIBRARY NodeEditor::nodes)
