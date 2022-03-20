@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "namespace"
+        run: grep -rni "Qv2ray::"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
