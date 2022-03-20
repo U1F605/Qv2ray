@@ -296,10 +296,6 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
         include(cmake/qnodeeditor.cmake)
         list(APPEND QV2RAY_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
-else()
-    add_definitions(-DQV2RAY_CLI)
-    include(cmake/components/cli.cmake)
-    list(APPEND QV2RAY_UI_SOURCES ${QV2RAY_CLI_SOURCES})
 endif()
 
 include(cmake/translations.cmake)
@@ -343,17 +339,11 @@ target_link_libraries(qv2ray PUBLIC
     ${QV2RAY_QRENCODE_LIBRARY}
     )
 
-# ==================================================================================
-# Qv2ray Unit Tests
-# ==================================================================================
 if (BUILD_TESTING)
     include(CTest)
     add_subdirectory(test)
 endif()
 
-# ==================================================================================
-# Platform-dependent installation process and deployment
-# ==================================================================================
 if(UNIX AND NOT APPLE AND NOT WIN32 AND NOT ANDROID)
     include(cmake/platforms/linux.cmake)
 elseif(WIN32)
