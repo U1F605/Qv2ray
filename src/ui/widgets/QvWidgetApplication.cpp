@@ -52,7 +52,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
     LOG("Client ID:", clientId, ", message received, version:", msg.buildVersion);
     DEBUG(_msg);
     //
-    if (msg.buildVersion > QV2RAY_VERSION_BUILD)
+    if (msg.buildVersion > QVMESSOCKET_VERSION_BUILD)
     {
         const auto newPath = msg.fullArgs.first();
         QString message;
