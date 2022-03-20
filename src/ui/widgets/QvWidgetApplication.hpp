@@ -6,7 +6,7 @@
 
 class MainWindow;
 
-namespace Qv2ray
+namespace Qvmessocket
 {
     class Qv2rayWidgetApplication : public Qv2rayPlatformApplication
     {
@@ -48,4 +48,4 @@ namespace Qv2ray
 #define QvWidgetApplication static_cast<Qv2rayWidgetApplication *>(qApp)
 #define qvAppTrayIcon (*(QvWidgetApplication->GetTrayIcon()))
 
-using namespace Qv2ray;
+using namespace Qvmessocket;
