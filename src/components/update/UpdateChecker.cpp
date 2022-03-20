@@ -43,7 +43,7 @@ namespace Qvmessocket::components
             return;
 
         const auto newVersionStr = root["tag_name"].toString("v").mid(1);
-        const auto currentVersionStr = QString(QV2RAY_VERSION_STRING);
+        const auto currentVersionStr = QString(QVMESSOCKET_VERSION_STRING);
         const auto ignoredVersionStr = GlobalConfig.updateConfig.ignoredVersion.isEmpty() ? "0.0.0" : GlobalConfig.updateConfig.ignoredVersion;
         //
         bool hasUpdate = false;
