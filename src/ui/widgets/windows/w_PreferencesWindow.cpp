@@ -78,7 +78,7 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
     SetAutoStartButtonsState(GetLaunchAtLoginStatus());
     themeCombo->addItems(StyleManager->AllStyles());
     //
-    qvVersion->setText(QVMESSOCKET_VERSION_STRING ":" + QSTRN(QV2RAY_VERSION_BUILD));
+    qvVersion->setText(QVMESSOCKET_VERSION_STRING ":" + QSTRN(QVMESSOCKET_VERSION_BUILD));
     qvBuildInfo->setText(QV2RAY_BUILD_INFO);
     qvBuildExInfo->setText(QV2RAY_BUILD_EXTRA_INFO);
     qvBuildTime->setText(__DATE__ " " __TIME__);
