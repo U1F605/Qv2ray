@@ -69,11 +69,7 @@ endif()
 message("Qvmessocket Version: ${QVMESSOCKET_VERSION_STRING}")
 message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 
-# ==================================================================================
-# Qv2ray compile arguments
-# ==================================================================================
-option(QV2RAY_AUTO_DEPLOY "Automatically run deploy command after build" ON)
-QVLOG(QV2RAY_AUTO_DEPLOY)
+option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 
 option(BUILD_TESTING "Build Tests" OFF)
 QVLOG(BUILD_TESTING)
