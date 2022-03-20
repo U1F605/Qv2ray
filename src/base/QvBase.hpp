@@ -58,14 +58,14 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QV2RAY_CONFIG_FILE_EXTENSION ".qv2ray.json"
 #define QV2RAY_GENERATED_DIR (QV2RAY_CONFIG_DIR + "generated/")
 
-#if !defined(QV2RAY_DEFAULT_VCORE_PATH) && !defined(QV2RAY_DEFAULT_VASSETS_PATH)
-#define QV2RAY_DEFAULT_VASSETS_PATH (QV2RAY_CONFIG_DIR + "vcore/")
-#define QV2RAY_DEFAULT_VCORE_PATH (QV2RAY_CONFIG_DIR + "vcore/v2ray" QV2RAY_EXECUTABLE_SUFFIX)
+#if !defined(QVMESSOCKET_DEFAULT_VCORE_PATH) && !defined(QVMESSOCKET_DEFAULT_VASSETS_PATH)
+#define QVMESSOCKET_DEFAULT_VASSETS_PATH (QV2RAY_CONFIG_DIR + "vcore/")
+#define QVMESSOCKET_DEFAULT_VCORE_PATH (QV2RAY_CONFIG_DIR + "vcore/v2ray" QV2RAY_EXECUTABLE_SUFFIX)
 #define QV2RAY_DEFAULT_VCTL_PATH (QV2RAY_CONFIG_DIR + "vcore/v2ctl" QV2RAY_EXECUTABLE_SUFFIX)
-#elif defined(QV2RAY_DEFAULT_VCORE_PATH) && defined(QV2RAY_DEFAULT_VASSETS_PATH)
+#elif defined(QVMESSOCKET_DEFAULT_VCORE_PATH) && defined(QVMESSOCKET_DEFAULT_VASSETS_PATH)
 
 #else
-#error Both QV2RAY_DEFAULT_VCORE_PATH and QVMESSOCKET_DEFAULT_VASSETS_PATH need to be presented when using manually specify the paths.
+#error Both QVMESSOCKET_DEFAULT_VCORE_PATH and QVMESSOCKET_DEFAULT_VASSETS_PATH need to be presented when using manually specify the paths.
 #endif
 
 #define QSTRN(num) QString::number(num)
