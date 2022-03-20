@@ -36,11 +36,11 @@ class RouteSettingsMatrixWidget
     const QString &assetsDirPath;
 
   private:
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *directDomainTxt;
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *proxyDomainTxt;
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *blockDomainTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *directDomainTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *proxyDomainTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *blockDomainTxt;
     //
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *directIPTxt;
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *blockIPTxt;
-    Qv2ray::ui::widgets::AutoCompleteTextEdit *proxyIPTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *directIPTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *blockIPTxt;
+    Qvmessocket::ui::widgets::AutoCompleteTextEdit *proxyIPTxt;
 };
