@@ -333,7 +333,7 @@ target_include_directories(qv2ray PRIVATE
 target_link_libraries(qv2ray PUBLIC
     qv2ray_baselib
     ${QNODEEDITOR_LIBRARY}
-    ${QV2RAY_PLATFORM_LIBS}
+    ${QVMESSOCKET_PLATFORM_LIBS}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
 
