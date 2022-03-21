@@ -84,7 +84,7 @@ option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QV2RAY_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
 
-set(QV2RAY_UI_TYPE "QWidget" CACHE STRING "Qv2ray GUI Component")
+set(QV2RAY_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 QVLOG(QV2RAY_UI_TYPE)
 
 option(QV2RAY_QT6 "Use Qt6" OFF)
