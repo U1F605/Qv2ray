@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run: grep -rni "QV2RAY_PLATFORM_SOURCES"
+        run: grep -rni "QV2RAY_QT6"
         
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
@@ -69,7 +69,7 @@ jobs:
           cd build
           cmake .. -GNinja \
             -DQV2RAY_UI_TYPE=${{ matrix.ui_type }} \
-            -DQV2RAY_QT6=ON \
+            -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./deployment \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           cmake --build . --parallel $(nproc)
@@ -83,7 +83,7 @@ jobs:
           cd build
           cmake .. -GNinja \
             -DQV2RAY_UI_TYPE=${{ matrix.ui_type }} \
-            -DQV2RAY_QT6=ON \
+            -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./AppDir/usr \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
             -DQV2RAY_TRANSLATION_PATH=QApplication::applicationDirPath\(\)+"/../share/qv2ray/lang"

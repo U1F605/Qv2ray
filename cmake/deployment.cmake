@@ -68,7 +68,7 @@ if(CMAKE_PREFIX_PATH)
 endif()
 
 # Append Qt's lib folder which is two levels above Qt5Widgets_DIR
-if(QV2RAY_QT6)
+if(QVMESSOCKET_QT6)
     list(APPEND DIRS "${Qt6Core_DIR}/../..")
 else()
     list(APPEND DIRS "${Qt5Core_DIR}/../..")

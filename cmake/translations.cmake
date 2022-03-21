@@ -1,7 +1,7 @@
 set(TRANSLATIONS_DIR ${CMAKE_SOURCE_DIR}/translations)
 file(GLOB TRANSLATIONS_TS ${TRANSLATIONS_DIR}/*.ts)
 
-if(QV2RAY_QT6)
+if(QVMESSOCKET_QT6)
     find_package(${QV_QT_LIBNAME} COMPONENTS Linguist REQUIRED)
     qt_add_translation(QVMESSOCKET_QM_FILES ${TRANSLATIONS_TS})
 else()
