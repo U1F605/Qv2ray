@@ -78,10 +78,8 @@ set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QVMESSOCKET_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
 
 option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
-QVLOG(QV2RAY_DISABLE_AUTO_UPDATE)
 
-option(QV2RAY_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
-QVLOG(QV2RAY_HAS_BUILTIN_PLUGINS)
+option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 
 option(QV2RAY_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QV2RAY_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
@@ -254,7 +252,7 @@ target_include_directories(qv2ray_baselib PUBLIC
 # ==================================================================================
 # Qv2ray Builtin Plugins
 # ==================================================================================
-if(QV2RAY_HAS_BUILTIN_PLUGINS)
+if(QVMESSOCKET_HAS_BUILTIN_PLUGINS)
     include(src/plugins/protocols/QvPlugin-BuiltinProtocolSupport.cmake)
     include(src/plugins/subscription-adapters/QvPlugin-BuiltinSubscriptionAdapters.cmake)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
