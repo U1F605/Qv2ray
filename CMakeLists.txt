@@ -266,7 +266,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
     list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     
-    if(QV2RAY_USE_QWIDGET)
+    if(QVMESSOCKET_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
