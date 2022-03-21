@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10.1)
+cmake_minimum_required(VERSION 3.20.1)
 
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSION" QVMESSOCKET_VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QVMESSOCKET_BUILD_VERSION)
