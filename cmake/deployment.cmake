@@ -44,17 +44,6 @@ if(WIN32)
     endif()
 endif()
 
-if(APPLE)
-    set(CPACK_GENERATOR "DragNDrop")
-    if(DS_STORE_SCRIPT)
-        set(CPACK_DMG_DS_STORE_SETUP_SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CMakeDMGSetup.scpt")
-    else()
-        set(CPACK_DMG_DS_STORE "${CMAKE_SOURCE_DIR}/assets/DS_Store")
-    endif()
-    set(CPACK_DMG_BACKGROUND_IMAGE "${CMAKE_SOURCE_DIR}/assets/CMakeDMGBackground.png")
-    configure_file("${CMAKE_SOURCE_DIR}/assets/package_dmg.json.in" "${CMAKE_SOURCE_DIR}/assets/package_dmg.json" @ONLY)
-endif()
-
 include(CPack)
 
 # Directories to look for dependencies
