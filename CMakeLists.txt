@@ -88,10 +88,6 @@ set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 
 option(QVMESSOCKET_QT6 "Use Qt6" OFF)
 
-if(QVMESSOCKET_UI_TYPE STREQUAL "QWidget")
-    set(QVMESSOCKET_USE_QWIDGET ON)
-endif()
-
 if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
     set(QV2RAY_SINGLEAPPLICATION_PROVIDER "module" CACHE STRING "SingleApplication Provider")
     QVLOG(QV2RAY_SINGLEAPPLICATION_PROVIDER)
@@ -266,12 +262,10 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
-        #
         if (QV2RAY_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
             list(APPEND QVMESSOCKET_QRC_RESOURCES ${UISTYLE_QRCS})
         endif()
-        #
         include(cmake/qnodeeditor.cmake)
         list(APPEND QVMESSOCKET_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
