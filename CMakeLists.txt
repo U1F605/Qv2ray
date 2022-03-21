@@ -82,7 +82,7 @@ option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
 option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 
 option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
-option(QV2RAY_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
+option(QVMESSOCKET_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
 
 set(QV2RAY_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 QVLOG(QV2RAY_UI_TYPE)
@@ -96,9 +96,8 @@ elseif(QV2RAY_UI_TYPE STREQUAL "CLI")
 endif()
 
 QVLOG(QV2RAY_USE_QWIDGET)
-QVLOG(QV2RAY_HAS_SINGLEAPPLICATION)
 
-if(QV2RAY_HAS_SINGLEAPPLICATION)
+if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
     set(QV2RAY_SINGLEAPPLICATION_PROVIDER "module" CACHE STRING "SingleApplication Provider")
     QVLOG(QV2RAY_SINGLEAPPLICATION_PROVIDER)
 endif()
@@ -211,7 +210,7 @@ endif()
 include(cmake/components/base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
-if(QV2RAY_HAS_SINGLEAPPLICATION)
+if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
     include(cmake/singleapplication.cmake)
 else()
     add_definitions(-DQV2RAY_NO_SINGLEAPPLICATON)
