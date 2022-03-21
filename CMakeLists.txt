@@ -77,7 +77,7 @@ set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 
 set(QVMESSOCKET_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
 
-option(QV2RAY_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
+option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
 QVLOG(QV2RAY_DISABLE_AUTO_UPDATE)
 
 option(QV2RAY_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
@@ -150,7 +150,7 @@ endif()
 # ==================================================================================
 # Disable Auto Update
 # ==================================================================================
-if(QV2RAY_DISABLE_AUTO_UPDATE)
+if(QVMESSOCKET_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
 
