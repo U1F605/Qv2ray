@@ -89,9 +89,9 @@ set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 option(QV2RAY_QT6 "Use Qt6" OFF)
 
 if(QVMESSOCKET_UI_TYPE STREQUAL "QWidget")
-    set(QV2RAY_USE_QWIDGET ON)
+    set(QVMESSOCKET_USE_QWIDGET ON)
 elseif(QVMESSOCKET_UI_TYPE STREQUAL "CLI")
-    set(QV2RAY_USE_QWIDGET OFF)
+    set(QVMESSOCKET_USE_QWIDGET OFF)
 endif()
 
 if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
@@ -99,7 +99,7 @@ if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
     QVLOG(QV2RAY_SINGLEAPPLICATION_PROVIDER)
 endif()
 
-if(QV2RAY_USE_QWIDGET)
+if(QVMESSOCKET_USE_QWIDGET)
     option(QV2RAY_HAS_BUILTIN_THEMES "Build with built-in themes" ON)
     set(QVMESSOCKET_QNODEEDITOR_PROVIDER "module" CACHE STRING "QNodeEditor Provider")
     QVLOG(QV2RAY_HAS_BUILTIN_THEMES)
@@ -195,7 +195,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(QV2RAY_USE_QWIDGET)
+if(QVMESSOCKET_USE_QWIDGET)
     find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Widgets Svg Gui REQUIRED)
     list(APPEND QVMESSOCKET_QT_LIBS
         ${QV_QT_LIBNAME}::Widgets
@@ -210,7 +210,7 @@ include(src/plugin-interface/QvPluginInterface.cmake)
 if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
     include(cmake/singleapplication.cmake)
 else()
-    add_definitions(-DQV2RAY_NO_SINGLEAPPLICATON)
+    add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
 endif()
 
 add_library(qv2ray_baselib STATIC
@@ -266,7 +266,7 @@ if(_QV2RAY_HAS_GUI_INTERNAL_)
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
     list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     
-    if(QV2RAY_USE_QWIDGET)
+    if(QVMESSOCKET_USE_QWIDGET)
         add_definitions(-DQV2RAY_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
