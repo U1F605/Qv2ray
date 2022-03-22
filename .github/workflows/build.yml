@@ -46,7 +46,7 @@ jobs:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-      - name: Linux - Install Packages
+      - name: Linux - Download Dependencies
         if: matrix.platform == 'ubuntu-20.04'
         run: |
           sudo apt update
