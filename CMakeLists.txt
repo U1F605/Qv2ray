@@ -281,7 +281,7 @@ list(APPEND QVMESSOCKET_QRC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources.new.qrc
     )
 
-set(QV2RAY_FULL_SOURCES
+set(QVMESSOCKET_FULL_SOURCES
     ${QVMESSOCKET_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QVMESSOCKET_UI_SOURCES}
@@ -291,9 +291,9 @@ set(QV2RAY_FULL_SOURCES
     )
 
 if(QVMESSOCKET_QT6)
-    qt6_add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    qt6_add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 else()
-    add_executable(qv2ray ${GUI_TYPE} ${QV2RAY_FULL_SOURCES})
+    add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 endif()
 
 target_include_directories(qv2ray PRIVATE
