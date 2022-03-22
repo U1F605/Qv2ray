@@ -291,12 +291,12 @@ set(QVMESSOCKET_FULL_SOURCES
     )
 
 if(QVMESSOCKET_QT6)
-    qt6_add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 else()
-    add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 endif()
 
-target_include_directories(qv2ray PRIVATE
+target_include_directories(qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -304,7 +304,7 @@ target_include_directories(qv2ray PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qv2ray PUBLIC
+target_link_libraries(qvmessocket PUBLIC
     qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
@@ -322,5 +322,5 @@ elseif(WIN32)
 endif()
 
 get_target_property(QVMESSOCKET_BASE_LINK_LIBS qvmessocket_baselib LINK_LIBRARIES)
-get_target_property(QVMESSOCKET_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_EXEC_LINK_LIBS qvmessocket LINK_LIBRARIES)
 message("${QVMESSOCKET_BUILD_STATS}")

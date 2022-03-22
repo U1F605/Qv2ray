@@ -1,11 +1,11 @@
 find_package(OpenSSL REQUIRED)
 target_link_libraries(qvmessocket_baselib wininet wsock32 ws2_32 user32 Rasapi32 Iphlpapi OpenSSL::SSL OpenSSL::Crypto Dbghelp)
 
-install(TARGETS qv2ray RUNTIME DESTINATION .)
+install(TARGETS qvmessocket RUNTIME DESTINATION .)
 
 install(DIRECTORY ${CMAKE_BINARY_DIR}/winqt/ DESTINATION .)
 
-set(APPS "\${CMAKE_INSTALL_PREFIX}/qv2ray.exe")
+set(APPS "\${CMAKE_INSTALL_PREFIX}/qvmessocket.exe")
 
 include(cmake/deployment.cmake)
 
@@ -15,7 +15,7 @@ if(QVMESSOCKET_AUTO_DEPLOY)
     else()
         set(QV2RAY_QtX_DIR ${Qt5_DIR})
     endif()
-    add_custom_command(TARGET qv2ray
+    add_custom_command(TARGET qvmessocket
         POST_BUILD
-        COMMAND ${QV2RAY_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qv2ray.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
+        COMMAND ${QV2RAY_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qvmessocket.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
 endif()
