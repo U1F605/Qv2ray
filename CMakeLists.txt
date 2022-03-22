@@ -291,9 +291,9 @@ set(QVMESSOCKET_FULL_SOURCES
     )
 
 if(QVMESSOCKET_QT6)
-    qt6_add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 else()
-    add_executable(qv2ray ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 endif()
 
 target_include_directories(qvmessocket PRIVATE
