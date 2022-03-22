@@ -17,7 +17,7 @@ Keywords[ja]=インターネット;VPN;プロキシ;Qt;v2ray;qv;
 Categories=Network;Qt;
 Terminal=false
 Icon=qv2ray
-Exec=qv2ray %u
+Exec=qvmessocket %u
 MimeType=x-scheme-handler/qv2ray;
 Actions=debug;noPlugin;noScaleFactor;noAPI;noAutoConnection;
 
