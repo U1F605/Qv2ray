@@ -4,7 +4,7 @@ if(QVMESSOCKET_SINGLEAPPLICATION_PROVIDER STREQUAL "module")
         ${SINGLEAPPLICATION_DIR}/singleapplication.cpp
         ${SINGLEAPPLICATION_DIR}/singleapplication_p.cpp
         )
-elseif(QVMESSOCKET  _SINGLEAPPLICATION_PROVIDER STREQUAL "package")
+elseif(QVMESSOCKET_SINGLEAPPLICATION_PROVIDER STREQUAL "package")
     find_library(SINGLEAPPLICATION_LIBRARY NAMES SingleApplication)
     find_path(SINGLEAPPLICATION_DIR NAMES singleapplication.h PATH_SUFFIXES singleapplication)
 endif()
