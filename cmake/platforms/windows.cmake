@@ -5,7 +5,7 @@ install(TARGETS qvmessocket RUNTIME DESTINATION .)
 
 install(DIRECTORY ${CMAKE_BINARY_DIR}/winqt/ DESTINATION .)
 
-set(APPS "\${CMAKE_INSTALL_PREFIX}/qv2ray.exe")
+set(APPS "\${CMAKE_INSTALL_PREFIX}/qvmessocket.exe")
 
 include(cmake/deployment.cmake)
 
