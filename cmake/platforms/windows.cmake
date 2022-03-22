@@ -17,5 +17,5 @@ if(QVMESSOCKET_AUTO_DEPLOY)
     endif()
     add_custom_command(TARGET qvmessocket
         POST_BUILD
-        COMMAND ${QV2RAY_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qv2ray.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
+        COMMAND ${QV2RAY_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qvmessocket.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
 endif()
