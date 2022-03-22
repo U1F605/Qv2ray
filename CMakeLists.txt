@@ -206,7 +206,7 @@ else()
     add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
 endif()
 
-add_library(qv2ray_baselib STATIC
+add_library(qvmessocket_baselib STATIC
     ${QVMESSOCKET_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
@@ -217,7 +217,7 @@ add_library(qv2ray_baselib STATIC
     ${API_PROTO_SRCS}
     )
 
-target_link_libraries(qv2ray_baselib
+target_link_libraries(qvmessocket_baselib
     ${QVMESSOCKET_QT_LIBS}
     ${QVMESSOCKET_PROTOBUF_LIBRARY}
     ${QVMESSOCKET_BACKEND_LIBRARY}
@@ -227,7 +227,7 @@ target_link_libraries(qv2ray_baselib
     Threads::Threads
     )
 
-target_include_directories(qv2ray_baselib PUBLIC
+target_include_directories(qvmessocket_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
@@ -305,7 +305,7 @@ target_include_directories(qv2ray PRIVATE
     )
 
 target_link_libraries(qv2ray PUBLIC
-    qv2ray_baselib
+    qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
@@ -321,6 +321,6 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-get_target_property(QVMESSOCKET_BASE_LINK_LIBS qv2ray_baselib LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_BASE_LINK_LIBS qvmessocket_baselib LINK_LIBRARIES)
 get_target_property(QVMESSOCKET_EXEC_LINK_LIBS qv2ray LINK_LIBRARIES)
 message("${QVMESSOCKET_BUILD_STATS}")
