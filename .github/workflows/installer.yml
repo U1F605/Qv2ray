@@ -42,12 +42,12 @@ jobs:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
       - name: Windows - ${{ matrix.arch }} - Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
-      - name: Windows - ${{ matrix.arch }} - Build preparation - Download Dependencies
+      - name: Windows - ${{ matrix.arch }} - Download Dependencies
         shell: bash
         run: |
           cd libs
           ./setup-libs.sh windows ${{ matrix.arch }}
-      - name: Windows - ${{ matrix.arch }} - Generate Dependencies and Build
+      - name: Windows - ${{ matrix.arch }} - Build
         shell: bash
         env:
           CC: cl.exe
@@ -57,11 +57,6 @@ jobs:
           cd build
           cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_NSIS=ON
           cmake --build . --target package --parallel $(nproc)
-      - name: Windows - Get package name
-        shell: bash
-        id: get_package
-        run: |
-          echo ::set-output name=NAME::$(basename build/qv2ray-*.exe)
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
