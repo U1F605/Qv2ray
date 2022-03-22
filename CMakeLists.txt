@@ -140,17 +140,6 @@ if(QVMESSOCKET_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
 
-# ==================================================================================
-# Qv2ray Build Info
-# ==================================================================================
-if(QV2RAY_BUILD_INFO)
-    set(_QV2RAY_BUILD_INFO_STR_ "${QV2RAY_BUILD_INFO}")
-elseif(DEFINED ENV{_QV2RAY_BUILD_INFO_})
-    set(_QV2RAY_BUILD_INFO_STR_ "$ENV{_QV2RAY_BUILD_INFO_}")
-else()
-    set(_QV2RAY_BUILD_INFO_STR_ "Qv2ray from manual build")
-endif()
-
 set(QV2RAY_BUILD_INFO ${_QV2RAY_BUILD_INFO_STR_})
 
 add_definitions(-D_QV2RAY_BUILD_INFO_STR_="${_QV2RAY_BUILD_INFO_STR_}")
