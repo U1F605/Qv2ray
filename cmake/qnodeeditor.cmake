@@ -60,7 +60,7 @@ if(QVMESSOCKET_QNODEEDITOR_PROVIDER STREQUAL "module")
         ${QNODEEDITOR_DIR}/include/nodes/internal/TypeConverter.hpp
         )
 
-    set(QNODEEDITOR_LIBRARY qv2ray_nodeeditor)
+    set(QNODEEDITOR_LIBRARY qvmessocket_nodeeditor)
     add_library(${QNODEEDITOR_LIBRARY} STATIC
         ${QNODEEDITOR_SOURCES}
         ${QNODEEDITOR_HEADERS}
