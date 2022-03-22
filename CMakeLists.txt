@@ -123,7 +123,7 @@ endif()
 # ==================================================================================
 # Embed Translations, Translation Search Path
 # ==================================================================================
-set(QV2RAY_TRANSLATION_PATH "unset" CACHE STRING "Qv2ray translations path")
+set(QV2RAY_TRANSLATION_PATH "unset" CACHE STRING "translations path")
 if(QV2RAY_TRANSLATION_PATH AND NOT QV2RAY_TRANSLATION_PATH STREQUAL "unset")
     add_definitions(-DQV2RAY_TRANSLATION_PATH="${QV2RAY_TRANSLATION_PATH}")
 endif()
