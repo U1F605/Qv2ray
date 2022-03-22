@@ -1,6 +1,6 @@
 install(TARGETS qvmessocket RUNTIME DESTINATION bin)
 install(FILES ${CMAKE_SOURCE_DIR}/assets/qv2ray.metainfo.xml DESTINATION share/metainfo)
-install(FILES ${CMAKE_SOURCE_DIR}/assets/qv2ray.desktop DESTINATION share/applications)
+install(FILES ${CMAKE_SOURCE_DIR}/assets/qvmessocket.desktop DESTINATION share/applications)
 install(FILES ${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.svg DESTINATION share/icons/hicolor/scalable/apps)
 
 set(QVMESSOCKET_ICON_DIMENSIONS 16 22 32 48 64 128 256 512 1024)
