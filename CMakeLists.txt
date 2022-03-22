@@ -143,12 +143,12 @@ endif()
 # ==================================================================================
 # Qv2ray Build Info
 # ==================================================================================
-if(QV2RAY_BUILD_INFO)
-    set(_QV2RAY_BUILD_INFO_STR_ "${QV2RAY_BUILD_INFO}")
+if(QVMESSOCKET_BUILD_INFO)
+    set(_QV2RAY_BUILD_INFO_STR_ "${QVMESSOCKET_BUILD_INFO}")
 elseif(DEFINED ENV{_QV2RAY_BUILD_INFO_})
-    set(_QV2RAY_BUILD_INFO_STR_ "$ENV{_QV2RAY_BUILD_INFO_}")
+    set(_QV2RAY_BUILD_INFO_STR_ "$ENV{_QVMESSOCKET_BUILD_INFO_}")
 else()
-    set(_QV2RAY_BUILD_INFO_STR_ "Qv2ray from manual build")
+    set(_QV2RAY_BUILD_INFO_STR_ "from manual build")
 endif()
 
 if(QV2RAY_BUILD_EXTRA_INFO)
