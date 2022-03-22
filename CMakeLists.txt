@@ -120,12 +120,9 @@ if(QVMESSOCKET_DEFAULT_VASSETS_PATH AND NOT QVMESSOCKET_DEFAULT_VASSETS_PATH STR
     add_definitions(-DQMESSOCKET_DEFAULT_VASSETS_PATH="${QVMESSOCKET_DEFAULT_VASSETS_PATH}")
 endif()
 
-# ==================================================================================
-# Embed Translations, Translation Search Path
-# ==================================================================================
-set(QV2RAY_TRANSLATION_PATH "unset" CACHE STRING "translations path")
-if(QV2RAY_TRANSLATION_PATH AND NOT QV2RAY_TRANSLATION_PATH STREQUAL "unset")
-    add_definitions(-DQV2RAY_TRANSLATION_PATH="${QV2RAY_TRANSLATION_PATH}")
+set(QVMESSOCKET_TRANSLATION_PATH "unset" CACHE STRING "translations path")
+if(QVMESSOCKET_TRANSLATION_PATH AND NOT QVMESSOCKET_TRANSLATION_PATH STREQUAL "unset")
+    add_definitions(-DQV2RAY_TRANSLATION_PATH="${QVMESSOCKET_TRANSLATION_PATH}")
 endif()
 if(QVMESSOCKET_EMBED_TRANSLATIONS)
     add_definitions(-DQ_EMBED_TRANSLATIONS)
