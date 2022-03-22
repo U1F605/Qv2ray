@@ -1,7 +1,7 @@
 find_package(OpenSSL REQUIRED)
 target_link_libraries(qv2ray_baselib wininet wsock32 ws2_32 user32 Rasapi32 Iphlpapi OpenSSL::SSL OpenSSL::Crypto Dbghelp)
 
-install(TARGETS qv2ray RUNTIME DESTINATION .)
+install(TARGETS qvmessocket RUNTIME DESTINATION .)
 
 install(DIRECTORY ${CMAKE_BINARY_DIR}/winqt/ DESTINATION .)
 
