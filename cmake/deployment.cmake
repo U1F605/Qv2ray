@@ -1,5 +1,5 @@
 set(CPACK_PACKAGE_VENDOR "Qvmessocket")
-set(CPACK_PACKAGE_VERSION ${QV2RAY_VERSION_STRING})
+set(CPACK_PACKAGE_VERSION ${QVMESSOCKET_VERSION_STRING})
 set(CPACK_PACKAGE_DESCRIPTION "Cross-platform Client written in Qt.")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/vmessocket")
 set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
