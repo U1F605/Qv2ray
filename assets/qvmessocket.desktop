@@ -1,15 +1,15 @@
 [Desktop Entry]
 Version=1.0
-Name=Qv2ray
+Name=Qvmessocket
 Type=Application
-GenericName=V2Ray Graphical Frontend
-GenericName[zh_CN]=V2Ray 图形前端
-GenericName[zh_TW]=V2Ray 圖形前端
-GenericName[ja]=V2Rayグラフィックフロントエンド
-Comment=A Cross-Platform V2Ray Qt GUI Client
-Comment[zh_CN]=跨平台的 V2Ray Qt 图形客户端
-Comment[zh_TW]=跨平臺的 V2Ray Qt 圖形用戶端
-Comment[ja]=とあるクロスプラットフォームV2Rayグラフィックフロントエンド
+GenericName=Graphical Frontend
+GenericName[zh_CN]=图形前端
+GenericName[zh_TW]=圖形前端
+GenericName[ja]=グラフィックフロントエンド
+Comment=A Cross-Platform Qt GUI Client
+Comment[zh_CN]=跨平台的 Qt 图形客户端
+Comment[zh_TW]=跨平臺的 Qt 圖形用戶端
+Comment[ja]=とあるクロスプラットフォームグラフィックフロントエンド
 Keywords=Internet;VPN;Proxy;v2ray;Qt;qv;
 Keywords[zh_CN]=Internet;VPN;Proxy;v2ray;Qt;qv;代理;
 Keywords[zh_TW]=Internet;VPN;Proxy;v2ray;Qt;qv;代理;
