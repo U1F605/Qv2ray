@@ -36,7 +36,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run:  grep -rni "Qv2rayConfigObject"
+        run:  grep -rni "qv2ray.desktop"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
