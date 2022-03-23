@@ -223,7 +223,7 @@ bool Qv2rayPlatformApplication::parseCommandLine(QString *errorMessage, bool *ca
     {
         if (arg.startsWith(QV2RAY_URL_SCHEME + "://"))
         {
-            StartupArguments.arguments << QvStartupArguments::QV2RAY_LINK;
+            StartupArguments.arguments << QvStartupArguments::QV_LINK;
             StartupArguments.links << arg;
         }
     }
