@@ -79,8 +79,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
     themeCombo->addItems(StyleManager->AllStyles());
     //
     qvVersion->setText(QVMESSOCKET_VERSION_STRING ":" + QSTRN(QVMESSOCKET_VERSION_BUILD));
-    qvBuildInfo->setText(QV2RAY_BUILD_INFO);
-    qvBuildExInfo->setText(QV2RAY_BUILD_EXTRA_INFO);
+    qvBuildInfo->setText(QVMESSOCKET_BUILD_INFO);
+    qvBuildExInfo->setText(QVMESSOCKET_BUILD_EXTRA_INFO);
     qvBuildTime->setText(__DATE__ " " __TIME__);
     qvPluginInterfaceVersionLabel->setText(tr("Version: %1").arg(QV2RAY_PLUGIN_INTERFACE_VERSION));
     //
