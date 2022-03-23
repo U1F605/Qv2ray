@@ -4,6 +4,8 @@
 #include "QvConfigIdentifier.hpp"
 #include "QvSafeType.hpp"
 
+using namespace Qvmessocket::base::objects::complex;
+
 namespace Qvmessocket::base::objects::complex
 {
     enum ComplexTagNodeMode
@@ -92,5 +94,3 @@ namespace Qvmessocket::base::objects::complex
         return meta;
     }
 }
-
-using namespace Qvmessocket::base::objects::complex;
