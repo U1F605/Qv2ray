@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.github.Qv2ray</id>
+  <id>com.github.Qvmessocket</id>
   <metadata_license>CC-BY-SA-3.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>Qv2ray</name>
-  <summary>Qv2ray is a cross-platform v2ray graphical frontend written in Qt.</summary>
+  <name>Qvmessocket</name>
+  <summary>Qvmessocket is a cross-platform graphical frontend written in Qt.</summary>
 
   <description>
     <p>
-      Qv2ray is a cross-platform v2ray graphical frontend written in Qt which can improve v2ray user experience. 
-      It can help users to set up v2ray configuration files easily and automatically set the system proxy.
+      Qvmessocket is a cross-platform graphical frontend written in Qt which can improve user experience. 
+      It can help users to set up configuration files easily and automatically set the system proxy.
     </p>
   </description>
 
@@ -19,7 +19,7 @@
 
   <developer_name>Leroy.H.Y</developer_name>
 
-  <launchable type="desktop-id">com.github.Qv2ray.desktop</launchable>
+  <launchable type="desktop-id">com.github.Qvmessocket.desktop</launchable>
 
   <screenshots>
     <screenshot type="default">
@@ -45,6 +45,6 @@
     </release>
   </releases>
   <content_rating type="oars-1.1" />
-  <url type="homepage">https://github.com/Qv2ray/Qv2ray</url>
-  <url type="bugtracker">https://github.com/Qv2ray/Qv2ray/issues</url>
+  <url type="homepage">https://github.com/vmessocket/Qvmessocket</url>
+  <url type="bugtracker">https://github.com/vmessocket/Qvmessocket/issues</url>
 </component>
