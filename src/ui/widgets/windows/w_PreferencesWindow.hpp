@@ -154,7 +154,7 @@ class PreferencesWindow
     //
     bool NeedRestart = false;
     bool finishedLoading = false;
-    Qv2rayConfigObject CurrentConfig;
+    QvConfigObject CurrentConfig;
 
   private:
     std::optional<QString> checkTProxySettings() const;
