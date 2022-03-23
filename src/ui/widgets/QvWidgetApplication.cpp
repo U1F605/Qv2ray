@@ -100,7 +100,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
                 ConnectionManager->StopConnection();
                 break;
             }
-            case QvStartupArguments::QV2RAY_LINK:
+            case QvStartupArguments::QV_LINK:
             {
                 for (const auto &link : msg.links)
                 {
@@ -134,7 +134,7 @@ QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
     // Show MainWindow
     UIStates = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME));
     mainWindow = new MainWindow();
-    if (StartupArguments.arguments.contains(QvStartupArguments::QV2RAY_LINK))
+    if (StartupArguments.arguments.contains(QvStartupArguments::QV_LINK))
     {
         for (const auto &link : StartupArguments.links)
         {
