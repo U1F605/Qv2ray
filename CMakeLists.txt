@@ -221,7 +221,7 @@ endif()
 # Qv2ray UI Frontend
 # ==================================================================================
 if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
-    add_definitions(-DQV2RAY_GUI)
+    add_definitions(-DQVMESSOCKET_GUI)
     include(cmake/qrencode.cmake)
 
     include(cmake/components/ui.cmake)
@@ -231,7 +231,7 @@ if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
     list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     
     if(QVMESSOCKET_USE_QWIDGET)
-        add_definitions(-DQV2RAY_GUI_QWIDGETS)
+        add_definitions(-DQVMESSOCKET_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
         #

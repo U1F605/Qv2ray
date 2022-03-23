@@ -84,7 +84,7 @@ bool Qv2rayPlatformApplication::Initialize()
     }
 #endif
 
-#ifdef QV2RAY_GUI
+#ifdef QVMESSOCKET_GUI
 #ifdef Q_OS_LINUX
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setFallbackSessionManagementEnabled(false);
