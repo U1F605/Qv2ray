@@ -165,7 +165,7 @@ if(QVMESSOCKET_USE_QWIDGET)
         ${QV_QT_LIBNAME}::Widgets
         ${QV_QT_LIBNAME}::Svg
         ${QV_QT_LIBNAME}::Gui)
-    set(_QV2RAY_HAS_GUI_INTERNAL_ ON)
+    set(_QVMESSOCKET_HAS_GUI_INTERNAL_ ON)
 endif()
 
 include(cmake/components/base.cmake)
@@ -220,7 +220,7 @@ endif()
 # ==================================================================================
 # Qv2ray UI Frontend
 # ==================================================================================
-if(_QV2RAY_HAS_GUI_INTERNAL_)
+if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
     add_definitions(-DQV2RAY_GUI)
     include(cmake/qrencode.cmake)
 
