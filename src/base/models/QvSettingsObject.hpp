@@ -179,7 +179,7 @@ namespace Qvmessocket::base::config
         AUTO_CONNECTION_LAST_CONNECTED = 2
     };
 
-    struct Qv2rayConfigObject
+    struct QvConfigObject
     {
         int config_version;
         int logLevel = 0;
@@ -198,18 +198,18 @@ namespace Qvmessocket::base::config
         Qv2rayConfig_Advanced advancedConfig;
         GroupRoutingConfig defaultRouteConfig;
 
-        explicit Qv2rayConfigObject()
+        explicit QvConfigObject()
         {
             config_version = QV2RAY_CONFIG_VERSION;
         }
 #if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
-        Q_DISABLE_COPY(Qv2rayConfigObject);
+        Q_DISABLE_COPY(QvConfigObject);
 #else
-        Q_DISABLE_COPY_MOVE(Qv2rayConfigObject);
+        Q_DISABLE_COPY_MOVE(QvConfigObject);
 #endif
-        JSONSTRUCT_COMPARE(Qv2rayConfigObject, config_version, logLevel, autoStartId, lastConnectedId, autoStartBehavior, uiConfig, pluginConfig,
+        JSONSTRUCT_COMPARE(QvConfigObject, config_version, logLevel, autoStartId, lastConnectedId, autoStartBehavior, uiConfig, pluginConfig,
                            kernelConfig, updateConfig, networkConfig, inboundConfig, outboundConfig, advancedConfig, defaultRouteConfig)
-        JSONSTRUCT_REGISTER_NOCOPYMOVE(Qv2rayConfigObject,                                                                   //
+        JSONSTRUCT_REGISTER_NOCOPYMOVE(QvConfigObject,                                                                   //
                                        A(config_version, autoStartId, lastConnectedId, autoStartBehavior, logLevel),         //
                                        A(uiConfig, advancedConfig, pluginConfig, updateConfig, kernelConfig, networkConfig), //
                                        A(inboundConfig, outboundConfig, defaultRouteConfig))

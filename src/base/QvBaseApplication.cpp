@@ -12,7 +12,7 @@ inline QString makeAbs(const QString &p)
 
 QvApplicationInterface::QvApplicationInterface()
 {
-    ConfigObject = new Qv2rayConfigObject;
+    ConfigObject = new QvConfigObject;
     QvCoreApplication = this;
     LOG("Qv2ray", QVMESSOCKET_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
     DEBUG("Qv2ray Start Time: ", QTime::currentTime().msecsSinceStartOfDay());
