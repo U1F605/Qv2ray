@@ -234,12 +234,12 @@ if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
         add_definitions(-DQVMESSOCKET_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
-        #
-        if (QV2RAY_HAS_BUILTIN_THEMES)
+
+        if (QVMESSOCKET_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
             list(APPEND QVMESSOCKET_QRC_RESOURCES ${UISTYLE_QRCS})
         endif()
-        #
+
         include(cmake/qnodeeditor.cmake)
         list(APPEND QVMESSOCKET_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
