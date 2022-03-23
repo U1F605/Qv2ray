@@ -30,7 +30,7 @@ namespace Qvmessocket
         enum Argument
         {
             NORMAL = 0,
-            QV2RAY_LINK = 1,
+            QV_LINK = 1,
             EXIT = 2,
             RECONNECT = 3,
             DISCONNECT = 4
