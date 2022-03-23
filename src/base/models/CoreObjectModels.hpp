@@ -98,8 +98,8 @@ namespace Qvmessocket::base::objects
     //
     struct RuleObject
     {
-        bool QV2RAY_RULE_ENABLED = true;
-        QString QV2RAY_RULE_TAG = "New Rule";
+        bool QVMESSOCKET_RULE_ENABLED = true;
+        QString QVMESSOCKET_RULE_TAG = "New Rule";
         //
         QString type = "field";
         QList<QString> inboundTag;
