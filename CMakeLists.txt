@@ -40,7 +40,7 @@ if(WIN32)
         QVMESSOCKET_RC
         NAME               "Qvmessocket"
         BUNDLE             "VMESSOCKET Project Family"
-        ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qv2ray.ico"
+        ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico"
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
         VERSION_PATCH      ${CPACK_PACKAGE_VERSION_PATCH}
