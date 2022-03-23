@@ -1,9 +1,7 @@
-# Packaging
-# Qv2ray Development and Research WorkGroup
-set(CPACK_PACKAGE_VENDOR "Qv2ray Development Group")
+set(CPACK_PACKAGE_VENDOR "Qvmessocket")
 set(CPACK_PACKAGE_VERSION ${QV2RAY_VERSION_STRING})
-set(CPACK_PACKAGE_DESCRIPTION "Cross-platform V2Ray Client written in Qt.")
-set(CPACK_PACKAGE_HOMEPAGE_URL "https://qv2ray.net")
+set(CPACK_PACKAGE_DESCRIPTION "Cross-platform Client written in Qt.")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/vmessocket")
 set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
 
@@ -15,48 +13,45 @@ if(WIN32)
         set(CPACK_GENERATOR "NSIS")
         set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
         set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
-        set(CPACK_NSIS_DISPLAY_NAME "Qv2ray")
-        set(CPACK_NSIS_PACKAGE_NAME "Qv2ray")
+        set(CPACK_NSIS_DISPLAY_NAME "Qvmesssocket")
+        set(CPACK_NSIS_PACKAGE_NAME "Qvmessocket")
         set(CPACK_NSIS_EXTRA_PREINSTALL_COMMANDS "
-            ExecWait \\\"taskkill /f /im qv2ray.exe\\\"
+            ExecWait \\\"taskkill /f /im qvmessocket.exe\\\"
             ExecWait \\\"taskkill /f /im v2ray.exe\\\"
             ExecWait \\\"taskkill /f /im wv2ray.exe\\\"
             ExecWait \\\"taskkill /f /im xray.exe\\\"
             ")
         set(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
-            CreateShortCut \\\"$DESKTOP\\\\Qv2ray.lnk\\\" \\\"$INSTDIR\\\\qv2ray.exe\\\"
+            CreateShortCut \\\"$DESKTOP\\\\Qv2ray.lnk\\\" \\\"$INSTDIR\\\\qvmessocket.exe\\\"
             CreateDirectory \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\"
-            CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\\Qv2ray.lnk\\\" \\\"$INSTDIR\\\\qv2ray.exe\\\"
-            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"DisplayIcon\\\" \\\"$INSTDIR\\\\qv2ray.exe\\\"
-            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"HelpLink\\\" \\\"https://qv2ray.net\\\"
+            CreateShortCut \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\\Qv2ray.lnk\\\" \\\"$INSTDIR\\\\qvmessocket.exe\\\"
+            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"DisplayIcon\\\" \\\"$INSTDIR\\\\qvmessocket.exe\\\"
+            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"HelpLink\\\" \\\"https://github.com/vmessocket\\\"
             WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"InstallLocation\\\" \\\"$INSTDIR\\\"
-            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"URLUpdateInfo\\\" \\\"https://github.com/Qv2ray/Qv2ray/releases\\\"
-            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"URLInfoAbout\\\" \\\"https://github.com/Qv2ray/Qv2ray\\\"
+            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"URLUpdateInfo\\\" \\\"https://github.com/Qvmessocket/Qv2ray/releases\\\"
+            WriteRegStr HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\" \\\"URLInfoAbout\\\" \\\"https://github.com/Qvmessocket/Qvmessocket\\\"
             ")
         set(CPACK_NSIS_EXTRA_UNINSTALL_COMMANDS "
-            ExecWait \\\"taskkill /f /im qv2ray.exe\\\"
+            ExecWait \\\"taskkill /f /im qvmessocket.exe\\\"
             Delete \\\"$DESKTOP\\\\Qv2ray.lnk\\\"
             Delete \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\\Qv2ray.lnk\\\"
             RMDir \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\"
-            DeleteRegKey HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qv2ray\\\"
+            DeleteRegKey HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qvmessocket\\\"
             ")
-        set(CPACK_PACKAGE_INSTALL_DIRECTORY "qv2ray")
+        set(CPACK_PACKAGE_INSTALL_DIRECTORY "qvmessocket")
     endif()
 endif()
 
 include(CPack)
 
-# Directories to look for dependencies
 set(DIRS "${CMAKE_BINARY_DIR}")
 
-# Path used for searching by FIND_XXX(), with appropriate suffixes added
 if(CMAKE_PREFIX_PATH)
     foreach(dir ${CMAKE_PREFIX_PATH})
         list(APPEND DIRS "${dir}/bin" "${dir}/lib")
     endforeach()
 endif()
 
-# Append Qt's lib folder which is two levels above Qt5Widgets_DIR
 if(QVMESSOCKET_QT6)
     list(APPEND DIRS "${Qt6Core_DIR}/../..")
 else()
