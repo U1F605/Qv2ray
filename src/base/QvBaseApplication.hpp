@@ -55,7 +55,7 @@ namespace Qvmessocket
     class QvApplicationInterface
     {
       public:
-        Qvmessocket::base::config::Qv2rayConfigObject *ConfigObject;
+        Qvmessocket::base::config::QvConfigObject *ConfigObject;
         QString ConfigPath;
         QvStartupArguments StartupArguments;
 
