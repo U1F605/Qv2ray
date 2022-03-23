@@ -171,7 +171,7 @@ void RouteEditor::OnDispatcherRuleCreated(std::shared_ptr<RuleObject> rule, QtNo
 
 void RouteEditor::OnDispatcherRuleDeleted(const RuleObject &rule)
 {
-    const auto items = ruleListWidget->findItems(rule.QV2RAY_RULE_TAG, Qt::MatchExactly);
+    const auto items = ruleListWidget->findItems(rule.QVMESSOCKET_RULE_TAG, Qt::MatchExactly);
     if (!items.isEmpty())
         ruleListWidget->takeItem(ruleListWidget->row(items.first()));
 }
