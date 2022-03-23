@@ -139,11 +139,7 @@ endif()
 
 add_definitions(-D_QVMESSOCKET_BUILD_INFO_STR_="${_QVMESSOCKET_BUILD_INFO_STR_}")
 add_definitions(-D_QVMESSOCKET_BUILD_EXTRA_INFO_STR_="${_QVMESSOCKET_BUILD_EXTRA_INFO_STR_}")
-message("Qv2ray Version: ${_QV2RAY_BUILD_INFO_STR_} - ${_QV2RAY_BUILD_EXTRA_INFO_STR_}")
 
-# ==================================================================================
-# 3rdparty Sources
-# ==================================================================================
 include(cmake/libuv.cmake)
 include(cmake/libcurl.cmake)
 include(cmake/libsemver.cmake)
