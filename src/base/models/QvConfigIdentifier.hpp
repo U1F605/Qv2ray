@@ -155,7 +155,7 @@ namespace Qvmessocket::base
         SubscriptionConfigObject subscriptionOption;
         GroupObject() : __QvConfigObjectBase(){};
         JSONSTRUCT_COMPARE(GroupObject, isSubscription, connections, routeConfigId, subscriptionOption)
-        JSONSTRUCT_REGISTER(GroupObject, F(connections, isSubscription, routeConfigId, subscriptionOption), B(__Qv2rayConfigObjectBase))
+        JSONSTRUCT_REGISTER(GroupObject, F(connections, isSubscription, routeConfigId, subscriptionOption), B(__QvConfigObjectBase))
     };
 
     enum StatisticsType
