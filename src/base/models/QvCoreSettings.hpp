@@ -73,7 +73,7 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_SystemProxy, F(setSystemProxy))
     };
 
-    struct Qv2rayConfig_ProtocolInboundBase
+    struct QvConfig_ProtocolInboundBase
     {
         int port = 0;
         bool useAuth = false;
@@ -81,20 +81,20 @@ namespace Qvmessocket::base::config
         QList<QString> destOverride = { "http", "tls" };
         objects::AccountObject account;
         bool metadataOnly = true;
-        Qv2rayConfig_ProtocolInboundBase(){};
-        JSONSTRUCT_REGISTER(Qv2rayConfig_ProtocolInboundBase, F(port, useAuth, sniffing, destOverride, account, metadataOnly))
+        QvConfig_ProtocolInboundBase(){};
+        JSONSTRUCT_REGISTER(QvConfig_ProtocolInboundBase, F(port, useAuth, sniffing, destOverride, account, metadataOnly))
     };
 
-    struct QvConfig_SocksInbound : Qv2rayConfig_ProtocolInboundBase
+    struct QvConfig_SocksInbound : QvConfig_ProtocolInboundBase
     {
         bool enableUDP = true;
         QString localIP = "127.0.0.1";
-        QvConfig_SocksInbound() : Qv2rayConfig_ProtocolInboundBase()
+        QvConfig_SocksInbound() : QvConfig_ProtocolInboundBase()
         {
             port = 1089;
         }
         JSONSTRUCT_COMPARE(QvConfig_SocksInbound, enableUDP, localIP, port, useAuth, sniffing, destOverride, metadataOnly)
-        JSONSTRUCT_REGISTER(QvConfig_SocksInbound, B(Qv2rayConfig_ProtocolInboundBase), F(enableUDP, localIP))
+        JSONSTRUCT_REGISTER(QvConfig_SocksInbound, B(QvConfig_ProtocolInboundBase), F(enableUDP, localIP))
     };
 
     struct QvConfig_HttpInbound : Qv2rayConfig_ProtocolInboundBase
@@ -104,7 +104,7 @@ namespace Qvmessocket::base::config
             port = 8889;
         }
         JSONSTRUCT_COMPARE(QvConfig_HttpInbound, port, useAuth, sniffing, destOverride, metadataOnly)
-        JSONSTRUCT_REGISTER(QvConfig_HttpInbound, B(Qv2rayConfig_ProtocolInboundBase))
+        JSONSTRUCT_REGISTER(QvConfig_HttpInbound, B(QvConfig_ProtocolInboundBase))
     };
 
     struct QvConfig_TProxy : Qv2rayConfig_ProtocolInboundBase
@@ -120,7 +120,7 @@ namespace Qvmessocket::base::config
             sniffing = true;
         }
         JSONSTRUCT_COMPARE(QvConfig_TProxy, tProxyIP, tProxyV6IP, hasTCP, hasUDP, mode, port, useAuth, sniffing, destOverride, metadataOnly)
-        JSONSTRUCT_REGISTER(QvConfig_TProxy, B(Qv2rayConfig_ProtocolInboundBase), F(tProxyIP, tProxyV6IP, hasTCP, hasUDP, mode))
+        JSONSTRUCT_REGISTER(QvConfig_TProxy, B(QvConfig_ProtocolInboundBase), F(tProxyIP, tProxyV6IP, hasTCP, hasUDP, mode))
     };
 
     struct QvConfig_BrowserForwarder
