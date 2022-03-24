@@ -91,15 +91,15 @@ namespace Qvmessocket::base
     constexpr unsigned int LATENCY_TEST_VALUE_NODATA = LATENCY_TEST_VALUE_ERROR - 1;
     using namespace std::chrono;
 
-    struct __Qv2rayConfigObjectBase
+    struct __QvConfigObjectBase
     {
         QString displayName;
         qint64 creationDate = system_clock::to_time_t(system_clock::now());
         qint64 lastUpdatedDate = system_clock::to_time_t(system_clock::now());
-        JSONSTRUCT_REGISTER(__Qv2rayConfigObjectBase, F(displayName, creationDate, lastUpdatedDate))
+        JSONSTRUCT_REGISTER(__QvConfigObjectBase, F(displayName, creationDate, lastUpdatedDate))
     };
 
-    struct GroupRoutingConfig : __Qv2rayConfigObjectBase
+    struct GroupRoutingConfig : __QvConfigObjectBase
     {
         bool overrideDNS = false;
         config::QvConfig_DNS dnsConfig;
@@ -147,15 +147,15 @@ namespace Qvmessocket::base
                             F(IncludeRelation, ExcludeRelation, IncludeKeywords, ExcludeKeywords))
     };
 
-    struct GroupObject : __Qv2rayConfigObjectBase
+    struct GroupObject : __QvConfigObjectBase
     {
         bool isSubscription = false;
         QList<ConnectionId> connections;
         GroupRoutingId routeConfigId;
         SubscriptionConfigObject subscriptionOption;
-        GroupObject() : __Qv2rayConfigObjectBase(){};
+        GroupObject() : __QvConfigObjectBase(){};
         JSONSTRUCT_COMPARE(GroupObject, isSubscription, connections, routeConfigId, subscriptionOption)
-        JSONSTRUCT_REGISTER(GroupObject, F(connections, isSubscription, routeConfigId, subscriptionOption), B(__Qv2rayConfigObjectBase))
+        JSONSTRUCT_REGISTER(GroupObject, F(connections, isSubscription, routeConfigId, subscriptionOption), B(__QvConfigObjectBase))
     };
 
     enum StatisticsType
@@ -223,7 +223,7 @@ namespace Qvmessocket::base
         QList<ConnectionStatsEntryObject> entries;
     };
 
-    struct ConnectionObject : __Qv2rayConfigObjectBase
+    struct ConnectionObject : __QvConfigObjectBase
     {
         qint64 lastConnected;
         qint64 latency = LATENCY_TEST_VALUE_NODATA;
@@ -232,7 +232,7 @@ namespace Qvmessocket::base
         //
         int __qvConnectionRefCount = 0;
         JSONSTRUCT_COMPARE(ConnectionObject, lastConnected, latency, importSource, stats, displayName, creationDate, lastUpdatedDate)
-        JSONSTRUCT_REGISTER(ConnectionObject, F(lastConnected, latency, importSource, stats), B(__Qv2rayConfigObjectBase))
+        JSONSTRUCT_REGISTER(ConnectionObject, F(lastConnected, latency, importSource, stats), B(__QvConfigObjectBase))
     };
 
     struct ProtocolSettingsInfoObject
@@ -258,7 +258,7 @@ namespace Qvmessocket::base
     {
         return ::qHash(pair.connectionId.toString() + pair.groupId.toString());
     }
-} // namespace Qv2ray::base
+}
 
 using namespace Qvmessocket::base;
 Q_DECLARE_METATYPE(ConnectionGroupPair)
