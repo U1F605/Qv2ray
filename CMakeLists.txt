@@ -70,22 +70,14 @@ message("Qvmessocket Version: ${QVMESSOCKET_VERSION_STRING}")
 message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 
 option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
-
 option(BUILD_TESTING "Build Tests" OFF)
-
 set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
-
 set(QVMESSOCKET_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
-
 option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
-
 option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
-
 option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QVMESSOCKET_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
-
 set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
-
 option(QVMESSOCKET_QT6 "Use Qt6" OFF)
 
 if(QVMESSOCKET_UI_TYPE STREQUAL "QWidget")
@@ -130,9 +122,6 @@ if(QVMESSOCKET_EMBED_TRANSLATIONS)
     set(QVMESSOCKET_EMBED_TRANSLATION_QRC ${CMAKE_BINARY_DIR}/translations.qrc)
 endif()
 
-# ==================================================================================
-# Disable Auto Update
-# ==================================================================================
 if(QVMESSOCKET_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
@@ -147,9 +136,6 @@ include(cmake/protobuf.cmake)
 include(cmake/backend.cmake)
 include(3rdparty/QJsonStruct/QJsonStruct.cmake)
 
-# ==================================================================================
-# Qv2ray Base, Qt Libraries, Qv2ray GUI Libraries, libThreads
-# ==================================================================================
 find_package(Threads REQUIRED)
 find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Core Network REQUIRED)
 list(APPEND QVMESSOCKET_QT_LIBS ${QV_QT_LIBNAME}::Core ${QV_QT_LIBNAME}::Network)
@@ -208,38 +194,27 @@ target_include_directories(qvmessocket_baselib PUBLIC
     ${Protobuf_INCLUDE_DIRS}
     )
 
-# ==================================================================================
-# Qv2ray Builtin Plugins
-# ==================================================================================
 if(QVMESSOCKET_HAS_BUILTIN_PLUGINS)
     include(src/plugins/protocols/QvPlugin-BuiltinProtocolSupport.cmake)
     include(src/plugins/subscription-adapters/QvPlugin-BuiltinSubscriptionAdapters.cmake)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
 endif()
 
-# ==================================================================================
-# Qv2ray UI Frontend
-# ==================================================================================
 if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
     add_definitions(-DQVMESSOCKET_GUI)
     include(cmake/qrencode.cmake)
-
     include(cmake/components/ui.cmake)
     list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
-
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
     list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
-    
     if(QVMESSOCKET_USE_QWIDGET)
         add_definitions(-DQVMESSOCKET_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
         list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
-
         if (QVMESSOCKET_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
             list(APPEND QVMESSOCKET_QRC_RESOURCES ${UISTYLE_QRCS})
         endif()
-
         include(cmake/qnodeeditor.cmake)
         list(APPEND QVMESSOCKET_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
