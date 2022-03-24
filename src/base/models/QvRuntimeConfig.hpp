@@ -5,9 +5,9 @@
 
 namespace Qvmessocket::base
 {
-    struct Qv2rayRuntimeConfig
+    struct QvRuntimeConfig
     {
         bool screenShotHideQv2ray = false;
     };
-    inline base::Qv2rayRuntimeConfig RuntimeConfig = base::Qv2rayRuntimeConfig();
-} // namespace Qv2ray::base
+    inline base::QvRuntimeConfig RuntimeConfig = base::QvRuntimeConfig();
+}
