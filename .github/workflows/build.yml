@@ -9,7 +9,6 @@ jobs:
   build:
     strategy:
       matrix:
-        ui_type: [QWidget]
         platform: [ubuntu-20.04, windows-latest]
         build_type: [RelWithDebInfo, Release]
         qt_version: [6.0.0]
@@ -114,7 +113,7 @@ jobs:
         if: matrix.platform == 'ubuntu-20.04'
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-linux-${{ matrix.ui_type }}.${{ matrix.build_type }}.AppImage
+          name: Qvmessocket-linux-${{ matrix.build_type }}.AppImage
           path: build/Qvmessocket.AppImage
       - name: Linux - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
@@ -135,7 +134,7 @@ jobs:
         if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-Windows-${{ matrix.ui_type }}.${{ matrix.build_type }}.7z
+          name: Qvmessocket-Windows-${{ matrix.build_type }}.7z
           path: release.7z
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
