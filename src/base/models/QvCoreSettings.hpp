@@ -58,12 +58,12 @@ namespace Qvmessocket::base::config
         bool bypassCN = true;
         bool bypassBT = false;
         bool bypassLAN = true;
-        bool v2rayFreedomDNS = false;
+        bool FreedomDNS = false;
         bool dnsIntercept = false;
         JSONSTRUCT_COMPARE(QvConfig_Connection, enableProxy, //
                            bypassCN, bypassBT, bypassLAN,    //
-                           v2rayFreedomDNS, dnsIntercept)
-        JSONSTRUCT_REGISTER(QvConfig_Connection, F(bypassCN, bypassBT, bypassLAN, enableProxy, v2rayFreedomDNS, dnsIntercept))
+                           FreedomDNS, dnsIntercept)
+        JSONSTRUCT_REGISTER(QvConfig_Connection, F(bypassCN, bypassBT, bypassLAN, enableProxy, FreedomDNS, dnsIntercept))
     };
 
     struct QvConfig_SystemProxy
@@ -154,4 +154,4 @@ namespace Qvmessocket::base::config
                             F(listenip, useSocks, useHTTP, useTPROXY), //
                             F(tProxySettings, httpSettings, systemProxySettings, browserForwarderSettings));
     };
-} // namespace Qv2ray::base::config
+}
