@@ -22,7 +22,7 @@ namespace Qvmessocket::base::objects::complex
     };
 
     constexpr auto META_OUTBOUND_KEY_NAME = "QVMESSOCKET_OUTBOUND_METADATA";
-    constexpr auto QV2RAY_CHAINED_OUTBOUND_PORT_ALLOCATION = 15500;
+    constexpr auto QVMESSOCKET_CHAINED_OUTBOUND_PORT_ALLOCATION = 15500;
 
     typedef BalancerObject ComplexBalancerObject;
 
