@@ -97,9 +97,9 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_SocksInbound, B(QvConfig_ProtocolInboundBase), F(enableUDP, localIP))
     };
 
-    struct QvConfig_HttpInbound : Qv2rayConfig_ProtocolInboundBase
+    struct QvConfig_HttpInbound : QvConfig_ProtocolInboundBase
     {
-        QvConfig_HttpInbound() : Qv2rayConfig_ProtocolInboundBase()
+        QvConfig_HttpInbound() : QvConfig_ProtocolInboundBase()
         {
             port = 8889;
         }
@@ -107,14 +107,14 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_HttpInbound, B(QvConfig_ProtocolInboundBase))
     };
 
-    struct QvConfig_TProxy : Qv2rayConfig_ProtocolInboundBase
+    struct QvConfig_TProxy : QvConfig_ProtocolInboundBase
     {
         QString tProxyIP = "127.0.0.1";
         QString tProxyV6IP = "::1";
         bool hasTCP = true;
         bool hasUDP = true;
         QString mode = "tproxy";
-        QvConfig_TProxy() : Qv2rayConfig_ProtocolInboundBase()
+        QvConfig_TProxy() : QvConfig_ProtocolInboundBase()
         {
             port = 12345;
             sniffing = true;
