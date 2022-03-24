@@ -341,7 +341,7 @@ namespace Qvmessocket::core::handler
             // Process FREEDOM and BLACKHOLE outbound
             {
                 OUTBOUNDS outbounds(root["outbounds"].toArray());
-                const auto freeDS = (connConf.v2rayFreedomDNS) ? "UseIP" : "AsIs";
+                const auto freeDS = (connConf.FreedomDNS) ? "UseIP" : "AsIs";
                 outbounds.append(GenerateOutboundEntry(OUTBOUND_TAG_DIRECT, "freedom", GenerateFreedomOUT(freeDS, ":0"), {}));
                 outbounds.append(GenerateOutboundEntry(OUTBOUND_TAG_BLACKHOLE, "blackhole", GenerateBlackHoleOUT(false), {}));
                 root["outbounds"] = outbounds;
@@ -442,4 +442,4 @@ namespace Qvmessocket::core::handler
 
         return root;
     }
-} // namespace Qv2ray::core::handler
+}
