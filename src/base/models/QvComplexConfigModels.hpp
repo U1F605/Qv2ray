@@ -34,7 +34,7 @@ namespace Qvmessocket::base::objects::complex
         ConnectionId connectionId;
         QList<QString> outboundTags;
         QString strategyType;
-        int chainPortAllocation = QV2RAY_CHAINED_OUTBOUND_PORT_ALLOCATION;
+        int chainPortAllocation = QVMESSOCKET_CHAINED_OUTBOUND_PORT_ALLOCATION;
         //
         safetype::OUTBOUND realOutbound;
         QString getDisplayName() const
