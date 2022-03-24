@@ -186,7 +186,7 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
     outboundMark->setValue(CurrentConfig.outboundConfig.mark);
     //
     dnsIntercept->setChecked(CurrentConfig.defaultRouteConfig.connectionConfig.dnsIntercept);
-    dnsFreedomCb->setChecked(CurrentConfig.defaultRouteConfig.connectionConfig.v2rayFreedomDNS);
+    dnsFreedomCb->setChecked(CurrentConfig.defaultRouteConfig.connectionConfig.FreedomDNS);
     //
     // Kernel Settings
     {
@@ -1049,7 +1049,7 @@ void PreferencesWindow::on_dnsFreedomCb_stateChanged(int arg1)
 {
     LOADINGCHECK
     NEEDRESTART
-    CurrentConfig.defaultRouteConfig.connectionConfig.v2rayFreedomDNS = arg1 == Qt::Checked;
+    CurrentConfig.defaultRouteConfig.connectionConfig.FreedomDNS = arg1 == Qt::Checked;
 }
 
 void PreferencesWindow::on_httpSniffingCB_stateChanged(int arg1)
