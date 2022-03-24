@@ -67,7 +67,6 @@ jobs:
           mkdir build
           cd build
           cmake .. -GNinja \
-            -DQV2RAY_UI_TYPE=${{ matrix.ui_type }} \
             -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./deployment \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
