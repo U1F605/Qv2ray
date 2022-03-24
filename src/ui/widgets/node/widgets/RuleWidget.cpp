@@ -42,14 +42,14 @@ void QvNodeRuleWidget::changeEvent(QEvent *e)
 void QvNodeRuleWidget::setValue(std::shared_ptr<RuleObject> _ruleptr)
 {
     this->ruleptr = _ruleptr;
-    // Switch to the detailed page.
+
     ruleEnableCB->setEnabled(true);
     ruleEnableCB->setChecked(rule.QV2RAY_RULE_ENABLED);
     ruleTagLineEdit->setEnabled(true);
     LOAD_FLAG_BEGIN
     ruleTagLineEdit->setText(rule.QV2RAY_RULE_TAG);
     isLoading = false;
-    // Networks
+
     auto network = rule.network.toLower();
     netUDPRB->setChecked(network.contains("udp"));
     netTCPRB->setChecked(network.contains("tcp"));
@@ -154,7 +154,7 @@ void QvNodeRuleWidget::on_ruleTagLineEdit_textEdited(const QString &arg1)
     if (originalTag == arg1 || dispatcher->RenameTag<NODE_RULE>(originalTag, arg1))
     {
         BLACK(ruleTagLineEdit);
-        rule.QV2RAY_RULE_TAG = arg1;
+        rule.QVMESSOCKET_RULE_TAG = arg1;
         return;
     }
     RED(ruleTagLineEdit);
