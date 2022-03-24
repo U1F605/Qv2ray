@@ -23,7 +23,7 @@ namespace Qvmessocket::core
 
     inline const QString getTag(const RuleObject &in)
     {
-        return in.QV2RAY_RULE_TAG;
+        return in.QVMESSOCKET_RULE_TAG;
     }
     //
     int64_t GetConnectionLatency(const ConnectionId &id);

@@ -98,8 +98,8 @@ namespace Qvmessocket::base::objects
     //
     struct RuleObject
     {
-        bool QV2RAY_RULE_ENABLED = true;
-        QString QV2RAY_RULE_TAG = "New Rule";
+        bool QVMESSOCKET_RULE_ENABLED = true;
+        QString QVMESSOCKET_RULE_TAG = "New Rule";
         //
         QString type = "field";
         QList<QString> inboundTag;
@@ -117,11 +117,11 @@ namespace Qvmessocket::base::objects
         QList<QString> protocol;
         QString attrs;
         JSONSTRUCT_COMPARE(RuleObject, type, outboundTag, balancerTag, //
-                           QV2RAY_RULE_ENABLED, QV2RAY_RULE_TAG,       //
+                           QVMESSOCKET_RULE_ENABLED, QVMESSOCKET_RULE_TAG,       //
                            domain, ip, port, sourcePort, network, source, inboundTag, protocol, attrs)
         JSONSTRUCT_REGISTER(RuleObject,                              //
                             A(type, outboundTag, balancerTag),       //
-                            A(QV2RAY_RULE_ENABLED, QV2RAY_RULE_TAG), //
+                            A(QVMESSOCKET_RULE_ENABLED, QVMESSOCKET_RULE_TAG), //
                             F(domain, ip, port, sourcePort, network, source, inboundTag, protocol, attrs))
     };
     //
