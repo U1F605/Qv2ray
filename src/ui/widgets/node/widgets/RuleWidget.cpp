@@ -44,10 +44,10 @@ void QvNodeRuleWidget::setValue(std::shared_ptr<RuleObject> _ruleptr)
     this->ruleptr = _ruleptr;
 
     ruleEnableCB->setEnabled(true);
-    ruleEnableCB->setChecked(rule.QV2RAY_RULE_ENABLED);
+    ruleEnableCB->setChecked(rule.QVMESSOCKET_RULE_ENABLED);
     ruleTagLineEdit->setEnabled(true);
     LOAD_FLAG_BEGIN
-    ruleTagLineEdit->setText(rule.QV2RAY_RULE_TAG);
+    ruleTagLineEdit->setText(rule.QVMESSOCKET_RULE_TAG);
     isLoading = false;
 
     auto network = rule.network.toLower();
@@ -137,7 +137,7 @@ void QvNodeRuleWidget::on_sourceIPList_textChanged()
 void QvNodeRuleWidget::on_ruleEnableCB_stateChanged(int arg1)
 {
     bool _isEnabled = arg1 == Qt::Checked;
-    rule.QV2RAY_RULE_ENABLED = _isEnabled;
+    rule.QVMESSOCKET_RULE_ENABLED = _isEnabled;
     settingsFrame->setEnabled(_isEnabled);
 }
 
@@ -150,7 +150,7 @@ void QvNodeRuleWidget::on_toolButton_clicked()
 
 void QvNodeRuleWidget::on_ruleTagLineEdit_textEdited(const QString &arg1)
 {
-    const auto originalTag = rule.QV2RAY_RULE_TAG;
+    const auto originalTag = rule.QVMESSOCKET_RULE_TAG;
     if (originalTag == arg1 || dispatcher->RenameTag<NODE_RULE>(originalTag, arg1))
     {
         BLACK(ruleTagLineEdit);
