@@ -9,7 +9,6 @@ jobs:
   build:
     strategy:
       matrix:
-        ui_type: [QWidget]
         platform: [ubuntu-20.04, windows-latest]
         build_type: [RelWithDebInfo, Release]
         qt_version: [6.0.0]
@@ -36,7 +35,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run:  grep -rni "qv2ray.metainfo.xml"
+        run:  grep -rni "V2RAY_UI_TYPE"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
@@ -67,7 +66,6 @@ jobs:
           mkdir build
           cd build
           cmake .. -GNinja \
-            -DQV2RAY_UI_TYPE=${{ matrix.ui_type }} \
             -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./deployment \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
@@ -81,7 +79,6 @@ jobs:
           mkdir build
           cd build
           cmake .. -GNinja \
-            -DQV2RAY_UI_TYPE=${{ matrix.ui_type }} \
             -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./AppDir/usr \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
@@ -116,7 +113,7 @@ jobs:
         if: matrix.platform == 'ubuntu-20.04'
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-linux-${{ matrix.ui_type }}.${{ matrix.build_type }}.AppImage
+          name: Qvmessocket-linux-${{ matrix.build_type }}.AppImage
           path: build/Qvmessocket.AppImage
       - name: Linux - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
@@ -137,7 +134,7 @@ jobs:
         if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-Windows-${{ matrix.ui_type }}.${{ matrix.build_type }}.7z
+          name: Qvmessocket-Windows-${{ matrix.build_type }}.7z
           path: release.7z
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v1-release
