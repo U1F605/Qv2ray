@@ -30,13 +30,13 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvGraphPenConfig, F(R, G, B, width, style))
     };
 
-    struct Qv2rayConfig_Graph
+    struct QvConfig_Graph
     {
         bool useOutboundStats = true;
         bool hasDirectStats = true;
         safetype::QvEnumMap<StatisticsType, safetype::QvPair<QvGraphPenConfig>> colorConfig;
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Graph, useOutboundStats, hasDirectStats, colorConfig)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Graph, F(useOutboundStats, hasDirectStats, colorConfig))
+        JSONSTRUCT_COMPARE(QvConfig_Graph, useOutboundStats, hasDirectStats, colorConfig)
+        JSONSTRUCT_REGISTER(QvConfig_Graph, F(useOutboundStats, hasDirectStats, colorConfig))
         const static inline QvPair<QvGraphPenConfig> DefaultPen{ { 134, 196, 63, 1.5f, Qt::SolidLine }, { 50, 153, 255, 1.5f, Qt::SolidLine } };
         const static inline QvPair<QvGraphPenConfig> DirectPen{ { 0, 210, 240, 1.5f, Qt::DotLine }, { 235, 220, 42, 1.5f, Qt::DotLine } };
     };
@@ -52,7 +52,7 @@ namespace Qvmessocket::base::config
 #endif
         QString language = "en_US";
         QList<ConnectionGroupPair> recentConnections;
-        Qv2rayConfig_Graph graphConfig;
+        QvConfig_Graph graphConfig;
         bool quietMode = false;
         bool useDarkTheme = false;
         bool useGlyphTrayIcon = true;
