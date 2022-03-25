@@ -11,9 +11,6 @@
 #ifdef Q_OS_ANDROID
 // No SingleApplication on Android platform
 #define QV2RAY_NO_SINGLEAPPLICATON
-#elif QV2RAY_WORKAROUND_MACOS_MEMLOCK
-// No SingleApplication on macOS locking error
-#define QV2RAY_NO_SINGLEAPPLICATON
 #endif
 #endif
 
