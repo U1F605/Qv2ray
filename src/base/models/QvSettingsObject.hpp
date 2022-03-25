@@ -92,9 +92,6 @@ namespace Qvmessocket::base::config
 #ifdef Q_OS_LINUX
 #define _VARNAME_VCOREPATH_ v2CorePath_linux
 #define _VARNAME_VASSETSPATH_ v2AssetsPath_linux
-#elif defined(Q_OS_MACOS)
-#define _VARNAME_VCOREPATH_ v2CorePath_macx
-#define _VARNAME_VASSETSPATH_ v2AssetsPath_macx
 #elif defined(Q_OS_WIN)
 #define _VARNAME_VCOREPATH_ v2CorePath_win
 #define _VARNAME_VASSETSPATH_ v2AssetsPath_win
