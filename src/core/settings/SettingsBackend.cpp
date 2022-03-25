@@ -239,7 +239,7 @@ namespace Qvmessocket::core::config
             auto conf = JsonFromString(StringFromFile(QV2RAY_CONFIG_FILE));
             const auto configVersion = conf["config_version"].toInt();
 
-            if (configVersion > QV2RAY_CONFIG_VERSION)
+            if (configVersion > QVMESSOCKET_CONFIG_VERSION)
             {
                 // Config version is larger than the current version...
                 // This is rare but it may happen....
@@ -263,6 +263,6 @@ namespace Qvmessocket::core::config
         }
     }
 
-} // namespace Qv2ray::core::config
+}
 
 using namespace Qvmessocket::core::config;
