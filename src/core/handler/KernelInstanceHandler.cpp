@@ -51,7 +51,7 @@ namespace Qvmessocket::core::handler
             if (!result)
                 portDetectionErrorMessage << tr("Endpoint: %1:%2 for inbound: \"%3\"").arg(info[key].address).arg(info[key].port).arg(key);
         }
-        if (GlobalConfig.pluginConfig.v2rayIntegration)
+        if (GlobalConfig.pluginConfig.Integration)
         {
             for (auto i = 0; i < plugins; i++)
             {
