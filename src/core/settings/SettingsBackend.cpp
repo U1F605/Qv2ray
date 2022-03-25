@@ -250,7 +250,7 @@ namespace Qvmessocket::core::config
                                      QObject::tr("Qv2ray will now exit."));
                 return false;
             }
-            else if (configVersion < QV2RAY_CONFIG_VERSION)
+            else if (configVersion < QVMESSOCKET_CONFIG_VERSION)
             {
                 // That is the config file needs to be upgraded.
                 conf = Qvmessocket::UpgradeSettingsVersion(configVersion, QV2RAY_CONFIG_VERSION, conf);
