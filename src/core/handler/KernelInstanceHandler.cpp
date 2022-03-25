@@ -87,7 +87,7 @@ namespace Qvmessocket::core::handler
         //    inboundInfo.push_back({ inbound["protocol"].toString(), inbound["port"].toInt(), inbound["tag"].toString() });
         //}
         //
-        if (GlobalConfig.pluginConfig.v2rayIntegration)
+        if (GlobalConfig.pluginConfig.Integration)
         {
             // Process outbounds.
             OUTBOUNDS processedOutbounds;
