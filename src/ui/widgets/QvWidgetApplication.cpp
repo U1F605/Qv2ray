@@ -153,23 +153,6 @@ QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
             }
         }
     }
-#ifdef Q_OS_MACOS
-    connect(this, &QApplication::applicationStateChanged, [this](Qt::ApplicationState state) {
-        switch (state)
-        {
-            case Qt::ApplicationActive:
-            {
-                mainWindow->show();
-                mainWindow->raise();
-                mainWindow->activateWindow();
-                break;
-            }
-            case Qt::ApplicationHidden:
-            case Qt::ApplicationInactive:
-            case Qt::ApplicationSuspended: break;
-        }
-    });
-#endif
     isInitialized = true;
     return (QvExitReason) exec();
 }
