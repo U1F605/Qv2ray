@@ -139,9 +139,9 @@ void SpeedWidget::UpdateSpeedPlotSettings()
             Graph.colorConfig[x] = y;
     };
 
-    apply_penconfig(API_INBOUND, Qv2rayConfig_Graph::DefaultPen);
+    apply_penconfig(API_INBOUND, QvConfig_Graph::DefaultPen);
     apply_penconfig(API_OUTBOUND_PROXY, Graph.colorConfig[API_INBOUND]);
-    apply_penconfig(API_OUTBOUND_DIRECT, Qv2rayConfig_Graph::DirectPen);
+    apply_penconfig(API_OUTBOUND_DIRECT, QvConfig_Graph::DirectPen);
 
     const auto getPen = [](const QvGraphPenConfig &conf) {
         QPen p{ { conf.R, conf.G, conf.B } };
