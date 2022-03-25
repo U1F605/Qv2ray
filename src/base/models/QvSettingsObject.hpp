@@ -73,8 +73,8 @@ namespace Qvmessocket::base::config
         QMap<QString, bool> pluginStates;
         bool Integration = true;
         int portAllocationStart = 15000;
-        JSONSTRUCT_COMPARE(QvConfig_Plugin, pluginStates, v2rayIntegration, portAllocationStart)
-        JSONSTRUCT_REGISTER(QvConfig_Plugin, F(pluginStates, v2rayIntegration, portAllocationStart))
+        JSONSTRUCT_COMPARE(QvConfig_Plugin, pluginStates, Integration, portAllocationStart)
+        JSONSTRUCT_REGISTER(QvConfig_Plugin, F(pluginStates, Integration, portAllocationStart))
     };
 
     struct Qv2rayConfig_Kernel
