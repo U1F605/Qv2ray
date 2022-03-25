@@ -68,13 +68,13 @@ namespace Qvmessocket::base::config
                                                maximumLogLines, maxJumpListCount, recentConnections, useOldShareLinkFormat, startMinimized, exitByCloseEvent))
     };
 
-    struct Qv2rayConfig_Plugin
+    struct QvConfig_Plugin
     {
         QMap<QString, bool> pluginStates;
         bool v2rayIntegration = true;
         int portAllocationStart = 15000;
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Plugin, pluginStates, v2rayIntegration, portAllocationStart)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Plugin, F(pluginStates, v2rayIntegration, portAllocationStart))
+        JSONSTRUCT_COMPARE(QvConfig_Plugin, pluginStates, v2rayIntegration, portAllocationStart)
+        JSONSTRUCT_REGISTER(QvConfig_Plugin, F(pluginStates, v2rayIntegration, portAllocationStart))
     };
 
     struct Qv2rayConfig_Kernel
@@ -189,7 +189,7 @@ namespace Qvmessocket::base::config
         Qv2rayAutoConnectionBehavior autoStartBehavior = AUTO_CONNECTION_NONE;
         //
         QvConfig_UI uiConfig;
-        Qv2rayConfig_Plugin pluginConfig;
+        QvConfig_Plugin pluginConfig;
         Qv2rayConfig_Kernel kernelConfig;
         Qv2rayConfig_Update updateConfig;
         Qv2rayConfig_Network networkConfig;
