@@ -41,7 +41,7 @@ namespace Qvmessocket::base::config
         const static inline QvPair<QvGraphPenConfig> DirectPen{ { 0, 210, 240, 1.5f, Qt::DotLine }, { 235, 220, 42, 1.5f, Qt::DotLine } };
     };
 
-    struct Qv2rayConfig_UI
+    struct QvConfig_UI
     {
 #ifdef Q_OS_WIN
         QString theme = "windowsvista";
@@ -62,9 +62,9 @@ namespace Qvmessocket::base::config
         bool useOldShareLinkFormat = false;
         bool startMinimized = true;
         bool exitByCloseEvent = false;
-        JSONSTRUCT_COMPARE(Qv2rayConfig_UI, theme, language, quietMode, graphConfig, useDarkTheme, useDarkTrayIcon, useGlyphTrayIcon, maximumLogLines,
+        JSONSTRUCT_COMPARE(QvConfig_UI, theme, language, quietMode, graphConfig, useDarkTheme, useDarkTrayIcon, useGlyphTrayIcon, maximumLogLines,
                            maxJumpListCount, recentConnections, useOldShareLinkFormat, startMinimized, exitByCloseEvent)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_UI, F(theme, language, quietMode, graphConfig, useDarkTheme, useDarkTrayIcon, useGlyphTrayIcon,
+        JSONSTRUCT_REGISTER(QvConfig_UI, F(theme, language, quietMode, graphConfig, useDarkTheme, useDarkTrayIcon, useGlyphTrayIcon,
                                                maximumLogLines, maxJumpListCount, recentConnections, useOldShareLinkFormat, startMinimized, exitByCloseEvent))
     };
 
