@@ -32,7 +32,7 @@ ImportConfigWindow::ImportConfigWindow(QWidget *parent) : QvDialog("ImportWindow
 
     setupUi(this);
     QvMessageBusConnect(ImportConfigWindow);
-    RESTORE_RUNTIME_CONFIG(screenShotHideQv2ray, hideQv2rayCB->setChecked)
+    RESTORE_RUNTIME_CONFIG(screenShotHideQv, hideQv2rayCB->setChecked)
     //
     auto defaultItemIndex = 0;
     for (const auto &gid : ConnectionManager->AllGroups())
