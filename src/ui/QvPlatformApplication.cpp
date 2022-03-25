@@ -170,14 +170,9 @@ bool Qv2rayPlatformApplication::parseCommandLine(QString *errorMessage, bool *ca
     QStringList filteredArgs;
     for (const auto &arg : arguments())
     {
-#ifdef Q_OS_MACOS
-        if (arg.contains("-psn"))
-            continue;
-#endif
         filteredArgs << arg;
     }
     QCommandLineParser parser;
-    //
     QCommandLineOption noAPIOption("noAPI", QObject::tr("Disable gRPC API subsystem"));
     QCommandLineOption noPluginsOption("noPlugin", QObject::tr("Disable plugins feature"));
     QCommandLineOption debugLogOption("debug", QObject::tr("Enable debug output"));
