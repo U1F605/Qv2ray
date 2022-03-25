@@ -188,7 +188,7 @@ namespace Qvmessocket::base::config
         ConnectionGroupPair lastConnectedId;
         Qv2rayAutoConnectionBehavior autoStartBehavior = AUTO_CONNECTION_NONE;
         //
-        Qv2rayConfig_UI uiConfig;
+        QvConfig_UI uiConfig;
         Qv2rayConfig_Plugin pluginConfig;
         Qv2rayConfig_Kernel kernelConfig;
         Qv2rayConfig_Update updateConfig;
