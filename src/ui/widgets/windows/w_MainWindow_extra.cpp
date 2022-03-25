@@ -4,10 +4,6 @@
 #include "utils/QvHelpers.hpp"
 #include "w_MainWindow.hpp"
 
-#ifdef Q_OS_MAC
-#include <ApplicationServices/ApplicationServices.h>
-#endif
-
 #define QV_MODULE_NAME "MainWindowExtra"
 
 void MainWindow::MWToggleVisibilitySetText()
@@ -38,19 +34,11 @@ void MainWindow::MWShowWindow()
     QThread::msleep(20);
     SetWindowPos(HWND(this->winId()), HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
 #endif
-#ifdef Q_OS_MAC
-    ProcessSerialNumber psn = { 0, kCurrentProcess };
-    TransformProcessType(&psn, kProcessTransformToForegroundApplication);
-#endif
     MWToggleVisibilitySetText();
 }
 
 void MainWindow::MWHideWindow()
 {
-#ifdef Q_OS_MAC
-    ProcessSerialNumber psn = { 0, kCurrentProcess };
-    TransformProcessType(&psn, kProcessTransformToUIElementApplication);
-#endif
 #if QV2RAY_FEATURE(ui_has_store_state)
     SaveState();
 #endif
@@ -256,10 +244,8 @@ void MainWindow::UpdateActionTranslations()
     sortAction_SortByPing_Dsc->setText(tr("By latency, Descending"));
     sortAction_SortByData_Asc->setText(tr("By data, Ascending"));
     sortAction_SortByData_Dsc->setText(tr("By data, Descending"));
-    //
     action_RCM_SwitchCoreLog->setText(tr("Switch to Core log"));
     action_RCM_SwitchQv2rayLog->setText(tr("Switch to Qv2ray log"));
-    //
     action_RCM_CopyGraph->setText(tr("Copy graph as image."));
     action_RCM_CopyRecentLogs->setText(tr("Copy latest logs."));
     action_RCM_CopySelected->setText(tr("Copy selected."));
