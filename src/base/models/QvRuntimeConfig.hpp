@@ -7,7 +7,7 @@ namespace Qvmessocket::base
 {
     struct QvRuntimeConfig
     {
-        bool screenShotHideQv2ray = false;
+        bool screenShotHideQv = false;
     };
     inline base::QvRuntimeConfig RuntimeConfig = base::QvRuntimeConfig();
 }
