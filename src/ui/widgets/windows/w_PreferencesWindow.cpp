@@ -199,9 +199,9 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         hasDirectStatisticsCB->setEnabled(CurrentConfig.uiConfig.graphConfig.useOutboundStats);
         hasDirectStatisticsCB->setChecked(CurrentConfig.uiConfig.graphConfig.hasDirectStats);
         //
-        pluginKernelV2RayIntegrationCB->setChecked(CurrentConfig.pluginConfig.v2rayIntegration);
+        pluginKernelV2RayIntegrationCB->setChecked(CurrentConfig.pluginConfig.Integration);
         pluginKernelPortAllocateCB->setValue(CurrentConfig.pluginConfig.portAllocationStart);
-        pluginKernelPortAllocateCB->setEnabled(CurrentConfig.pluginConfig.v2rayIntegration);
+        pluginKernelPortAllocateCB->setEnabled(CurrentConfig.pluginConfig.Integration);
     }
     // Connection Settings
     {
@@ -854,7 +854,7 @@ void PreferencesWindow::on_pluginKernelV2RayIntegrationCB_stateChanged(int arg1)
     LOADINGCHECK
     if (KernelInstance->ActivePluginKernelsCount() > 0)
         NEEDRESTART;
-    CurrentConfig.pluginConfig.v2rayIntegration = arg1 == Qt::Checked;
+    CurrentConfig.pluginConfig.Integration = arg1 == Qt::Checked;
     pluginKernelPortAllocateCB->setEnabled(arg1 == Qt::Checked);
 }
 

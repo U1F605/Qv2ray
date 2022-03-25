@@ -51,7 +51,7 @@ namespace Qvmessocket::core::handler
             if (!result)
                 portDetectionErrorMessage << tr("Endpoint: %1:%2 for inbound: \"%3\"").arg(info[key].address).arg(info[key].port).arg(key);
         }
-        if (GlobalConfig.pluginConfig.v2rayIntegration)
+        if (GlobalConfig.pluginConfig.Integration)
         {
             for (auto i = 0; i < plugins; i++)
             {
@@ -87,7 +87,7 @@ namespace Qvmessocket::core::handler
         //    inboundInfo.push_back({ inbound["protocol"].toString(), inbound["port"].toInt(), inbound["tag"].toString() });
         //}
         //
-        if (GlobalConfig.pluginConfig.v2rayIntegration)
+        if (GlobalConfig.pluginConfig.Integration)
         {
             // Process outbounds.
             OUTBOUNDS processedOutbounds;
@@ -149,9 +149,9 @@ namespace Qvmessocket::core::handler
             }
             auto firstOutbound = fullConfig["outbounds"].toArray().first().toObject();
             const auto firstOutboundProtocol = firstOutbound["protocol"].toString();
-            if (GlobalConfig.pluginConfig.v2rayIntegration)
+            if (GlobalConfig.pluginConfig.Integration)
             {
-                LOG("Starting kernels with V2RayIntegration.");
+                LOG("Starting kernels with Integration.");
                 bool hasAllKernelStarted = true;
                 for (auto &[outboundProtocol, kernelObject] : activeKernels)
                 {
@@ -326,4 +326,4 @@ namespace Qvmessocket::core::handler
     {
         OnV2RayStatsDataRcvd_p({ { API_OUTBOUND_PROXY, { uploadSpeed, downloadSpeed } } });
     }
-} // namespace Qv2ray::core::handler
+}
