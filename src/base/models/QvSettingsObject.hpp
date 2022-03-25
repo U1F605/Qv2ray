@@ -5,7 +5,7 @@
 
 #include <chrono>
 
-constexpr int QV2RAY_CONFIG_VERSION = 14;
+constexpr int QVMESSOCKET_CONFIG_VERSION = 14;
 
 namespace Qvmessocket::base::config
 {
@@ -200,7 +200,7 @@ namespace Qvmessocket::base::config
 
         explicit QvConfigObject()
         {
-            config_version = QV2RAY_CONFIG_VERSION;
+            config_version = QVMESSOCKET_CONFIG_VERSION;
         }
 #if QT_VERSION < QT_VERSION_CHECK(5, 13, 0)
         Q_DISABLE_COPY(QvConfigObject);
@@ -214,4 +214,4 @@ namespace Qvmessocket::base::config
                                        A(uiConfig, advancedConfig, pluginConfig, updateConfig, kernelConfig, networkConfig), //
                                        A(inboundConfig, outboundConfig, defaultRouteConfig))
     };
-} // namespace Qv2ray::base::config
+}
