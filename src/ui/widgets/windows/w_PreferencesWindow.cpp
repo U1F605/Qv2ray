@@ -854,7 +854,7 @@ void PreferencesWindow::on_pluginKernelV2RayIntegrationCB_stateChanged(int arg1)
     LOADINGCHECK
     if (KernelInstance->ActivePluginKernelsCount() > 0)
         NEEDRESTART;
-    CurrentConfig.pluginConfig.v2rayIntegration = arg1 == Qt::Checked;
+    CurrentConfig.pluginConfig.Integration = arg1 == Qt::Checked;
     pluginKernelPortAllocateCB->setEnabled(arg1 == Qt::Checked);
 }
 
