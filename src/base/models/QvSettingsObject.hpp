@@ -109,12 +109,10 @@ namespace Qvmessocket::base::config
 
         JSONSTRUCT_COMPARE(Qv2rayConfig_Kernel, enableAPI, statsPort, //
                            CorePath_linux, AssetsPath_linux,      //
-                           CorePath_macx, AssetsPath_macx,        //
                            CorePath_win, AssetsPath_win)
         JSONSTRUCT_REGISTER(Qv2rayConfig_Kernel,                     //
                             F(enableAPI, statsPort),                 //
                             F(CorePath_linux, AssetsPath_linux), //
-                            F(CorePath_macx, AssetsPath_macx),   //
                             F(CorePath_win, AssetsPath_win))
     };
 
