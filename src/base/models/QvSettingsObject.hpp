@@ -88,11 +88,11 @@ namespace Qvmessocket::base::config
         QString AssetsPath_win;
 
 #ifdef Q_OS_LINUX
-#define _VARNAME_VCOREPATH_ v2CorePath_linux
-#define _VARNAME_VASSETSPATH_ v2AssetsPath_linux
+#define _VARNAME_VCOREPATH_ CorePath_linux
+#define _VARNAME_VASSETSPATH_ AssetsPath_linux
 #elif defined(Q_OS_WIN)
-#define _VARNAME_VCOREPATH_ v2CorePath_win
-#define _VARNAME_VASSETSPATH_ v2AssetsPath_win
+#define _VARNAME_VCOREPATH_ CorePath_win
+#define _VARNAME_VASSETSPATH_ AssetsPath_win
 #endif
 
         inline const QString KernelPath(const QString &path = "")
