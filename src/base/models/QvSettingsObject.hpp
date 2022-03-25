@@ -82,12 +82,10 @@ namespace Qvmessocket::base::config
         bool enableAPI = true;
         int statsPort = 15490;
         //
-        QString v2CorePath_linux;
-        QString v2AssetsPath_linux;
-        QString v2CorePath_macx;
-        QString v2AssetsPath_macx;
-        QString v2CorePath_win;
-        QString v2AssetsPath_win;
+        QString CorePath_linux;
+        QString AssetsPath_linux;
+        QString CorePath_win;
+        QString AssetsPath_win;
 
 #ifdef Q_OS_LINUX
 #define _VARNAME_VCOREPATH_ v2CorePath_linux
