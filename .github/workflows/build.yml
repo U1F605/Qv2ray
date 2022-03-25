@@ -35,7 +35,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run:  grep -rni "V2RAY_UI_TYPE"
+        run:  grep -rni "mac"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
