@@ -108,14 +108,14 @@ namespace Qvmessocket::base::config
 #undef _VARNAME_VASSETSPATH_
 
         JSONSTRUCT_COMPARE(Qv2rayConfig_Kernel, enableAPI, statsPort, //
-                           v2CorePath_linux, v2AssetsPath_linux,      //
-                           v2CorePath_macx, v2AssetsPath_macx,        //
-                           v2CorePath_win, v2AssetsPath_win)
+                           CorePath_linux, AssetsPath_linux,      //
+                           CorePath_macx, AssetsPath_macx,        //
+                           CorePath_win, AssetsPath_win)
         JSONSTRUCT_REGISTER(Qv2rayConfig_Kernel,                     //
                             F(enableAPI, statsPort),                 //
-                            F(v2CorePath_linux, v2AssetsPath_linux), //
-                            F(v2CorePath_macx, v2AssetsPath_macx),   //
-                            F(v2CorePath_win, v2AssetsPath_win))
+                            F(CorePath_linux, AssetsPath_linux), //
+                            F(CorePath_macx, AssetsPath_macx),   //
+                            F(CorePath_win, AssetsPath_win))
     };
 
     struct Qv2rayConfig_Update
