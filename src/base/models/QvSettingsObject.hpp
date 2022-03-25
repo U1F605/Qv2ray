@@ -82,19 +82,17 @@ namespace Qvmessocket::base::config
         bool enableAPI = true;
         int statsPort = 15490;
         //
-        QString v2CorePath_linux;
-        QString v2AssetsPath_linux;
-        QString v2CorePath_macx;
-        QString v2AssetsPath_macx;
-        QString v2CorePath_win;
-        QString v2AssetsPath_win;
+        QString CorePath_linux;
+        QString AssetsPath_linux;
+        QString CorePath_win;
+        QString AssetsPath_win;
 
 #ifdef Q_OS_LINUX
-#define _VARNAME_VCOREPATH_ v2CorePath_linux
-#define _VARNAME_VASSETSPATH_ v2AssetsPath_linux
+#define _VARNAME_VCOREPATH_ CorePath_linux
+#define _VARNAME_VASSETSPATH_ AssetsPath_linux
 #elif defined(Q_OS_WIN)
-#define _VARNAME_VCOREPATH_ v2CorePath_win
-#define _VARNAME_VASSETSPATH_ v2AssetsPath_win
+#define _VARNAME_VCOREPATH_ CorePath_win
+#define _VARNAME_VASSETSPATH_ AssetsPath_win
 #endif
 
         inline const QString KernelPath(const QString &path = "")
@@ -110,14 +108,12 @@ namespace Qvmessocket::base::config
 #undef _VARNAME_VASSETSPATH_
 
         JSONSTRUCT_COMPARE(Qv2rayConfig_Kernel, enableAPI, statsPort, //
-                           v2CorePath_linux, v2AssetsPath_linux,      //
-                           v2CorePath_macx, v2AssetsPath_macx,        //
-                           v2CorePath_win, v2AssetsPath_win)
+                           CorePath_linux, AssetsPath_linux,      //
+                           CorePath_win, AssetsPath_win)
         JSONSTRUCT_REGISTER(Qv2rayConfig_Kernel,                     //
                             F(enableAPI, statsPort),                 //
-                            F(v2CorePath_linux, v2AssetsPath_linux), //
-                            F(v2CorePath_macx, v2AssetsPath_macx),   //
-                            F(v2CorePath_win, v2AssetsPath_win))
+                            F(CorePath_linux, AssetsPath_linux), //
+                            F(CorePath_win, AssetsPath_win))
     };
 
     struct Qv2rayConfig_Update
