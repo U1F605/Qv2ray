@@ -7,20 +7,9 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QTextStream>
-// macOS headers (possibly OBJ-c)
-#if defined(Q_OS_MAC)
-#include <CoreFoundation/CoreFoundation.h>
-#include <CoreServices/CoreServices.h>
-#endif
+
 namespace Qvmessocket::components::autolaunch
 {
-    //
-    //  launchatlogin.cpp
-    //  ShadowClash
-    //
-    //  Created by TheWanderingCoel on 2018/6/12.
-    //  Copyright © 2019 Coel Wu. All rights reserved.
-    //
     QString getUserAutostartDir_private()
     {
         QString config = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
@@ -114,4 +103,4 @@ namespace Qvmessocket::components::autolaunch
         }
     }
 #endif
-} // namespace Qv2ray::components::autolaunch
+}
