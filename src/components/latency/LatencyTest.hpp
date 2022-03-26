@@ -16,7 +16,7 @@ namespace Qvmessocket::components::latency
         long worst = LATENCY_TEST_VALUE_ERROR;
         long best = LATENCY_TEST_VALUE_ERROR;
         long avg = LATENCY_TEST_VALUE_ERROR;
-        Qv2rayLatencyTestingMethod method;
+        QvLatencyTestingMethod method;
     };
     struct LatencyTestRequest
     {
@@ -24,7 +24,7 @@ namespace Qvmessocket::components::latency
         QString host;
         int port;
         int totalCount;
-        Qv2rayLatencyTestingMethod method;
+        QvLatencyTestingMethod method;
     };
 
     class LatencyTestHost : public QObject
@@ -48,7 +48,7 @@ namespace Qvmessocket::components::latency
         // and libuv event loop is fast.
         LatencyTestThread *latencyThread;
     };
-} // namespace Qv2ray::components::latency
+}
 
 using namespace Qvmessocket::components::latency;
 Q_DECLARE_METATYPE(LatencyTestResult)
