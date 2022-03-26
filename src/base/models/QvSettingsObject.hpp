@@ -184,7 +184,7 @@ namespace Qvmessocket::base::config
         QvConfig_UI uiConfig;
         QvConfig_Plugin pluginConfig;
         QvConfig_Kernel kernelConfig;
-        Qv2rayConfig_Update updateConfig;
+        QvConfig_Update updateConfig;
         Qv2rayConfig_Network networkConfig;
         QvConfig_Inbounds inboundConfig;
         QvConfig_Outbounds outboundConfig;
