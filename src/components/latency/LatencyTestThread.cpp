@@ -18,7 +18,7 @@ namespace Qvmessocket::components::latency
     {
     }
 
-    void LatencyTestThread::pushRequest(const ConnectionId &id, int totalTestCount, Qv2rayLatencyTestingMethod method)
+    void LatencyTestThread::pushRequest(const ConnectionId &id, int totalTestCount, QvLatencyTestingMethod method)
     {
         if (isStop)
             return;
@@ -91,7 +91,7 @@ namespace Qvmessocket::components::latency
         stopTimer->start(uvw::TimerHandle::Time{ 500 }, uvw::TimerHandle::Time{ 500 });
         loop->run();
     }
-    void LatencyTestThread::pushRequest(const QList<ConnectionId> &ids, int totalTestCount, Qv2rayLatencyTestingMethod method)
+    void LatencyTestThread::pushRequest(const QList<ConnectionId> &ids, int totalTestCount, QvLatencyTestingMethod method)
     {
         if (isStop)
             return;
@@ -102,4 +102,4 @@ namespace Qvmessocket::components::latency
             requests.emplace_back(LatencyTestRequest{ id, host, port, totalTestCount, method });
         }
     }
-} // namespace Qv2ray::components::latency
+}
