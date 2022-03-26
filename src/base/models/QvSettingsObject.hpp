@@ -147,7 +147,7 @@ namespace Qvmessocket::base::config
 
     struct Qv2rayConfig_Network
     {
-        enum Qv2rayProxyType
+        enum QvProxyType
         {
             QVPROXY_NONE = 0,
             QVPROXY_SYSTEM = 1,
@@ -156,7 +156,7 @@ namespace Qvmessocket::base::config
 
         QvLatencyTestingMethod latencyTestingMethod = TCPING;
         QString latencyRealPingTestURL = "https://www.google.com";
-        Qv2rayProxyType proxyType = QVPROXY_NONE;
+        QvProxyType proxyType = QVPROXY_NONE;
         QString address = "127.0.0.1";
         QString type = "http";
         int port = 8000;
