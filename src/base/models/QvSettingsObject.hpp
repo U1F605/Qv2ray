@@ -161,8 +161,8 @@ namespace Qvmessocket::base::config
         QString type = "http";
         int port = 8000;
         QString userAgent = "Qv2ray/$VERSION WebRequestHelper";
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Network, latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Network, F(latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent))
+        JSONSTRUCT_COMPARE(QvConfig_Network, latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent)
+        JSONSTRUCT_REGISTER(QvConfig_Network, F(latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent))
     };
 
     enum Qv2rayAutoConnectionBehavior
