@@ -116,7 +116,7 @@ namespace Qvmessocket::base::config
                             F(CorePath_win, AssetsPath_win))
     };
 
-    struct Qv2rayConfig_Update
+    struct QvConfig_Update
     {
         enum UpdateChannel
         {
@@ -125,8 +125,8 @@ namespace Qvmessocket::base::config
         };
         UpdateChannel updateChannel = CHANNEL_STABLE;
         QString ignoredVersion;
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Update, updateChannel, ignoredVersion)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Update, F(ignoredVersion, updateChannel))
+        JSONSTRUCT_COMPARE(QvConfig_Update, updateChannel, ignoredVersion)
+        JSONSTRUCT_REGISTER(QvConfig_Update, F(ignoredVersion, updateChannel))
     };
 
     struct Qv2rayConfig_Advanced
