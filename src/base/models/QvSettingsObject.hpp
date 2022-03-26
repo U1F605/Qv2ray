@@ -165,7 +165,7 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_Network, F(latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent))
     };
 
-    enum Qv2rayAutoConnectionBehavior
+    enum QvAutoConnectionBehavior
     {
         AUTO_CONNECTION_NONE = 0,
         AUTO_CONNECTION_FIXED = 1,
@@ -179,7 +179,7 @@ namespace Qvmessocket::base::config
         //
         ConnectionGroupPair autoStartId;
         ConnectionGroupPair lastConnectedId;
-        Qv2rayAutoConnectionBehavior autoStartBehavior = AUTO_CONNECTION_NONE;
+        QvAutoConnectionBehavior autoStartBehavior = AUTO_CONNECTION_NONE;
         //
         QvConfig_UI uiConfig;
         QvConfig_Plugin pluginConfig;
