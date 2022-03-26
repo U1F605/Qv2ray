@@ -145,7 +145,7 @@ namespace Qvmessocket::base::config
         REALPING = 2
     };
 
-    struct Qv2rayConfig_Network
+    struct QvConfig_Network
     {
         enum QvProxyType
         {
@@ -185,7 +185,7 @@ namespace Qvmessocket::base::config
         QvConfig_Plugin pluginConfig;
         QvConfig_Kernel kernelConfig;
         QvConfig_Update updateConfig;
-        Qv2rayConfig_Network networkConfig;
+        QvConfig_Network networkConfig;
         QvConfig_Inbounds inboundConfig;
         QvConfig_Outbounds outboundConfig;
         QvConfig_Advanced advancedConfig;
