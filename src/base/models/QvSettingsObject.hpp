@@ -77,7 +77,7 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_Plugin, F(pluginStates, Integration, portAllocationStart))
     };
 
-    struct Qv2rayConfig_Kernel
+    struct QvConfig_Kernel
     {
         bool enableAPI = true;
         int statsPort = 15490;
@@ -107,10 +107,10 @@ namespace Qvmessocket::base::config
 #undef _VARNAME_VCOREPATH_
 #undef _VARNAME_VASSETSPATH_
 
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Kernel, enableAPI, statsPort, //
+        JSONSTRUCT_COMPARE(QvConfig_Kernel, enableAPI, statsPort, //
                            CorePath_linux, AssetsPath_linux,      //
                            CorePath_win, AssetsPath_win)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Kernel,                     //
+        JSONSTRUCT_REGISTER(QvConfig_Kernel,                     //
                             F(enableAPI, statsPort),                 //
                             F(CorePath_linux, AssetsPath_linux), //
                             F(CorePath_win, AssetsPath_win))
@@ -183,7 +183,7 @@ namespace Qvmessocket::base::config
         //
         QvConfig_UI uiConfig;
         QvConfig_Plugin pluginConfig;
-        Qv2rayConfig_Kernel kernelConfig;
+        QvConfig_Kernel kernelConfig;
         Qv2rayConfig_Update updateConfig;
         Qv2rayConfig_Network networkConfig;
         QvConfig_Inbounds inboundConfig;
