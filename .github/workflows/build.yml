@@ -18,10 +18,6 @@ jobs:
       fail-fast: false
 
     runs-on: ${{ matrix.platform }}
-    env:
-      _QV2RAY_BUILD_INFO_: "build from Github Action"
-      _QV2RAY_BUILD_EXTRA_INFO_: "qt${{ matrix.qt_version }}-${{ github.sha }}-ci.${{ matrix.platform }}"
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
     steps:
       - name: Checking out sources
