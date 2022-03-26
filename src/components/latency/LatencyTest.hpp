@@ -32,8 +32,8 @@ namespace Qvmessocket::components::latency
         Q_OBJECT
       public:
         explicit LatencyTestHost(const int defaultCount = 3, QObject *parent = nullptr);
-        void TestLatency(const ConnectionId &connectionId, Qv2rayLatencyTestingMethod);
-        void TestLatency(const QList<ConnectionId> &connectionIds, Qv2rayLatencyTestingMethod);
+        void TestLatency(const ConnectionId &connectionId, QvLatencyTestingMethod);
+        void TestLatency(const QList<ConnectionId> &connectionIds, QvLatencyTestingMethod);
         void StopAllLatencyTest();
 
         ~LatencyTestHost() override;
