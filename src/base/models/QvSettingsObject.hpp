@@ -145,7 +145,7 @@ namespace Qvmessocket::base::config
         REALPING = 2
     };
 
-    struct Qv2rayConfig_Network
+    struct QvConfig_Network
     {
         enum QvProxyType
         {
@@ -161,8 +161,8 @@ namespace Qvmessocket::base::config
         QString type = "http";
         int port = 8000;
         QString userAgent = "Qv2ray/$VERSION WebRequestHelper";
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Network, latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Network, F(latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent))
+        JSONSTRUCT_COMPARE(QvConfig_Network, latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent)
+        JSONSTRUCT_REGISTER(QvConfig_Network, F(latencyTestingMethod, latencyRealPingTestURL, proxyType, type, address, port, userAgent))
     };
 
     enum Qv2rayAutoConnectionBehavior
@@ -185,7 +185,7 @@ namespace Qvmessocket::base::config
         QvConfig_Plugin pluginConfig;
         QvConfig_Kernel kernelConfig;
         QvConfig_Update updateConfig;
-        Qv2rayConfig_Network networkConfig;
+        QvConfig_Network networkConfig;
         QvConfig_Inbounds inboundConfig;
         QvConfig_Outbounds outboundConfig;
         QvConfig_Advanced advancedConfig;

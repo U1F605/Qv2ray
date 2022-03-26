@@ -19,18 +19,18 @@ namespace Qvmessocket::common::network
     {
         switch (GlobalConfig.networkConfig.proxyType)
         {
-            case Qv2rayConfig_Network::QVPROXY_NONE:
+            case QvConfig_Network::QVPROXY_NONE:
             {
                 DEBUG("Get without proxy.");
                 accessManager.setProxy(QNetworkProxy(QNetworkProxy::ProxyType::NoProxy));
                 break;
             }
-            case Qv2rayConfig_Network::QVPROXY_SYSTEM:
+            case QvConfig_Network::QVPROXY_SYSTEM:
             {
                 accessManager.setProxy(QNetworkProxyFactory::systemProxyForQuery().first());
                 break;
             }
-            case Qv2rayConfig_Network::QVPROXY_CUSTOM:
+            case QvConfig_Network::QVPROXY_CUSTOM:
             {
                 QNetworkProxy p{
                     GlobalConfig.networkConfig.type == "http" ? QNetworkProxy::HttpProxy : QNetworkProxy::Socks5Proxy, //

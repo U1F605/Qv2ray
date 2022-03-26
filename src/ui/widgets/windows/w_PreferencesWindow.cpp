@@ -222,10 +222,10 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         qvProxyTypeCombo->setCurrentText(CurrentConfig.networkConfig.type);
         qvNetworkUATxt->setEditText(CurrentConfig.networkConfig.userAgent);
         //
-        qvProxyNoProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_NONE);
-        qvProxySystemProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_SYSTEM);
-        qvProxyCustomProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_CUSTOM);
-        SET_PROXY_UI_ENABLE(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_CUSTOM)
+        qvProxyNoProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_NONE);
+        qvProxySystemProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_SYSTEM);
+        qvProxyCustomProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_CUSTOM);
+        SET_PROXY_UI_ENABLE(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_CUSTOM)
     }
     //
     //
@@ -1020,7 +1020,7 @@ void PreferencesWindow::on_dnsIntercept_toggled(bool checked)
 
 void PreferencesWindow::on_qvProxyCustomProxy_clicked()
 {
-    CurrentConfig.networkConfig.proxyType = Qv2rayConfig_Network::QVPROXY_CUSTOM;
+    CurrentConfig.networkConfig.proxyType = QvConfig_Network::QVPROXY_CUSTOM;
     SET_PROXY_UI_ENABLE(true);
     qvProxyNoProxy->setChecked(false);
     qvProxySystemProxy->setChecked(false);
@@ -1029,7 +1029,7 @@ void PreferencesWindow::on_qvProxyCustomProxy_clicked()
 
 void PreferencesWindow::on_qvProxySystemProxy_clicked()
 {
-    CurrentConfig.networkConfig.proxyType = Qv2rayConfig_Network::QVPROXY_SYSTEM;
+    CurrentConfig.networkConfig.proxyType = QvConfig_Network::QVPROXY_SYSTEM;
     SET_PROXY_UI_ENABLE(false);
     qvProxyNoProxy->setChecked(false);
     qvProxyCustomProxy->setChecked(false);
@@ -1038,7 +1038,7 @@ void PreferencesWindow::on_qvProxySystemProxy_clicked()
 
 void PreferencesWindow::on_qvProxyNoProxy_clicked()
 {
-    CurrentConfig.networkConfig.proxyType = Qv2rayConfig_Network::QVPROXY_NONE;
+    CurrentConfig.networkConfig.proxyType = QvConfig_Network::QVPROXY_NONE;
     SET_PROXY_UI_ENABLE(false);
     qvProxySystemProxy->setChecked(false);
     qvProxyCustomProxy->setChecked(false);
