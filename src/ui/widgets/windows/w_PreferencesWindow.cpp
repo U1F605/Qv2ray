@@ -845,7 +845,7 @@ void PreferencesWindow::on_enableAPI_stateChanged(int arg1)
 void PreferencesWindow::on_updateChannelCombo_currentIndexChanged(int index)
 {
     LOADINGCHECK
-    CurrentConfig.updateConfig.updateChannel = (Qv2rayConfig_Update::UpdateChannel) index;
+    CurrentConfig.updateConfig.updateChannel = (QvConfig_Update::UpdateChannel) index;
     CurrentConfig.updateConfig.ignoredVersion.clear();
 }
 
