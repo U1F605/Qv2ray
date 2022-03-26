@@ -138,7 +138,7 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_Advanced, F(testLatencyPeriodically, disableSystemRoot, testLatencyOnConnected))
     };
 
-    enum Qv2rayLatencyTestingMethod
+    enum QvLatencyTestingMethod
     {
         TCPING = 0,
         ICMPING = 1,
@@ -154,7 +154,7 @@ namespace Qvmessocket::base::config
             QVPROXY_CUSTOM = 2
         };
 
-        Qv2rayLatencyTestingMethod latencyTestingMethod = TCPING;
+        QvLatencyTestingMethod latencyTestingMethod = TCPING;
         QString latencyRealPingTestURL = "https://www.google.com";
         Qv2rayProxyType proxyType = QVPROXY_NONE;
         QString address = "127.0.0.1";

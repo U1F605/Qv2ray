@@ -22,8 +22,8 @@ namespace Qvmessocket::components::latency
         {
             isStop = true;
         }
-        void pushRequest(const QList<ConnectionId> &ids, int totalTestCount, Qv2rayLatencyTestingMethod method);
-        void pushRequest(const ConnectionId &id, int totalTestCount, Qv2rayLatencyTestingMethod method);
+        void pushRequest(const QList<ConnectionId> &ids, int totalTestCount, QvLatencyTestingMethod method);
+        void pushRequest(const ConnectionId &id, int totalTestCount, QvLatencyTestingMethod method);
 
       protected:
         void run() override;

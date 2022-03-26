@@ -27,13 +27,13 @@ namespace Qvmessocket::components::latency
         latencyThread->start();
     }
 
-    void LatencyTestHost::TestLatency(const ConnectionId &id, Qv2rayLatencyTestingMethod method)
+    void LatencyTestHost::TestLatency(const ConnectionId &id, QvLatencyTestingMethod method)
     {
         latencyThread->pushRequest(id, totalTestCount, method);
     }
-    void LatencyTestHost::TestLatency(const QList<ConnectionId> &ids, Qv2rayLatencyTestingMethod method)
+    void LatencyTestHost::TestLatency(const QList<ConnectionId> &ids, QvLatencyTestingMethod method)
     {
         latencyThread->pushRequest(ids, totalTestCount, method);
     }
 
-} // namespace Qv2ray::components::latency
+}
