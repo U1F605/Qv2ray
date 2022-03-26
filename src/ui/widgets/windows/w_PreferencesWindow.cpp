@@ -222,10 +222,10 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         qvProxyTypeCombo->setCurrentText(CurrentConfig.networkConfig.type);
         qvNetworkUATxt->setEditText(CurrentConfig.networkConfig.userAgent);
         //
-        qvProxyNoProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_NONE);
-        qvProxySystemProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_SYSTEM);
-        qvProxyCustomProxy->setChecked(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_CUSTOM);
-        SET_PROXY_UI_ENABLE(CurrentConfig.networkConfig.proxyType == Qv2rayConfig_Network::QVPROXY_CUSTOM)
+        qvProxyNoProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_NONE);
+        qvProxySystemProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_SYSTEM);
+        qvProxyCustomProxy->setChecked(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_CUSTOM);
+        SET_PROXY_UI_ENABLE(CurrentConfig.networkConfig.proxyType == QvConfig_Network::QVPROXY_CUSTOM)
     }
     //
     //
