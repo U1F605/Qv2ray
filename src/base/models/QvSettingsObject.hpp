@@ -129,13 +129,13 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_Update, F(ignoredVersion, updateChannel))
     };
 
-    struct Qv2rayConfig_Advanced
+    struct QvConfig_Advanced
     {
         bool testLatencyPeriodically = false;
         bool disableSystemRoot = false;
         bool testLatencyOnConnected = false;
-        JSONSTRUCT_COMPARE(Qv2rayConfig_Advanced, testLatencyPeriodically, disableSystemRoot, testLatencyOnConnected)
-        JSONSTRUCT_REGISTER(Qv2rayConfig_Advanced, F(testLatencyPeriodically, disableSystemRoot, testLatencyOnConnected))
+        JSONSTRUCT_COMPARE(QvConfig_Advanced, testLatencyPeriodically, disableSystemRoot, testLatencyOnConnected)
+        JSONSTRUCT_REGISTER(QvConfig_Advanced, F(testLatencyPeriodically, disableSystemRoot, testLatencyOnConnected))
     };
 
     enum Qv2rayLatencyTestingMethod
@@ -188,7 +188,7 @@ namespace Qvmessocket::base::config
         Qv2rayConfig_Network networkConfig;
         QvConfig_Inbounds inboundConfig;
         QvConfig_Outbounds outboundConfig;
-        Qv2rayConfig_Advanced advancedConfig;
+        QvConfig_Advanced advancedConfig;
         GroupRoutingConfig defaultRouteConfig;
 
         explicit QvConfigObject()
