@@ -48,8 +48,7 @@ jobs:
         if: matrix.platform == 'ubuntu-20.04'
         run: |
           sudo apt update
-          sudo apt install -y libssl-dev libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0
-          sudo apt install -y libprotobuf-dev protobuf-compiler protobuf-c-compiler libgrpc++-dev protobuf-compiler-grpc libcurl4-openssl-dev
+          sudo apt install -y libssl-dev libprotobuf-dev protobuf-compiler protobuf-c-compiler libgrpc++-dev protobuf-compiler-grpc libcurl4-openssl-dev
       - name: Windows - Download Dependencies
         shell: bash
         if: matrix.platform == 'windows-latest'
