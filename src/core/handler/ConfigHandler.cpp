@@ -137,7 +137,7 @@ namespace Qvmessocket::core::handler
         pingHelper->TestLatency(groups[id].connections, GlobalConfig.networkConfig.latencyTestingMethod);
     }
 
-    void QvConfigHandler::StartLatencyTest(const ConnectionId &id, Qv2rayLatencyTestingMethod method)
+    void QvConfigHandler::StartLatencyTest(const ConnectionId &id, QvLatencyTestingMethod method)
     {
         emit OnLatencyTestStarted(id);
         pingHelper->TestLatency(id, method);
@@ -753,7 +753,7 @@ namespace Qvmessocket::core::handler
         return { newId, groupId };
     }
 
-} // namespace Qv2ray::core::handler
+}
 
 #undef CheckIdExistance
 #undef CheckGroupExistanceEx
