@@ -76,8 +76,7 @@ jobs:
           cmake .. -GNinja \
             -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./AppDir/usr \
-            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-            -DQV2RAY_TRANSLATION_PATH=QApplication::applicationDirPath\(\)+"/../share/qv2ray/lang"
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} 
           cmake --build . --parallel $(nproc)
           cmake --install .
       - name: Linux - Generating AppImage
