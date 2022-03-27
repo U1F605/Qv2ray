@@ -1118,7 +1118,7 @@ void PreferencesWindow::on_socksOverrideTLSCB_stateChanged(int arg1)
 
 void PreferencesWindow::on_pushButton_clicked()
 {
-#if QV2RAY_FEATURE(util_has_ntp)
+#if QV_FEATURE(util_has_ntp)
     const auto ntpTitle = tr("NTP Checker");
     const auto ntpHint = tr("Check date and time from server:");
     const static QStringList ntpServerList = { "cn.pool.ntp.org",      "cn.ntp.org.cn",           "edu.ntp.org.cn",
