@@ -16,7 +16,7 @@ class ImportConfigWindow
     QMultiMap<QString, CONFIGROOT> SelectConnection(bool outboundsOnly);
     void processCommands(QString command, QStringList commands, QMap<QString, QString> args) override
     {
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
         const static QMap<QString, int> indexMap{ { "link", 0 }, { "qr", 1 }, { "advanced", 2 } };
 #else
         const static QMap<QString, int> indexMap{ { "link", 0 }, { "advanced", 1 } };
@@ -35,7 +35,7 @@ class ImportConfigWindow
     QvMessageBusSlotDecl override;
 
   private slots:
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
     void on_qrFromScreenBtn_clicked();
     void on_selectImageBtn_clicked();
     void on_hideQv2rayCB_stateChanged(int arg1);
