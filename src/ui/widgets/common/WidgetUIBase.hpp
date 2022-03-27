@@ -54,7 +54,7 @@ class QvStateObject
     const QString windowName;
     options_storage_type state_options_list;
 
-#if QV2RAY_FEATURE(ui_has_store_state)
+#if QV_FEATURE(ui_has_store_state)
   public:
     void SaveState()
     {
@@ -90,7 +90,7 @@ class QvDialog
   public:
     explicit QvDialog(const QString &name, QWidget *parent) : QDialog(parent), QvStateObject(name)
     {
-#if QV2RAY_FEATURE(ui_has_store_state)
+#if QV_FEATURE(ui_has_store_state)
         connect(this, &QvDialog::finished, [this] { SaveState(); });
 #endif
     }
@@ -103,7 +103,7 @@ class QvDialog
     void showEvent(QShowEvent *event) override
     {
         QWidget::showEvent(event);
-#if QV2RAY_FEATURE(ui_has_store_state)
+#if QV_FEATURE(ui_has_store_state)
         RestoreState();
 #endif
     }
@@ -153,6 +153,6 @@ namespace Qvmessocket::ui
         cursor.insertText(message);
         cursor.endEditBlock();
     }
-} // namespace Qv2ray::ui
+}
 
 using namespace Qvmessocket::ui;
