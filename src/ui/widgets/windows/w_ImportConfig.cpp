@@ -261,7 +261,7 @@ void ImportConfigWindow::on_beginImportBtn_clicked()
 
             break;
         }
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
         case QRCODE_PAGE:
         {
             QString errorMsg;
