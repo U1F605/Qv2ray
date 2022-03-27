@@ -22,7 +22,7 @@
 #define QV_LOG_PREPEND_CONTENT
 #endif
 
-#define _LOG_ARG_(...) QV2RAY_LOG_PREPEND_CONTENT "[" QV_MODULE_NAME "]", __VA_ARGS__
+#define _LOG_ARG_(...) QV_LOG_PREPEND_CONTENT "[" QV_MODULE_NAME "]", __VA_ARGS__
 
 #define LOG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_NORMAL>(_LOG_ARG_(__VA_ARGS__))
 #define DEBUG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_DEBUG>(_LOG_ARG_(__VA_ARGS__))
