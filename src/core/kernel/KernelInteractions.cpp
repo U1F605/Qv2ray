@@ -104,7 +104,7 @@ namespace Qvmessocket::core::kernel
         }
 #endif
 
-#if QV2RAY_FEATURE(kernel_check_permission)
+#if QV_FEATURE(kernel_check_permission)
         // Check executable permissions.
         const auto [isExecutableOk, strExecutableErr] = CheckAndSetCoreExecutableState(corePath);
         if (!isExecutableOk)
