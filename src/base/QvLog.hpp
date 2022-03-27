@@ -14,15 +14,15 @@
 #define A(...) FOREACH_CALL_FUNC(___LOG_EXPAND, __VA_ARGS__)
 
 #ifdef QT_DEBUG
-#define QV2RAY_IS_DEBUG true
+#define QV_IS_DEBUG true
 // __FILE__ ":" QT_STRINGIFY(__LINE__),
-#define QV2RAY_LOG_PREPEND_CONTENT Q_FUNC_INFO,
+#define QV_LOG_PREPEND_CONTENT Q_FUNC_INFO,
 #else
-#define QV2RAY_IS_DEBUG false
-#define QV2RAY_LOG_PREPEND_CONTENT
+#define QV_IS_DEBUG false
+#define QV_LOG_PREPEND_CONTENT
 #endif
 
-#define _LOG_ARG_(...) QV2RAY_LOG_PREPEND_CONTENT "[" QV_MODULE_NAME "]", __VA_ARGS__
+#define _LOG_ARG_(...) QV_LOG_PREPEND_CONTENT "[" QV_MODULE_NAME "]", __VA_ARGS__
 
 #define LOG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_NORMAL>(_LOG_ARG_(__VA_ARGS__))
 #define DEBUG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_DEBUG>(_LOG_ARG_(__VA_ARGS__))
