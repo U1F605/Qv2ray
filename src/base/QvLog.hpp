@@ -24,13 +24,13 @@
 
 #define _LOG_ARG_(...) QV_LOG_PREPEND_CONTENT "[" QV_MODULE_NAME "]", __VA_ARGS__
 
-#define LOG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_NORMAL>(_LOG_ARG_(__VA_ARGS__))
-#define DEBUG(...) Qvmessocket::base::log_internal<QV2RAY_LOG_DEBUG>(_LOG_ARG_(__VA_ARGS__))
+#define LOG(...) Qvmessocket::base::log_internal<QV_LOG_NORMAL>(_LOG_ARG_(__VA_ARGS__))
+#define DEBUG(...) Qvmessocket::base::log_internal<QV_LOG_DEBUG>(_LOG_ARG_(__VA_ARGS__))
 
 enum QvLogType
 {
-    QV2RAY_LOG_NORMAL = 0,
-    QV2RAY_LOG_DEBUG = 1
+    QV_LOG_NORMAL = 0,
+    QV_LOG_DEBUG = 1
 };
 
 Q_DECLARE_METATYPE(const char *)
