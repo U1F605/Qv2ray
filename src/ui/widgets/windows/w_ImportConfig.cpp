@@ -126,7 +126,7 @@ int ImportConfigWindow::PerformImportConnection()
     return count;
 }
 
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
 void ImportConfigWindow::on_qrFromScreenBtn_clicked()
 {
     bool hideQv2ray = hideQv2rayCB->isChecked();
