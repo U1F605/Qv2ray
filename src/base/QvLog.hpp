@@ -57,7 +57,7 @@ namespace Qvmessocket::base
         // We only process DEBUG log in Release mode
         // Prevent QvCoreApplication nullptr
         // TODO: Move log function inside QvCoreApplication
-        if (t == QV2RAY_LOG_DEBUG && QvCoreApplication && !QvCoreApplication->StartupArguments.debugLog)
+        if (t == QV_LOG_DEBUG && QvCoreApplication && !QvCoreApplication->StartupArguments.debugLog)
         {
             // Discard debug log in non-debug Qv2ray version with
             // no-debugLog mode.
