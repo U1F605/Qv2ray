@@ -11,4 +11,4 @@
 
 #define QVFEATURE_util_has_ntp                  1
 
-#define QV2RAY_FEATURE(feat) ((1 / QVFEATURE_##feat) == 1)
+#define QV_FEATURE(feat) ((1 / QVFEATURE_##feat) == 1)
