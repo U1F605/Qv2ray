@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#if QV2RAY_FEATURE(kernel_check_abi)
+#if QV_FEATURE(kernel_check_abi)
 
 namespace Qvmessocket::core::kernel::abi
 {
@@ -83,6 +83,6 @@ namespace Qvmessocket::core::kernel::abi
             default: return QObject::tr("unknown abi");
         }
     }
-} // namespace Qv2ray::core::kernel::abi
+}
 
 #endif

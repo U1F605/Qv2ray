@@ -755,7 +755,7 @@ void PreferencesWindow::on_checkVCoreSettings_clicked()
     auto vcorePath = vCorePathTxt->text();
     auto vAssetsPath = vCoreAssetsPathTxt->text();
 
-#if QV2RAY_FEATURE(kernel_check_filename)
+#if QV_FEATURE(kernel_check_filename)
     // prevent some bullshit situations.
     if (const auto vCorePathSmallCased = vcorePath.toLower(); vCorePathSmallCased.endsWith("qv2ray") || vCorePathSmallCased.endsWith("qv2ray.exe"))
     {
@@ -777,7 +777,7 @@ void PreferencesWindow::on_checkVCoreSettings_clicked()
     {
         QvMessageBoxWarn(this, tr("V2Ray Core Settings"), *msg);
     }
-#if QV2RAY_FEATURE(kernel_check_output)
+#if QV_FEATURE(kernel_check_output)
     else if (!msg->toLower().contains("v2ray") && !msg->toLower().contains("xray"))
     {
         const auto content = tr("This does not seem like an output from V2Ray Core.") + NEWLINE +                         //
@@ -1118,7 +1118,7 @@ void PreferencesWindow::on_socksOverrideTLSCB_stateChanged(int arg1)
 
 void PreferencesWindow::on_pushButton_clicked()
 {
-#if QV2RAY_FEATURE(util_has_ntp)
+#if QV_FEATURE(util_has_ntp)
     const auto ntpTitle = tr("NTP Checker");
     const auto ntpHint = tr("Check date and time from server:");
     const static QStringList ntpServerList = { "cn.pool.ntp.org",      "cn.ntp.org.cn",           "edu.ntp.org.cn",

@@ -24,7 +24,7 @@ void MainWindow::MWToggleVisibility()
 
 void MainWindow::MWShowWindow()
 {
-#if QV2RAY_FEATURE(ui_has_store_state)
+#if QV_FEATURE(ui_has_store_state)
     RestoreState();
 #endif
     this->show();
@@ -39,7 +39,7 @@ void MainWindow::MWShowWindow()
 
 void MainWindow::MWHideWindow()
 {
-#if QV2RAY_FEATURE(ui_has_store_state)
+#if QV_FEATURE(ui_has_store_state)
     SaveState();
 #endif
     this->hide();

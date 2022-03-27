@@ -17,7 +17,7 @@
 
 #include "QvNTPClient.hpp"
 
-#if QV2RAY_FEATURE(util_has_ntp)
+#if QV_FEATURE(util_has_ntp)
 #include <cmath>
 
 namespace Qvmessocket::components::ntp

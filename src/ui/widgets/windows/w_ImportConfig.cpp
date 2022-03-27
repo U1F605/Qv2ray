@@ -15,7 +15,7 @@
 namespace
 {
     constexpr auto LINK_PAGE = 0;
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
     constexpr auto QRCODE_PAGE = 1;
     constexpr auto ADVANCED_PAGE = 2;
 #else
@@ -42,7 +42,7 @@ ImportConfigWindow::ImportConfigWindow(QWidget *parent) : QvDialog("ImportWindow
             defaultItemIndex = groupCombo->count() - 1;
     }
     groupCombo->setCurrentIndex(defaultItemIndex);
-#if !QV2RAY_FEATURE(ui_has_import_qrcode)
+#if !QV_FEATURE(ui_has_import_qrcode)
     qrCodeTab->setVisible(false);
     tabWidget->removeTab(1);
 #endif
@@ -126,7 +126,7 @@ int ImportConfigWindow::PerformImportConnection()
     return count;
 }
 
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
 void ImportConfigWindow::on_qrFromScreenBtn_clicked()
 {
     bool hideQv2ray = hideQv2rayCB->isChecked();
@@ -261,7 +261,7 @@ void ImportConfigWindow::on_beginImportBtn_clicked()
 
             break;
         }
-#if QV2RAY_FEATURE(ui_has_import_qrcode)
+#if QV_FEATURE(ui_has_import_qrcode)
         case QRCODE_PAGE:
         {
             QString errorMsg;

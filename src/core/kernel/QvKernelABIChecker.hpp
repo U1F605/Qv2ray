@@ -2,7 +2,7 @@
 
 #include "base/QvFeatures.hpp"
 
-#if QV2RAY_FEATURE(kernel_check_abi)
+#if QV_FEATURE(kernel_check_abi)
 
 #include <QDataStream>
 #include <QFile>
@@ -54,7 +54,7 @@ namespace Qvmessocket::core::kernel
         std::pair<std::optional<QvKernelABIType>, std::optional<QString>> deduceKernelABI(const QString &pathCoreExecutable);
         QvKernelABICompatibility checkCompatibility(QvKernelABIType hostType, QvKernelABIType targetType);
         QString abiToString(QvKernelABIType abi);
-    } // namespace abi
-} // namespace Qv2ray::core::kernel
+    }
+}
 
 #endif
