@@ -171,10 +171,6 @@ namespace Qvmessocket
 #define _VARNAME_VCOREPATH_ kernelConfig["v2CorePath_linux"]
 #define _VARNAME_VASSETSPATH_ kernelConfig["v2AssetsPath_linux"]
                 UPGRADELOG("Update kernel and assets paths for linux");
-#elif defined(Q_OS_MACOS)
-#define _VARNAME_VCOREPATH_ kernelConfig["v2CorePath_macx"]
-#define _VARNAME_VASSETSPATH_ kernelConfig["v2AssetsPath_macx"]
-                UPGRADELOG("Update kernel and assets paths for macOS");
 #elif defined(Q_OS_WIN)
 #define _VARNAME_VCOREPATH_ kernelConfig["v2CorePath_win"]
 #define _VARNAME_VASSETSPATH_ kernelConfig["v2AssetsPath_win"]
