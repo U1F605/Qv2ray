@@ -337,9 +337,9 @@ namespace Qvmessocket::base::objects
         transfer::QuicObject quicSettings;
         transfer::gRPCObject grpcSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
-                           tcpSettings, tlsSettings, xtlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings)
+                           tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
-                            F(tcpSettings, tlsSettings, xtlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings))
+                            F(tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings))
     };
 
     struct FakeDNSObject
