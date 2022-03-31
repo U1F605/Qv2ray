@@ -197,11 +197,6 @@ namespace Qvmessocket::core::connection
                 if (!stream.tlsSettings.serverName.isEmpty())
                     query.addQueryItem("tlsServerName", stream.tlsSettings.serverName);
             }
-            else if (stream.security == "xtls")
-            {
-                if (!stream.xtlsSettings.serverName.isEmpty())
-                    query.addQueryItem("tlsServerName", stream.xtlsSettings.serverName);
-            }
             url.setPath("/");
             url.setScheme("vmess");
             url.setPassword(server.users.first().id + "-" + QSTRN(server.users.first().alterId));
@@ -211,5 +206,5 @@ namespace Qvmessocket::core::connection
             url.setQuery(query);
             return url.toString();
         }
-    } // namespace serialization::vmess_new
-} // namespace Qv2ray::core::connection
+    }
+}
