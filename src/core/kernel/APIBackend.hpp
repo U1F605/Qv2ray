@@ -1,6 +1,6 @@
 #pragma once
 #include "base/QvBase.hpp"
-#include "v2ray_api.grpc.pb.h"
+#include "api.grpc.pb.h"
 
 #include <grpc++/grpc++.h>
 
