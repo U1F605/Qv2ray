@@ -23,12 +23,12 @@ else()
     set(QVMESSOCKET_BACKEND_LIBRARY gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts)
 endif()
 
-set(API_PROTO "${CMAKE_SOURCE_DIR}/assets/v2ray_api.proto")
+set(API_PROTO "${CMAKE_SOURCE_DIR}/assets/api.proto")
 set(API_PROTO_PATH "${CMAKE_SOURCE_DIR}/assets")
-set(API_PROTO_SRCS "${CMAKE_CURRENT_BINARY_DIR}/v2ray_api.pb.cc")
-set(API_PROTO_HDRS "${CMAKE_CURRENT_BINARY_DIR}/v2ray_api.pb.h")
-set(API_GRPC_SRCS "${CMAKE_CURRENT_BINARY_DIR}/v2ray_api.grpc.pb.cc")
-set(API_GRPC_HDRS "${CMAKE_CURRENT_BINARY_DIR}/v2ray_api.grpc.pb.h")
+set(API_PROTO_SRCS "${CMAKE_CURRENT_BINARY_DIR}/api.pb.cc")
+set(API_PROTO_HDRS "${CMAKE_CURRENT_BINARY_DIR}/vapi.pb.h")
+set(API_GRPC_SRCS "${CMAKE_CURRENT_BINARY_DIR}/api.grpc.pb.cc")
+set(API_GRPC_HDRS "${CMAKE_CURRENT_BINARY_DIR}/api.grpc.pb.h")
 add_custom_command(
     OUTPUT "${API_GRPC_SRCS}" "${API_GRPC_HDRS}" "${API_PROTO_HDRS}" "${API_PROTO_SRCS}"
     COMMAND ${Protobuf_PROTOC_EXECUTABLE}
