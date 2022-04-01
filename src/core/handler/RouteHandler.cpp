@@ -209,7 +209,6 @@ namespace Qvmessocket::core::handler
         //
         const auto &connConf = config.overrideConnectionConfig ? config.connectionConfig : GlobalConfig.defaultRouteConfig.connectionConfig;
         const auto &dnsConf = config.overrideDNS ? config.dnsConfig : GlobalConfig.defaultRouteConfig.dnsConfig;
-        const auto &fakeDNSConf = config.overrideDNS ? config.fakeDNSConfig : GlobalConfig.defaultRouteConfig.fakeDNSConfig;
         const auto &routeConf = config.overrideRoute ? config.routeConfig : GlobalConfig.defaultRouteConfig.routeConfig;
         const auto &fpConf = config.overrideForwardProxyConfig ? config.forwardProxyConfig : GlobalConfig.defaultRouteConfig.forwardProxyConfig;
         const auto &browserForwardingConf = GlobalConfig.inboundConfig.browserForwarderSettings;
