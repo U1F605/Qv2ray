@@ -38,7 +38,6 @@ namespace Qvmessocket::core::handler
     {
         configs[id].overrideDNS = overrideGlobal;
         configs[id].dnsConfig = dns;
-        configs[id].fakeDNSConfig = fakeDNS;
         return true;
     }
 
