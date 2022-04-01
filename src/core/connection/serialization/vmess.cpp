@@ -29,10 +29,6 @@ namespace Qvmessocket::core::connection
             {
                 vmessUriRoot["sni"] = transfer.tlsSettings.serverName;
             }
-            else if (transfer.security == "xtls")
-            {
-                vmessUriRoot["sni"] = transfer.xtlsSettings.serverName;
-            }
 
             if (transfer.network == "tcp")
             {

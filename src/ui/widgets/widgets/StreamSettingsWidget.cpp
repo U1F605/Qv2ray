@@ -52,8 +52,6 @@ void StreamSettingsWidget::SetStreamObject(const StreamSettingsObject &sso)
 
         tls_xtls_process(tls);
 
-        if (stream.security == "xtls")
-            tls_xtls_process(xtls);
     }
     // TCP
     {
@@ -296,36 +294,30 @@ void StreamSettingsWidget::on_securityTypeCB_currentIndexChanged(int arg1)
 void StreamSettingsWidget::on_serverNameTxt_textEdited(const QString &arg1)
 {
     stream.tlsSettings.serverName = arg1.trimmed();
-    stream.xtlsSettings.serverName = arg1.trimmed();
 }
 
 void StreamSettingsWidget::on_allowInsecureCB_stateChanged(int arg1)
 {
     stream.tlsSettings.allowInsecure = arg1 == Qt::Checked;
-    stream.xtlsSettings.allowInsecure = arg1 == Qt::Checked;
 }
 
 void StreamSettingsWidget::on_enableSessionResumptionCB_stateChanged(int arg1)
 {
     stream.tlsSettings.enableSessionResumption = arg1 == Qt::Checked;
-    stream.xtlsSettings.enableSessionResumption = arg1 == Qt::Checked;
 }
 
 void StreamSettingsWidget::on_alpnTxt_textEdited(const QString &arg1)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     stream.tlsSettings.alpn = arg1.split('|', Qt::SplitBehaviorFlags::SkipEmptyParts);
-    stream.xtlsSettings.alpn = arg1.split('|', Qt::SplitBehaviorFlags::SkipEmptyParts);
 #else
     stream.tlsSettings.alpn = arg1.split('|', QString::SkipEmptyParts);
-    stream.xtlsSettings.alpn = arg1.split('|', QString::SkipEmptyParts);
 #endif
 }
 
 void StreamSettingsWidget::on_disableSystemRoot_stateChanged(int arg1)
 {
     stream.tlsSettings.disableSystemRoot = arg1;
-    stream.xtlsSettings.disableSystemRoot = arg1;
 }
 
 void StreamSettingsWidget::on_openCertEditorBtn_clicked()
