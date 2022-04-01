@@ -21,7 +21,7 @@ namespace Qvmessocket::core::handler
             return { configs[id].overrideRoute, configs[id].routeConfig };
         }
         //
-        bool SetDNSSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_DNS &dns, const QvConfig_FakeDNS &fakeDNS);
+        bool SetDNSSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_DNS &dns);
         bool SetAdvancedRouteSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_Route &dns);
         //
         OUTBOUNDS ExpandExternalConnection(const OUTBOUNDS &outbounds) const;
