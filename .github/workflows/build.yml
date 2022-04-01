@@ -31,7 +31,7 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run:  grep -rni "fakedns"
+        run:  grep -rni "GetDNSObject"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
