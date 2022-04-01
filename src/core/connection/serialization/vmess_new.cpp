@@ -99,11 +99,6 @@ namespace Qvmessocket::core::connection
                     stream.wsSettings.headers["Host"] = getQueryValue("host", "");
                     stream.wsSettings.path = getQueryValue("path", "/");
                 }
-                else if (net == "kcp")
-                {
-                    stream.kcpSettings.seed = getQueryValue("seed", "");
-                    stream.kcpSettings.header.type = getQueryValue("type", "none");
-                }
                 else if (net == "grpc")
                 {
                     stream.grpcSettings.serviceName = getQueryValue("serviceName", "");
@@ -156,13 +151,6 @@ namespace Qvmessocket::core::connection
                     query.addQueryItem("host", stream.wsSettings.headers["Host"]);
                 if (!stream.wsSettings.path.isEmpty() && stream.wsSettings.path != "/")
                     query.addQueryItem("path", stream.wsSettings.path);
-            }
-            else if (stream.network == "kcp")
-            {
-                if (!stream.kcpSettings.seed.isEmpty() && stream.kcpSettings.seed != "")
-                    query.addQueryItem("seed", stream.kcpSettings.seed);
-                if (!stream.kcpSettings.header.type.isEmpty() && stream.kcpSettings.header.type != "none")
-                    query.addQueryItem("type", stream.kcpSettings.header.type);
             }
             else if (stream.network == "grpc")
             {
