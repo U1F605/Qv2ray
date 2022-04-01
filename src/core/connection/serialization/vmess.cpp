@@ -38,12 +38,6 @@ namespace Qvmessocket::core::connection
             {
                 vmessUriRoot["type"] = transfer.kcpSettings.header.type;
             }
-            else if (transfer.network == "quic")
-            {
-                vmessUriRoot["type"] = transfer.quicSettings.header.type;
-                vmessUriRoot["host"] = transfer.quicSettings.security;
-                vmessUriRoot["path"] = transfer.quicSettings.key;
-            }
             else if (transfer.network == "ws")
             {
                 auto x = transfer.wsSettings.headers;
@@ -271,12 +265,6 @@ namespace Qvmessocket::core::connection
             {
                 streaming.kcpSettings.header.type = type;
             }
-            else if (net == "quic")
-            {
-                streaming.quicSettings.security = host;
-                streaming.quicSettings.header.type = type;
-                streaming.quicSettings.key = path;
-            }
             else if (net == "grpc")
             {
                 streaming.grpcSettings.serviceName = path;
@@ -307,5 +295,5 @@ namespace Qvmessocket::core::connection
             return root;
 #undef default
         }
-    } // namespace serialization::vmess
-} // namespace Qv2ray::core::connection
+    }
+}
