@@ -34,10 +34,6 @@ namespace Qvmessocket::core::connection
             {
                 vmessUriRoot["type"] = transfer.tcpSettings.header.type;
             }
-            else if (transfer.network == "kcp")
-            {
-                vmessUriRoot["type"] = transfer.kcpSettings.header.type;
-            }
             else if (transfer.network == "ws")
             {
                 auto x = transfer.wsSettings.headers;
@@ -260,10 +256,6 @@ namespace Qvmessocket::core::connection
                 if (!host.isEmpty())
                     streaming.wsSettings.headers["Host"] = host;
                 streaming.wsSettings.path = path;
-            }
-            else if (net == "kcp")
-            {
-                streaming.kcpSettings.header.type = type;
             }
             else if (net == "grpc")
             {
