@@ -33,8 +33,8 @@ set(QT_QRENCODE_SOURCES
 
 find_package(${QV_QT_LIBNAME} COMPONENTS Core Gui Svg REQUIRED)
 
-set(QVMESSOCKET_QRENCODE_LIBRARY qv2ray_qrencode)
-add_library(qv2ray_qrencode STATIC ${QT_QRENCODE_SOURCES})
+set(QVMESSOCKET_QRENCODE_LIBRARY qvmessocket_qrencode)
+add_library(qvmessocket_qrencode STATIC ${QT_QRENCODE_SOURCES})
 target_compile_definitions(${QVMESSOCKET_QRENCODE_LIBRARY} PRIVATE
     -D__STATIC=static
     -DMAJOR_VERSION=3
