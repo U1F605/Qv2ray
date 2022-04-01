@@ -79,18 +79,6 @@ void StreamSettingsWidget::SetStreamObject(const StreamSettingsObject &sso)
         wsBrowserForwardCB->setChecked(stream.wsSettings.useBrowserForwarding);
         wsEarlyDataHeaderNameCB->setCurrentText(stream.wsSettings.earlyDataHeaderName);
     }
-    // mKCP
-    {
-        kcpMTU->setValue(stream.kcpSettings.mtu);
-        kcpTTI->setValue(stream.kcpSettings.tti);
-        kcpHeaderType->setCurrentText(stream.kcpSettings.header.type);
-        kcpCongestionCB->setChecked(stream.kcpSettings.congestion);
-        kcpReadBufferSB->setValue(stream.kcpSettings.readBufferSize);
-        kcpUploadCapacSB->setValue(stream.kcpSettings.uplinkCapacity);
-        kcpDownCapacitySB->setValue(stream.kcpSettings.downlinkCapacity);
-        kcpWriteBufferSB->setValue(stream.kcpSettings.writeBufferSize);
-        kcpSeedTxt->setText(stream.kcpSettings.seed);
-    }
     // DS
     {
         dsPathTxt->setText(stream.dsSettings.path);
@@ -186,51 +174,6 @@ void StreamSettingsWidget::on_tcpHeaderTypeCB_currentIndexChanged(int arg1)
 void StreamSettingsWidget::on_wsPathTxt_textEdited(const QString &arg1)
 {
     stream.wsSettings.path = arg1;
-}
-
-void StreamSettingsWidget::on_kcpMTU_valueChanged(int arg1)
-{
-    stream.kcpSettings.mtu = arg1;
-}
-
-void StreamSettingsWidget::on_kcpTTI_valueChanged(int arg1)
-{
-    stream.kcpSettings.tti = arg1;
-}
-
-void StreamSettingsWidget::on_kcpUploadCapacSB_valueChanged(int arg1)
-{
-    stream.kcpSettings.uplinkCapacity = arg1;
-}
-
-void StreamSettingsWidget::on_kcpCongestionCB_stateChanged(int arg1)
-{
-    stream.kcpSettings.congestion = arg1 == Qt::Checked;
-}
-
-void StreamSettingsWidget::on_kcpDownCapacitySB_valueChanged(int arg1)
-{
-    stream.kcpSettings.downlinkCapacity = arg1;
-}
-
-void StreamSettingsWidget::on_kcpReadBufferSB_valueChanged(int arg1)
-{
-    stream.kcpSettings.readBufferSize = arg1;
-}
-
-void StreamSettingsWidget::on_kcpWriteBufferSB_valueChanged(int arg1)
-{
-    stream.kcpSettings.writeBufferSize = arg1;
-}
-
-void StreamSettingsWidget::on_kcpHeaderType_currentIndexChanged(int arg1)
-{
-    stream.kcpSettings.header.type = kcpHeaderType->itemText(arg1);
-}
-
-void StreamSettingsWidget::on_kcpSeedTxt_textEdited(const QString &arg1)
-{
-    stream.kcpSettings.seed = arg1;
 }
 
 void StreamSettingsWidget::on_dsPathTxt_textEdited(const QString &arg1)
