@@ -34,7 +34,7 @@ namespace Qvmessocket::core::handler
         StringToFile(JsonToString(routingObject), QV2RAY_CONFIG_DIR + "routes.json");
     }
 
-    bool RouteHandler::SetDNSSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_DNS &dns, const QvConfig_FakeDNS &fakeDNS)
+    bool RouteHandler::SetDNSSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_DNS &dns)
     {
         configs[id].overrideDNS = overrideGlobal;
         configs[id].dnsConfig = dns;
