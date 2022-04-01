@@ -12,9 +12,9 @@ namespace Qvmessocket::core::handler
         ~RouteHandler();
         void SaveRoutes() const;
         //
-        std::tuple<bool, QvConfig_DNS, QvConfig_FakeDNS> GetDNSSettings(const GroupRoutingId &id) const
+        std::tuple<bool, QvConfig_DNS> GetDNSSettings(const GroupRoutingId &id) const
         {
-            return { configs[id].overrideDNS, configs[id].dnsConfig, configs[id].fakeDNSConfig };
+            return { configs[id].overrideDNS, configs[id].dnsConfig };
         }
         std::pair<bool, QvConfig_Route> GetAdvancedRoutingSettings(const GroupRoutingId &id) const
         {
@@ -36,4 +36,4 @@ namespace Qvmessocket::core::handler
         QHash<GroupRoutingId, GroupRoutingConfig> configs;
     };
     inline ::Qvmessocket::core::handler::RouteHandler *RouteManager = nullptr;
-} // namespace Qv2ray::core::handler
+}
