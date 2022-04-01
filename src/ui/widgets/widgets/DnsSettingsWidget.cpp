@@ -74,10 +74,9 @@ QvMessageBusSlotImpl(DnsSettingsWidget)
     }
 }
 
-void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns, const FakeDNSObject &_fakeDNS)
+void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns)
 {
     this->dns = _dns;
-    this->fakeDNS = _fakeDNS;
 
     dnsClientIPTxt->setText(dns.clientIp);
     dnsTagTxt->setText(dns.tag);
@@ -105,8 +104,6 @@ void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns, const FakeDNSObject 
     dnsDisableFallbackCB->setChecked(dns.disableFallback);
     dnsDisableCacheCB->setChecked(dns.disableCache);
 
-    fakeDNSIPPool->setCurrentText(fakeDNS.ipPool);
-    fakeDNSIPPoolSize->setValue(fakeDNS.poolSize);
     UPDATE_UI_ENABLED_STATE
 }
 
@@ -290,16 +287,6 @@ void DnsSettingsWidget::on_detailsSettingsGB_toggled(bool arg1)
     if (currentServerIndex >= 0)
         dns.servers[currentServerIndex].QVMESSOCKET_DNS_IS_COMPLEX_DNS = arg1;
     // detailsSettingsGB->setChecked(dns.servers[currentServerIndex].QV2RAY_DNS_IS_COMPLEX_DNS);
-}
-
-void DnsSettingsWidget::on_fakeDNSIPPool_currentTextChanged(const QString &arg1)
-{
-    fakeDNS.ipPool = arg1;
-}
-
-void DnsSettingsWidget::on_fakeDNSIPPoolSize_valueChanged(int arg1)
-{
-    fakeDNS.poolSize = arg1;
 }
 
 void DnsSettingsWidget::on_dnsDisableCacheCB_stateChanged(int arg1)
