@@ -293,9 +293,8 @@ CONFIGROOT RouteEditor::OpenEditor()
     }
     root["outbounds"] = outboundsArray;
     // Process DNS
-    const auto &[dns, fakedns] = dnsWidget->GetDNSObject();
+    const auto &[dns] = dnsWidget->GetDNSObject();
     root["dns"] = GenerateDNS(dns);
-    root["fakedns"] = fakedns.toJson();
     {
         // Process Browser Forwarder
         if (!bfListenIPTxt->text().trimmed().isEmpty())
