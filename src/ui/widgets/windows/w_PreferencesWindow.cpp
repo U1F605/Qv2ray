@@ -118,12 +118,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         httpSniffingMetadataOnly->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideHTTPCB->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideTLSCB->setEnabled(has_http && httpSettings.sniffing);
-        httpOverrideFakeDNSCB->setEnabled(has_http && httpSettings.sniffing);
-        httpOverrideFakeDNSOthersCB->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideHTTPCB->setChecked(httpSettings.destOverride.contains("http"));
         httpOverrideTLSCB->setChecked(httpSettings.destOverride.contains("tls"));
-        httpOverrideFakeDNSCB->setChecked(httpSettings.destOverride.contains("fakedns"));
-        httpOverrideFakeDNSOthersCB->setChecked(httpSettings.destOverride.contains("fakedns+others"));
         httpSniffingMetadataOnly->setChecked(httpSettings.metadataOnly);
     }
     {
@@ -146,12 +142,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         socksSniffingMetadataOnly->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideHTTPCB->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideTLSCB->setEnabled(has_socks && socksSettings.sniffing);
-        socksOverrideFakeDNSCB->setEnabled(has_socks && socksSettings.sniffing);
-        socksOverrideFakeDNSOthersCB->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideHTTPCB->setChecked(socksSettings.destOverride.contains("http"));
         socksOverrideTLSCB->setChecked(socksSettings.destOverride.contains("tls"));
-        socksOverrideFakeDNSCB->setChecked(socksSettings.destOverride.contains("fakedns"));
-        socksOverrideFakeDNSOthersCB->setChecked(socksSettings.destOverride.contains("fakedns+others"));
         socksSniffingMetadataOnly->setChecked(socksSettings.metadataOnly);
     }
     {
@@ -168,12 +160,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         tproxySniffingMetadataOnlyCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideHTTPCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideTLSCB->setEnabled(has_tproxy && tProxySettings.sniffing);
-        tproxyOverrideFakeDNSCB->setEnabled(has_tproxy && tProxySettings.sniffing);
-        tproxyOverrideFakeDNSOthersCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideHTTPCB->setChecked(tProxySettings.destOverride.contains("http"));
         tproxyOverrideTLSCB->setChecked(tProxySettings.destOverride.contains("tls"));
-        tproxyOverrideFakeDNSCB->setChecked(tProxySettings.destOverride.contains("fakedns"));
-        tproxyOverrideFakeDNSOthersCB->setChecked(tProxySettings.destOverride.contains("fakedns+others"));
         tproxySniffingMetadataOnlyCB->setChecked(tProxySettings.metadataOnly);
 
         tproxyMode->setCurrentText(tProxySettings.mode);
