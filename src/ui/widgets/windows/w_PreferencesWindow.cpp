@@ -388,7 +388,7 @@ void PreferencesWindow::on_buttonBox_accepted()
         {
             NEEDRESTART
         }
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
+        const auto &[dns] = dnsSettingsWidget->GetDNSObject();
         CurrentConfig.defaultRouteConfig.dnsConfig = dns;
         CurrentConfig.defaultRouteConfig.fakeDNSConfig = fakedns;
         if (!(CurrentConfig.defaultRouteConfig.dnsConfig == GlobalConfig.defaultRouteConfig.dnsConfig))
