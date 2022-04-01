@@ -149,7 +149,7 @@ void DnsSettingsWidget::ShowCurrentDnsServerDetails()
     ProcessDnsPortEnabledState();
 }
 
-std::pair<DNSObject, FakeDNSObject> DnsSettingsWidget::GetDNSObject()
+std::pair<DNSObject> DnsSettingsWidget::GetDNSObject()
 {
     dns.hosts.clear();
     for (auto i = 0; i < staticResolvedDomainsTable->rowCount(); i++)
@@ -159,7 +159,7 @@ std::pair<DNSObject, FakeDNSObject> DnsSettingsWidget::GetDNSObject()
         if (item1 && item2)
             dns.hosts[item1->text()] = item2->text();
     }
-    return { dns, fakeDNS };
+    return { dns };
 }
 
 void DnsSettingsWidget::on_dnsClientIPTxt_textEdited(const QString &arg1)
