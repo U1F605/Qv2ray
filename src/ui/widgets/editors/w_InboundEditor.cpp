@@ -231,17 +231,6 @@ void InboundEditor::on_sniffTLSCB_stateChanged(int)
     CHECKLOADING
     SET_SNIFF_DEST_OVERRIDE;
 }
-void InboundEditor::on_sniffFakeDNSOtherCB_stateChanged(int)
-{
-    CHECKLOADING
-    SET_SNIFF_DEST_OVERRIDE;
-}
-
-void InboundEditor::on_sniffFakeDNSCB_stateChanged(int)
-{
-    CHECKLOADING
-    SET_SNIFF_DEST_OVERRIDE;
-}
 
 void InboundEditor::on_stackedWidget_currentChanged(int)
 {
