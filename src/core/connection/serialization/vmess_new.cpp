@@ -104,12 +104,6 @@ namespace Qvmessocket::core::connection
                     stream.kcpSettings.seed = getQueryValue("seed", "");
                     stream.kcpSettings.header.type = getQueryValue("type", "none");
                 }
-                else if (net == "quic")
-                {
-                    stream.quicSettings.security = getQueryValue("security", "none");
-                    stream.quicSettings.key = getQueryValue("key", "");
-                    stream.quicSettings.header.type = getQueryValue("type", "none");
-                }
                 else if (net == "grpc")
                 {
                     stream.grpcSettings.serviceName = getQueryValue("serviceName", "");
@@ -169,15 +163,6 @@ namespace Qvmessocket::core::connection
                     query.addQueryItem("seed", stream.kcpSettings.seed);
                 if (!stream.kcpSettings.header.type.isEmpty() && stream.kcpSettings.header.type != "none")
                     query.addQueryItem("type", stream.kcpSettings.header.type);
-            }
-            else if (stream.network == "quic")
-            {
-                if (!stream.quicSettings.security.isEmpty() && stream.quicSettings.security != "none")
-                    query.addQueryItem("security", stream.quicSettings.security);
-                if (!stream.quicSettings.key.isEmpty())
-                    query.addQueryItem("key", stream.quicSettings.key);
-                if (!stream.quicSettings.header.type.isEmpty() && stream.quicSettings.header.type != "none")
-                    query.addQueryItem("headers", stream.quicSettings.header.type);
             }
             else if (stream.network == "grpc")
             {

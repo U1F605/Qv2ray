@@ -261,16 +261,6 @@ namespace Qvmessocket::base::objects
         };
         //
         //
-        struct QuicObject
-        {
-            QString security = "none";
-            QString key;
-            ObfsHeaderObject header;
-            JSONSTRUCT_COMPARE(QuicObject, security, key, header)
-            JSONSTRUCT_REGISTER(QuicObject, F(security, key, header))
-        };
-        //
-        //
         struct gRPCObject
         {
             QString serviceName;
@@ -334,12 +324,11 @@ namespace Qvmessocket::base::objects
         transfer::WebSocketObject wsSettings;
         transfer::HttpObject httpSettings;
         transfer::DomainSocketObject dsSettings;
-        transfer::QuicObject quicSettings;
         transfer::gRPCObject grpcSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
-                           tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings)
+                           tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, grpcSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
-                            F(tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, quicSettings, grpcSettings))
+                            F(tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, grpcSettings))
     };
 
     struct FakeDNSObject
