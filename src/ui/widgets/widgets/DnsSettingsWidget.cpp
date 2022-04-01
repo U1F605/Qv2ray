@@ -155,9 +155,6 @@ std::pair<DNSObject> DnsSettingsWidget::GetDNSObject()
     for (auto i = 0; i < staticResolvedDomainsTable->rowCount(); i++)
     {
         const auto &item1 = staticResolvedDomainsTable->item(i, 0);
-        const auto &item2 = staticResolvedDomainsTable->item(i, 1);
-        if (item1 && item2)
-            dns.hosts[item1->text()] = item2->text();
     }
     return { dns };
 }
