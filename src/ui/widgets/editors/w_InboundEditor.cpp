@@ -124,8 +124,6 @@ void InboundEditor::loadUI()
         const auto data = sniffingSettings["destOverride"].toArray();
         sniffHTTPCB->setChecked(data.contains("http"));
         sniffTLSCB->setChecked(data.contains("tls"));
-        sniffFakeDNSCB->setChecked(data.contains("fakedns"));
-        sniffFakeDNSOtherCB->setChecked(data.contains("fakedns+others"));
     }
     bool processed = false;
     const auto settings = current["settings"].toObject();
@@ -220,11 +218,7 @@ void InboundEditor::on_sniffMetaDataOnlyCB_clicked(bool checked)
         if (hasHTTP)                                                                                                                                 \
             list << "http";                                                                                                                          \
         if (hasTLS)                                                                                                                                  \
-            list << "tls";                                                                                                                           \
-        if (hasFakeDNS)                                                                                                                              \
-            list << "fakedns";                                                                                                                       \
-        if (hasFakeDNSOthers)                                                                                                                        \
-            list << "fakedns+others";                                                                                                                \
+            list << "tls";                                                                                                                           \                                                                                                               \
         sniffingSettings["destOverride"] = QJsonArray::fromStringList(list);                                                                         \
     } while (0)
 
