@@ -211,9 +211,7 @@ void InboundEditor::on_sniffMetaDataOnlyCB_clicked(bool checked)
     do                                                                                                                                               \
     {                                                                                                                                                \
         const auto hasHTTP = sniffHTTPCB->isChecked();                                                                                               \
-        const auto hasTLS = sniffTLSCB->isChecked();                                                                                                 \
-        const auto hasFakeDNS = sniffFakeDNSCB->isChecked();                                                                                         \
-        const auto hasFakeDNSOthers = sniffFakeDNSOtherCB->isChecked();                                                                              \
+        const auto hasTLS = sniffTLSCB->isChecked();                                                                                                 \                                                                             \
         QStringList list;                                                                                                                            \
         if (hasHTTP)                                                                                                                                 \
             list << "http";                                                                                                                          \
