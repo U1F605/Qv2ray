@@ -197,14 +197,6 @@ namespace Qvmessocket::base::objects
         };
         //
         //
-        struct ObfsHeaderObject
-        {
-            QString type = "none";
-            JSONSTRUCT_COMPARE(ObfsHeaderObject, type)
-            JSONSTRUCT_REGISTER(ObfsHeaderObject, F(type))
-        };
-        //
-        //
         struct TCPObject
         {
             TCPHeader_Internal header;
