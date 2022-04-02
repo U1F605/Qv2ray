@@ -287,7 +287,6 @@ namespace Qvmessocket::base::objects
         transfer::TCPObject tcpSettings;
         transfer::WebSocketObject wsSettings;
         transfer::HttpObject httpSettings;
-        transfer::DomainSocketObject dsSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
                            tcpSettings, tlsSettings, wsSettings, httpSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
