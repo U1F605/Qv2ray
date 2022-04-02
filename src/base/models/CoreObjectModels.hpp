@@ -213,23 +213,6 @@ namespace Qvmessocket::base::objects
         };
         //
         //
-        struct KCPObject
-        {
-            int mtu = 1350;
-            int tti = 50;
-            int uplinkCapacity = 5;
-            int downlinkCapacity = 20;
-            bool congestion = false;
-            int readBufferSize = 2;
-            int writeBufferSize = 2;
-            QString seed;
-            ObfsHeaderObject header;
-            KCPObject(){};
-            JSONSTRUCT_COMPARE(KCPObject, mtu, tti, uplinkCapacity, downlinkCapacity, congestion, readBufferSize, writeBufferSize, seed, header)
-            JSONSTRUCT_REGISTER(KCPObject, F(mtu, tti, uplinkCapacity, downlinkCapacity, congestion, readBufferSize, writeBufferSize, header, seed))
-        };
-        //
-        //
         struct WebSocketObject
         {
             QString path = "/";
@@ -320,15 +303,14 @@ namespace Qvmessocket::base::objects
         transfer::SockoptObject sockopt;
         transfer::TLSObject tlsSettings;
         transfer::TCPObject tcpSettings;
-        transfer::KCPObject kcpSettings;
         transfer::WebSocketObject wsSettings;
         transfer::HttpObject httpSettings;
         transfer::DomainSocketObject dsSettings;
         transfer::gRPCObject grpcSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
-                           tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, grpcSettings)
+                           tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings, grpcSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
-                            F(tcpSettings, tlsSettings, kcpSettings, wsSettings, httpSettings, dsSettings, grpcSettings))
+                            F(tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings, grpcSettings))
     };
 
     struct FakeDNSObject

@@ -30,17 +30,6 @@ class StreamSettingsWidget
     void on_httpHeadersEditBtn_clicked();
     void on_httpHeadersDefBtn_clicked();
 
-    // KCP
-    void on_kcpCongestionCB_stateChanged(int arg1);
-    void on_kcpDownCapacitySB_valueChanged(int arg1);
-    void on_kcpHeaderType_currentIndexChanged(int arg1);
-    void on_kcpMTU_valueChanged(int arg1);
-    void on_kcpReadBufferSB_valueChanged(int arg1);
-    void on_kcpSeedTxt_textEdited(const QString &arg1);
-    void on_kcpTTI_valueChanged(int arg1);
-    void on_kcpUploadCapacSB_valueChanged(int arg1);
-    void on_kcpWriteBufferSB_valueChanged(int arg1);
-
     // TLS/XTLS
     void on_allowInsecureCB_stateChanged(int arg1);
     void on_alpnTxt_textEdited(const QString &arg1);
