@@ -236,16 +236,6 @@ namespace Qvmessocket::base::objects
         };
         //
         //
-        struct gRPCObject
-        {
-            QString serviceName;
-            bool multiMode = false;
-            JSONSTRUCT_COMPARE(gRPCObject, serviceName, multiMode)
-            JSONSTRUCT_REGISTER(gRPCObject, F(serviceName, multiMode))
-        };
-
-        //
-        //
         struct SockoptObject
         {
             int mark = 0;
@@ -299,9 +289,9 @@ namespace Qvmessocket::base::objects
         transfer::HttpObject httpSettings;
         transfer::DomainSocketObject dsSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
-                           tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings)
+                           tcpSettings, tlsSettings, wsSettings, httpSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
-                            F(tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings))
+                            F(tcpSettings, tlsSettings, wsSettings, httpSettings))
     };
 
     struct FakeDNSObject
