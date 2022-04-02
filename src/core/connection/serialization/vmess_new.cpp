@@ -99,10 +99,6 @@ namespace Qvmessocket::core::connection
                     stream.wsSettings.headers["Host"] = getQueryValue("host", "");
                     stream.wsSettings.path = getQueryValue("path", "/");
                 }
-                else if (net == "grpc")
-                {
-                    stream.grpcSettings.serviceName = getQueryValue("serviceName", "");
-                }
                 else
                 {
                     *errMessage = QObject::tr("Unknown transport method: ") + net;
@@ -151,11 +147,6 @@ namespace Qvmessocket::core::connection
                     query.addQueryItem("host", stream.wsSettings.headers["Host"]);
                 if (!stream.wsSettings.path.isEmpty() && stream.wsSettings.path != "/")
                     query.addQueryItem("path", stream.wsSettings.path);
-            }
-            else if (stream.network == "grpc")
-            {
-                if (!stream.grpcSettings.serviceName.isEmpty())
-                    query.addQueryItem("serviceName", stream.grpcSettings.serviceName);
             }
             else
             {

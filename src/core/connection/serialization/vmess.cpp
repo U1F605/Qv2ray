@@ -49,11 +49,6 @@ namespace Qvmessocket::core::connection
                 vmessUriRoot["host"] = transfer.httpSettings.host.join(",");
                 vmessUriRoot["path"] = transfer.httpSettings.path;
             }
-            else if (transfer.network == "grpc")
-            {
-                vmessUriRoot["path"] = transfer.grpcSettings.serviceName;
-            }
-
             if (!vmessUriRoot.contains("type") || vmessUriRoot["type"].toString().isEmpty())
             {
                 vmessUriRoot["type"] = "none";
@@ -257,11 +252,6 @@ namespace Qvmessocket::core::connection
                     streaming.wsSettings.headers["Host"] = host;
                 streaming.wsSettings.path = path;
             }
-            else if (net == "grpc")
-            {
-                streaming.grpcSettings.serviceName = path;
-            }
-
             streaming.security = tls;
             if (tls == "tls")
             {
