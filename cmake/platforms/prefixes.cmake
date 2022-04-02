@@ -13,12 +13,7 @@ message("CMAKE_PROGRAM_PATH=${CMAKE_PROGRAM_PATH}")
 
 # From vcpkg
 # If CMake does not have a mapping for MinSizeRel and RelWithDebInfo in imported targets
-# it will map those configuration to the first valid configuration in CMAKE_CONFIGURATION_TYPES or the targets IMPORTED_CONFIGURATIONS.
-# In most cases this is the debug configuration which is wrong.
-if(NOT DEFINED CMAKE_MAP_IMPORTED_CONFIG_MINSIZEREL)
-    set(CMAKE_MAP_IMPORTED_CONFIG_MINSIZEREL "MinSizeRel;Release;")
-    message(STATUS "CMAKE_MAP_IMPORTED_CONFIG_MINSIZEREL set to MinSizeRel;Release;")
-endif()
+# it will map those configuration to the f
 if(NOT DEFINED CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO)
     set(CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO "RelWithDebInfo;Release;")
     message(STATUS "CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO set to RelWithDebInfo;Release;")
