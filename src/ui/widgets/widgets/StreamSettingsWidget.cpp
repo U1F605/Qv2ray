@@ -232,16 +232,6 @@ void StreamSettingsWidget::on_openCertEditorBtn_clicked()
 {
 }
 
-void StreamSettingsWidget::on_grpcServiceNameTxt_textEdited(const QString &arg1)
-{
-    stream.grpcSettings.serviceName = arg1;
-}
-
-void StreamSettingsWidget::on_grpcModeCB_currentIndexChanged(int arg1)
-{
-    stream.grpcSettings.multiMode = grpcModeCB->itemText(arg1).toLower() == "multi";
-}
-
 void StreamSettingsWidget::on_wsEarlyDataSB_valueChanged(int arg1)
 {
     stream.wsSettings.maxEarlyData = arg1;
