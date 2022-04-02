@@ -11,14 +11,6 @@ list(APPEND CMAKE_PROGRAM_PATH
 
 message("CMAKE_PROGRAM_PATH=${CMAKE_PROGRAM_PATH}")
 
-# From vcpkg
-# If CMake does not have a mapping for MinSizeRel and RelWithDebInfo in imported targets
-# it will map those configuration to the f
-if(NOT DEFINED CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO)
-    set(CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO "RelWithDebInfo;Release;")
-    message(STATUS "CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO set to RelWithDebInfo;Release;")
-endif()
-
 QVLOG(QVMESSOCKET_PLATFORM_LIBS_PREFIX)
 
 if(NOT DEFINED QV2RAY_PLATFORM_LIBS_NO_DEBUG_SUBDIR)
