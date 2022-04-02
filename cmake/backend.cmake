@@ -26,7 +26,7 @@ endif()
 set(API_PROTO "${CMAKE_SOURCE_DIR}/assets/api.proto")
 set(API_PROTO_PATH "${CMAKE_SOURCE_DIR}/assets")
 set(API_PROTO_SRCS "${CMAKE_CURRENT_BINARY_DIR}/api.pb.cc")
-set(API_PROTO_HDRS "${CMAKE_CURRENT_BINARY_DIR}/vapi.pb.h")
+set(API_PROTO_HDRS "${CMAKE_CURRENT_BINARY_DIR}/api.pb.h")
 set(API_GRPC_SRCS "${CMAKE_CURRENT_BINARY_DIR}/api.grpc.pb.cc")
 set(API_GRPC_HDRS "${CMAKE_CURRENT_BINARY_DIR}/api.grpc.pb.h")
 add_custom_command(
