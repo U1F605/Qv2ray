@@ -79,15 +79,6 @@ void StreamSettingsWidget::SetStreamObject(const StreamSettingsObject &sso)
         wsBrowserForwardCB->setChecked(stream.wsSettings.useBrowserForwarding);
         wsEarlyDataHeaderNameCB->setCurrentText(stream.wsSettings.earlyDataHeaderName);
     }
-    // DS
-    {
-        dsPathTxt->setText(stream.dsSettings.path);
-    }
-    // gRPC
-    {
-        grpcServiceNameTxt->setText(stream.grpcSettings.serviceName);
-        grpcModeCB->setCurrentText(stream.grpcSettings.multiMode ? "multi" : "gun");
-    }
     // SOCKOPT
     {
         tProxyCB->setCurrentText(stream.sockopt.tproxy);
@@ -174,11 +165,6 @@ void StreamSettingsWidget::on_tcpHeaderTypeCB_currentIndexChanged(int arg1)
 void StreamSettingsWidget::on_wsPathTxt_textEdited(const QString &arg1)
 {
     stream.wsSettings.path = arg1;
-}
-
-void StreamSettingsWidget::on_dsPathTxt_textEdited(const QString &arg1)
-{
-    stream.dsSettings.path = arg1;
 }
 
 void StreamSettingsWidget::on_tcpRequestEditBtn_clicked()
