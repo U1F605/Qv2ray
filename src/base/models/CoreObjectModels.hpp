@@ -236,14 +236,6 @@ namespace Qvmessocket::base::objects
         };
         //
         //
-        struct DomainSocketObject
-        {
-            QString path = "/";
-            JSONSTRUCT_COMPARE(DomainSocketObject, path)
-            JSONSTRUCT_REGISTER(DomainSocketObject, F(path))
-        };
-        //
-        //
         struct gRPCObject
         {
             QString serviceName;
@@ -306,11 +298,10 @@ namespace Qvmessocket::base::objects
         transfer::WebSocketObject wsSettings;
         transfer::HttpObject httpSettings;
         transfer::DomainSocketObject dsSettings;
-        transfer::gRPCObject grpcSettings;
         JSONSTRUCT_COMPARE(StreamSettingsObject, network, security, sockopt, //
-                           tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings, grpcSettings)
+                           tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings)
         JSONSTRUCT_REGISTER(StreamSettingsObject, F(network, security, sockopt),
-                            F(tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings, grpcSettings))
+                            F(tcpSettings, tlsSettings, wsSettings, httpSettings, dsSettings))
     };
 
     struct FakeDNSObject
