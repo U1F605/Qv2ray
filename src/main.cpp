@@ -197,18 +197,8 @@ int main(int argc, char *argv[])
     // values to identify instances.
     QCoreApplication::setApplicationVersion(QVMESSOCKET_VERSION_STRING);
 
-#ifdef QT_DEBUG
-    QCoreApplication::setApplicationName("qv2ray_debug");
-#else
-    QCoreApplication::setApplicationName("qv2ray");
-#endif
-
 #ifdef QVMESSOCKET_GUI
     QApplication::setApplicationDisplayName("Qv2ray");
-#endif
-
-#ifdef QT_DEBUG
-    std::cerr << "WARNING: ================ This is a debug build, many features are not stable enough. ================" << std::endl;
 #endif
 
     if (qEnvironmentVariableIsSet("QV2RAY_NO_SCALE_FACTORS"))
