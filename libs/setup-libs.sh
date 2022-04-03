@@ -5,7 +5,7 @@ mkdir -p downloaded; cd ./downloaded;
 DEPS_OS=$1
 DEPS_CATEGORY=$2
 
-_JSON=$(curl -s https://api.github.com/repos/Qv2ray/Qv2ray-deps/releases/latest | jq ".assets[] | {browser_download_url, name}" -c | grep "$DEPS_CATEGORY-$DEPS_OS")
+_JSON=$(curl -s https://api.github.com/repos/U1F605/Qv-deps/releases/latest | jq ".assets[] | {browser_download_url, name}" -c | grep "$DEPS_CATEGORY-$DEPS_OS")
 
 echo $_JSON
 
