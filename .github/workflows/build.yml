@@ -30,6 +30,11 @@ jobs:
         with:
           toolset: 14.2
           arch: x64
+      - name: Setup GRPC
+        if: matrix.platform == 'windows-latest'
+        uses: eWaterCycle/setup-grpc@v5
+        with:
+          grpc-version: 1.30.2
       - name: find
         run:  grep -rni "grpc"
       - name: Setup Ninja
