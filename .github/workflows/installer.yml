@@ -34,17 +34,17 @@ jobs:
         with:
           toolset: 14.2
           arch: ${{ matrix.arch }}
+      - name: Setup GRPC
+        if: matrix.platform == 'windows-latest'
+        uses: eWaterCycle/setup-grpc@v5
+        with:
+          grpc-version: 1.30.2
       - name: Setup Qt - ${{ matrix.arch }}
         uses: jurplel/install-qt-action@v2
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
-      - name: Setup GRPC
-        if: matrix.platform == 'windows-latest'
-        uses: eWaterCycle/setup-grpc@v5
-        with:
-          grpc-version: 1.30.2
       - name: Windows - ${{ matrix.arch }} - Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Windows - ${{ matrix.arch }} - Download Dependencies
