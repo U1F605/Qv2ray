@@ -7,9 +7,6 @@
 [submodule "3rdparty/puresource"]
 	path = 3rdparty/puresource
 	url = https://github.com/Qv2ray/PureSource
-[submodule "src/plugin-interface"]
-	path = src/plugin-interface
-	url = https://github.com/Qv2ray/QvPlugin-Interface
 [submodule "3rdparty/QJsonStruct"]
 	path = 3rdparty/QJsonStruct
 	url = https://github.com/Qv2ray/QJsonStruct
