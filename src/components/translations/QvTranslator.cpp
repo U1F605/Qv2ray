@@ -12,11 +12,11 @@ QStringList getLanguageSearchPaths()
 {
     // Configuration Path
     QStringList list = QvCoreApplication->GetAssetsPaths("lang");
-#ifdef QV2RAY_EMBED_TRANSLATIONS
+#ifdef QV_EMBED_TRANSLATIONS
     // If the translations have been embedded.
     list << QString(":/translations/");
 #endif
-#ifdef QV2RAY_TRANSLATION_PATH
+#ifdef QV_TRANSLATION_PATH
     // Platform-specific dir, if specified.
     list << QString(QV2RAY_TRANSLATION_PATH);
 #endif
@@ -69,4 +69,4 @@ namespace Qvmessocket::common
         }
         return false;
     }
-} // namespace Qv2ray::common
+}
