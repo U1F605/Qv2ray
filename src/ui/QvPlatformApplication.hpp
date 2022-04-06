@@ -55,7 +55,7 @@ class QvPlatformApplication
 
     virtual QStringList CheckPrerequisites() final;
     virtual bool Initialize() final;
-    virtual QvExitReason RunQv2ray() final;
+    virtual QvExitReason RunQvmessocket() final;
 
   protected:
     virtual QStringList checkPrerequisitesInternal() = 0;
