@@ -8,7 +8,7 @@ class MainWindow;
 
 namespace Qvmessocket
 {
-    class Qv2rayWidgetApplication : public Qv2rayPlatformApplication
+    class Qv2rayWidgetApplication : public QvPlatformApplication
     {
         Q_OBJECT
       public:
