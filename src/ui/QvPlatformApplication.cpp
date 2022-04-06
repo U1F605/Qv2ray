@@ -9,13 +9,10 @@
 #include <QSslSocket>
 #define QV_MODULE_NAME "PlatformApplication"
 
-#ifdef QT_DEBUG
-const static inline QString QV2RAY_URL_SCHEME = "qv2ray-debug";
-#else
-const static inline QString QV2RAY_URL_SCHEME = "qv2ray";
-#endif
 
-QStringList Qv2rayPlatformApplication::CheckPrerequisites()
+const static inline QString QV2RAY_URL_SCHEME = "qv2ray";
+
+QStringList QvPlatformApplication::CheckPrerequisites()
 {
     QStringList errors;
     if (!QSslSocket::supportsSsl())
@@ -32,7 +29,7 @@ QStringList Qv2rayPlatformApplication::CheckPrerequisites()
     return errors + checkPrerequisitesInternal();
 }
 
-bool Qv2rayPlatformApplication::Initialize()
+bool QvPlatformApplication::Initialize()
 {
     QString errorMessage;
     bool canContinue;
@@ -66,9 +63,9 @@ bool Qv2rayPlatformApplication::Initialize()
     reg.setValue("Default", appPath + " %1");
 #endif
 
-    connect(this, &Qv2rayPlatformApplication::aboutToQuit, this, &Qv2rayPlatformApplication::quitInternal);
+    connect(this, &QvPlatformApplication::aboutToQuit, this, &QvPlatformApplication::quitInternal);
 #ifndef QV2RAY_NO_SINGLEAPPLICATON
-    connect(this, &SingleApplication::receivedMessage, this, &Qv2rayPlatformApplication::onMessageReceived, Qt::QueuedConnection);
+    connect(this, &SingleApplication::receivedMessage, this, &QvPlatformApplication::onMessageReceived, Qt::QueuedConnection);
     if (isSecondary())
     {
         StartupArguments.version = QVMESSOCKET_VERSION_STRING;
@@ -139,7 +136,7 @@ bool Qv2rayPlatformApplication::Initialize()
     return true;
 }
 
-QvExitReason Qv2rayPlatformApplication::RunQv2ray()
+QvExitReason QvPlatformApplication::RunQv2ray()
 {
     PluginHost = new QvPluginHost();
     RouteManager = new RouteHandler();
@@ -147,7 +144,7 @@ QvExitReason Qv2rayPlatformApplication::RunQv2ray()
     return runQv2rayInternal();
 }
 
-void Qv2rayPlatformApplication::quitInternal()
+void QvPlatformApplication::quitInternal()
 {
     // Do not change the order.
     ConnectionManager->StopConnection();
@@ -164,7 +161,7 @@ void Qv2rayPlatformApplication::quitInternal()
     PluginHost = nullptr;
 }
 
-bool Qv2rayPlatformApplication::parseCommandLine(QString *errorMessage, bool *canContinue)
+bool QvPlatformApplication::parseCommandLine(QString *errorMessage, bool *canContinue)
 {
     *canContinue = true;
     QStringList filteredArgs;
