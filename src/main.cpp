@@ -247,7 +247,7 @@ int main(int argc, char *argv[])
     signal(SIGUSR2, [](int) { ConnectionManager->StopConnection(); });
 #endif
 
-    app.RunQv2ray();
+    app.RunQvmessocket();
     const auto reason = app.GetExitReason();
     if (reason == EXIT_NEW_VERSION_TRIGGER)
     {
