@@ -46,8 +46,8 @@ class QvPlatformApplication
 {
     Q_OBJECT
   public:
-    Qv2rayPlatformApplication(int &argc, char *argv[]) : QVBASEAPPLICATION(QVBASEAPPLICATION_CTORARGS), QvApplicationInterface(){};
-    virtual ~Qv2rayPlatformApplication(){};
+    QvPlatformApplication(int &argc, char *argv[]) : QVBASEAPPLICATION(QVBASEAPPLICATION_CTORARGS), QvApplicationInterface(){};
+    virtual ~QvPlatformApplication(){};
     virtual QvExitReason GetExitReason() const final
     {
         return _exitReason;
