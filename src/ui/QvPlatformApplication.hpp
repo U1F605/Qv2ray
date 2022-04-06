@@ -40,7 +40,7 @@ const static inline QMap<MessageOpt, QMessageBox::StandardButton> MessageBoxButt
 #define QVBASEAPPLICATION_CTORARGS argc, argv
 #endif
 
-class Qv2rayPlatformApplication
+class QvPlatformApplication
     : public QVBASEAPPLICATION
     , public QvApplicationInterface
 {
