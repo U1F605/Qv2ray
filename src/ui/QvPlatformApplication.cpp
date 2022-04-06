@@ -136,7 +136,7 @@ bool QvPlatformApplication::Initialize()
     return true;
 }
 
-QvExitReason QvPlatformApplication::RunQv2ray()
+QvExitReason QvPlatformApplication::RunQvmessocket()
 {
     PluginHost = new QvPluginHost();
     RouteManager = new RouteHandler();
