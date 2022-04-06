@@ -21,7 +21,7 @@
 
 constexpr auto QV2RAY_WIDGETUI_STATE_FILENAME = "UIState.json";
 
-Qv2rayWidgetApplication::Qv2rayWidgetApplication(int &argc, char *argv[]) : Qv2rayPlatformApplication(argc, argv)
+Qv2rayWidgetApplication::Qv2rayWidgetApplication(int &argc, char *argv[]) : QvPlatformApplication(argc, argv)
 {
 }
 
