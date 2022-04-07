@@ -40,10 +40,10 @@ namespace Qvmessocket
     };
 }
 
-#ifdef Qv2rayApplication
-#undef Qv2rayApplication
+#ifdef QvApplication
+#undef QvApplication
 #endif
-#define Qv2rayApplication Qv2rayWidgetApplication
+#define QvApplication Qv2rayWidgetApplication
 
 #define QvWidgetApplication static_cast<Qv2rayWidgetApplication *>(qApp)
 #define qvAppTrayIcon (*(QvWidgetApplication->GetTrayIcon()))
