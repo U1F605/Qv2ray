@@ -125,7 +125,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
 }
 #endif
 
-QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
+QvExitReason Qv2rayWidgetApplication::runQvmessocketInternal()
 {
     setQuitOnLastWindowClosed(false);
     hTray = new QSystemTrayIcon();
