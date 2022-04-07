@@ -21,16 +21,16 @@
 
 constexpr auto QV2RAY_WIDGETUI_STATE_FILENAME = "UIState.json";
 
-Qv2rayWidgetApplication::Qv2rayWidgetApplication(int &argc, char *argv[]) : QvPlatformApplication(argc, argv)
+QvWidgetApplication::QvWidgetApplication(int &argc, char *argv[]) : QvPlatformApplication(argc, argv)
 {
 }
 
-QStringList Qv2rayWidgetApplication::checkPrerequisitesInternal()
+QStringList QvWidgetApplication::checkPrerequisitesInternal()
 {
     return {};
 }
 
-void Qv2rayWidgetApplication::terminateUIInternal()
+void QvWidgetApplication::terminateUIInternal()
 {
     delete mainWindow;
     delete hTray;
@@ -39,7 +39,7 @@ void Qv2rayWidgetApplication::terminateUIInternal()
 }
 
 #ifndef QV2RAY_NO_SINGLEAPPLICATON
-void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _msg)
+void QvWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _msg)
 {
     // Sometimes SingleApplication will send message with clientId == 0, ignore them.
     if (clientId == instanceId())
@@ -125,7 +125,7 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
 }
 #endif
 
-QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
+QvExitReason QvWidgetApplication::runQv2rayInternal()
 {
     setQuitOnLastWindowClosed(false);
     hTray = new QSystemTrayIcon();
@@ -157,22 +157,22 @@ QvExitReason Qv2rayWidgetApplication::runQv2rayInternal()
     return (QvExitReason) exec();
 }
 
-void Qv2rayWidgetApplication::OpenURL(const QString &url)
+void QvWidgetApplication::OpenURL(const QString &url)
 {
     QDesktopServices::openUrl(url);
 }
 
-void Qv2rayWidgetApplication::MessageBoxWarn(QWidget *parent, const QString &title, const QString &text)
+void QvWidgetApplication::MessageBoxWarn(QWidget *parent, const QString &title, const QString &text)
 {
     QMessageBox::warning(parent, title, text, QMessageBox::Ok);
 }
 
-void Qv2rayWidgetApplication::MessageBoxInfo(QWidget *parent, const QString &title, const QString &text)
+void QvWidgetApplication::MessageBoxInfo(QWidget *parent, const QString &title, const QString &text)
 {
     QMessageBox::information(parent, title, text, QMessageBox::Ok);
 }
 
-MessageOpt Qv2rayWidgetApplication::MessageBoxAsk(QWidget *parent, const QString &title, const QString &text, const QList<MessageOpt> &buttons)
+MessageOpt QvWidgetApplication::MessageBoxAsk(QWidget *parent, const QString &title, const QString &text, const QList<MessageOpt> &buttons)
 {
     QFlags<QMessageBox::StandardButton> btns;
     for (const auto &b : buttons)
@@ -182,7 +182,7 @@ MessageOpt Qv2rayWidgetApplication::MessageBoxAsk(QWidget *parent, const QString
     return MessageBoxButtonMap.key(QMessageBox::question(parent, title, text, btns));
 }
 
-void Qv2rayWidgetApplication::ShowTrayMessage(const QString &m, int msecs)
+void QvWidgetApplication::ShowTrayMessage(const QString &m, int msecs)
 {
     hTray->showMessage("Qv2ray", m, QIcon(":/assets/icons/qv2ray.png"), msecs);
 }
