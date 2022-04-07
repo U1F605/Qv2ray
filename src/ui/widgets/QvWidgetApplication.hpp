@@ -8,11 +8,11 @@ class MainWindow;
 
 namespace Qvmessocket
 {
-    class Qv2rayWidgetApplication : public QvPlatformApplication
+    class QvWidgetApplication : public QvPlatformApplication
     {
         Q_OBJECT
       public:
-        explicit Qv2rayWidgetApplication(int &argc, char *argv[]);
+        explicit QvWidgetApplication(int &argc, char *argv[]);
         QJsonObject UIStates;
 
       public:
@@ -43,9 +43,9 @@ namespace Qvmessocket
 #ifdef Qv2rayApplication
 #undef Qv2rayApplication
 #endif
-#define Qv2rayApplication Qv2rayWidgetApplication
+#define Qv2rayApplication QvWidgetApplication
 
-#define QvWidgetApplication static_cast<Qv2rayWidgetApplication *>(qApp)
+#define QvWidgetApplication static_cast<QvWidgetApplication *>(qApp)
 #define qvAppTrayIcon (*(QvWidgetApplication->GetTrayIcon()))
 
 using namespace Qvmessocket;
