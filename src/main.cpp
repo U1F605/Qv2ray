@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 #endif
 
-    Qv2rayApplication app(argc, argv);
+    QvApplication app(argc, argv);
     if (const auto list = app.CheckPrerequisites(); !list.isEmpty())
     {
         BootstrapMessageBox("Qv2ray Prerequisites Check Failed", list.join(NEWLINE));
