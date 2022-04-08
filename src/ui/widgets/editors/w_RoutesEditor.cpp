@@ -293,7 +293,7 @@ CONFIGROOT RouteEditor::OpenEditor()
     }
     root["outbounds"] = outboundsArray;
     // Process DNS
-    const auto &[dns] = dnsWidget->GetDNSObject();
+    const &dns = dnsWidget->GetDNSObject();
     root["dns"] = GenerateDNS(dns);
     {
         // Process Browser Forwarder
