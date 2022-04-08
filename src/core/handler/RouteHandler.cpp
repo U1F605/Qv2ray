@@ -366,16 +366,6 @@ namespace Qvmessocket::core::handler
         //
         // Process Log
         QJsonIO::SetValue(root, V2RayLogLevel[GlobalConfig.logLevel], "log", "loglevel");
-
-        //
-        // Process DNS
-        const auto hasDNS = root.contains("dns") && !root.value("dns").toObject().isEmpty();
-        if (!hasDNS)
-        {
-            root.insert("dns", GenerateDNS(dnsConf));
-            LOG("Added global DNS config");
-        }
-
         //
         // If inbounds list is empty, we append our global configured inbounds to the config.
         // The setting applies to BOTH complex config AND simple config.
