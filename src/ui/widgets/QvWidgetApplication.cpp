@@ -38,7 +38,7 @@ void Qv2rayWidgetApplication::terminateUIInternal()
     StringToFile(JsonToString(UIStates), QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME);
 }
 
-#ifndef QV2RAY_NO_SINGLEAPPLICATON
+#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
 void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _msg)
 {
     // Sometimes SingleApplication will send message with clientId == 0, ignore them.
