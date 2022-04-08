@@ -74,7 +74,7 @@ QvMessageBusSlotImpl(DnsSettingsWidget)
     }
 }
 
-void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns, const FakeDNSObject &_fakeDNS)
+void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns)
 {
     this->dns = _dns;
     this->fakeDNS = _fakeDNS;
