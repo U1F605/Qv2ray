@@ -105,8 +105,6 @@ void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns, const FakeDNSObject 
     dnsDisableFallbackCB->setChecked(dns.disableFallback);
     dnsDisableCacheCB->setChecked(dns.disableCache);
 
-    fakeDNSIPPool->setCurrentText(fakeDNS.ipPool);
-    fakeDNSIPPoolSize->setValue(fakeDNS.poolSize);
     UPDATE_UI_ENABLED_STATE
 }
 
@@ -152,7 +150,7 @@ void DnsSettingsWidget::ShowCurrentDnsServerDetails()
     ProcessDnsPortEnabledState();
 }
 
-std::pair<DNSObject, FakeDNSObject> DnsSettingsWidget::GetDNSObject()
+std::pair<DNSObject> DnsSettingsWidget::GetDNSObject()
 {
     dns.hosts.clear();
     for (auto i = 0; i < staticResolvedDomainsTable->rowCount(); i++)
@@ -162,7 +160,7 @@ std::pair<DNSObject, FakeDNSObject> DnsSettingsWidget::GetDNSObject()
         if (item1 && item2)
             dns.hosts[item1->text()] = item2->text();
     }
-    return { dns, fakeDNS };
+    return { dns };
 }
 
 void DnsSettingsWidget::on_dnsClientIPTxt_textEdited(const QString &arg1)
@@ -290,16 +288,6 @@ void DnsSettingsWidget::on_detailsSettingsGB_toggled(bool arg1)
     if (currentServerIndex >= 0)
         dns.servers[currentServerIndex].QVMESSOCKET_DNS_IS_COMPLEX_DNS = arg1;
     // detailsSettingsGB->setChecked(dns.servers[currentServerIndex].QV2RAY_DNS_IS_COMPLEX_DNS);
-}
-
-void DnsSettingsWidget::on_fakeDNSIPPool_currentTextChanged(const QString &arg1)
-{
-    fakeDNS.ipPool = arg1;
-}
-
-void DnsSettingsWidget::on_fakeDNSIPPoolSize_valueChanged(int arg1)
-{
-    fakeDNS.poolSize = arg1;
 }
 
 void DnsSettingsWidget::on_dnsDisableCacheCB_stateChanged(int arg1)
