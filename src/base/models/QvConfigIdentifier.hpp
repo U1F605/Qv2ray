@@ -101,8 +101,6 @@ namespace Qvmessocket::base
 
     struct GroupRoutingConfig : __QvConfigObjectBase
     {
-        bool overrideDNS = false;
-        config::QvConfig_DNS dnsConfig;
         //
         bool overrideRoute = false;
         config::QvConfig_Route routeConfig;
