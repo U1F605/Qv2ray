@@ -7,7 +7,6 @@
 #include "ui/widgets/node/models/InboundNodeModel.hpp"
 #include "ui/widgets/node/models/OutboundNodeModel.hpp"
 #include "ui/widgets/node/models/RuleNodeModel.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/complex/ChainEditorWidget.hpp"
 #include "ui/widgets/widgets/complex/RoutingEditorWidget.hpp"
 #include "ui/widgets/windows/w_ImportConfig.hpp"
@@ -90,7 +89,6 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
     nodeDispatcher = std::make_shared<NodeDispatcher>();
     ruleWidget = new RoutingEditorWidget(nodeDispatcher, ruleEditorUIWidget);
     chainWidget = new ChainEditorWidget(nodeDispatcher, chainEditorUIWidget);
-    dnsWidget = new DnsSettingsWidget(this);
     nodeDispatcher->InitializeScenes(ruleWidget->getScene(), chainWidget->getScene());
     connect(nodeDispatcher.get(), &NodeDispatcher::OnOutboundCreated, this, &RouteEditor::OnDispatcherOutboundCreated);
     connect(nodeDispatcher.get(), &NodeDispatcher::OnOutboundDeleted, this, &RouteEditor::OnDispatcherOutboundDeleted);
