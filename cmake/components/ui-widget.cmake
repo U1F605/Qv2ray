@@ -86,8 +86,6 @@ set(_QVMESSOCKET_UI_SOURCES
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/StreamSettingsWidget.cpp
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/InboundSettingsWidget.cpp
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/InboundSettingsWidget.hpp
-    ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/DnsSettingsWidget.cpp
-    ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/DnsSettingsWidget.hpp
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/CertificateItemWidget.ui
     # Complex Widgets
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/complex/ChainEditorWidget.cpp
