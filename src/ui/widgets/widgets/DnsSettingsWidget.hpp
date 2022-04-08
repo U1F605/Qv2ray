@@ -18,7 +18,7 @@ class DnsSettingsWidget
   public:
     explicit DnsSettingsWidget(QWidget *parent = nullptr);
     void SetDNSObject(const DNSObject &dns);
-    std::pair<DNSObject> GetDNSObject();
+    DNSObject GetDNSObject();
     bool CheckIsValidDNS() const;
 
   private slots:
