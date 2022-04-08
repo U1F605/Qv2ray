@@ -103,7 +103,6 @@ namespace Qvmessocket::base
     {
         bool overrideDNS = false;
         config::QvConfig_DNS dnsConfig;
-        config::QvConfig_FakeDNS fakeDNSConfig;
         //
         bool overrideRoute = false;
         config::QvConfig_Route routeConfig;
@@ -115,13 +114,13 @@ namespace Qvmessocket::base
         config::QvConfig_ForwardProxy forwardProxyConfig;
         //
         JSONSTRUCT_COMPARE(GroupRoutingConfig,                         //
-                           overrideDNS, dnsConfig, fakeDNSConfig,      //
+                           overrideDNS, dnsConfig,      //
                            overrideRoute, routeConfig,                 //
                            overrideConnectionConfig, connectionConfig, //
                            overrideForwardProxyConfig, forwardProxyConfig)
         JSONSTRUCT_REGISTER(GroupRoutingConfig,                            //
                             F(overrideRoute, routeConfig),                 //
-                            F(overrideDNS, dnsConfig, fakeDNSConfig),      //
+                            F(overrideDNS, dnsConfig),      //
                             F(overrideConnectionConfig, connectionConfig), //
                             F(overrideForwardProxyConfig, forwardProxyConfig))
     };
