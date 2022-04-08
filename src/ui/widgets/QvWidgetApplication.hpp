@@ -32,7 +32,7 @@ namespace Qvmessocket
         QvExitReason runQvmessocketInternal() override;
         bool isInitialized;
         void terminateUIInternal() override;
-#ifndef QV2RAY_NO_SINGLEAPPLICATON
+#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
         void onMessageReceived(quint32 clientID, QByteArray msg) override;
 #endif
         QSystemTrayIcon *hTray;
