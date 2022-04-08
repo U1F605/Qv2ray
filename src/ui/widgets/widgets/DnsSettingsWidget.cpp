@@ -77,7 +77,6 @@ QvMessageBusSlotImpl(DnsSettingsWidget)
 void DnsSettingsWidget::SetDNSObject(const DNSObject &_dns)
 {
     this->dns = _dns;
-    this->fakeDNS = _fakeDNS;
 
     dnsClientIPTxt->setText(dns.clientIp);
     dnsTagTxt->setText(dns.tag);
@@ -150,7 +149,7 @@ void DnsSettingsWidget::ShowCurrentDnsServerDetails()
     ProcessDnsPortEnabledState();
 }
 
-std::pair<DNSObject> DnsSettingsWidget::GetDNSObject()
+DNSObject DnsSettingsWidget::GetDNSObject()
 {
     dns.hosts.clear();
     for (auto i = 0; i < staticResolvedDomainsTable->rowCount(); i++)
