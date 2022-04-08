@@ -7,10 +7,10 @@
 #include "core/settings/SettingsBackend.hpp"
 #include "utils/QvHelpers.hpp"
 
-#ifndef QV2RAY_NO_SINGLEAPPLICATON
+#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
 #ifdef Q_OS_ANDROID
 // No SingleApplication on Android platform
-#define QV2RAY_NO_SINGLEAPPLICATON
+#define QVMESSOCKET_NO_SINGLEAPPLICATON
 #endif
 #endif
 
@@ -31,7 +31,7 @@ const static inline QMap<MessageOpt, QMessageBox::StandardButton> MessageBoxButt
 #include <QCoreApplication>
 #endif
 
-#ifndef QV2RAY_NO_SINGLEAPPLICATON
+#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
 #include <SingleApplication>
 #define QVBASEAPPLICATION SingleApplication
 #define QVBASEAPPLICATION_CTORARGS argc, argv, true, User | ExcludeAppPath | ExcludeAppVersion
@@ -66,7 +66,7 @@ class QvPlatformApplication
         _exitReason = r;
     }
 
-#ifndef QV2RAY_NO_SINGLEAPPLICATON
+#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
     virtual void onMessageReceived(quint32 clientId, QByteArray msg) = 0;
 #endif
 
