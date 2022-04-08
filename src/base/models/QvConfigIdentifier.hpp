@@ -112,13 +112,11 @@ namespace Qvmessocket::base
         config::QvConfig_ForwardProxy forwardProxyConfig;
         //
         JSONSTRUCT_COMPARE(GroupRoutingConfig,                         //
-                           overrideDNS, dnsConfig,      //
                            overrideRoute, routeConfig,                 //
                            overrideConnectionConfig, connectionConfig, //
                            overrideForwardProxyConfig, forwardProxyConfig)
         JSONSTRUCT_REGISTER(GroupRoutingConfig,                            //
                             F(overrideRoute, routeConfig),                 //
-                            F(overrideDNS, dnsConfig),      //
                             F(overrideConnectionConfig, connectionConfig), //
                             F(overrideForwardProxyConfig, forwardProxyConfig))
     };
