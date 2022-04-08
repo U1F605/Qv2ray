@@ -14,7 +14,6 @@ set(_QVMESSOCKET_UI_FORMS
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/RouteSettingsMatrix.ui
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/InboundSettingsWidget.ui
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/ConnectionSettingsWidget.ui
-    ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/widgets/DnsSettingsWidget.ui
     #
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/windows/w_GroupManager.ui
     ${QVMESSOCKET_QWIDGETS_UI_BASEDIR}/windows/w_ImportConfig.ui
