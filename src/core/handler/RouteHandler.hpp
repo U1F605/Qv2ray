@@ -12,10 +12,6 @@ namespace Qvmessocket::core::handler
         ~RouteHandler();
         void SaveRoutes() const;
         //
-        std::tuple<bool, QvConfig_DNS> GetDNSSettings(const GroupRoutingId &id) const
-        {
-            return { configs[id].overrideDNS, configs[id].dnsConfig};
-        }
         std::pair<bool, QvConfig_Route> GetAdvancedRoutingSettings(const GroupRoutingId &id) const
         {
             return { configs[id].overrideRoute, configs[id].routeConfig };
