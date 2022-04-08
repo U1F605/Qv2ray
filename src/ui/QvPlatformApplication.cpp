@@ -141,7 +141,7 @@ QvExitReason QvPlatformApplication::RunQvmessocket()
     PluginHost = new QvPluginHost();
     RouteManager = new RouteHandler();
     ConnectionManager = new QvConfigHandler();
-    return runQv2rayInternal();
+    return runQvmessocketInternal();
 }
 
 void QvPlatformApplication::quitInternal()
