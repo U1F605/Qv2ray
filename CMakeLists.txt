@@ -157,11 +157,7 @@ endif()
 include(cmake/components/base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
-if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
-    include(cmake/singleapplication.cmake)
-else()
-    add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
-endif()
+add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
 
 add_library(qvmessocket_baselib STATIC
     ${QVMESSOCKET_BASE_SOURCES}
