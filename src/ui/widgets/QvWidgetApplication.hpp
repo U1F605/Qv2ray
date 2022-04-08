@@ -29,7 +29,7 @@ namespace Qvmessocket
 
       private:
         QStringList checkPrerequisitesInternal() override;
-        QvExitReason runQv2rayInternal() override;
+        QvExitReason runQvmessocketInternal() override;
         bool isInitialized;
         void terminateUIInternal() override;
 #ifndef QV2RAY_NO_SINGLEAPPLICATON

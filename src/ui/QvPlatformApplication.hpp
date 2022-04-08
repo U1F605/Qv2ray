@@ -59,7 +59,7 @@ class QvPlatformApplication
 
   protected:
     virtual QStringList checkPrerequisitesInternal() = 0;
-    virtual QvExitReason runQv2rayInternal() = 0;
+    virtual QvExitReason runQvmessocketInternal() = 0;
     virtual void terminateUIInternal() = 0;
     virtual void SetExitReason(QvExitReason r) final
     {
