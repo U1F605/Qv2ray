@@ -398,10 +398,6 @@ void GroupManager::on_groupList_itemClicked(QListWidgetItem *item)
     // Load DNS / Route config
     const auto routeId = ConnectionManager->GetGroupRoutingId(currentGroupId);
     {
-        const auto &[overrideDns, dns, fakedns] = RouteManager->GetDNSSettings(routeId);
-        dnsSettingsWidget->SetDNSObject(dns, fakedns);
-        dnsSettingsGB->setChecked(overrideDns);
-        //
         const auto &[overrideRoute, route] = RouteManager->GetAdvancedRoutingSettings(routeId);
         routeSettingsWidget->SetRouteConfig(route);
         routeSettingsGB->setChecked(overrideRoute);
