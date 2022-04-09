@@ -6,7 +6,6 @@
 #include "ui_w_PreferencesWindow.h"
 
 class RouteSettingsMatrixWidget;
-class DnsSettingsWidget;
 
 class PreferencesWindow
     : public QvDialog
@@ -138,17 +137,10 @@ class PreferencesWindow
     void on_httpSniffingMetadataOnly_stateChanged(int arg1);
     void on_socksSniffingMetadataOnly_stateChanged(int arg1);
     void on_tproxySniffingMetadataOnlyCB_stateChanged(int arg1);
-    void on_socksOverrideFakeDNSCB_stateChanged(int arg1);
-    void on_socksOverrideFakeDNSOthersCB_stateChanged(int arg1);
-    void on_httpOverrideFakeDNSCB_stateChanged(int arg1);
-    void on_httpOverrideFakeDNSOthersCB_stateChanged(int arg1);
-    void on_tproxyOverrideFakeDNSCB_stateChanged(int arg1);
-    void on_tproxyOverrideFakeDNSOthersCB_stateChanged(int arg1);
     void on_browserForwarderAddressTxt_textEdited(const QString &arg1);
     void on_browserForwarderPortSB_valueChanged(int arg1);
 
   private:
-    DnsSettingsWidget *dnsSettingsWidget;
     RouteSettingsMatrixWidget *routeSettingsWidget;
     void SetAutoStartButtonsState(bool isAutoStart);
     //

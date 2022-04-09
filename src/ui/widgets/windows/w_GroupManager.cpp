@@ -4,7 +4,6 @@
 #include "core/handler/ConfigHandler.hpp"
 #include "core/handler/RouteHandler.hpp"
 #include "core/settings/SettingsBackend.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/RouteSettingsMatrix.hpp"
 #include "utils/QvHelpers.hpp"
 
@@ -57,11 +56,7 @@ GroupManager::GroupManager(QWidget *parent) : QvDialog("GroupManager", parent)
     }
 
     //
-    dnsSettingsWidget = new DnsSettingsWidget(this);
     routeSettingsWidget = new RouteSettingsMatrixWidget(GlobalConfig.kernelConfig.AssetsPath(), this);
-    //
-    dnsSettingsGB->setLayout(new QGridLayout(dnsSettingsGB));
-    dnsSettingsGB->layout()->addWidget(dnsSettingsWidget);
     //
     routeSettingsGB->setLayout(new QGridLayout(routeSettingsGB));
     routeSettingsGB->layout()->addWidget(routeSettingsWidget);
@@ -341,8 +336,6 @@ void GroupManager::on_buttonBox_accepted()
     if (currentGroupId != NullGroupId)
     {
         const auto routeId = ConnectionManager->GetGroupRoutingId(currentGroupId);
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        RouteManager->SetDNSSettings(routeId, dnsSettingsGB->isChecked(), dns, fakedns);
         RouteManager->SetAdvancedRouteSettings(routeId, routeSettingsGB->isChecked(), routeSettingsWidget->GetRouteConfig());
     }
     // Nothing?
@@ -405,10 +398,6 @@ void GroupManager::on_groupList_itemClicked(QListWidgetItem *item)
     // Load DNS / Route config
     const auto routeId = ConnectionManager->GetGroupRoutingId(currentGroupId);
     {
-        const auto &[overrideDns, dns, fakedns] = RouteManager->GetDNSSettings(routeId);
-        dnsSettingsWidget->SetDNSObject(dns, fakedns);
-        dnsSettingsGB->setChecked(overrideDns);
-        //
         const auto &[overrideRoute, route] = RouteManager->GetAdvancedRoutingSettings(routeId);
         routeSettingsWidget->SetRouteConfig(route);
         routeSettingsGB->setChecked(overrideRoute);
@@ -443,8 +432,6 @@ void GroupManager::on_groupList_currentItemChanged(QListWidgetItem *current, QLi
     if (priv)
     {
         const auto group = ConnectionManager->GetGroupMetaObject(currentGroupId);
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        RouteManager->SetDNSSettings(group.routeConfigId, dnsSettingsGB->isChecked(), dns, fakedns);
         RouteManager->SetAdvancedRouteSettings(group.routeConfigId, routeSettingsGB->isChecked(), routeSettingsWidget->GetRouteConfig());
     }
     if (current)

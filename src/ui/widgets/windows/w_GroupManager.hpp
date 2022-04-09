@@ -7,7 +7,6 @@
 
 #include <QMenu>
 
-class DnsSettingsWidget;
 class RouteSettingsMatrixWidget;
 
 class GroupManager
@@ -69,8 +68,6 @@ class GroupManager
     void reloadGroupRCMActions();
     //
     void exportConnectionFilter(CONFIGROOT &root);
-    //
-    DnsSettingsWidget *dnsSettingsWidget;
     RouteSettingsMatrixWidget *routeSettingsWidget;
     //
     QMenu *connectionListRCMenu = new QMenu(this);

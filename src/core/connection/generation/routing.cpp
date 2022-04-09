@@ -1,16 +1,6 @@
 #include "core/connection/Generation.hpp"
 namespace Qvmessocket::core::connection::generation::routing
 {
-    QJsonObject GenerateDNS(const QvConfig_DNS &dnsServer)
-    {
-        QJsonObject root = dnsServer.toJson();
-        QJsonArray servers;
-        for (const auto &serv : dnsServer.servers)
-            servers << (serv.QVMESSOCKET_DNS_IS_COMPLEX_DNS ? serv.toJson() : QJsonValue(serv.address));
-        root["servers"] = servers;
-        return root;
-    }
-
     ROUTERULE GenerateSingleRouteRule(RuleType t, const QString &str, const QString &outboundTag, const QString &type)
     {
         return GenerateSingleRouteRule(t, QStringList{ str }, outboundTag, type);

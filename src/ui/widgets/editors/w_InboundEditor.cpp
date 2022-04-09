@@ -124,8 +124,6 @@ void InboundEditor::loadUI()
         const auto data = sniffingSettings["destOverride"].toArray();
         sniffHTTPCB->setChecked(data.contains("http"));
         sniffTLSCB->setChecked(data.contains("tls"));
-        sniffFakeDNSCB->setChecked(data.contains("fakedns"));
-        sniffFakeDNSOtherCB->setChecked(data.contains("fakedns+others"));
     }
     bool processed = false;
     const auto settings = current["settings"].toObject();
@@ -214,17 +212,11 @@ void InboundEditor::on_sniffMetaDataOnlyCB_clicked(bool checked)
     {                                                                                                                                                \
         const auto hasHTTP = sniffHTTPCB->isChecked();                                                                                               \
         const auto hasTLS = sniffTLSCB->isChecked();                                                                                                 \
-        const auto hasFakeDNS = sniffFakeDNSCB->isChecked();                                                                                         \
-        const auto hasFakeDNSOthers = sniffFakeDNSOtherCB->isChecked();                                                                              \
         QStringList list;                                                                                                                            \
         if (hasHTTP)                                                                                                                                 \
             list << "http";                                                                                                                          \
         if (hasTLS)                                                                                                                                  \
             list << "tls";                                                                                                                           \
-        if (hasFakeDNS)                                                                                                                              \
-            list << "fakedns";                                                                                                                       \
-        if (hasFakeDNSOthers)                                                                                                                        \
-            list << "fakedns+others";                                                                                                                \
         sniffingSettings["destOverride"] = QJsonArray::fromStringList(list);                                                                         \
     } while (0)
 
@@ -235,17 +227,6 @@ void InboundEditor::on_sniffHTTPCB_stateChanged(int)
 }
 
 void InboundEditor::on_sniffTLSCB_stateChanged(int)
-{
-    CHECKLOADING
-    SET_SNIFF_DEST_OVERRIDE;
-}
-void InboundEditor::on_sniffFakeDNSOtherCB_stateChanged(int)
-{
-    CHECKLOADING
-    SET_SNIFF_DEST_OVERRIDE;
-}
-
-void InboundEditor::on_sniffFakeDNSCB_stateChanged(int)
 {
     CHECKLOADING
     SET_SNIFF_DEST_OVERRIDE;

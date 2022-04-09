@@ -7,7 +7,6 @@
 #include "ui/widgets/node/models/InboundNodeModel.hpp"
 #include "ui/widgets/node/models/OutboundNodeModel.hpp"
 #include "ui/widgets/node/models/RuleNodeModel.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/complex/ChainEditorWidget.hpp"
 #include "ui/widgets/widgets/complex/RoutingEditorWidget.hpp"
 #include "ui/widgets/windows/w_ImportConfig.hpp"
@@ -90,7 +89,6 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
     nodeDispatcher = std::make_shared<NodeDispatcher>();
     ruleWidget = new RoutingEditorWidget(nodeDispatcher, ruleEditorUIWidget);
     chainWidget = new ChainEditorWidget(nodeDispatcher, chainEditorUIWidget);
-    dnsWidget = new DnsSettingsWidget(this);
     nodeDispatcher->InitializeScenes(ruleWidget->getScene(), chainWidget->getScene());
     connect(nodeDispatcher.get(), &NodeDispatcher::OnOutboundCreated, this, &RouteEditor::OnDispatcherOutboundCreated);
     connect(nodeDispatcher.get(), &NodeDispatcher::OnOutboundDeleted, this, &RouteEditor::OnDispatcherOutboundDeleted);
@@ -111,11 +109,8 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
 
     SetUpLayout(ruleEditorUIWidget, ruleWidget);
     SetUpLayout(chainEditorUIWidget, chainWidget);
-    SetUpLayout(dnsEditorUIWidget, dnsWidget);
     //
     nodeDispatcher->LoadFullConfig(root);
-    dnsWidget->SetDNSObject(DNSObject::fromJson(root["dns"].toObject()), FakeDNSObject::fromJson(root["fakedns"].toObject()));
-    //
     domainStrategy = root["routing"].toObject()["domainStrategy"].toString();
     domainStrategyCombo->setCurrentText(domainStrategy);
     //
@@ -292,10 +287,6 @@ CONFIGROOT RouteEditor::OpenEditor()
             outboundsArray.append(outboundJsonObject);
     }
     root["outbounds"] = outboundsArray;
-    // Process DNS
-    const auto &[dns, fakedns] = dnsWidget->GetDNSObject();
-    root["dns"] = GenerateDNS(dns);
-    root["fakedns"] = fakedns.toJson();
     {
         // Process Browser Forwarder
         if (!bfListenIPTxt->text().trimmed().isEmpty())

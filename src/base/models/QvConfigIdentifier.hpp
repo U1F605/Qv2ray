@@ -101,9 +101,6 @@ namespace Qvmessocket::base
 
     struct GroupRoutingConfig : __QvConfigObjectBase
     {
-        bool overrideDNS = false;
-        config::QvConfig_DNS dnsConfig;
-        config::QvConfig_FakeDNS fakeDNSConfig;
         //
         bool overrideRoute = false;
         config::QvConfig_Route routeConfig;
@@ -115,13 +112,11 @@ namespace Qvmessocket::base
         config::QvConfig_ForwardProxy forwardProxyConfig;
         //
         JSONSTRUCT_COMPARE(GroupRoutingConfig,                         //
-                           overrideDNS, dnsConfig, fakeDNSConfig,      //
                            overrideRoute, routeConfig,                 //
                            overrideConnectionConfig, connectionConfig, //
                            overrideForwardProxyConfig, forwardProxyConfig)
         JSONSTRUCT_REGISTER(GroupRoutingConfig,                            //
                             F(overrideRoute, routeConfig),                 //
-                            F(overrideDNS, dnsConfig, fakeDNSConfig),      //
                             F(overrideConnectionConfig, connectionConfig), //
                             F(overrideForwardProxyConfig, forwardProxyConfig))
     };

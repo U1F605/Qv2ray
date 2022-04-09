@@ -216,10 +216,6 @@ namespace Qvmessocket::core::config
             GlobalConfig.kernelConfig.AssetsPath(QVMESSOCKET_DEFAULT_VASSETS_PATH);
             GlobalConfig.logLevel = 3;
             GlobalConfig.uiConfig.language = QLocale::system().name();
-            GlobalConfig.defaultRouteConfig.dnsConfig.servers.append({ "1.1.1.1" });
-            GlobalConfig.defaultRouteConfig.dnsConfig.servers.append({ "8.8.8.8" });
-            GlobalConfig.defaultRouteConfig.dnsConfig.servers.append({ "8.8.4.4" });
-
             // Save initial config.
             SaveGlobalSettings();
             LOG("Created initial config file.");

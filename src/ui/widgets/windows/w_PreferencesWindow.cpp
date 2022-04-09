@@ -9,7 +9,6 @@
 #include "src/plugin-interface/QvPluginInterface.hpp"
 #include "ui/common/autolaunch/QvAutoLaunch.hpp"
 #include "ui/widgets/styles/StyleManager.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/RouteSettingsMatrix.hpp"
 #include "utils/HTTPRequestHelper.hpp"
 #include "utils/QvHelpers.hpp"
@@ -118,12 +117,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         httpSniffingMetadataOnly->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideHTTPCB->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideTLSCB->setEnabled(has_http && httpSettings.sniffing);
-        httpOverrideFakeDNSCB->setEnabled(has_http && httpSettings.sniffing);
-        httpOverrideFakeDNSOthersCB->setEnabled(has_http && httpSettings.sniffing);
         httpOverrideHTTPCB->setChecked(httpSettings.destOverride.contains("http"));
         httpOverrideTLSCB->setChecked(httpSettings.destOverride.contains("tls"));
-        httpOverrideFakeDNSCB->setChecked(httpSettings.destOverride.contains("fakedns"));
-        httpOverrideFakeDNSOthersCB->setChecked(httpSettings.destOverride.contains("fakedns+others"));
         httpSniffingMetadataOnly->setChecked(httpSettings.metadataOnly);
     }
     {
@@ -146,12 +141,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         socksSniffingMetadataOnly->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideHTTPCB->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideTLSCB->setEnabled(has_socks && socksSettings.sniffing);
-        socksOverrideFakeDNSCB->setEnabled(has_socks && socksSettings.sniffing);
-        socksOverrideFakeDNSOthersCB->setEnabled(has_socks && socksSettings.sniffing);
         socksOverrideHTTPCB->setChecked(socksSettings.destOverride.contains("http"));
         socksOverrideTLSCB->setChecked(socksSettings.destOverride.contains("tls"));
-        socksOverrideFakeDNSCB->setChecked(socksSettings.destOverride.contains("fakedns"));
-        socksOverrideFakeDNSOthersCB->setChecked(socksSettings.destOverride.contains("fakedns+others"));
         socksSniffingMetadataOnly->setChecked(socksSettings.metadataOnly);
     }
     {
@@ -168,12 +159,8 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
         tproxySniffingMetadataOnlyCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideHTTPCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideTLSCB->setEnabled(has_tproxy && tProxySettings.sniffing);
-        tproxyOverrideFakeDNSCB->setEnabled(has_tproxy && tProxySettings.sniffing);
-        tproxyOverrideFakeDNSOthersCB->setEnabled(has_tproxy && tProxySettings.sniffing);
         tproxyOverrideHTTPCB->setChecked(tProxySettings.destOverride.contains("http"));
         tproxyOverrideTLSCB->setChecked(tProxySettings.destOverride.contains("tls"));
-        tproxyOverrideFakeDNSCB->setChecked(tProxySettings.destOverride.contains("fakedns"));
-        tproxyOverrideFakeDNSOthersCB->setChecked(tProxySettings.destOverride.contains("fakedns+others"));
         tproxySniffingMetadataOnlyCB->setChecked(tProxySettings.metadataOnly);
 
         tproxyMode->setCurrentText(tProxySettings.mode);
@@ -238,10 +225,6 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
     }
     //
     {
-        dnsSettingsWidget = new DnsSettingsWidget(this);
-        dnsSettingsWidget->SetDNSObject(CurrentConfig.defaultRouteConfig.dnsConfig, CurrentConfig.defaultRouteConfig.fakeDNSConfig);
-        dnsSettingsLayout->addWidget(dnsSettingsWidget);
-        //
         routeSettingsWidget = new RouteSettingsMatrixWidget(CurrentConfig.kernelConfig.AssetsPath(), this);
         routeSettingsWidget->SetRouteConfig(CurrentConfig.defaultRouteConfig.routeConfig);
         advRouteSettingsLayout->addWidget(routeSettingsWidget);
@@ -380,10 +363,6 @@ void PreferencesWindow::on_buttonBox_accepted()
     {
         QvMessageBoxWarn(this, tr("Preferences"), *err);
     }
-    else if (!dnsSettingsWidget->CheckIsValidDNS())
-    {
-        QvMessageBoxWarn(this, tr("Preferences"), tr("Invalid DNS settings."));
-    }
     else
     {
         if (CurrentConfig.uiConfig.language != GlobalConfig.uiConfig.language)
@@ -397,13 +376,6 @@ void PreferencesWindow::on_buttonBox_accepted()
         }
         CurrentConfig.defaultRouteConfig.routeConfig = routeSettingsWidget->GetRouteConfig();
         if (!(CurrentConfig.defaultRouteConfig.routeConfig == GlobalConfig.defaultRouteConfig.routeConfig))
-        {
-            NEEDRESTART
-        }
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        CurrentConfig.defaultRouteConfig.dnsConfig = dns;
-        CurrentConfig.defaultRouteConfig.fakeDNSConfig = fakedns;
-        if (!(CurrentConfig.defaultRouteConfig.dnsConfig == GlobalConfig.defaultRouteConfig.dnsConfig))
         {
             NEEDRESTART
         }
@@ -803,8 +775,6 @@ void PreferencesWindow::on_httpGroupBox_clicked(bool checked)
     httpAuthPasswordTxt->setEnabled(checked && CurrentConfig.inboundConfig.httpSettings.useAuth);
     httpOverrideHTTPCB->setEnabled(checked && CurrentConfig.inboundConfig.httpSettings.sniffing);
     httpOverrideTLSCB->setEnabled(checked && CurrentConfig.inboundConfig.httpSettings.sniffing);
-    httpOverrideFakeDNSCB->setEnabled(checked && CurrentConfig.inboundConfig.httpSettings.sniffing);
-    httpOverrideFakeDNSOthersCB->setEnabled(checked && CurrentConfig.inboundConfig.httpSettings.sniffing);
 }
 
 void PreferencesWindow::on_socksGroupBox_clicked(bool checked)
@@ -817,8 +787,6 @@ void PreferencesWindow::on_socksGroupBox_clicked(bool checked)
     socksAuthPasswordTxt->setEnabled(checked && CurrentConfig.inboundConfig.socksSettings.useAuth);
     socksOverrideHTTPCB->setEnabled(checked && CurrentConfig.inboundConfig.socksSettings.sniffing);
     socksOverrideTLSCB->setEnabled(checked && CurrentConfig.inboundConfig.socksSettings.sniffing);
-    socksOverrideFakeDNSCB->setEnabled(checked && CurrentConfig.inboundConfig.socksSettings.sniffing);
-    socksOverrideFakeDNSOthersCB->setEnabled(checked && CurrentConfig.inboundConfig.socksSettings.sniffing);
 }
 
 void PreferencesWindow::on_fpGroupBox_clicked(bool checked)
@@ -917,8 +885,6 @@ void PreferencesWindow::on_tproxyGroupBox_toggled(bool arg1)
     CurrentConfig.inboundConfig.useTPROXY = arg1;
     tproxyOverrideHTTPCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
     tproxyOverrideTLSCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
-    tproxyOverrideFakeDNSCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
-    tproxyOverrideFakeDNSOthersCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
 }
 
 void PreferencesWindow::on_tProxyPort_valueChanged(int arg1)
@@ -950,8 +916,6 @@ void PreferencesWindow::on_tproxySniffingCB_stateChanged(int arg1)
     tproxySniffingMetadataOnlyCB->setEnabled(arg1 == Qt::Checked);
     tproxyOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     tproxyOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    tproxyOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    tproxyOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_tproxyOverrideHTTPCB_stateChanged(int arg1)
@@ -1060,8 +1024,6 @@ void PreferencesWindow::on_httpSniffingCB_stateChanged(int arg1)
     httpSniffingMetadataOnly->setEnabled(arg1 == Qt::Checked);
     httpOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     httpOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    httpOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    httpOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_httpOverrideHTTPCB_stateChanged(int arg1)
@@ -1092,8 +1054,6 @@ void PreferencesWindow::on_socksSniffingCB_stateChanged(int arg1)
     socksSniffingMetadataOnly->setEnabled(arg1 == Qt::Checked);
     socksOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     socksOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    socksOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    socksOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_socksOverrideHTTPCB_stateChanged(int arg1)
@@ -1277,60 +1237,6 @@ void PreferencesWindow::on_tproxySniffingMetadataOnlyCB_stateChanged(int arg1)
     LOADINGCHECK
     NEEDRESTART
     CurrentConfig.inboundConfig.tProxySettings.metadataOnly = arg1 == Qt::Checked;
-}
-
-void PreferencesWindow::on_socksOverrideFakeDNSCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.socksSettings.destOverride.removeAll("fakedns");
-    else if (!CurrentConfig.inboundConfig.socksSettings.destOverride.contains("fakedns"))
-        CurrentConfig.inboundConfig.socksSettings.destOverride.append("fakedns");
-}
-
-void PreferencesWindow::on_socksOverrideFakeDNSOthersCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.socksSettings.destOverride.removeAll("fakedns+others");
-    else if (!CurrentConfig.inboundConfig.socksSettings.destOverride.contains("fakedns+others"))
-        CurrentConfig.inboundConfig.socksSettings.destOverride.append("fakedns+others");
-}
-
-void PreferencesWindow::on_httpOverrideFakeDNSCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.httpSettings.destOverride.removeAll("fakedns");
-    else if (!CurrentConfig.inboundConfig.httpSettings.destOverride.contains("fakedns"))
-        CurrentConfig.inboundConfig.httpSettings.destOverride.append("fakedns");
-}
-
-void PreferencesWindow::on_httpOverrideFakeDNSOthersCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.httpSettings.destOverride.removeAll("fakedns+others");
-    else if (!CurrentConfig.inboundConfig.httpSettings.destOverride.contains("fakedns+others"))
-        CurrentConfig.inboundConfig.httpSettings.destOverride.append("fakedns+others");
-}
-
-void PreferencesWindow::on_tproxyOverrideFakeDNSCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.tProxySettings.destOverride.removeAll("fakedns");
-    else if (!CurrentConfig.inboundConfig.tProxySettings.destOverride.contains("fakedns"))
-        CurrentConfig.inboundConfig.tProxySettings.destOverride.append("fakedns");
-}
-
-void PreferencesWindow::on_tproxyOverrideFakeDNSOthersCB_stateChanged(int arg1)
-{
-    NEEDRESTART
-    if (arg1 != Qt::Checked)
-        CurrentConfig.inboundConfig.tProxySettings.destOverride.removeAll("fakedns+others");
-    else if (!CurrentConfig.inboundConfig.tProxySettings.destOverride.contains("fakedns+others"))
-        CurrentConfig.inboundConfig.tProxySettings.destOverride.append("fakedns+others");
 }
 
 void PreferencesWindow::on_browserForwarderAddressTxt_textEdited(const QString &arg1)

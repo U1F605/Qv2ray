@@ -29,9 +29,6 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_Route, A(domainStrategy, domainMatcher, domains, ips))
     };
 
-    using QvConfig_DNS = objects::DNSObject;
-    using QvConfig_FakeDNS = objects::FakeDNSObject;
-
     struct QvConfig_Outbounds
     {
         int mark = 255;
