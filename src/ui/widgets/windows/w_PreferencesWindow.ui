@@ -1176,20 +1176,6 @@ Custom DNS Settings</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QCheckBox" name="tproxyOverrideFakeDNSCB">
-                    <property name="text">
-                     <string>FakeDNS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="tproxyOverrideFakeDNSOthersCB">
-                    <property name="text">
-                     <string>FakeDNS+Others</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
                    <spacer name="horizontalSpacer_3">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
@@ -1515,20 +1501,6 @@ Custom DNS Settings</string>
                    <widget class="QCheckBox" name="socksOverrideTLSCB">
                     <property name="text">
                      <string>TLS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="socksOverrideFakeDNSCB">
-                    <property name="text">
-                     <string>FakeDNS</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCheckBox" name="socksOverrideFakeDNSOthersCB">
-                    <property name="text">
-                     <string>FakeDNS+Others</string>
                     </property>
                    </widget>
                   </item>
