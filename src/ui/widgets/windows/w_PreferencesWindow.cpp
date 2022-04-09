@@ -885,8 +885,6 @@ void PreferencesWindow::on_tproxyGroupBox_toggled(bool arg1)
     CurrentConfig.inboundConfig.useTPROXY = arg1;
     tproxyOverrideHTTPCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
     tproxyOverrideTLSCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
-    tproxyOverrideFakeDNSCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
-    tproxyOverrideFakeDNSOthersCB->setEnabled(arg1 && CurrentConfig.inboundConfig.tProxySettings.sniffing);
 }
 
 void PreferencesWindow::on_tProxyPort_valueChanged(int arg1)
@@ -918,8 +916,6 @@ void PreferencesWindow::on_tproxySniffingCB_stateChanged(int arg1)
     tproxySniffingMetadataOnlyCB->setEnabled(arg1 == Qt::Checked);
     tproxyOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     tproxyOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    tproxyOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    tproxyOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_tproxyOverrideHTTPCB_stateChanged(int arg1)
@@ -1028,8 +1024,6 @@ void PreferencesWindow::on_httpSniffingCB_stateChanged(int arg1)
     httpSniffingMetadataOnly->setEnabled(arg1 == Qt::Checked);
     httpOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     httpOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    httpOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    httpOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_httpOverrideHTTPCB_stateChanged(int arg1)
@@ -1060,8 +1054,6 @@ void PreferencesWindow::on_socksSniffingCB_stateChanged(int arg1)
     socksSniffingMetadataOnly->setEnabled(arg1 == Qt::Checked);
     socksOverrideHTTPCB->setEnabled(arg1 == Qt::Checked);
     socksOverrideTLSCB->setEnabled(arg1 == Qt::Checked);
-    socksOverrideFakeDNSCB->setEnabled(arg1 == Qt::Checked);
-    socksOverrideFakeDNSOthersCB->setEnabled(arg1 == Qt::Checked);
 }
 
 void PreferencesWindow::on_socksOverrideHTTPCB_stateChanged(int arg1)
