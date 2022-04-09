@@ -6,7 +6,6 @@
 #include "ui_w_PreferencesWindow.h"
 
 class RouteSettingsMatrixWidget;
-class DnsSettingsWidget;
 
 class PreferencesWindow
     : public QvDialog
@@ -148,7 +147,6 @@ class PreferencesWindow
     void on_browserForwarderPortSB_valueChanged(int arg1);
 
   private:
-    DnsSettingsWidget *dnsSettingsWidget;
     RouteSettingsMatrixWidget *routeSettingsWidget;
     void SetAutoStartButtonsState(bool isAutoStart);
     //
