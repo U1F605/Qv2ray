@@ -432,8 +432,6 @@ void GroupManager::on_groupList_currentItemChanged(QListWidgetItem *current, QLi
     if (priv)
     {
         const auto group = ConnectionManager->GetGroupMetaObject(currentGroupId);
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        RouteManager->SetDNSSettings(group.routeConfigId, dnsSettingsGB->isChecked(), dns, fakedns);
         RouteManager->SetAdvancedRouteSettings(group.routeConfigId, routeSettingsGB->isChecked(), routeSettingsWidget->GetRouteConfig());
     }
     if (current)
