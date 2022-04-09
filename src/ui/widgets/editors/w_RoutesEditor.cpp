@@ -287,9 +287,6 @@ CONFIGROOT RouteEditor::OpenEditor()
             outboundsArray.append(outboundJsonObject);
     }
     root["outbounds"] = outboundsArray;
-    // Process DNS
-    const int &[dns] = dnsWidget->GetDNSObject();
-    root["dns"] = GenerateDNS(dns);
     {
         // Process Browser Forwarder
         if (!bfListenIPTxt->text().trimmed().isEmpty())
