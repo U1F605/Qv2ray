@@ -256,7 +256,7 @@ target_link_libraries(qvmessocket PUBLIC
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
 
-if(UNIX AND NOT APPLE AND NOT WIN32 AND NOT ANDROID)
+if(UNIX)
     include(cmake/platforms/linux.cmake)
 elseif(WIN32)
     include(cmake/platforms/windows.cmake)
