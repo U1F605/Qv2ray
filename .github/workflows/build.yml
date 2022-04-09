@@ -50,12 +50,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y libssl-dev libprotobuf-dev protobuf-compiler protobuf-c-compiler libgrpc++-dev protobuf-compiler-grpc libcurl4-openssl-dev
-      - name: Windows - Download Dependencies
-        shell: bash
-        if: matrix.platform == 'windows-latest'
-        run: |
-          cd ./libs
-          ./setup-libs.sh windows x64
       - name: Windows - Build
         shell: bash
         if: matrix.platform == 'windows-latest'
