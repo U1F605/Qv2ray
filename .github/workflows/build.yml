@@ -33,6 +33,8 @@ jobs:
       - name: Setup Chocolatey
         if: matrix.platform == 'windows-latest'
         uses: crazy-max/ghaction-chocolatey@v1.6.0
+        with:
+          args: -h
       - name: find
         run:  grep -rni "observatory"
       - name: Setup Ninja
