@@ -336,8 +336,6 @@ void GroupManager::on_buttonBox_accepted()
     if (currentGroupId != NullGroupId)
     {
         const auto routeId = ConnectionManager->GetGroupRoutingId(currentGroupId);
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        RouteManager->SetDNSSettings(routeId, dnsSettingsGB->isChecked(), dns, fakedns);
         RouteManager->SetAdvancedRouteSettings(routeId, routeSettingsGB->isChecked(), routeSettingsWidget->GetRouteConfig());
     }
     // Nothing?
