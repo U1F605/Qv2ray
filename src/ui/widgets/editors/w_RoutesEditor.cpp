@@ -118,8 +118,6 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
     defaultOutboundTag = getTag(OUTBOUND(root["outbounds"].toArray().first().toObject()));
     defaultOutboundCombo->setCurrentText(defaultOutboundTag);
     //
-    bfListenIPTxt->setText(root["browserForwarder"].toObject()["listenAddr"].toString());
-    bfListenPortTxt->setValue(root["browserForwarder"].toObject()["listenPort"].toInt());
     obSubjectSelectorTxt->setPlainText(root["observatory"].toObject()["subjectSelector"].toVariant().toStringList().join(NEWLINE));
 
     for (const auto &group : ConnectionManager->AllGroups())
@@ -287,16 +285,6 @@ CONFIGROOT RouteEditor::OpenEditor()
             outboundsArray.append(outboundJsonObject);
     }
     root["outbounds"] = outboundsArray;
-    {
-        // Process Browser Forwarder
-        if (!bfListenIPTxt->text().trimmed().isEmpty())
-        {
-            root["browserForwarder"] = QJsonObject{
-                { "listenAddr", bfListenIPTxt->text() },
-                { "listenPort", bfListenPortTxt->value() },
-            };
-        }
-    }
     {
         // Process Observatory
         QJsonObject observatory;
