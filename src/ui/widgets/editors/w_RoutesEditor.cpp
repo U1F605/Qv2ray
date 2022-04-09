@@ -117,8 +117,6 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
     // Set default outboung combo text AFTER adding all outbounds.
     defaultOutboundTag = getTag(OUTBOUND(root["outbounds"].toArray().first().toObject()));
     defaultOutboundCombo->setCurrentText(defaultOutboundTag);
-    //
-    obSubjectSelectorTxt->setPlainText(root["observatory"].toObject()["subjectSelector"].toVariant().toStringList().join(NEWLINE));
 
     for (const auto &group : ConnectionManager->AllGroups())
     {
@@ -285,12 +283,6 @@ CONFIGROOT RouteEditor::OpenEditor()
             outboundsArray.append(outboundJsonObject);
     }
     root["outbounds"] = outboundsArray;
-    {
-        // Process Observatory
-        QJsonObject observatory;
-        observatory["subjectSelector"] = QJsonArray::fromStringList(SplitLines(obSubjectSelectorTxt->toPlainText()));
-        root["observatory"] = observatory;
-    }
     return root;
 }
 
