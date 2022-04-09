@@ -16,7 +16,7 @@ Terminal=false
 Icon=qv2ray
 Exec=qvmessocket %u
 MimeType=x-scheme-handler/qv2ray;
-Actions=debug;noPlugin;noScaleFactor;noAPI;noAutoConnection;
+Actions=noPlugin;noScaleFactor;noAPI;noAutoConnection;
 
 [Desktop Action noPlugin]
 Name=Start without Plugins
