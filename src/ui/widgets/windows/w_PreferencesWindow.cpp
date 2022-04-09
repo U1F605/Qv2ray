@@ -165,11 +165,6 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
 
         tproxyMode->setCurrentText(tProxySettings.mode);
     }
-    {
-        const auto &browserForwarderSettings = CurrentConfig.inboundConfig.browserForwarderSettings;
-        browserForwarderAddressTxt->setText(browserForwarderSettings.address);
-        browserForwarderPortSB->setValue(browserForwarderSettings.port);
-    }
     outboundMark->setValue(CurrentConfig.outboundConfig.mark);
     //
     dnsIntercept->setChecked(CurrentConfig.defaultRouteConfig.connectionConfig.dnsIntercept);
@@ -1237,16 +1232,4 @@ void PreferencesWindow::on_tproxySniffingMetadataOnlyCB_stateChanged(int arg1)
     LOADINGCHECK
     NEEDRESTART
     CurrentConfig.inboundConfig.tProxySettings.metadataOnly = arg1 == Qt::Checked;
-}
-
-void PreferencesWindow::on_browserForwarderAddressTxt_textEdited(const QString &arg1)
-{
-    NEEDRESTART
-    CurrentConfig.inboundConfig.browserForwarderSettings.address = arg1;
-}
-
-void PreferencesWindow::on_browserForwarderPortSB_valueChanged(int arg1)
-{
-    NEEDRESTART
-    CurrentConfig.inboundConfig.browserForwarderSettings.port = arg1;
 }

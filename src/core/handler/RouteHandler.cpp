@@ -203,8 +203,6 @@ namespace Qvmessocket::core::handler
         const auto &connConf = config.overrideConnectionConfig ? config.connectionConfig : GlobalConfig.defaultRouteConfig.connectionConfig;
         const auto &routeConf = config.overrideRoute ? config.routeConfig : GlobalConfig.defaultRouteConfig.routeConfig;
         const auto &fpConf = config.overrideForwardProxyConfig ? config.forwardProxyConfig : GlobalConfig.defaultRouteConfig.forwardProxyConfig;
-        const auto &browserForwardingConf = GlobalConfig.inboundConfig.browserForwarderSettings;
-        //
         //
         // Note: The part below always makes the whole functionality in
         // trouble...... BE EXTREME CAREFUL when changing these code
@@ -276,14 +274,6 @@ namespace Qvmessocket::core::handler
                 QJsonIO::SetValue(root, tag, "outbounds", 0, "tag");
             }
             root["routing"] = GenerateRoutes(connConf.enableProxy, connConf.bypassCN, connConf.bypassLAN, tag, routeConf);
-
-            // Browser Forwarding
-            if (QJsonIO::GetValue(root, "outbounds", 0, "streamSettings", "wsSettings", "useBrowserForwarding").toBool(false))
-            {
-                LOG("Applying browserForwarder configuration");
-                QJsonIO::SetValue(root, browserForwardingConf.address, "browserForwarder", "listenAddr");
-                QJsonIO::SetValue(root, browserForwardingConf.port, "browserForwarder", "listenPort");
-            }
 
             //
             // Forward proxy

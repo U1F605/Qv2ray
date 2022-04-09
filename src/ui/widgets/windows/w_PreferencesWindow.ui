@@ -1693,67 +1693,6 @@ Custom DNS Settings</string>
                </layout>
               </widget>
              </item>
-             <item row="1" column="1">
-              <widget class="QGroupBox" name="groupBox_2">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="title">
-                <string>Browser Forwarder Settings</string>
-               </property>
-               <property name="checkable">
-                <bool>false</bool>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-               <layout class="QFormLayout" name="formLayout_14">
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_42">
-                  <property name="text">
-                   <string comment="Listening Address for Browser Forwarder">Listening Address</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QLineEdit" name="browserForwarderAddressTxt">
-                  <property name="text">
-                   <string notr="true">127.0.0.1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_66">
-                  <property name="text">
-                   <string comment="Listening Port for Browser Forwarder">Listening Port</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QSpinBox" name="browserForwarderPortSB">
-                  <property name="minimum">
-                   <number>1</number>
-                  </property>
-                  <property name="maximum">
-                   <number>65535</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0" colspan="2">
-                 <widget class="QLabel" name="label_82">
-                  <property name="font">
-                   <font>
-                    <italic>true</italic>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>This applies to Simple Configs with Browser Forwarder on.</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </item>
           </layout>
@@ -2512,8 +2451,6 @@ Custom DNS Settings</string>
   <tabstop>tproxyOverrideTLSCB</tabstop>
   <tabstop>tproxyMode</tabstop>
   <tabstop>outboundMark</tabstop>
-  <tabstop>browserForwarderAddressTxt</tabstop>
-  <tabstop>browserForwarderPortSB</tabstop>
   <tabstop>proxyDefaultCb</tabstop>
   <tabstop>bypassPrivateCb</tabstop>
   <tabstop>bypassCNCb</tabstop>

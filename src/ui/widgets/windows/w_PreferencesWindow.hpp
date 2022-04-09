@@ -137,8 +137,6 @@ class PreferencesWindow
     void on_httpSniffingMetadataOnly_stateChanged(int arg1);
     void on_socksSniffingMetadataOnly_stateChanged(int arg1);
     void on_tproxySniffingMetadataOnlyCB_stateChanged(int arg1);
-    void on_browserForwarderAddressTxt_textEdited(const QString &arg1);
-    void on_browserForwarderPortSB_valueChanged(int arg1);
 
   private:
     RouteSettingsMatrixWidget *routeSettingsWidget;
