@@ -1238,15 +1238,3 @@ void PreferencesWindow::on_tproxySniffingMetadataOnlyCB_stateChanged(int arg1)
     NEEDRESTART
     CurrentConfig.inboundConfig.tProxySettings.metadataOnly = arg1 == Qt::Checked;
 }
-
-void PreferencesWindow::on_browserForwarderAddressTxt_textEdited(const QString &arg1)
-{
-    NEEDRESTART
-    CurrentConfig.inboundConfig.browserForwarderSettings.address = arg1;
-}
-
-void PreferencesWindow::on_browserForwarderPortSB_valueChanged(int arg1)
-{
-    NEEDRESTART
-    CurrentConfig.inboundConfig.browserForwarderSettings.port = arg1;
-}
