@@ -120,17 +120,6 @@ namespace Qvmessocket::base::config
         JSONSTRUCT_REGISTER(QvConfig_TProxy, B(QvConfig_ProtocolInboundBase), F(tProxyIP, tProxyV6IP, hasTCP, hasUDP, mode))
     };
 
-    struct QvConfig_BrowserForwarder
-    {
-        QString address = "127.0.0.1";
-        int port = 8088;
-
-        QvConfig_BrowserForwarder() {}
-
-        JSONSTRUCT_COMPARE(QvConfig_BrowserForwarder, address, port)
-        JSONSTRUCT_REGISTER(QvConfig_BrowserForwarder, F(address, port))
-    };
-
     struct QvConfig_Inbounds
     {
         QString listenip = "127.0.0.1";
