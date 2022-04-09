@@ -109,7 +109,6 @@ RouteEditor::RouteEditor(QJsonObject connection, QWidget *parent) : QvDialog("Ro
 
     SetUpLayout(ruleEditorUIWidget, ruleWidget);
     SetUpLayout(chainEditorUIWidget, chainWidget);
-    SetUpLayout(dnsEditorUIWidget, dnsWidget);
     //
     nodeDispatcher->LoadFullConfig(root);
     domainStrategy = root["routing"].toObject()["domainStrategy"].toString();
