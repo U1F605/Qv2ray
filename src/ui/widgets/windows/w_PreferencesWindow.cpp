@@ -165,11 +165,6 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
 
         tproxyMode->setCurrentText(tProxySettings.mode);
     }
-    {
-        const auto &browserForwarderSettings = CurrentConfig.inboundConfig.browserForwarderSettings;
-        browserForwarderAddressTxt->setText(browserForwarderSettings.address);
-        browserForwarderPortSB->setValue(browserForwarderSettings.port);
-    }
     outboundMark->setValue(CurrentConfig.outboundConfig.mark);
     //
     dnsIntercept->setChecked(CurrentConfig.defaultRouteConfig.connectionConfig.dnsIntercept);
