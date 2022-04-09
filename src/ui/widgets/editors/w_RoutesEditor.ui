@@ -365,19 +365,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_7">
-         <property name="title">
-          <string> Observatory</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Subject Selector</string>
-            </property>
-           </widget>
-          </item>
           <item>
            <widget class="QPlainTextEdit" name="obSubjectSelectorTxt"/>
           </item>
