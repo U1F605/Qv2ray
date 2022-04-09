@@ -131,13 +131,11 @@ namespace Qvmessocket::base::config
         QvConfig_HttpInbound httpSettings;
         QvConfig_SocksInbound socksSettings;
         QvConfig_SystemProxy systemProxySettings;
-        QvConfig_BrowserForwarder browserForwarderSettings;
-        //
         JSONSTRUCT_COMPARE(QvConfig_Inbounds, listenip, useSocks, useHTTP, useTPROXY, tProxySettings, httpSettings, socksSettings,
-                           systemProxySettings, browserForwarderSettings);
+                           systemProxySettings);
         JSONSTRUCT_REGISTER(QvConfig_Inbounds,                         //
                             A(socksSettings),                          //
                             F(listenip, useSocks, useHTTP, useTPROXY), //
-                            F(tProxySettings, httpSettings, systemProxySettings, browserForwarderSettings));
+                            F(tProxySettings, httpSettings, systemProxySettings));
     };
 }
