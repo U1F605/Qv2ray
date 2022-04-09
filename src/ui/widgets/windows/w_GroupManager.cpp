@@ -4,7 +4,6 @@
 #include "core/handler/ConfigHandler.hpp"
 #include "core/handler/RouteHandler.hpp"
 #include "core/settings/SettingsBackend.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/RouteSettingsMatrix.hpp"
 #include "utils/QvHelpers.hpp"
 
@@ -57,11 +56,7 @@ GroupManager::GroupManager(QWidget *parent) : QvDialog("GroupManager", parent)
     }
 
     //
-    dnsSettingsWidget = new DnsSettingsWidget(this);
     routeSettingsWidget = new RouteSettingsMatrixWidget(GlobalConfig.kernelConfig.AssetsPath(), this);
-    //
-    dnsSettingsGB->setLayout(new QGridLayout(dnsSettingsGB));
-    dnsSettingsGB->layout()->addWidget(dnsSettingsWidget);
     //
     routeSettingsGB->setLayout(new QGridLayout(routeSettingsGB));
     routeSettingsGB->layout()->addWidget(routeSettingsWidget);
