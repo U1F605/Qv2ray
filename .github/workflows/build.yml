@@ -34,7 +34,7 @@ jobs:
         if: matrix.platform == 'windows-latest'
         uses: crazy-max/ghaction-chocolatey@v1.6.0
         with:
-          args: install protoc
+          args: install openssl
       - name: find
         run:  grep -rni "observatory"
       - name: Setup Ninja
