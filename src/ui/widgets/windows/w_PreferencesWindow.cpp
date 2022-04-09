@@ -9,7 +9,6 @@
 #include "src/plugin-interface/QvPluginInterface.hpp"
 #include "ui/common/autolaunch/QvAutoLaunch.hpp"
 #include "ui/widgets/styles/StyleManager.hpp"
-#include "ui/widgets/widgets/DnsSettingsWidget.hpp"
 #include "ui/widgets/widgets/RouteSettingsMatrix.hpp"
 #include "utils/HTTPRequestHelper.hpp"
 #include "utils/QvHelpers.hpp"
