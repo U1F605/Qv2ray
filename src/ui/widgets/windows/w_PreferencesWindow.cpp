@@ -237,10 +237,6 @@ PreferencesWindow::PreferencesWindow(QWidget *parent) : QvDialog("PreferenceWind
     }
     //
     {
-        dnsSettingsWidget = new DnsSettingsWidget(this);
-        dnsSettingsWidget->SetDNSObject(CurrentConfig.defaultRouteConfig.dnsConfig, CurrentConfig.defaultRouteConfig.fakeDNSConfig);
-        dnsSettingsLayout->addWidget(dnsSettingsWidget);
-        //
         routeSettingsWidget = new RouteSettingsMatrixWidget(CurrentConfig.kernelConfig.AssetsPath(), this);
         routeSettingsWidget->SetRouteConfig(CurrentConfig.defaultRouteConfig.routeConfig);
         advRouteSettingsLayout->addWidget(routeSettingsWidget);
@@ -379,10 +375,6 @@ void PreferencesWindow::on_buttonBox_accepted()
     {
         QvMessageBoxWarn(this, tr("Preferences"), *err);
     }
-    else if (!dnsSettingsWidget->CheckIsValidDNS())
-    {
-        QvMessageBoxWarn(this, tr("Preferences"), tr("Invalid DNS settings."));
-    }
     else
     {
         if (CurrentConfig.uiConfig.language != GlobalConfig.uiConfig.language)
@@ -396,13 +388,6 @@ void PreferencesWindow::on_buttonBox_accepted()
         }
         CurrentConfig.defaultRouteConfig.routeConfig = routeSettingsWidget->GetRouteConfig();
         if (!(CurrentConfig.defaultRouteConfig.routeConfig == GlobalConfig.defaultRouteConfig.routeConfig))
-        {
-            NEEDRESTART
-        }
-        const auto &[dns, fakedns] = dnsSettingsWidget->GetDNSObject();
-        CurrentConfig.defaultRouteConfig.dnsConfig = dns;
-        CurrentConfig.defaultRouteConfig.fakeDNSConfig = fakedns;
-        if (!(CurrentConfig.defaultRouteConfig.dnsConfig == GlobalConfig.defaultRouteConfig.dnsConfig))
         {
             NEEDRESTART
         }
