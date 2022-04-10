@@ -115,14 +115,13 @@ jobs:
           name: Qvmessocket-linux-${{ matrix.build_type }}.AppImage
           path: build/Qvmessocket.AppImage
       - name: Linux - Upload binaries to release
-        uses: svenstaro/upload-release-action@v1-release
+        uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release' && matrix.platform == 'ubuntu-20.04' && matrix.ui_type == 'QWidget' && matrix.build_type == 'Release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: build/Qvmessocket.AppImage
           asset_name: Qvmessocket.${{ steps.get_version.outputs.VERSION }}.Qt6.Linux.AppImage
           tag: ${{ github.ref }}
-          overwrite: true
       - name: Windows - Create 7z Release
         if: matrix.platform == 'windows-latest'
         uses: DuckSoft/create-7z-action@v1.0
@@ -136,11 +135,10 @@ jobs:
           name: Qvmessocket-Windows-${{ matrix.build_type }}.7z
           path: release.7z
       - name: Windows - Upload binaries to release
-        uses: svenstaro/upload-release-action@v1-release
+        uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release' && matrix.platform == 'windows-latest' && matrix.ui_type == 'QWidget' && matrix.build_type == 'Release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: release.7z
           asset_name: Qvmessocket.${{ steps.get_version.outputs.VERSION }}.Qt6.Windows.7z
           tag: ${{ github.ref }}
-          overwrite: true
