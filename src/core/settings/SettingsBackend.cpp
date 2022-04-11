@@ -149,7 +149,7 @@ namespace Qvmessocket::core::config
         {
             // Use the config path found by the checks above
             SetConfigDirPath(configPath);
-            LOG("Using ", QV2RAY_CONFIG_DIR, " as the config path.");
+            LOG("Using ", QVMESSOCKET_CONFIG_DIR, " as the config path.");
         }
         else
         {
