@@ -32,12 +32,12 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QVMESSOCKET_BUILD_EXTRA_INFO QString(_QVMESSOCKET_BUILD_EXTRA_INFO_STR_)
 
 #define _BOMB_
-#define QV2RAY_CONFIG_DIR_SUFFIX "/"
+#define QVMESSOCKET_CONFIG_DIR_SUFFIX "/"
 
 #ifdef Q_OS_WIN
-#define QV2RAY_EXECUTABLE_SUFFIX ".exe"
+#define QVMESSOCKET_EXECUTABLE_SUFFIX ".exe"
 #else
-#define QV2RAY_EXECUTABLE_SUFFIX ""
+#define QVMESSOCKET_EXECUTABLE_SUFFIX ""
 #endif
 
 #ifdef Q_OS_WIN
