@@ -57,8 +57,8 @@ namespace Qvmessocket
                     UPGRADELOG("Migrating: " + config.toString());
                     //
                     // MOVE FILES.
-                    // OLD PATH is at QV2RAY_CONFIG_DIR
-                    auto filePath = QV2RAY_CONFIG_DIR + config.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
+                    // OLD PATH is at 
+                    auto filePath = QVMESSOCKET_CONFIG_DIR + config.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
                     auto configFile = QFile(filePath);
                     auto newUuid = GenerateUuid();
                     DEBUG("Generated new UUID: " + newUuid);
