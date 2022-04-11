@@ -109,8 +109,8 @@ namespace Qvmessocket
                     subs["updateInterval"] = value["updateInterval"];
                     subs["displayName"] = key;
                     //
-                    auto baseDirPath = QV2RAY_CONFIG_DIR + "/subscriptions/" + key;
-                    auto newDirPath = QV2RAY_CONFIG_DIR + "/subscriptions/" + subsUuid;
+                    auto baseDirPath = QVMESSOCKET_CONFIG_DIR + "/subscriptions/" + key;
+                    auto newDirPath = QVMESSOCKET_CONFIG_DIR + "/subscriptions/" + subsUuid;
                     QDir newDir(newDirPath);
 
                     if (!newDir.exists())
@@ -248,7 +248,7 @@ namespace Qvmessocket
                     root["connections"] = QJsonArray::fromStringList(connectionsArray);
                     //
                     // Store Connection.json
-                    StringToFile(JsonToString(newConnectionsArray), QV2RAY_CONFIG_DIR + "connections.json");
+                    StringToFile(JsonToString(newConnectionsArray), QVMESSOCKET_CONFIG_DIR + "connections.json");
                 }
                 // Merged groups and subscriptions. $QV2RAY_GROUPS_PATH + groupId.json
                 {
@@ -278,7 +278,7 @@ namespace Qvmessocket
                         for (const auto &cid : aSubscription["connections"].toArray())
                         {
                             ConnectionsCache[cid.toString()] = JsonFromString(
-                                StringFromFile(QV2RAY_CONFIG_DIR + "subscriptions/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
+                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "subscriptions/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
                         }
                         //
                         allGroupsObject[key] = aSubscription;
@@ -308,13 +308,13 @@ namespace Qvmessocket
                         for (const auto &cid : aGroup["connections"].toArray())
                         {
                             ConnectionsCache[cid.toString()] = JsonFromString(
-                                StringFromFile(QV2RAY_CONFIG_DIR + "connections/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
+                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "connections/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
                         }
                         //
                         allGroupsObject[key] = aGroup;
                     }
                     //
-                    StringToFile(JsonToString(allGroupsObject), QV2RAY_CONFIG_DIR + "groups.json");
+                    StringToFile(JsonToString(allGroupsObject), QVMESSOCKET_CONFIG_DIR + "groups.json");
                     //
                     root.remove("groups"); //
                     UPGRADELOG("Removing unused directory");
