@@ -318,10 +318,10 @@ namespace Qvmessocket
                     //
                     root.remove("groups"); //
                     UPGRADELOG("Removing unused directory");
-                    QDir(QV2RAY_CONFIG_DIR + "subscriptions/").removeRecursively();
-                    QDir(QV2RAY_CONFIG_DIR + "connections/").removeRecursively();
+                    QDir(QVMESSOCKET_CONFIG_DIR + "subscriptions/").removeRecursively();
+                    QDir(QVMESSOCKET_CONFIG_DIR + "connections/").removeRecursively();
                     //
-                    QDir().mkpath(QV2RAY_CONFIG_DIR + "connections/");
+                    QDir().mkpath(QVMESSOCKET_CONFIG_DIR + "connections/");
                     //
                     //
                     // FileSystem Migrations
@@ -329,7 +329,7 @@ namespace Qvmessocket
                     //      Only Store (connections.json in CONFIG_PATH) and ($groupID.json in GROUP_PATH)
                     for (const auto &cid : ConnectionsCache.keys())
                     {
-                        StringToFile(JsonToString(ConnectionsCache[cid]), QV2RAY_CONFIG_DIR + "connections/" + cid + QV2RAY_CONFIG_FILE_EXTENSION);
+                        StringToFile(JsonToString(ConnectionsCache[cid]), QVMESSOCKET_CONFIG_DIR + "connections/" + cid + QV2RAY_CONFIG_FILE_EXTENSION);
                     }
                     //
                 }
