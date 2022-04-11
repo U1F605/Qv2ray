@@ -14,8 +14,8 @@ namespace Qvmessocket::core::handler
     QvConfigHandler::QvConfigHandler(QObject *parent) : QObject(parent)
     {
         DEBUG("ConnectionHandler Constructor.");
-        const auto connectionJson = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + "connections.json"));
-        const auto groupJson = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + "groups.json"));
+        const auto connectionJson = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + "connections.json"));
+        const auto groupJson = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + "groups.json"));
         //
         for (const auto &connectionId : connectionJson.keys())
         {
