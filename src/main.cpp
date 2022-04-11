@@ -153,11 +153,11 @@ void signalHandler(int signum)
 
     if (qApp && QvCoreApplication)
     {
-        QDir().mkpath(QV2RAY_CONFIG_DIR + "bugreport/");
-        const auto filePath = QV2RAY_CONFIG_DIR + "bugreport/QvBugReport_" + QSTRN(system_clock::to_time_t(system_clock::now())) + ".stacktrace";
+        QDir().mkpath(QVMESSOCKET_CONFIG_DIR + "bugreport/");
+        const auto filePath = QVMESSOCKET_CONFIG_DIR + "bugreport/QvBugReport_" + QSTRN(system_clock::to_time_t(system_clock::now())) + ".stacktrace";
         StringToFile(msg, filePath);
         std::cout << "Backtrace saved in: " + filePath.toStdString() << std::endl;
-        const auto message = QObject::tr("Qv2ray has encountered an uncaught exception: ") + NEWLINE +              //
+        const auto message = QObject::tr("Qvmessocket has encountered an uncaught exception: ") + NEWLINE +              //
                              QObject::tr("Please report a bug via Github with the file located here: ") + NEWLINE + //
                              NEWLINE + filePath;
         BootstrapMessageBox("UNCAUGHT EXCEPTION", message);

@@ -30,13 +30,8 @@ jobs:
         with:
           toolset: 14.2
           arch: x64
-      - name: Setup Chocolatey
-        if: matrix.platform == 'windows-latest'
-        uses: crazy-max/ghaction-chocolatey@v1.6.0
-        with:
-          args: -h
       - name: find
-        run:  grep -rni "observatory"
+        run:  grep -rni "VLESS"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt

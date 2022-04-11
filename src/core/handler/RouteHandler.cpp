@@ -12,7 +12,7 @@ namespace Qvmessocket::core::handler
 {
     RouteHandler::RouteHandler(QObject *parent) : QObject(parent)
     {
-        const auto routesJson = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + "routes.json"));
+        const auto routesJson = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + "routes.json"));
         for (const auto &routeId : routesJson.keys())
         {
             configs.insert(GroupRoutingId{ routeId }, GroupRoutingConfig::fromJson(routesJson.value(routeId).toObject()));
@@ -31,7 +31,7 @@ namespace Qvmessocket::core::handler
         {
             routingObject[key.toString()] = configs[key].toJson();
         }
-        StringToFile(JsonToString(routingObject), QV2RAY_CONFIG_DIR + "routes.json");
+        StringToFile(JsonToString(routingObject), QVMESSOCKET_CONFIG_DIR + "routes.json");
     }
 
     bool RouteHandler::SetAdvancedRouteSettings(const GroupRoutingId &id, bool overrideGlobal, const QvConfig_Route &route)

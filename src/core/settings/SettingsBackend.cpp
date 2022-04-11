@@ -96,8 +96,8 @@ namespace Qvmessocket::core::config
     {
         LOG("Application exec path: " + qApp->applicationDirPath());
         // Non-standard paths needs special handing for "_debug"
-        const auto currentPathConfig = qApp->applicationDirPath() + "/config" QV2RAY_CONFIG_DIR_SUFFIX;
-        const auto homeQv2ray = QDir::homePath() + "/.qv2ray" QV2RAY_CONFIG_DIR_SUFFIX;
+        const auto currentPathConfig = qApp->applicationDirPath() + "/config" QVMESSOCKET_CONFIG_DIR_SUFFIX;
+        const auto homeQv2ray = QDir::homePath() + "/.qv2ray" QVMESSOCKET_CONFIG_DIR_SUFFIX;
         //
         // Standard paths already handles the "_debug" suffix for us.
         const auto configQv2ray = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
@@ -149,7 +149,7 @@ namespace Qvmessocket::core::config
         {
             // Use the config path found by the checks above
             SetConfigDirPath(configPath);
-            LOG("Using ", QV2RAY_CONFIG_DIR, " as the config path.");
+            LOG("Using ", QVMESSOCKET_CONFIG_DIR, " as the config path.");
         }
         else
         {

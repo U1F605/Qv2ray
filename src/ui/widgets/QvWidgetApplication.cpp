@@ -35,7 +35,7 @@ void Qv2rayWidgetApplication::terminateUIInternal()
     delete mainWindow;
     delete hTray;
     delete StyleManager;
-    StringToFile(JsonToString(UIStates), QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME);
+    StringToFile(JsonToString(UIStates), QVMESSOCKET_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME);
 }
 
 #ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
@@ -132,7 +132,7 @@ QvExitReason Qv2rayWidgetApplication::runQvmessocketInternal()
     StyleManager = new QvStyleManager();
     StyleManager->ApplyStyle(GlobalConfig.uiConfig.theme);
     // Show MainWindow
-    UIStates = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME));
+    UIStates = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + QV2RAY_WIDGETUI_STATE_FILENAME));
     mainWindow = new MainWindow();
     if (StartupArguments.arguments.contains(QvStartupArguments::QV_LINK))
     {

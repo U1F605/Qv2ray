@@ -26,7 +26,7 @@ namespace Qvmessocket::components
     void QvUpdateChecker::CheckUpdate()
     {
 #ifndef DISABLE_AUTO_UPDATE
-        if (QFile(QV2RAY_CONFIG_DIR + "QV2RAY_FEATURE_DISABLE_AUTO_UPDATE").exists())
+        if (QFile(QVMESSOCKET_CONFIG_DIR + "QV2RAY_FEATURE_DISABLE_AUTO_UPDATE").exists())
             return;
         const auto &updateChannel = GlobalConfig.updateConfig.updateChannel;
         LOG("Start checking update for channel ID: " + QSTRN(updateChannel));
@@ -75,12 +75,12 @@ namespace Qvmessocket::components
             }
             const auto link = root["html_url"].toString("");
             const auto versionMessage =
-                QString("A new version of Qv2ray has been found:" NEWLINE "v%1" NEWLINE NEWLINE "%2" NEWLINE "------------" NEWLINE "%3")
+                QString("A new version of Qvmessocket has been found:" NEWLINE "v%1" NEWLINE NEWLINE "%2" NEWLINE "------------" NEWLINE "%3")
                     .arg(newVersionStr)
                     .arg(name)
                     .arg(root["body"].toString());
 
-            const auto result = QvMessageBoxAsk(nullptr, tr("Qv2ray Update"), versionMessage, { Yes, No, Ignore });
+            const auto result = QvMessageBoxAsk(nullptr, tr("Qvmessocket Update"), versionMessage, { Yes, No, Ignore });
             if (result == Yes)
             {
                 QvCoreApplication->OpenURL(link);

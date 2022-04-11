@@ -135,10 +135,10 @@ void PluginManageWindow::on_pluginListWidget_itemSelectionChanged()
 
 void PluginManageWindow::on_openPluginFolder_clicked()
 {
-    QDir pluginPath(QV2RAY_CONFIG_DIR + "plugins/");
+    QDir pluginPath(QVMESSOCKET_CONFIG_DIR + "plugins/");
     if (!pluginPath.exists())
     {
-        pluginPath.mkpath(QV2RAY_CONFIG_DIR + "plugins/");
+        pluginPath.mkpath(QVMESSOCKET_CONFIG_DIR + "plugins/");
     }
     QDesktopServices::openUrl(QUrl::fromLocalFile(pluginPath.absolutePath()));
 }

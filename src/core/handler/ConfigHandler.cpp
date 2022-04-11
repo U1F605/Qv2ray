@@ -14,8 +14,8 @@ namespace Qvmessocket::core::handler
     QvConfigHandler::QvConfigHandler(QObject *parent) : QObject(parent)
     {
         DEBUG("ConnectionHandler Constructor.");
-        const auto connectionJson = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + "connections.json"));
-        const auto groupJson = JsonFromString(StringFromFile(QV2RAY_CONFIG_DIR + "groups.json"));
+        const auto connectionJson = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + "connections.json"));
+        const auto groupJson = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_DIR + "groups.json"));
         //
         for (const auto &connectionId : connectionJson.keys())
         {
@@ -89,14 +89,14 @@ namespace Qvmessocket::core::handler
         {
             connectionsObject[key.toString()] = connections[key].toJson();
         }
-        StringToFile(JsonToString(connectionsObject), QV2RAY_CONFIG_DIR + "connections.json");
+        StringToFile(JsonToString(connectionsObject), QVMESSOCKET_CONFIG_DIR + "connections.json");
         //
         QJsonObject groupObject;
         for (const auto &key : groups.keys())
         {
             groupObject[key.toString()] = groups[key].toJson();
         }
-        StringToFile(JsonToString(groupObject), QV2RAY_CONFIG_DIR + "groups.json");
+        StringToFile(JsonToString(groupObject), QVMESSOCKET_CONFIG_DIR + "groups.json");
     }
 
     void QvConfigHandler::timerEvent(QTimerEvent *event)
