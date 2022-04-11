@@ -127,18 +127,18 @@ jobs:
         uses: DuckSoft/create-7z-action@v1.0
         with:
           pathSource: ./build/deployment/
-          pathTarget: ./release.7z
+          pathTarget: ./Qvmessocket.7z
       - name: Windows - Uploading Artifact
         if: matrix.platform == 'windows-latest'
         uses: actions/upload-artifact@master
         with:
           name: Qvmessocket-Windows-${{ matrix.build_type }}.7z
-          path: release.7z
+          path: Qvmessocket.7z
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release' && matrix.platform == 'windows-latest' && matrix.build_type == 'Release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: release.7z
+          file: Qvmessocket.7z
           file_glob: true
           tag: ${{ github.ref }}
