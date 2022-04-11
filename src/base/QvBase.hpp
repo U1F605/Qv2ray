@@ -46,12 +46,12 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QV2RAY_LIBRARY_SUFFIX ".so"
 #endif
 
-#define QV2RAY_CONFIG_DIR (QvCoreApplication->ConfigPath)
-#define QV2RAY_CONFIG_FILE (QV2RAY_CONFIG_DIR + "Qv2ray.conf")
-#define QV2RAY_CONNECTIONS_DIR (QV2RAY_CONFIG_DIR + "connections/")
-#define QV2RAY_PLUGIN_SETTINGS_DIR (QV2RAY_CONFIG_DIR + "plugin_settings/")
+#define QVMESSOCKET_CONFIG_DIR (QvCoreApplication->ConfigPath)
+#define QV2RAY_CONFIG_FILE (QVMESSOCKET_CONFIG_DIR + "Qv2ray.conf")
+#define QV2RAY_CONNECTIONS_DIR (QVMESSOCKET_CONFIG_DIR + "connections/")
+#define QV2RAY_PLUGIN_SETTINGS_DIR (QVMESSOCKET_CONFIG_DIR + "plugin_settings/")
 #define QV2RAY_CONFIG_FILE_EXTENSION ".qv2ray.json"
-#define QV2RAY_GENERATED_DIR (QV2RAY_CONFIG_DIR + "generated/")
+#define QV2RAY_GENERATED_DIR (QVMESSOCKET_CONFIG_DIR + "generated/")
 
 #if !defined(QVMESSOCKET_DEFAULT_VCORE_PATH) && !defined(QVMESSOCKET_DEFAULT_VASSETS_PATH)
 #define QVMESSOCKET_DEFAULT_VASSETS_PATH (QVMESSOCKET_CONFIG_DIR + "vcore/")
