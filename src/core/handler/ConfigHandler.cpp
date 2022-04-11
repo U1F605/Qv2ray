@@ -89,14 +89,14 @@ namespace Qvmessocket::core::handler
         {
             connectionsObject[key.toString()] = connections[key].toJson();
         }
-        StringToFile(JsonToString(connectionsObject), QV2RAY_CONFIG_DIR + "connections.json");
+        StringToFile(JsonToString(connectionsObject), QVMESSOCKET_CONFIG_DIR + "connections.json");
         //
         QJsonObject groupObject;
         for (const auto &key : groups.keys())
         {
             groupObject[key.toString()] = groups[key].toJson();
         }
-        StringToFile(JsonToString(groupObject), QV2RAY_CONFIG_DIR + "groups.json");
+        StringToFile(JsonToString(groupObject), QVMESSOCKET_CONFIG_DIR + "groups.json");
     }
 
     void QvConfigHandler::timerEvent(QTimerEvent *event)
