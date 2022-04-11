@@ -62,12 +62,11 @@ jobs:
         with:
           name: Qvmessocket-win64.exe
           path: build/Qvmessocket-win64.exe
-      - name: Windows - ${{ matrix.arch }} - Upload binaries to release
-        uses: svenstaro/upload-release-action@v1-release
+      - name: Windows - Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build/${{ steps.get_package.outputs.NAME }}
-          asset_name: ${{ steps.get_package.outputs.NAME }}
+          file: Qvmessocket-win64.exe
+          file_glob: true
           tag: ${{ github.ref }}
-          overwrite: true
