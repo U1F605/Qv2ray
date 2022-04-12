@@ -12,7 +12,6 @@
 #include "outbound/loopback.hpp"
 #include "outbound/shadowsocks.hpp"
 #include "outbound/socksout.hpp"
-#include "outbound/vless.hpp"
 #include "outbound/vmess.hpp"
 
 using namespace Qv2rayPlugin;
