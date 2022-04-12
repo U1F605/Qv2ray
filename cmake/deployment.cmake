@@ -38,7 +38,7 @@ if(WIN32)
             RMDir \\\"$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Qv2ray\\\"
             DeleteRegKey HKLM \\\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Uninstall\\\\qvmessocket\\\"
             ")
-        set(CPACK_PACKAGE_INSTALL_DIRECTORY "qvmessocket")
+        set(CPACK_PACKAGE_INSTALL_DIRECTORY "Qvmessocket")
     endif()
 endif()
 
