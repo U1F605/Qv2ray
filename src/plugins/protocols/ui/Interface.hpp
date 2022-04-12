@@ -44,7 +44,6 @@ class ProtocolGUIInterface : public PluginGUIInterface
     {
         return {
             MakeEditorInfoPair<VmessOutboundEditor>("vmess", "VMess"),                   //
-            MakeEditorInfoPair<VlessOutboundEditor>("vless", "VLESS"),                   //
             MakeEditorInfoPair<ShadowsocksOutboundEditor>("shadowsocks", "Shadowsocks"), //
             MakeEditorInfoPair<HttpOutboundEditor>("http", "HTTP"),                      //
             MakeEditorInfoPair<SocksOutboundEditor>("socks", "SOCKS"),                   //
