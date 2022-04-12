@@ -65,7 +65,6 @@ using namespace Qvmessocket::base::objects::transfer;
 
 #define QSTRN(num) QString::number(num)
 
-#define OUTBOUND_TAG_BLACKHOLE "BLACKHOLE"
 #define OUTBOUND_TAG_DIRECT "DIRECT"
 #define OUTBOUND_TAG_PROXY "PROXY"
 #define OUTBOUND_TAG_FORWARD_PROXY "QV2RAY_FORWARD_PROXY"
