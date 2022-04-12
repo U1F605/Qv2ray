@@ -15,31 +15,26 @@ namespace Qvmessocket::core::connection::serialization
     {
         CONFIGROOT Deserialize(const QString &vmess, QString *alias, QString *errMessage);
         const QString Serialize(const StreamSettingsObject &transfer, const VMessServerObject &server, const QString &alias);
-    } // namespace vmess
+    }
 
     namespace vmess_new
     {
         CONFIGROOT Deserialize(const QString &vmess, QString *alias, QString *errMessage);
         const QString Serialize(const StreamSettingsObject &transfer, const VMessServerObject &server, const QString &alias);
-    } // namespace vmess_new
-
-    namespace vless
-    {
-        CONFIGROOT Deserialize(const QString &vless, QString *alias, QString *errMessage);
-    } // namespace vless
+    }
 
     namespace ss
     {
         CONFIGROOT Deserialize(const QString &ss, QString *alias, QString *errMessage);
         const QString Serialize(const ShadowSocksServerObject &server, const QString &alias, bool isSip002);
-    } // namespace ss
+    }
 
     namespace ssd
     {
         QList<std::pair<QString, CONFIGROOT>> Deserialize(const QString &uri, QString *groupName, QStringList *logList);
-    } // namespace ssd
+    }
 
-} // namespace Qv2ray::core::connection::serialization
+}
 
 using namespace Qvmessocket::core;
 using namespace Qvmessocket::core::connection;
