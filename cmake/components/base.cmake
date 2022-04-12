@@ -72,7 +72,6 @@ set(QVMESSOCKET_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/ssd.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess_new.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vless.cpp
 
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.hpp

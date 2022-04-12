@@ -54,26 +54,6 @@ struct ShadowSocksServerObject
 };
 
 //
-// VLESS Server
-struct VLESSServerObject
-{
-    struct UserObject
-    {
-        QString id;
-        QString encryption = "none";
-        QString flow;
-        JSONSTRUCT_COMPARE(UserObject, id, encryption, flow)
-        JSONSTRUCT_REGISTER(UserObject, A(encryption), F(id, flow))
-    };
-
-    QString address;
-    int port = 0;
-    QList<UserObject> users;
-    JSONSTRUCT_COMPARE(VLESSServerObject, address, port, users)
-    JSONSTRUCT_REGISTER(VLESSServerObject, F(address, port, users))
-};
-
-//
 // VMess Server
 constexpr auto VMESS_USER_ALTERID_DEFAULT = 0;
 struct VMessServerObject

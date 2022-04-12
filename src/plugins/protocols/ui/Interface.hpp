@@ -12,7 +12,6 @@
 #include "outbound/loopback.hpp"
 #include "outbound/shadowsocks.hpp"
 #include "outbound/socksout.hpp"
-#include "outbound/vless.hpp"
 #include "outbound/vmess.hpp"
 
 using namespace Qv2rayPlugin;
@@ -45,7 +44,6 @@ class ProtocolGUIInterface : public PluginGUIInterface
     {
         return {
             MakeEditorInfoPair<VmessOutboundEditor>("vmess", "VMess"),                   //
-            MakeEditorInfoPair<VlessOutboundEditor>("vless", "VLESS"),                   //
             MakeEditorInfoPair<ShadowsocksOutboundEditor>("shadowsocks", "Shadowsocks"), //
             MakeEditorInfoPair<HttpOutboundEditor>("http", "HTTP"),                      //
             MakeEditorInfoPair<SocksOutboundEditor>("socks", "SOCKS"),                   //
