@@ -13,7 +13,7 @@ if(WIN32)
         set(CPACK_GENERATOR "NSIS")
         set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
         set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico")
-        set(CPACK_NSIS_DISPLAY_NAME "Qvmesssocket")
+        set(CPACK_NSIS_DISPLAY_NAME "Qvmessocket")
         set(CPACK_NSIS_PACKAGE_NAME "Qvmessocket")
         set(CPACK_NSIS_EXTRA_PREINSTALL_COMMANDS "
             ExecWait \\\"taskkill /f /im qvmessocket.exe\\\"
