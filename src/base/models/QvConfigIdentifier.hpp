@@ -158,7 +158,6 @@ namespace Qvmessocket::base
         API_INBOUND = 0,
         API_OUTBOUND_PROXY = 1,
         API_OUTBOUND_DIRECT = 2,
-        API_OUTBOUND_BLACKHOLE = 3,
     };
 
     typedef long qvspeed;
