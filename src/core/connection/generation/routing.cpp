@@ -43,12 +43,6 @@ namespace Qvmessocket::core::connection::generation::routing
         else
         {
             //
-            // Blocked.
-            if (!routeConfig.ips.block.isEmpty())
-                rulesList << GenerateSingleRouteRule(RULE_IP, routeConfig.ips.block, OUTBOUND_TAG_BLACKHOLE);
-            if (!routeConfig.domains.block.isEmpty())
-                rulesList << GenerateSingleRouteRule(RULE_DOMAIN, routeConfig.domains.block, OUTBOUND_TAG_BLACKHOLE);
-            //
             // Proxied
             if (!routeConfig.ips.proxy.isEmpty())
                 rulesList << GenerateSingleRouteRule(RULE_IP, routeConfig.ips.proxy, outTag);
