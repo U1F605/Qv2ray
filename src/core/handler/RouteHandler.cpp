@@ -323,7 +323,6 @@ namespace Qvmessocket::core::handler
                 OUTBOUNDS outbounds(root["outbounds"].toArray());
                 const auto freeDS = (connConf.FreedomDNS) ? "UseIP" : "AsIs";
                 outbounds.append(GenerateOutboundEntry(OUTBOUND_TAG_DIRECT, "freedom", GenerateFreedomOUT(freeDS, ":0"), {}));
-                outbounds.append(GenerateOutboundEntry(OUTBOUND_TAG_BLACKHOLE, "blackhole", GenerateBlackHoleOUT(false), {}));
                 root["outbounds"] = outbounds;
             }
 
