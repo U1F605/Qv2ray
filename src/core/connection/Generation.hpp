@@ -15,12 +15,12 @@ namespace Qvmessocket::core::connection::generation
         ROUTERULE GenerateSingleRouteRule(RuleType t, const QString &str, const QString &outboundTag, const QString &type = "field");
         ROUTERULE GenerateSingleRouteRule(RuleType t, const QStringList &list, const QString &outboundTag, const QString &type = "field");
         ROUTING GenerateRoutes(bool enableProxy, bool bypassCN, bool bypassLAN, const QString &outboundTag, const QvConfig_Route &routeConfig);
-    } // namespace routing
+    }
 
     namespace misc
     {
         QJsonObject GenerateAPIEntry(const QString &tag, bool withHandler = true, bool withLogger = true, bool withStats = true);
-    } // namespace misc
+    }
 
     namespace inbounds
     {
@@ -36,12 +36,11 @@ namespace Qvmessocket::core::connection::generation
                                      const INBOUNDSETTING &settings,   //
                                      const QJsonObject &sniffing = {}, //
                                      const QJsonObject &allocate = {});
-    } // namespace inbounds
+    }
 
     namespace outbounds
     {
         OUTBOUNDSETTING GenerateFreedomOUT(const QString &domainStrategy, const QString &redirect);
-        OUTBOUNDSETTING GenerateBlackHoleOUT(bool useHTTP);
         OUTBOUNDSETTING GenerateShadowSocksOUT(const QList<ShadowSocksServerObject> &servers);
         OUTBOUNDSETTING GenerateShadowSocksServerOUT(const QString &address, int port, const QString &method, const QString &password);
         OUTBOUNDSETTING GenerateHTTPSOCKSOut(const QString &address, int port, bool useAuth, const QString &username, const QString &password);
@@ -51,20 +50,19 @@ namespace Qvmessocket::core::connection::generation
                                        const QJsonObject &streamSettings, //
                                        const QJsonObject &mux = {},       //
                                        const QString &sendThrough = "0.0.0.0");
-    } // namespace outbounds
+    }
 
     namespace filters
     {
-        // mark all outbound
         void OutboundMarkSettingFilter(CONFIGROOT &root, const int mark);
         void RemoveEmptyMuxFilter(CONFIGROOT &root);
         void DNSInterceptFilter(CONFIGROOT &root, const bool have_tproxy, const bool have_tproxy_v6, const bool have_socks);
         void BypassBTFilter(CONFIGROOT &root);
         void mKCPSeedFilter(CONFIGROOT &root);
         void FillupTagsFilter(CONFIGROOT &root, const QString &subKey);
-    } // namespace filters
+    }
 
-} // namespace Qv2ray::core::connection::generation
+}
 
 using namespace Qvmessocket::core;
 using namespace Qvmessocket::core::connection;
