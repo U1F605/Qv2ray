@@ -90,16 +90,6 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="insertBlackBtn">
-            <property name="toolTip">
-             <string>Add Blackhole Outbound</string>
-            </property>
-            <property name="text">
-             <string>Blackhole</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="insertDirectBtn">
             <property name="toolTip">
              <string>Add Freedom Outbound</string>
