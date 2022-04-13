@@ -318,7 +318,7 @@ namespace Qvmessocket::core::handler
             }
 
             //
-            // Process FREEDOM and BLACKHOLE outbound
+            // Process FREEDOM outbound
             {
                 OUTBOUNDS outbounds(root["outbounds"].toArray());
                 const auto freeDS = (connConf.FreedomDNS) ? "UseIP" : "AsIs";
