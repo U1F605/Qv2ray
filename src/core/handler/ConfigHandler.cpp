@@ -41,7 +41,7 @@ namespace Qvmessocket::core::handler
             auto const &connectionObject = connections.value(id);
             if (connectionObject.__qvConnectionRefCount == 0)
             {
-                QFile connectionFile(QV2RAY_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION);
+                QFile connectionFile(QVMESSOCKET_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION);
                 if (connectionFile.exists())
                 {
                     if (!connectionFile.remove())
@@ -52,7 +52,7 @@ namespace Qvmessocket::core::handler
             }
             else
             {
-                const auto connectionFilePath = QV2RAY_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
+                const auto connectionFilePath = QVMESSOCKET_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
                 connectionRootCache[id] = CONFIGROOT(JsonFromString(StringFromFile(connectionFilePath)));
                 DEBUG("Loaded connection id: " + id.toString() + " into cache.");
             }
