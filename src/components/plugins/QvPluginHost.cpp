@@ -35,7 +35,7 @@ namespace Qvmessocket::components::plugins
             const QStringList entries = QDir(pluginDirPath).entryList(QDir::Files);
             for (const auto &fileName : entries)
             {
-                if (!fileName.endsWith(QV2RAY_LIBRARY_SUFFIX))
+                if (!fileName.endsWith(QVMESSOCKET_LIBRARY_SUFFIX))
                 {
                     DEBUG("Skipping: " + fileName + " in: " + pluginDirPath);
                     continue;
@@ -365,4 +365,4 @@ namespace Qvmessocket::components::plugins
         }
         return typesList;
     }
-} // namespace Qv2ray::components::plugins
+}
