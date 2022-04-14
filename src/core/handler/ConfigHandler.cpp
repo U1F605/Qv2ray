@@ -225,7 +225,7 @@ namespace Qvmessocket::core::handler
             LOG("Fully removing a connection from cache.");
             connectionRootCache.remove(id);
             //
-            QFile connectionFile(QV2RAY_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION);
+            QFile connectionFile(QVMESSOCKET_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION);
             if (connectionFile.exists())
             {
                 if (!connectionFile.remove())
@@ -368,7 +368,7 @@ namespace Qvmessocket::core::handler
     {
         CheckValidId(id, false);
         //
-        auto path = QV2RAY_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
+        auto path = QVMESSOCKET_CONNECTIONS_DIR + id.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
         auto content = JsonToString(root);
         bool result = StringToFile(content, path);
         //
