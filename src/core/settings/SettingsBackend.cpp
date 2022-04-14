@@ -4,14 +4,14 @@
 #include "utils/QvHelpers.hpp"
 
 #define QV_MODULE_NAME "SettingsBackend"
-constexpr auto QV2RAY_CONFIG_PATH_ENV_NAME = "QV2RAY_CONFIG_PATH";
+constexpr auto QV2RAY_CONFIG_PATH_ENV_NAME = "QVMESSOCKET_CONFIG_PATH";
 
 namespace Qvmessocket::core::config
 {
     void SaveGlobalSettings()
     {
         const auto str = JsonToString(GlobalConfig.toJson());
-        StringToFile(str, QV2RAY_CONFIG_FILE);
+        StringToFile(str, QVMESSOCKET_CONFIG_FILE);
     }
 
     void SetConfigDirPath(const QString &path)
@@ -190,7 +190,7 @@ namespace Qvmessocket::core::config
             LOG("Set " + configPath + " as the config path.");
             SetConfigDirPath(configPath);
 
-            if (QFile::exists(QV2RAY_CONFIG_FILE))
+            if (QFile::exists(QVMESSOCKET_CONFIG_FILE))
             {
                 // As we already tried to load config from every possible dir.
                 //
@@ -232,7 +232,7 @@ namespace Qvmessocket::core::config
         //
         {
             // Load the config for upgrade, but do not parse it to the struct.
-            auto conf = JsonFromString(StringFromFile(QV2RAY_CONFIG_FILE));
+            auto conf = JsonFromString(StringFromFile(QVMESSOCKET_CONFIG_FILE));
             const auto configVersion = conf["config_version"].toInt();
 
             if (configVersion > QVMESSOCKET_CONFIG_VERSION)
