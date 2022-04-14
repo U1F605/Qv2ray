@@ -41,9 +41,9 @@ using namespace Qvmessocket::base::objects::transfer;
 #endif
 
 #ifdef Q_OS_WIN
-#define QV2RAY_LIBRARY_SUFFIX ".dll"
+#define QVMESSOCKET_LIBRARY_SUFFIX ".dll"
 #else
-#define QV2RAY_LIBRARY_SUFFIX ".so"
+#define QVMESSOCKET_LIBRARY_SUFFIX ".so"
 #endif
 
 #define QVMESSOCKET_CONFIG_DIR (QvCoreApplication->ConfigPath)
