@@ -206,7 +206,7 @@ namespace Qvmessocket::core::config
                                  QObject::tr("Failed to determine the location of config file:") + NEWLINE +                                   //
                                      QObject::tr("Qv2ray has found a config file, but it failed to be loaded due to some errors.") + NEWLINE + //
                                      QObject::tr("A workaround is to remove the this file and restart Qv2ray:") + NEWLINE +                    //
-                                     QV2RAY_CONFIG_FILE + NEWLINE +                                                                            //
+                                     QVMESSOCKET_CONFIG_FILE + NEWLINE +                                                                            //
                                      QObject::tr("Qv2ray will now exit.") + NEWLINE +                                                          //
                                      QObject::tr("Please report if you think it's a bug."));                                                   //
                 return false;
@@ -258,7 +258,6 @@ namespace Qvmessocket::core::config
             return true;
         }
     }
-
 }
 
 using namespace Qvmessocket::core::config;
