@@ -43,9 +43,9 @@ namespace Qvmessocket
                 defaultGroup["displayName"] = QObject::tr("Default Group");
                 QString defaultGroupId = "000000000000";
 
-                if (!QDir(QV2RAY_CONNECTIONS_DIR + defaultGroupId).exists())
+                if (!QDir(QVMESSOCKET_CONNECTIONS_DIR + defaultGroupId).exists())
                 {
-                    QDir().mkpath(QV2RAY_CONNECTIONS_DIR + defaultGroupId);
+                    QDir().mkpath(QVMESSOCKET_CONNECTIONS_DIR + defaultGroupId);
                 }
 
                 QString autoStartId;
@@ -74,7 +74,7 @@ namespace Qvmessocket
 
                     if (configFile.exists())
                     {
-                        auto newPath = QV2RAY_CONNECTIONS_DIR + defaultGroupId + "/" + newUuid + QV2RAY_CONFIG_FILE_EXTENSION;
+                        auto newPath = QVMESSOCKET_CONNECTIONS_DIR + defaultGroupId + "/" + newUuid + QV2RAY_CONFIG_FILE_EXTENSION;
                         configFile.rename(newPath);
                         UPGRADELOG("Moved: " + filePath + " to " + newPath);
                     }
@@ -213,10 +213,10 @@ namespace Qvmessocket
                 //
                 {
                     // Moved root["connections"] into separated file: $QV2RAY_CONFIG_PATH/connections.json
-                    QDir connectionsDir(QV2RAY_CONNECTIONS_DIR);
+                    QDir connectionsDir(QVMESSOCKET_CONNECTIONS_DIR);
                     if (!connectionsDir.exists())
                     {
-                        connectionsDir.mkpath(QV2RAY_CONNECTIONS_DIR);
+                        connectionsDir.mkpath(QVMESSOCKET_CONNECTIONS_DIR);
                     }
                     const auto connectionsArray = root["connections"].toObject().keys();
                     QJsonObject newConnectionsArray;
