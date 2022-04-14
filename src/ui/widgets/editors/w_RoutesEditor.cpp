@@ -376,16 +376,6 @@ void RouteEditor::on_addDefaultBtn_clicked()
     }
 }
 
-void RouteEditor::on_insertBlackBtn_clicked()
-{
-    LOADINGCHECK
-    auto blackHole = GenerateBlackHoleOUT(false);
-    auto tag = "BlackHole-" + QSTRN(QTime::currentTime().msecsSinceStartOfDay());
-    auto outbound = GenerateOutboundEntry(tag, "blackhole", blackHole, {});
-    const auto _ = nodeDispatcher->CreateOutbound(make_normal_outbound(outbound));
-    Q_UNUSED(_)
-}
-
 void RouteEditor::on_addInboundBtn_clicked()
 {
     LOADINGCHECK

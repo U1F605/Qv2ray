@@ -759,7 +759,6 @@ void MainWindow::OnStatsAvailable(const ConnectionGroupPair &id, const QMap<Stat
                     pointData[SpeedWidget::OUTBOUND_DIRECT_DOWN] = downSpeed;
                 }
                 break;
-            case API_OUTBOUND_BLACKHOLE: break;
         }
     }
 

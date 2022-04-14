@@ -11,7 +11,6 @@ macro(ADD_SOURCE mode name)
     list(APPEND PLUGIN_UI_SOURCE "${CMAKE_CURRENT_LIST_DIR}/ui/${mode}/${name}.hpp")
 endmacro()
 
-ADD_SOURCE(outbound blackhole)
 ADD_SOURCE(outbound dns)
 ADD_SOURCE(outbound freedom)
 ADD_SOURCE(outbound httpout)

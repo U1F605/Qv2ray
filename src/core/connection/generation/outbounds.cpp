@@ -8,15 +8,6 @@ namespace Qvmessocket::core::connection::generation::outbounds
         JADD(domainStrategy, redirect)
         return root;
     }
-    OUTBOUNDSETTING GenerateBlackHoleOUT(bool useHTTP)
-    {
-        OUTBOUNDSETTING root;
-        QJsonObject resp;
-        resp.insert("type", useHTTP ? "http" : "none");
-        root.insert("response", resp);
-        return root;
-    }
-
     OUTBOUNDSETTING GenerateShadowSocksOUT(const QList<ShadowSocksServerObject> &_servers)
     {
         OUTBOUNDSETTING root;
@@ -58,4 +49,4 @@ namespace Qvmessocket::core::connection::generation::outbounds
         JADD(sendThrough, protocol, settings, tag, streamSettings, mux)
         return root;
     }
-} // namespace Qv2ray::core::connection::generation::outbounds
+}

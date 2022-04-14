@@ -52,7 +52,6 @@ class RouteEditor
     void on_domainStrategyCombo_currentIndexChanged(int arg1);
     void on_importExistingBtn_clicked();
     void on_importGroupBtn_currentIndexChanged(int index);
-    void on_insertBlackBtn_clicked();
     void on_insertDirectBtn_clicked();
     void on_linkExistingBtn_clicked();
     void on_importOutboundBtn_clicked();

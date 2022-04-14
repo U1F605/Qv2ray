@@ -5,7 +5,6 @@
 #include "inbound/httpin.hpp"
 #include "inbound/socksin.hpp"
 //
-#include "outbound/blackhole.hpp"
 #include "outbound/dns.hpp"
 #include "outbound/freedom.hpp"
 #include "outbound/httpout.hpp"
@@ -48,7 +47,6 @@ class ProtocolGUIInterface : public PluginGUIInterface
             MakeEditorInfoPair<HttpOutboundEditor>("http", "HTTP"),                      //
             MakeEditorInfoPair<SocksOutboundEditor>("socks", "SOCKS"),                   //
             MakeEditorInfoPair<FreedomOutboundEditor>("freedom", "Freedom"),             //
-            MakeEditorInfoPair<BlackholeOutboundEditor>("blackhole", "Blackhole"),       //
             MakeEditorInfoPair<DnsOutboundEditor>("dns", "DNS"),                         //
             MakeEditorInfoPair<LoopbackSettingsEditor>("loopback", "Loopback"),          //
         };
