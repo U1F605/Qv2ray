@@ -262,6 +262,6 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-get_target_property(QVMESSOCKET_BASE_LINK_LIBS qvmessocket_baselib LINK_LIBRARIES)
-get_target_property(QVMESSOCKET_EXEC_LINK_LIBS qvmessocket LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_BASE_LINK_LIBS Qvmessocket_baselib LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_EXEC_LINK_LIBS Qvmessocket LINK_LIBRARIES)
 message("${QVMESSOCKET_BUILD_STATS}")
