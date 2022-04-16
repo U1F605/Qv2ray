@@ -55,7 +55,7 @@ jobs:
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-win64*.exe
+          name: Qvmessocket-*-win64.exe
           path: build/Qvmessocket-win64*.exe
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v2
