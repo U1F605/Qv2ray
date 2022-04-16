@@ -14,9 +14,9 @@ namespace Qvmessocket::components::plugins
     {
         if (!QvCoreApplication->StartupArguments.noPlugins)
         {
-            if (auto dir = QDir(QV2RAY_PLUGIN_SETTINGS_DIR); !dir.exists())
+            if (auto dir = QDir(QVMESSOCKET_PLUGIN_SETTINGS_DIR); !dir.exists())
             {
-                dir.mkpath(QV2RAY_PLUGIN_SETTINGS_DIR);
+                dir.mkpath(QVMESSOCKET_PLUGIN_SETTINGS_DIR);
             }
             initializePluginHost();
         }
@@ -184,7 +184,7 @@ namespace Qvmessocket::components::plugins
             {
                 LOG("Saving plugin settings for: \"" + name + "\"");
                 auto &conf = plugins[name].pluginInterface->GetSettngs();
-                StringToFile(JsonToString(conf), QV2RAY_PLUGIN_SETTINGS_DIR + name + ".conf");
+                StringToFile(JsonToString(conf), QVMESSOCKET_PLUGIN_SETTINGS_DIR + name + ".conf");
             }
         }
     }
