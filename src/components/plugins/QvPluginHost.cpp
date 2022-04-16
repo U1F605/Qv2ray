@@ -170,8 +170,8 @@ namespace Qvmessocket::components::plugins
             return false;
         }
 
-        auto conf = JsonFromString(StringFromFile(QV2RAY_PLUGIN_SETTINGS_DIR + internalName + ".conf"));
-        plugins[internalName].pluginInterface->InitializePlugin(QV2RAY_PLUGIN_SETTINGS_DIR + internalName + "/", conf);
+        auto conf = JsonFromString(StringFromFile(QVMESSOCKET_PLUGIN_SETTINGS_DIR + internalName + ".conf"));
+        plugins[internalName].pluginInterface->InitializePlugin(QVMESSOCKET_PLUGIN_SETTINGS_DIR + internalName + "/", conf);
         plugins[internalName].isLoaded = true;
         return true;
     }
