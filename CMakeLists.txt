@@ -211,8 +211,6 @@ if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
     endif()
 endif()
 
-include(cmake/translations.cmake)
-
 list(APPEND QVMESSOCKET_QRC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources.qrc
     ${CMAKE_SOURCE_DIR}/resources.new.qrc
