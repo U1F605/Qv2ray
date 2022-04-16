@@ -163,7 +163,7 @@ else()
     add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
 endif()
 
-add_library(qvmessocket_baselib STATIC
+add_library(Qvmessocket_baselib STATIC
     ${QVMESSOCKET_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
@@ -174,7 +174,7 @@ add_library(qvmessocket_baselib STATIC
     ${API_PROTO_SRCS}
     )
 
-target_link_libraries(qvmessocket_baselib
+target_link_libraries(Qvmessocket_baselib
     ${QVMESSOCKET_QT_LIBS}
     ${QVMESSOCKET_PROTOBUF_LIBRARY}
     ${QVMESSOCKET_BACKEND_LIBRARY}
@@ -237,12 +237,12 @@ set(QVMESSOCKET_FULL_SOURCES
     )
 
 if(QVMESSOCKET_QT6)
-    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 else()
-    add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 endif()
 
-target_include_directories(qvmessocket PRIVATE
+target_include_directories(Qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -250,7 +250,7 @@ target_include_directories(qvmessocket PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qvmessocket PUBLIC
+target_link_libraries(Qvmessocket PUBLIC
     qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
