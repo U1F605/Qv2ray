@@ -198,7 +198,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationVersion(QVMESSOCKET_VERSION_STRING);
 
 #ifdef QVMESSOCKET_GUI
-    QApplication::setApplicationDisplayName("Qv2ray");
+    QApplication::setApplicationDisplayName("Qvmessocket");
 #endif
 
     if (qEnvironmentVariableIsSet("QV2RAY_NO_SCALE_FACTORS"))
