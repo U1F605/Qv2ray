@@ -251,7 +251,7 @@ target_include_directories(Qvmessocket PRIVATE
     )
 
 target_link_libraries(Qvmessocket PUBLIC
-    qvmessocket_baselib
+    Qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
