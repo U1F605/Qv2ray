@@ -10,8 +10,3 @@ foreach(d ${QVMESSOCKET_ICON_DIMENSIONS})
         DESTINATION share/icons/hicolor/${d}x${d}/apps
         RENAME qv2ray.png)
 endforeach(d)
-
-if(NOT QV2RAY_EMBED_TRANSLATIONS)
-    install(FILES ${QV2RAY_QM_FILES}
-        DESTINATION share/qv2ray/lang)
-endif()
