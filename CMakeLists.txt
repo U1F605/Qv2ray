@@ -184,7 +184,7 @@ target_link_libraries(Qvmessocket_baselib
     Threads::Threads
     )
 
-target_include_directories(qvmessocket_baselib PUBLIC
+target_include_directories(Qvmessocket_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
