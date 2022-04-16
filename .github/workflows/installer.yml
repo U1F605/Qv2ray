@@ -62,6 +62,6 @@ jobs:
         if: github.event_name == 'release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: Qvmessocket-win64.exe
+          file: Qvmessocket-win64*.exe
           file_glob: true
           tag: ${{ github.ref }}
