@@ -14,7 +14,7 @@ Keywords[zh_TW]=Internet;VPN;Proxy;v2ray;Qt;qv;代理;
 Categories=Network;Qt;
 Terminal=false
 Icon=qv2ray
-Exec=qvmessocket %u
+Exec=Qvmessocket %u
 MimeType=x-scheme-handler/qv2ray;
 Actions=noPlugin;noScaleFactor;noAPI;noAutoConnection;
 
@@ -22,23 +22,23 @@ Actions=noPlugin;noScaleFactor;noAPI;noAutoConnection;
 Name=Start without Plugins
 Name[zh_CN]=不使用插件启动
 Name[zh_TW]=不使用外掛程式啟動
-Exec=qvmessocket --noPlugin
+Exec=Qvmessocket --noPlugin
 
 [Desktop Action noScaleFactor]
 Name=Start without Scaling Factor
 Name[zh_CN]=禁用界面缩放启动
 Name[zh_TW]=禁用介面縮放啟動
-Exec=qvmessocket --noScaleFactor
+Exec=Qvmessocket --noScaleFactor
 
 [Desktop Action noAPI]
 Name=Start without gRPC API
 Name[zh_CN]=不使用 gRPC API 启动
 Name[zh_TW]=不使用 gRPC API 啟動
-Exec=qvmessocket --noAPI
+Exec=Qvmessocket --noAPI
 
 [Desktop Action noAutoConnection]
 Name=Start without automatic connection
 Name[zh_CN]=不自动连接节点启动
 Name[zh_TW]=不自動連接節點啟動
-Exec=qvmessocket --noAutoConnection
+Exec=Qvmessocket --noAutoConnection
 
