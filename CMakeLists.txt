@@ -5,7 +5,7 @@ file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QVMESSOCKET_BUILD_VERSI
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QVMESSOCKET_VERSION_SUFFIX)
 
 set(QVMESSOCKET_VERSION_STRING "${QVMESSOCKET_VERSION}${QVMESSOCKET_VERSION_SUFFIX}")
-project(qvmessocket)
+project(Qvmessocket)
 
 macro(QVLOG MSG)
     set(QVMESSOCKET_BUILD_STATS "${QVMESSOCKET_BUILD_STATS}${MSG}: ${${MSG}}\r\n")
@@ -163,7 +163,7 @@ else()
     add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
 endif()
 
-add_library(qvmessocket_baselib STATIC
+add_library(Qvmessocket_baselib STATIC
     ${QVMESSOCKET_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
@@ -174,7 +174,7 @@ add_library(qvmessocket_baselib STATIC
     ${API_PROTO_SRCS}
     )
 
-target_link_libraries(qvmessocket_baselib
+target_link_libraries(Qvmessocket_baselib
     ${QVMESSOCKET_QT_LIBS}
     ${QVMESSOCKET_PROTOBUF_LIBRARY}
     ${QVMESSOCKET_BACKEND_LIBRARY}
@@ -184,7 +184,7 @@ target_link_libraries(qvmessocket_baselib
     Threads::Threads
     )
 
-target_include_directories(qvmessocket_baselib PUBLIC
+target_include_directories(Qvmessocket_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
@@ -237,12 +237,12 @@ set(QVMESSOCKET_FULL_SOURCES
     )
 
 if(QVMESSOCKET_QT6)
-    qt6_add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 else()
-    add_executable(qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+    add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 endif()
 
-target_include_directories(qvmessocket PRIVATE
+target_include_directories(Qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -250,8 +250,8 @@ target_include_directories(qvmessocket PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(qvmessocket PUBLIC
-    qvmessocket_baselib
+target_link_libraries(Qvmessocket PUBLIC
+    Qvmessocket_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
@@ -262,6 +262,6 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-get_target_property(QVMESSOCKET_BASE_LINK_LIBS qvmessocket_baselib LINK_LIBRARIES)
-get_target_property(QVMESSOCKET_EXEC_LINK_LIBS qvmessocket LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_BASE_LINK_LIBS Qvmessocket_baselib LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_EXEC_LINK_LIBS Qvmessocket LINK_LIBRARIES)
 message("${QVMESSOCKET_BUILD_STATS}")
