@@ -4,13 +4,6 @@
 
 namespace Qvmessocket::core::connection::generation::inbounds
 {
-    INBOUNDSETTING GenerateDokodemoIN(const QString &address, int port, const QString &network, int timeout, bool followRedirect)
-    {
-        INBOUNDSETTING root;
-        JADD(address, port, network, timeout, followRedirect)
-        return root;
-    }
-
     INBOUNDSETTING GenerateHTTPIN(bool enableAuth, const QList<AccountObject> &_accounts, int timeout, bool allowTransparent)
     {
         INBOUNDSETTING root;
@@ -130,7 +123,6 @@ namespace Qvmessocket::core::connection::generation::inbounds
             if (INCONF.tProxySettings.hasUDP)
                 networks << "udp";
             const auto tproxy_network = networks.join(",");
-            const auto tProxySettings = GenerateDokodemoIN("", 0, tproxy_network, 0, true);
             const auto tproxySniffingObject = GenerateSniffingObject(INCONF.tProxySettings.sniffing, //
                                                                      INCONF.tProxySettings.destOverride);
             // tProxy IPv4 Settings
@@ -160,4 +152,4 @@ namespace Qvmessocket::core::connection::generation::inbounds
 #undef INCONF
         return inboundsList;
     }
-} // namespace Qv2ray::core::connection::generation::inbounds
+}
