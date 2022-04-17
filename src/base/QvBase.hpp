@@ -49,7 +49,7 @@ using namespace Qvmessocket::base::objects::transfer;
 #define QVMESSOCKET_CONFIG_DIR (QvCoreApplication->ConfigPath)
 #define QVMESSOCKET_CONFIG_FILE (QVMESSOCKET_CONFIG_DIR + "Qv2ray.conf")
 #define QVMESSOCKET_CONNECTIONS_DIR (QVMESSOCKET_CONFIG_DIR + "connections/")
-#define QV2RAY_PLUGIN_SETTINGS_DIR (QVMESSOCKET_CONFIG_DIR + "plugin_settings/")
+#define QVMESSOCKET_PLUGIN_SETTINGS_DIR (QVMESSOCKET_CONFIG_DIR + "plugin_settings/")
 #define QV2RAY_CONFIG_FILE_EXTENSION ".qv2ray.json"
 #define QV2RAY_GENERATED_DIR (QVMESSOCKET_CONFIG_DIR + "generated/")
 

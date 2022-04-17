@@ -14,9 +14,9 @@ namespace Qvmessocket::components::plugins
     {
         if (!QvCoreApplication->StartupArguments.noPlugins)
         {
-            if (auto dir = QDir(QV2RAY_PLUGIN_SETTINGS_DIR); !dir.exists())
+            if (auto dir = QDir(QVMESSOCKET_PLUGIN_SETTINGS_DIR); !dir.exists())
             {
-                dir.mkpath(QV2RAY_PLUGIN_SETTINGS_DIR);
+                dir.mkpath(QVMESSOCKET_PLUGIN_SETTINGS_DIR);
             }
             initializePluginHost();
         }
@@ -170,8 +170,8 @@ namespace Qvmessocket::components::plugins
             return false;
         }
 
-        auto conf = JsonFromString(StringFromFile(QV2RAY_PLUGIN_SETTINGS_DIR + internalName + ".conf"));
-        plugins[internalName].pluginInterface->InitializePlugin(QV2RAY_PLUGIN_SETTINGS_DIR + internalName + "/", conf);
+        auto conf = JsonFromString(StringFromFile(QVMESSOCKET_PLUGIN_SETTINGS_DIR + internalName + ".conf"));
+        plugins[internalName].pluginInterface->InitializePlugin(QVMESSOCKET_PLUGIN_SETTINGS_DIR + internalName + "/", conf);
         plugins[internalName].isLoaded = true;
         return true;
     }
@@ -184,7 +184,7 @@ namespace Qvmessocket::components::plugins
             {
                 LOG("Saving plugin settings for: \"" + name + "\"");
                 auto &conf = plugins[name].pluginInterface->GetSettngs();
-                StringToFile(JsonToString(conf), QV2RAY_PLUGIN_SETTINGS_DIR + name + ".conf");
+                StringToFile(JsonToString(conf), QVMESSOCKET_PLUGIN_SETTINGS_DIR + name + ".conf");
             }
         }
     }

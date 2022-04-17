@@ -1,7 +1,6 @@
 #include "PluginSettingsWidget.hpp"
 #include "QvGUIPluginInterface.hpp"
 //
-#include "inbound/dokodemo-door.hpp"
 #include "inbound/httpin.hpp"
 #include "inbound/socksin.hpp"
 //
@@ -36,7 +35,6 @@ class ProtocolGUIInterface : public PluginGUIInterface
         return {
             MakeEditorInfoPair<HTTPInboundEditor>("http", "HTTP"),
             MakeEditorInfoPair<SocksInboundEditor>("socks", "SOCKS"),
-            MakeEditorInfoPair<DokodemoDoorInboundEditor>("dokodemo-door", "Dokodemo-Door"),
         };
     }
     QList<typed_plugin_editor> createOutboundEditors() const override

@@ -19,7 +19,6 @@ ADD_SOURCE(outbound shadowsocks)
 ADD_SOURCE(outbound vmess)
 ADD_SOURCE(outbound loopback)
 
-ADD_SOURCE(inbound dokodemo-door)
 ADD_SOURCE(inbound httpin)
 ADD_SOURCE(inbound socksin)
 

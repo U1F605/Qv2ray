@@ -160,4 +160,4 @@ namespace Qvmessocket::core::connection::generation::inbounds
 #undef INCONF
         return inboundsList;
     }
-} // namespace Qv2ray::core::connection::generation::inbounds
+}
