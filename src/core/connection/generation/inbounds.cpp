@@ -131,7 +131,6 @@ namespace Qvmessocket::core::connection::generation::inbounds
                 auto tProxyIn = GenerateInboundEntry("tproxy_IN", "dokodemo-door",   //
                                                      INCONF.tProxySettings.tProxyIP, //
                                                      INCONF.tProxySettings.port,     //
-                                                     tProxySettings,                 //
                                                      tproxySniffingObject);
                 tProxyIn.insert("streamSettings", QJsonObject{ { "sockopt", QJsonObject{ { "tproxy", INCONF.tProxySettings.mode } } } });
                 inboundsList.append(tProxyIn);
@@ -142,7 +141,6 @@ namespace Qvmessocket::core::connection::generation::inbounds
                 auto tProxyIn = GenerateInboundEntry("tproxy_IN_V6", "dokodemo-door",  //
                                                      INCONF.tProxySettings.tProxyV6IP, //
                                                      INCONF.tProxySettings.port,       //
-                                                     tProxySettings,                   //
                                                      tproxySniffingObject);
                 tProxyIn.insert("streamSettings", QJsonObject{ { "sockopt", QJsonObject{ { "tproxy", INCONF.tProxySettings.mode } } } });
                 inboundsList.append(tProxyIn);
