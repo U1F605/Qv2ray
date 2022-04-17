@@ -11,7 +11,7 @@ using grpc::Status;
 namespace Qvmessocket::core::kernel
 {
     constexpr auto Qv2ray_GRPC_ERROR_RETCODE = -1;
-    static QvAPIDataTypeConfig DefaultInboundAPIConfig{ { API_INBOUND, { "dokodemo-door", "http", "socks" } } };
+    static QvAPIDataTypeConfig DefaultInboundAPIConfig{ { API_INBOUND, { "http", "socks" } } };
     static QvAPIDataTypeConfig DefaultOutboundAPIConfig{ { API_OUTBOUND_PROXY,
                                                            { "dns", "http", "mtproto", "shadowsocks", "socks", "vmess"} },
                                                          { API_OUTBOUND_DIRECT, { "freedom" } } };
