@@ -6,7 +6,7 @@
 
 #include <QProcess>
 
-#define QV2RAY_GENERATED_FILE_PATH (QV2RAY_GENERATED_DIR + "config.gen.json")
+#define QV2RAY_GENERATED_FILE_PATH (QVMESSOCKET_GENERATED_DIR + "config.gen.json")
 #define QV_MODULE_NAME "V2RayInteraction"
 
 namespace Qvmessocket::core::kernel

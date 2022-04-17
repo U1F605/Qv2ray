@@ -221,11 +221,11 @@ namespace Qvmessocket::core::config
             LOG("Created initial config file.");
         }
 
-        if (!QDir(QV2RAY_GENERATED_DIR).exists())
+        if (!QDir(QVMESSOCKET_GENERATED_DIR).exists())
         {
             // The dir used to generate final config file, for V2Ray interaction.
-            QDir().mkdir(QV2RAY_GENERATED_DIR);
-            LOG("Created config generation dir at: " + QV2RAY_GENERATED_DIR);
+            QDir().mkdir(QVMESSOCKET_GENERATED_DIR);
+            LOG("Created config generation dir at: " + QVMESSOCKET_GENERATED_DIR);
         }
         //
         // BEGIN LOAD CONFIGURATIONS
