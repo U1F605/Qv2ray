@@ -31,7 +31,9 @@ jobs:
           toolset: 14.2
           arch: x64
       - name: find
-        run:  grep -rni "dokodemo"
+        run: |
+          grep -rni "dokodemo"
+          grep -rni "QV2RAY_CONFIG_FILE_EXTENSION"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
