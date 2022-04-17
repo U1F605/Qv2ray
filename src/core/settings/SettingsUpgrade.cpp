@@ -58,7 +58,7 @@ namespace Qvmessocket
                     //
                     // MOVE FILES.
                     // OLD PATH is at 
-                    auto filePath = QVMESSOCKET_CONFIG_DIR + config.toString() + QV2RAY_CONFIG_FILE_EXTENSION;
+                    auto filePath = QVMESSOCKET_CONFIG_DIR + config.toString() + QVMESSOCKET_CONFIG_FILE_EXTENSION;
                     auto configFile = QFile(filePath);
                     auto newUuid = GenerateUuid();
                     DEBUG("Generated new UUID: " + newUuid);
@@ -74,7 +74,7 @@ namespace Qvmessocket
 
                     if (configFile.exists())
                     {
-                        auto newPath = QVMESSOCKET_CONNECTIONS_DIR + defaultGroupId + "/" + newUuid + QV2RAY_CONFIG_FILE_EXTENSION;
+                        auto newPath = QVMESSOCKET_CONNECTIONS_DIR + defaultGroupId + "/" + newUuid + QVMESSOCKET_CONFIG_FILE_EXTENSION;
                         configFile.rename(newPath);
                         UPGRADELOG("Moved: " + filePath + " to " + newPath);
                     }
@@ -126,10 +126,10 @@ namespace Qvmessocket
                     {
                         auto subsConnectionId = GenerateUuid();
                         auto baseFilePath = baseDirPath + "/" + fileName;
-                        auto newFilePath = newDirPath + "/" + subsConnectionId + QV2RAY_CONFIG_FILE_EXTENSION;
+                        auto newFilePath = newDirPath + "/" + subsConnectionId + QVMESSOCKET_CONFIG_FILE_EXTENSION;
                         //
                         QJsonObject subsConnection;
-                        subsConnection["displayName"] = fileName.chopped(QString(QV2RAY_CONFIG_FILE_EXTENSION).count());
+                        subsConnection["displayName"] = fileName.chopped(QString(QVMESSOCKET_CONFIG_FILE_EXTENSION).count());
                         QFile(baseFilePath).rename(newFilePath);
                         UPGRADELOG("Moved subscription file from: " + baseFilePath + " to: " + newFilePath);
                         subsConnectionIds << subsConnectionId;
@@ -278,7 +278,7 @@ namespace Qvmessocket
                         for (const auto &cid : aSubscription["connections"].toArray())
                         {
                             ConnectionsCache[cid.toString()] = JsonFromString(
-                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "subscriptions/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
+                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "subscriptions/" + key + "/" + cid.toString() + QVMESSOCKET_CONFIG_FILE_EXTENSION));
                         }
                         //
                         allGroupsObject[key] = aSubscription;
@@ -308,7 +308,7 @@ namespace Qvmessocket
                         for (const auto &cid : aGroup["connections"].toArray())
                         {
                             ConnectionsCache[cid.toString()] = JsonFromString(
-                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "connections/" + key + "/" + cid.toString() + QV2RAY_CONFIG_FILE_EXTENSION));
+                                StringFromFile(QVMESSOCKET_CONFIG_DIR + "connections/" + key + "/" + cid.toString() + QVMESSOCKET_CONFIG_FILE_EXTENSION));
                         }
                         //
                         allGroupsObject[key] = aGroup;
@@ -329,7 +329,7 @@ namespace Qvmessocket
                     //      Only Store (connections.json in CONFIG_PATH) and ($groupID.json in GROUP_PATH)
                     for (const auto &cid : ConnectionsCache.keys())
                     {
-                        StringToFile(JsonToString(ConnectionsCache[cid]), QVMESSOCKET_CONFIG_DIR + "connections/" + cid + QV2RAY_CONFIG_FILE_EXTENSION);
+                        StringToFile(JsonToString(ConnectionsCache[cid]), QVMESSOCKET_CONFIG_DIR + "connections/" + cid + QVMESSOCKET_CONFIG_FILE_EXTENSION);
                     }
                     //
                 }
@@ -438,4 +438,4 @@ namespace Qvmessocket
 
         return root;
     }
-} // namespace Qv2ray
+}
