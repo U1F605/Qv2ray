@@ -4,6 +4,13 @@
 
 namespace Qvmessocket::core::connection::generation::inbounds
 {
+    INBOUNDSETTING GenerateDokodemoIN(const QString &address, int port, const QString &network, int timeout, bool followRedirect)
+    {
+        INBOUNDSETTING root;
+        JADD(address, port, network, timeout, followRedirect)
+        return root;
+    }
+
     INBOUNDSETTING GenerateHTTPIN(bool enableAuth, const QList<AccountObject> &_accounts, int timeout, bool allowTransparent)
     {
         INBOUNDSETTING root;
@@ -123,6 +130,7 @@ namespace Qvmessocket::core::connection::generation::inbounds
             if (INCONF.tProxySettings.hasUDP)
                 networks << "udp";
             const auto tproxy_network = networks.join(",");
+            const auto tProxySettings = GenerateDokodemoIN("", 0, tproxy_network, 0, true);
             const auto tproxySniffingObject = GenerateSniffingObject(INCONF.tProxySettings.sniffing, //
                                                                      INCONF.tProxySettings.destOverride);
             // tProxy IPv4 Settings
@@ -131,6 +139,7 @@ namespace Qvmessocket::core::connection::generation::inbounds
                 auto tProxyIn = GenerateInboundEntry("tproxy_IN", "dokodemo-door",   //
                                                      INCONF.tProxySettings.tProxyIP, //
                                                      INCONF.tProxySettings.port,     //
+                                                     tProxySettings,                 //
                                                      tproxySniffingObject);
                 tProxyIn.insert("streamSettings", QJsonObject{ { "sockopt", QJsonObject{ { "tproxy", INCONF.tProxySettings.mode } } } });
                 inboundsList.append(tProxyIn);
@@ -141,6 +150,7 @@ namespace Qvmessocket::core::connection::generation::inbounds
                 auto tProxyIn = GenerateInboundEntry("tproxy_IN_V6", "dokodemo-door",  //
                                                      INCONF.tProxySettings.tProxyV6IP, //
                                                      INCONF.tProxySettings.port,       //
+                                                     tProxySettings,                   //
                                                      tproxySniffingObject);
                 tProxyIn.insert("streamSettings", QJsonObject{ { "sockopt", QJsonObject{ { "tproxy", INCONF.tProxySettings.mode } } } });
                 inboundsList.append(tProxyIn);
