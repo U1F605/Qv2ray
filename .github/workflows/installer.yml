@@ -9,7 +9,6 @@ jobs:
   build:
     strategy:
       matrix:
-        qt_version: [5.15.0]
         platform: [windows-latest]
         arch: [x64]
         include:
@@ -32,7 +31,7 @@ jobs:
       - name: Setup Qt - ${{ matrix.arch }}
         uses: jurplel/install-qt-action@v2
         with:
-          version: ${{ matrix.qt_version }}
+          version: 5.15.0
           arch: ${{ matrix.qtarch }}
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
       - name: Windows - ${{ matrix.arch }} - Setup Ninja
