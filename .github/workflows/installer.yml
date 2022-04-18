@@ -51,16 +51,22 @@ jobs:
           cd build
           cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_NSIS=ON
           cmake --build . --target package --parallel $(nproc)
+      - name: Show workflow information
+        id: get_filename
+        run: |
+          export _VER=$(cat makespec/VERSION)
+          echo "::set-output name=ASSET_NAME::$_VER"
+          echo "ASSET_NAME=$_VER" >> $GITHUB_ENV
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-3.0.0-win64.exe
-          path: build/Qvmessocket-3.0.0-win64.exe
+          name: Qvmessocket-${{ steps.get_filename.outputs.ASSET_NAME }}-win64.exe
+          path: build/Qvmessocket-${{ steps.get_filename.outputs.ASSET_NAME }}-win64.exe
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: Qvmessocket-3.0.0-win64.exe
+          file: Qvmessocket-${{ steps.get_filename.outputs.ASSET_NAME }}-win64.exe
           file_glob: true
           tag: ${{ github.ref }}
