@@ -52,6 +52,7 @@ jobs:
           cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_NSIS=ON
           cmake --build . --target package --parallel $(nproc)
       - name: Show workflow information
+        shell: bash
         run: |
           export _VER=$(cat makespec/VERSION)
           echo "::set-output name=ASSET_NAME::$_VER"
