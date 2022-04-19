@@ -105,7 +105,7 @@ OUTBOUND OutboundEditor::generateConnectionJson()
                          tr("The specified outbound type is not supported, this may happen due to a plugin failure."));
     }
     auto root = GenerateOutboundEntry(tag, outboundType, settings, streaming, muxConfig);
-    root[QV2RAY_USE_FPROXY_KEY] = useForwardProxy;
+    root[QVMESSOCKET_USE_FPROXY_KEY] = useForwardProxy;
     return root;
 }
 
