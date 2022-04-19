@@ -105,7 +105,7 @@ OUTBOUND OutboundEditor::generateConnectionJson()
                          tr("The specified outbound type is not supported, this may happen due to a plugin failure."));
     }
     auto root = GenerateOutboundEntry(tag, outboundType, settings, streaming, muxConfig);
-    root[QV2RAY_USE_FPROXY_KEY] = useForwardProxy;
+    root[QVMESSOCKET_USE_FPROXY_KEY] = useForwardProxy;
     return root;
 }
 
@@ -115,7 +115,7 @@ void OutboundEditor::reloadGUI()
     tagTxt->setText(tag);
     outboundType = originalConfig["protocol"].toString("vmess");
     muxConfig = originalConfig.contains("mux") ? originalConfig["mux"].toObject() : QJsonObject{};
-    useForwardProxy = originalConfig[QV2RAY_USE_FPROXY_KEY].toBool(false);
+    useForwardProxy = originalConfig[QVMESSOCKET_USE_FPROXY_KEY].toBool(false);
     streamSettingsWidget->SetStreamObject(StreamSettingsObject::fromJson(originalConfig["streamSettings"].toObject()));
     //
     useFPCB->setChecked(useForwardProxy);
