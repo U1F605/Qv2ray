@@ -279,7 +279,7 @@ namespace Qvmessocket::core::handler
             // Forward proxy
             if (fpConf.enableForwardProxy)
             {
-                if (QJsonIO::GetValue(root, "outbounds", 0, QV2RAY_USE_FPROXY_KEY).toBool(false))
+                if (QJsonIO::GetValue(root, "outbounds", 0, QVMESSOCKET_USE_FPROXY_KEY).toBool(false))
                 {
                     if (fpConf.type.isEmpty())
                     {
