@@ -32,7 +32,7 @@ jobs:
       - name: find
         run: |
           grep -rni "dokodemo"
-          grep -rni "QV2RAY_USE_FPROXY_KEY"
+          grep -rni "debug"
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
