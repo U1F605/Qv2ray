@@ -66,7 +66,6 @@ message("Qvmessocket Version: ${QVMESSOCKET_VERSION_STRING}")
 message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
 
 option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
-option(BUILD_TESTING "Build Tests" OFF)
 set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QVMESSOCKET_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
 option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
