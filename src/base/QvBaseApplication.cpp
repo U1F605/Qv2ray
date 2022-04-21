@@ -52,19 +52,19 @@ QStringList QvApplicationInterface::GetAssetsPaths(const QString &dirName) const
 
 #ifdef Q_OS_UNIX
     if (qEnvironmentVariableIsSet("APPIMAGE"))
-        list << makeAbs(QCoreApplication::applicationDirPath() + "/../share/qv2ray/" + dirName);
+        list << makeAbs(QCoreApplication::applicationDirPath() + "/../share/qvmessocket/" + dirName);
 
     if (qEnvironmentVariableIsSet("SNAP"))
-        list << makeAbs(qEnvironmentVariable("SNAP") + "/usr/share/qv2ray/" + dirName);
+        list << makeAbs(qEnvironmentVariable("SNAP") + "/usr/share/qvmessocket/" + dirName);
 
     if (qEnvironmentVariableIsSet("XDG_DATA_DIRS"))
         list << makeAbs(qEnvironmentVariable("XDG_DATA_DIRS") + "/" + dirName);
 
-    list << makeAbs("/usr/local/share/qv2ray/" + dirName);
-    list << makeAbs("/usr/local/lib/qv2ray/" + dirName);
-    list << makeAbs("/usr/share/qv2ray/" + dirName);
-    list << makeAbs("/usr/lib/qv2ray/" + dirName);
-    list << makeAbs("/lib/qv2ray/" + dirName);
+    list << makeAbs("/usr/local/share/qvmessocket/" + dirName);
+    list << makeAbs("/usr/local/lib/qvmessocket/" + dirName);
+    list << makeAbs("/usr/share/qvmessocket/" + dirName);
+    list << makeAbs("/usr/lib/qvmessocket/" + dirName);
+    list << makeAbs("/lib/qvmessocket/" + dirName);
 #endif
 
     list.removeDuplicates();
