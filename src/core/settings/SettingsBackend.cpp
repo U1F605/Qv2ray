@@ -212,8 +212,8 @@ namespace Qvmessocket::core::config
                 return false;
             }
 
-            GlobalConfig.kernelConfig.KernelPath(QVMESSOCKET_DEFAULT_VCORE_PATH);
-            GlobalConfig.kernelConfig.AssetsPath(QVMESSOCKET_DEFAULT_VASSETS_PATH);
+            GlobalConfig.kernelConfig.KernelPath(QCLASH_DEFAULT_VCORE_PATH);
+            GlobalConfig.kernelConfig.AssetsPath(QCLASH_DEFAULT_VASSETS_PATH);
             GlobalConfig.logLevel = 3;
             GlobalConfig.uiConfig.language = QLocale::system().name();
             // Save initial config.
