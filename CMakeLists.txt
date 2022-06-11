@@ -65,10 +65,10 @@ option(QCLASH_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
 option(QCLASH_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 option(QCLASH_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QCLASH_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
-set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
+set(QCLASH_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 option(QVMESSOCKET_QT6 "Use Qt6" OFF)
 
-if(QVMESSOCKET_UI_TYPE STREQUAL "QWidget")
+if(QCLASH_UI_TYPE STREQUAL "QWidget")
     set(QVMESSOCKET_USE_QWIDGET ON)
 endif()
 
