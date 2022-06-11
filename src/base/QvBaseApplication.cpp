@@ -14,11 +14,11 @@ QvApplicationInterface::QvApplicationInterface()
 {
     ConfigObject = new QvConfigObject;
     QvCoreApplication = this;
-    LOG(QVMESSOCKET_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
+    LOG(QCLASH_VERSION_STRING, "on", QSysInfo::prettyProductName(), QSysInfo::currentCpuArchitecture());
     DEBUG("Start Time: ", QTime::currentTime().msecsSinceStartOfDay());
     DEBUG("QVMESSOCKET_BUILD_INFO", QVMESSOCKET_BUILD_INFO);
     DEBUG("QVMESSOCKET_BUILD_EXTRA_INFO", QVMESSOCKET_BUILD_EXTRA_INFO);
-    DEBUG("QVMESSOCKET_BUILD_NUMBER", QSTRN(QVMESSOCKET_VERSION_BUILD));
+    DEBUG("QVMESSOCKET_BUILD_NUMBER", QSTRN(QCLASH_VERSION_BUILD));
     QStringList licenseList;
     licenseList << "This program comes with ABSOLUTELY NO WARRANTY.";
     licenseList << "This is free software, and you are welcome to redistribute it";
