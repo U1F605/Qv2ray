@@ -1,0 +1,66 @@
+name: build Windows Installer
+
+on:
+  push:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [windows-latest]
+        arch: [x64]
+        include:
+          - platform: windows-latest
+            arch: x64
+            qtarch: win64_msvc2019_64
+      fail-fast: false
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup MSVC compiler
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          toolset: 14.2
+          arch: ${{ matrix.arch }}
+      - name: Setup Qt - ${{ matrix.arch }}
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: 5.15.0
+          arch: ${{ matrix.qtarch }}
+          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+      - name: Windows - ${{ matrix.arch }} - Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+      - name: Windows - ${{ matrix.arch }} - Download Dependencies
+        shell: bash
+        run: |
+          cd libs
+          ./setup-libs.sh windows ${{ matrix.arch }}
+      - name: Windows - ${{ matrix.arch }} - Build
+        shell: bash
+        env:
+          CC: cl.exe
+          CXX: cl.exe
+        run: |
+          mkdir build
+          cd build
+          cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_NSIS=ON
+          cmake --build . --target package --parallel $(nproc)
+      - name: Windows - ${{ matrix.arch }} - uploading artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: Qvmessocket-3.0.0-win64.exe
+          path: build/Qvmessocket-3.0.0-win64.exe
+      - name: Windows - Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        if: github.event_name == 'release'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Qvmessocket-3.0.0-win64.exe
+          file_glob: true
+          tag: ${{ github.ref }}
