@@ -58,7 +58,7 @@ namespace Qvmessocket::common::network
 #endif
 
         auto ua = GlobalConfig.networkConfig.userAgent;
-        ua.replace("$VERSION", QVMESSOCKET_VERSION_STRING);
+        ua.replace("$VERSION", QCLASH_VERSION_STRING);
         request.setHeader(QNetworkRequest::KnownHeaders::UserAgentHeader, ua);
     }
 
@@ -108,4 +108,4 @@ namespace Qvmessocket::common::network
         });
     }
 
-} // namespace Qv2ray::common::network
+}

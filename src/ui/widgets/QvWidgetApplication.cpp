@@ -52,11 +52,11 @@ void Qv2rayWidgetApplication::onMessageReceived(quint32 clientId, QByteArray _ms
     LOG("Client ID:", clientId, ", message received, version:", msg.buildVersion);
     DEBUG(_msg);
     //
-    if (msg.buildVersion > QVMESSOCKET_VERSION_BUILD)
+    if (msg.buildVersion > QCLASH_VERSION_BUILD)
     {
         const auto newPath = msg.fullArgs.first();
         QString message;
-        message += tr("A new version of Qv2ray is starting:") + NEWLINE;
+        message += tr("A new version of Qclash is starting:") + NEWLINE;
         message += NEWLINE;
         message += tr("New version information: ") + NEWLINE;
         message += tr("Version: %1:%2").arg(msg.version).arg(msg.buildVersion) + NEWLINE;

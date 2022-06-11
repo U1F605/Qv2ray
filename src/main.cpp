@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
     //
     // This line must be called before any other ones, since we are using these
     // values to identify instances.
-    QCoreApplication::setApplicationVersion(QVMESSOCKET_VERSION_STRING);
+    QCoreApplication::setApplicationVersion(QCLASH_VERSION_STRING);
 
 #ifdef QVMESSOCKET_GUI
     QApplication::setApplicationDisplayName("Qvmessocket");
