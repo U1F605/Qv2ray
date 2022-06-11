@@ -44,7 +44,7 @@ if(WIN32)
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
         VERSION_PATCH      ${CPACK_PACKAGE_VERSION_PATCH}
-        VERSION_REVISION   ${QVMESSOCKET_BUILD_VERSION}
+        VERSION_REVISION   ${QCLASH_BUILD_VERSION}
         COMPANY_NAME       "Qclash"
         COMPANY_COPYRIGHT  "Qclash"
         FILE_DESCRIPTION   "Qclash Main Application"
@@ -62,8 +62,8 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.17.0")
     cmake_policy(SET CMP0100 NEW)
 endif()
 
-message("Qvmessocket Version: ${QVMESSOCKET_VERSION_STRING}")
-message("Qvmessocket Build Version: ${QVMESSOCKET_BUILD_VERSION}")
+message("Qvmessocket Version: ${QCLASH_VERSION_STRING}")
+message("Qvmessocket Build Version: ${QCLASH_BUILD_VERSION}")
 
 option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
