@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.10.1)
 
-file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSION" QVMESSOCKET_VERSION)
-file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QVMESSOCKET_BUILD_VERSION)
-file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QVMESSOCKET_VERSION_SUFFIX)
+file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSION" QCLASH_VERSION)
+file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QCLASH_BUILD_VERSION)
+file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QCLASH_VERSION_SUFFIX)
 
-set(QVMESSOCKET_VERSION_STRING "${QVMESSOCKET_VERSION}${QVMESSOCKET_VERSION_SUFFIX}")
+set(QVMESSOCKET_VERSION_STRING "${QCLASH_VERSION}${QCLASH_VERSION_SUFFIX}")
 project(Qvmessocket)
 
 macro(QVLOG MSG)
@@ -38,16 +38,16 @@ if(WIN32)
     include(cmake/versioninfo/generate_product_version.cmake)
     generate_product_version(
         QVMESSOCKET_RC
-        NAME               "Qvmessocket"
-        BUNDLE             "VMESSOCKET Project Family"
+        NAME               "Qclash"
+        BUNDLE             "clash Project Family"
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico"
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
         VERSION_PATCH      ${CPACK_PACKAGE_VERSION_PATCH}
         VERSION_REVISION   ${QVMESSOCKET_BUILD_VERSION}
-        COMPANY_NAME       "VMESSOCKET BDFL-U1F605"
-        COMPANY_COPYRIGHT  "VMESSOCKET BDFL-U1F605"
-        FILE_DESCRIPTION   "Qvmessocket Main Application"
+        COMPANY_NAME       "Qclash"
+        COMPANY_COPYRIGHT  "Qclash"
+        FILE_DESCRIPTION   "Qclash Main Application"
         )
     add_definitions(-DUNICODE -D_UNICODE -DNOMINMAX)
     set(GUI_TYPE WIN32)
