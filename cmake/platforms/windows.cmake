@@ -9,7 +9,7 @@ set(APPS "\${CMAKE_INSTALL_PREFIX}/Qvmessocket.exe")
 
 include(cmake/deployment.cmake)
 
-if(QVMESSOCKET_AUTO_DEPLOY)
+if(QCLASH_AUTO_DEPLOY)
     if(QVMESSOCKET_QT6)
         set(QVMESSOCKET_QtX_DIR ${Qt6_DIR})
     else()
