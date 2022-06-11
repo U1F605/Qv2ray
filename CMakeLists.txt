@@ -61,7 +61,7 @@ endif()
 option(QCLASH_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 set(QCLASH_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QCLASH_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
-option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
+option(QCLASH_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
 option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QVMESSOCKET_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
@@ -105,7 +105,7 @@ if(QVMESSOCKET_TRANSLATION_PATH AND NOT QVMESSOCKET_TRANSLATION_PATH STREQUAL "u
     add_definitions(-DQVMESSOCKET_TRANSLATION_PATH="${QVMESSOCKET_TRANSLATION_PATH}")
 endif()
 
-if(QVMESSOCKET_DISABLE_AUTO_UPDATE)
+if(QCLASH_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
 
