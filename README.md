@@ -1,1 +1,2 @@
-### a personal use of the Qv2ray
+### 
+A Graphical user interface of clash for windows
