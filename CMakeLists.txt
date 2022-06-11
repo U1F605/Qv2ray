@@ -58,10 +58,7 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.17.0")
     cmake_policy(SET CMP0100 NEW)
 endif()
 
-message("Qvmessocket Version: ${QCLASH_VERSION_STRING}")
-message("Qvmessocket Build Version: ${QCLASH_BUILD_VERSION}")
-
-option(QVMESSOCKET_AUTO_DEPLOY "Automatically run deploy command after build" ON)
+option(QCLASH_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 set(QVMESSOCKET_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QVMESSOCKET_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
 option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
