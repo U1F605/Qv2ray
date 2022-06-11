@@ -61,18 +61,18 @@ endif()
 option(QCLASH_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 set(QCLASH_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QCLASH_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
-option(QVMESSOCKET_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
-option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
-option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
-option(QVMESSOCKET_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
-set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
+option(QCLASH_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
+option(QCLASH_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
+option(QCLASH_EMBED_TRANSLATIONS "Embed Translations" OFF)
+option(QCLASH_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
+set(QCLASH_UI_TYPE "QWidget" CACHE STRING "GUI Component")
 option(QVMESSOCKET_QT6 "Use Qt6" OFF)
 
-if(QVMESSOCKET_UI_TYPE STREQUAL "QWidget")
+if(QCLASH_UI_TYPE STREQUAL "QWidget")
     set(QVMESSOCKET_USE_QWIDGET ON)
 endif()
 
-if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
+if(QCLASH_HAS_SINGLEAPPLICATION)
     set(QVMESSOCKET_SINGLEAPPLICATION_PROVIDER "module" CACHE STRING "SingleApplication Provider")
 endif()
 
@@ -105,7 +105,7 @@ if(QVMESSOCKET_TRANSLATION_PATH AND NOT QVMESSOCKET_TRANSLATION_PATH STREQUAL "u
     add_definitions(-DQVMESSOCKET_TRANSLATION_PATH="${QVMESSOCKET_TRANSLATION_PATH}")
 endif()
 
-if(QVMESSOCKET_DISABLE_AUTO_UPDATE)
+if(QCLASH_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
 
@@ -140,7 +140,7 @@ endif()
 include(cmake/components/base.cmake)
 include(src/plugin-interface/QvPluginInterface.cmake)
 
-if(QVMESSOCKET_HAS_SINGLEAPPLICATION)
+if(QCLASH_HAS_SINGLEAPPLICATION)
     include(cmake/singleapplication.cmake)
 else()
     add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
@@ -177,7 +177,7 @@ target_include_directories(Qvmessocket_baselib PUBLIC
     ${Protobuf_INCLUDE_DIRS}
     )
 
-if(QVMESSOCKET_HAS_BUILTIN_PLUGINS)
+if(QCLASH_HAS_BUILTIN_PLUGINS)
     include(src/plugins/protocols/QvPlugin-BuiltinProtocolSupport.cmake)
     include(src/plugins/subscription-adapters/QvPlugin-BuiltinSubscriptionAdapters.cmake)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
@@ -212,7 +212,7 @@ set(QVMESSOCKET_FULL_SOURCES
     ${QVMESSOCKET_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QVMESSOCKET_UI_SOURCES}
-    ${QVMESSOCKET_EMBED_TRANSLATION_QRC}
+    ${QCLASH_EMBED_TRANSLATION_QRC}
     ${QVMESSOCKET_QRC_RESOURCES}
     ${QVMESSOCKET_QM_FILES}
     )
