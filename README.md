@@ -1,2 +1,1 @@
-### 
-A Graphical user interface of clash for windows
+### A Graphical user interface of clash for windows
