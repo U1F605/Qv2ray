@@ -23,7 +23,7 @@ class InternalProtocolSupportPlugin
                  "vmessocket project",                                                     //
                  "qvplugin_builtin_protocol",                                                 //
                  "VMess, SOCKS, HTTP, Shadowsocks, DNS editor support",        //
-                 QVMESSOCKET_VERSION_STRING,                                                  //
+                 QCLASH_VERSION_STRING,                                                  //
                  "Qvmessocket",                                                             //
                  {
                      COMPONENT_OUTBOUND_HANDLER, //
