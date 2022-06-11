@@ -62,7 +62,7 @@ option(QCLASH_AUTO_DEPLOY "Automatically run deploy command after build" ON)
 set(QCLASH_DEFAULT_VASSETS_PATH "unset" CACHE STRING "Default assets path")
 set(QCLASH_DEFAULT_VCORE_PATH "unset" CACHE STRING "Default core path")
 option(QCLASH_DISABLE_AUTO_UPDATE "Disable Update Checker" OFF)
-option(QVMESSOCKET_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
+option(QCLASH_HAS_BUILTIN_PLUGINS "Build with builtin plugins" ON)
 option(QVMESSOCKET_EMBED_TRANSLATIONS "Embed Translations" OFF)
 option(QVMESSOCKET_HAS_SINGLEAPPLICATION "Build With SingleApplication" ON)
 set(QVMESSOCKET_UI_TYPE "QWidget" CACHE STRING "GUI Component")
@@ -177,7 +177,7 @@ target_include_directories(Qvmessocket_baselib PUBLIC
     ${Protobuf_INCLUDE_DIRS}
     )
 
-if(QVMESSOCKET_HAS_BUILTIN_PLUGINS)
+if(QCLASH_HAS_BUILTIN_PLUGINS)
     include(src/plugins/protocols/QvPlugin-BuiltinProtocolSupport.cmake)
     include(src/plugins/subscription-adapters/QvPlugin-BuiltinSubscriptionAdapters.cmake)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
