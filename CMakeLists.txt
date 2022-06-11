@@ -50,7 +50,7 @@ if(WIN32)
     add_compile_options("/utf-8")
     add_compile_options("/std:c++17")
     add_definitions(-D_WIN32_WINNT=0x600 -D_SCL_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_WARNINGS)
-    set(QVMESSOCKET_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x64-windows/)
+    set(QCLASH_PLATFORM_LIBS_PREFIX ${CMAKE_SOURCE_DIR}/libs/x64-windows/)
     include(cmake/platforms/prefixes.cmake)
 endif()
 
