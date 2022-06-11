@@ -68,8 +68,8 @@ bool QvPlatformApplication::Initialize()
     connect(this, &SingleApplication::receivedMessage, this, &QvPlatformApplication::onMessageReceived, Qt::QueuedConnection);
     if (isSecondary())
     {
-        StartupArguments.version = QVMESSOCKET_VERSION_STRING;
-        StartupArguments.buildVersion = QVMESSOCKET_VERSION_BUILD;
+        StartupArguments.version = QCLASH_VERSION_STRING;
+        StartupArguments.buildVersion = QCLASH_VERSION_BUILD;
         StartupArguments.fullArgs = arguments();
         if (StartupArguments.arguments.isEmpty())
             StartupArguments.arguments << QvStartupArguments::NORMAL;
