@@ -130,7 +130,7 @@ include(src/plugin-interface/QvPluginInterface.cmake)
 if(QCLASH_HAS_SINGLEAPPLICATION)
     include(cmake/singleapplication.cmake)
 else()
-    add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
+    add_definitions(-DQCLASH_NO_SINGLEAPPLICATON)
 endif()
 
 add_library(Qvmessocket_baselib STATIC
