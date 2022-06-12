@@ -64,7 +64,7 @@ bool QvPlatformApplication::Initialize()
 #endif
 
     connect(this, &QvPlatformApplication::aboutToQuit, this, &QvPlatformApplication::quitInternal);
-#ifndef QVMESSOCKET_NO_SINGLEAPPLICATON
+#ifndef QCLASH_NO_SINGLEAPPLICATON
     connect(this, &SingleApplication::receivedMessage, this, &QvPlatformApplication::onMessageReceived, Qt::QueuedConnection);
     if (isSecondary())
     {
