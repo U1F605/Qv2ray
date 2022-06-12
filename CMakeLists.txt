@@ -197,12 +197,6 @@ set(QVMESSOCKET_FULL_SOURCES
     ${QVMESSOCKET_QM_FILES}
     )
 
-if(QVMESSOCKET_QT6)
-    qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
-else()
-    add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
-endif()
-
 target_include_directories(Qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
