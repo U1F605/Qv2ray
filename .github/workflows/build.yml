@@ -57,7 +57,6 @@ jobs:
           mkdir build
           cd build
           cmake .. -GNinja \
-            -DQVMESSOCKET_QT6=ON \
             -DCMAKE_INSTALL_PREFIX=./deployment \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
           cmake --build . --parallel $(nproc)

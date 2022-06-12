@@ -52,11 +52,7 @@ if(CMAKE_PREFIX_PATH)
     endforeach()
 endif()
 
-if(QVMESSOCKET_QT6)
-    list(APPEND DIRS "${Qt6Core_DIR}/../..")
-else()
-    list(APPEND DIRS "${Qt5Core_DIR}/../..")
-endif()
+list(APPEND DIRS "${Qt6Core_DIR}/../..")
 
 list(APPEND DIRS "/usr/local/lib")
 list(APPEND DIRS "/usr/lib")
