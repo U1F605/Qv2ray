@@ -96,8 +96,8 @@ if(QCLASH_DISABLE_AUTO_UPDATE)
     add_definitions(-DDISABLE_AUTO_UPDATE)
 endif()
 
-add_definitions(-D_QVMESSOCKET_BUILD_INFO_STR_="${_QVMESSOCKET_BUILD_INFO_STR_}")
-add_definitions(-D_QVMESSOCKET_BUILD_EXTRA_INFO_STR_="${_QVMESSOCKET_BUILD_EXTRA_INFO_STR_}")
+add_definitions(-D_QCLASH_BUILD_INFO_STR_="${_QCLASH_BUILD_INFO_STR_}")
+add_definitions(-D_QCLASH_BUILD_EXTRA_INFO_STR_="${_QCLASH_BUILD_EXTRA_INFO_STR_}")
 
 include(cmake/libuv.cmake)
 include(cmake/libcurl.cmake)
