@@ -36,7 +36,7 @@ if(WIN32)
         QVMESSOCKET_RC
         NAME               "Qclash"
         BUNDLE             "clash Project Family"
-        ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qvmessocket.ico"
+        ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qclash.ico"
         VERSION_MAJOR      ${CMAKE_PROJECT_VERSION_MAJOR}
         VERSION_MINOR      ${CMAKE_PROJECT_VERSION_MINOR}
         VERSION_PATCH      ${CPACK_PACKAGE_VERSION_PATCH}
