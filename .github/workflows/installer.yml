@@ -54,8 +54,7 @@ jobs:
       - name: prepare
         shell: bash
         run: |
-          tree
-          PKG=$(find . -name '*win64.exe')
+          PKG=$(find ./build/_CPack_Packages/win64/NSIS -name '*win64.exe')
           echo "PKG=$PKG" >> $GITHUB_ENV
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
