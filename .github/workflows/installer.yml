@@ -54,7 +54,7 @@ jobs:
       - name: prepare
         shell: bash
         run: |
-          ls
+          tree
           PKG=$(find . -name '*win64.exe')
           echo "PKG=$PKG" >> $GITHUB_ENV
       - name: Windows - ${{ matrix.arch }} - uploading artifact
