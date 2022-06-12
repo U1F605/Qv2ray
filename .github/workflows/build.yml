@@ -1,0 +1,134 @@
+name: build
+
+on:
+  push:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-20.04, windows-latest]
+        build_type: [Release]
+        include:
+          - platform: windows-latest
+            qtarch: win64_msvc2019_64
+      fail-fast: false
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - name: Checking out sources
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup MSVC compiler
+        if: matrix.platform == 'windows-latest'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          toolset: 14.2
+          arch: x64
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+      - name: Setup Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: 6.0.0
+          arch: ${{ matrix.qtarch }}
+      - name: Linux - Download Dependencies
+        if: matrix.platform == 'ubuntu-20.04'
+        run: |
+          sudo apt update
+          sudo apt install -y libssl-dev libprotobuf-dev protobuf-compiler protobuf-c-compiler libgrpc++-dev protobuf-compiler-grpc libcurl4-openssl-dev
+      - name: Windows - Download Dependencies
+        shell: bash
+        if: matrix.platform == 'windows-latest'
+        run: |
+          cd ./libs
+          ./setup-libs.sh windows x64
+      - name: Windows - Build
+        shell: bash
+        if: matrix.platform == 'windows-latest'
+        env:
+          CC: cl.exe
+          CXX: cl.exe
+        run: |
+          mkdir build
+          cd build
+          cmake .. -GNinja \
+            -DCMAKE_INSTALL_PREFIX=./deployment \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          cmake --build . --parallel $(nproc)
+          cmake --install .
+          cp -v ./*.pdb ./deployment || true
+      - name: Linux - Build
+        if: matrix.platform == 'ubuntu-20.04'
+        shell: bash
+        run: |
+          mkdir build
+          cd build
+          cmake .. -GNinja \
+            -DQVMESSOCKET_QT6=ON \
+            -DCMAKE_INSTALL_PREFIX=./AppDir/usr \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} 
+          cmake --build . --parallel $(nproc)
+          cmake --install .
+      - name: Linux - Generating AppImage
+        if: matrix.platform == 'ubuntu-20.04'
+        run: |
+          cd build
+          cd AppDir
+          mkdir -p ./usr/{lib,optional}/
+          mkdir -p ./usr/optional/libstdc++/
+          mkdir -p ./usr/optional/libgcc_s/
+          wget -c https://github.com/darealshinji/AppImageKit-checkrt/releases/download/continuous/AppRun-patched-x86_64 -O AppRun
+          wget -c https://github.com/darealshinji/AppImageKit-checkrt/releases/download/continuous/exec-x86_64.so -O ./usr/optional/exec.so
+          chmod a+x AppRun
+          cp -fv /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ./usr/optional/libstdc++/
+          cp -fv /lib/x86_64-linux-gnu/libgcc_s.so.1 ./usr/optional/libgcc_s/
+          cp -fv /usr/lib/x86_64-linux-gnu/{libssl.so.1.1,libcrypto.so.1.1} ./usr/lib/
+          cd ..
+          wget https://github.com/probonopd/linuxdeployqt/releases/download/6/linuxdeployqt-6-x86_64.AppImage
+          chmod +x ./linuxdeployqt-6-x86_64.AppImage
+          ./linuxdeployqt-6-x86_64.AppImage AppDir/usr/share/applications/qvmessocket.desktop \
+            -unsupported-allow-new-glibc \
+            -appimage \
+            -no-strip \
+            -always-overwrite \
+            -extra-plugins=iconengines,imageformats,platforminputcontexts
+          mv ./Qvmessocket*.AppImage ./Qvmessocket.AppImage
+      - name: Linux - Uploading Artifact
+        if: matrix.platform == 'ubuntu-20.04'
+        uses: actions/upload-artifact@master
+        with:
+          name: Qvmessocket-linux-${{ matrix.build_type }}.AppImage
+          path: build/Qvmessocket.AppImage
+      - name: Linux - Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        if: github.event_name == 'release' && matrix.platform == 'ubuntu-20.04' && matrix.build_type == 'Release'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build/Qvmessocket.AppImage
+          file_glob: true
+          tag: ${{ github.ref }}
+      - name: Windows - Create 7z Release
+        if: matrix.platform == 'windows-latest'
+        uses: DuckSoft/create-7z-action@v1.0
+        with:
+          pathSource: ./build/deployment/
+          pathTarget: ./Qvmessocket.7z
+      - name: Windows - Uploading Artifact
+        if: matrix.platform == 'windows-latest'
+        uses: actions/upload-artifact@master
+        with:
+          name: Qvmessocket-Windows-${{ matrix.build_type }}.7z
+          path: Qvmessocket.7z
+      - name: Windows - Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        if: github.event_name == 'release' && matrix.platform == 'windows-latest' && matrix.build_type == 'Release'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Qvmessocket.7z
+          file_glob: true
+          tag: ${{ github.ref }}
