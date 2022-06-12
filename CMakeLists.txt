@@ -121,7 +121,7 @@ if(QCLASH_USE_QWIDGET)
         ${QV_QT_LIBNAME}::Widgets
         ${QV_QT_LIBNAME}::Svg
         ${QV_QT_LIBNAME}::Gui)
-    set(_QVMESSOCKET_HAS_GUI_INTERNAL_ ON)
+    set(_QCLASH_HAS_GUI_INTERNAL_ ON)
 endif()
 
 include(cmake/components/base.cmake)
@@ -170,7 +170,7 @@ if(QCLASH_HAS_BUILTIN_PLUGINS)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
 endif()
 
-if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
+if(_QCLASH_HAS_GUI_INTERNAL_)
     add_definitions(-DQVMESSOCKET_GUI)
     include(cmake/qrencode.cmake)
     include(cmake/components/ui.cmake)
