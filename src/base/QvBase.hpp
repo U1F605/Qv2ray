@@ -28,8 +28,8 @@ using namespace Qvmessocket::base::objects;
 using namespace Qvmessocket::base::objects::protocol;
 using namespace Qvmessocket::base::objects::transfer;
 
-#define QVMESSOCKET_BUILD_INFO QString(_QVMESSOCKET_BUILD_INFO_STR_)
-#define QVMESSOCKET_BUILD_EXTRA_INFO QString(_QVMESSOCKET_BUILD_EXTRA_INFO_STR_)
+#define QVMESSOCKET_BUILD_INFO QString(_QCLASH_BUILD_INFO_STR_)
+#define QVMESSOCKET_BUILD_EXTRA_INFO QString(_QCLASH_BUILD_EXTRA_INFO_STR_)
 
 #define _BOMB_
 #define QVMESSOCKET_CONFIG_DIR_SUFFIX "/"
