@@ -108,7 +108,7 @@ include(3rdparty/QJsonStruct/QJsonStruct.cmake)
 
 find_package(Threads REQUIRED)
 find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Core Network REQUIRED)
-list(APPEND QVMESSOCKET_QT_LIBS ${QV_QT_LIBNAME}::Core ${QV_QT_LIBNAME}::Network)
+list(APPEND QCLASH_QT_LIBS ${QV_QT_LIBNAME}::Core ${QV_QT_LIBNAME}::Network)
 
 cmake_policy(SET CMP0071 NEW)
 set(CMAKE_AUTOMOC ON)
@@ -117,11 +117,11 @@ set(CMAKE_AUTOUIC ON)
 
 if(QCLASH_USE_QWIDGET)
     find_package(${QV_QT_LIBNAME} ${QV_QT_MAJOR_VERSION}.${QV_QT_MINOR_VERSION} COMPONENTS Widgets Svg Gui REQUIRED)
-    list(APPEND QVMESSOCKET_QT_LIBS
+    list(APPEND QCLASH_QT_LIBS
         ${QV_QT_LIBNAME}::Widgets
         ${QV_QT_LIBNAME}::Svg
         ${QV_QT_LIBNAME}::Gui)
-    set(_QVMESSOCKET_HAS_GUI_INTERNAL_ ON)
+    set(_QCLASH_HAS_GUI_INTERNAL_ ON)
 endif()
 
 include(cmake/components/base.cmake)
@@ -130,7 +130,7 @@ include(src/plugin-interface/QvPluginInterface.cmake)
 if(QCLASH_HAS_SINGLEAPPLICATION)
     include(cmake/singleapplication.cmake)
 else()
-    add_definitions(-DQVMESSOCKET_NO_SINGLEAPPLICATON)
+    add_definitions(-DQCLASH_NO_SINGLEAPPLICATON)
 endif()
 
 add_library(Qvmessocket_baselib STATIC
@@ -145,7 +145,7 @@ add_library(Qvmessocket_baselib STATIC
     )
 
 target_link_libraries(Qvmessocket_baselib
-    ${QVMESSOCKET_QT_LIBS}
+    ${QCLASH_QT_LIBS}
     ${QVMESSOCKET_PROTOBUF_LIBRARY}
     ${QVMESSOCKET_BACKEND_LIBRARY}
     ${LibUV_LIBRARIES}
@@ -170,7 +170,7 @@ if(QCLASH_HAS_BUILTIN_PLUGINS)
     #include(src/plugins/utils/QvPlugin-BuiltinUtils.cmake)
 endif()
 
-if(_QVMESSOCKET_HAS_GUI_INTERNAL_)
+if(_QCLASH_HAS_GUI_INTERNAL_)
     add_definitions(-DQVMESSOCKET_GUI)
     include(cmake/qrencode.cmake)
     include(cmake/components/ui.cmake)
