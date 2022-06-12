@@ -51,11 +51,16 @@ jobs:
           cd build
           cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_NSIS=ON
           cmake --build . --target package --parallel $(nproc)
+      - name: prepare
+        shell: bash
+        run: |
+          PKG=$(find ./build/_CPack_Packages/win64/NSIS -name '*win64.exe')
+          echo "PKG=$PKG" >> $GITHUB_ENV
       - name: Windows - ${{ matrix.arch }} - uploading artifact
         uses: actions/upload-artifact@master
         with:
-          name: Qvmessocket-3.0.0-win64.exe
-          path: build/Qvmessocket-3.0.0-win64.exe
+          name: PKG
+          path: ${{ env.PKG }}
       - name: Windows - Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         if: github.event_name == 'release'
