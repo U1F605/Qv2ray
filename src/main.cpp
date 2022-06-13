@@ -1,6 +1,6 @@
 #include <QtGlobal>
 
-#ifdef QVMESSOCKET_GUI_QWIDGETS
+#ifdef QCLASH_GUI_QWIDGETS
 #include "ui/widgets/QvWidgetApplication.hpp"
 #endif
 
@@ -23,7 +23,7 @@ char **globalArgv;
 
 void BootstrapMessageBox(const QString &title, const QString &text)
 {
-#ifdef QVMESSOCKET_GUI
+#ifdef QCLASH_GUI
     if (qApp)
     {
         QMessageBox::warning(nullptr, title, text);
@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
     // values to identify instances.
     QCoreApplication::setApplicationVersion(QCLASH_VERSION_STRING);
 
-#ifdef QVMESSOCKET_GUI
+#ifdef QCLASH_GUI
     QApplication::setApplicationDisplayName("Qvmessocket");
 #endif
 
@@ -214,7 +214,7 @@ int main(int argc, char *argv[])
         QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-#ifdef QVMESSOCKET_GUI
+#ifdef QCLASH_GUI
         QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
 #endif
 #endif
