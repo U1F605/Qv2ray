@@ -33,7 +33,7 @@ endif()
 if(WIN32)
     include(cmake/versioninfo/generate_product_version.cmake)
     generate_product_version(
-        QVMESSOCKET_RC
+        QCLASH_RC
         NAME               "Qclash"
         BUNDLE             "clash Project Family"
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qclash.ico"
