@@ -5,7 +5,7 @@ file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QCLASH_BUILD_VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QCLASH_VERSION_SUFFIX)
 
 set(QCLASH_VERSION_STRING "${QCLASH_VERSION}${QCLASH_VERSION_SUFFIX}")
-project(Qvmessocket)
+project(Qclash)
 
 set(VERSION_LIST ${QCLASH_VERSION})
 string(REPLACE "." ";" VERSION_LIST ${VERSION_LIST})
@@ -80,13 +80,6 @@ if(QCLASH_USE_QWIDGET)
     set(QVMESSOCKET_QNODEEDITOR_PROVIDER "module" CACHE STRING "QNodeEditor Provider")
 endif()
 
-if(QCLASH_DEFAULT_VCORE_PATH AND NOT QCLASH_DEFAULT_VCORE_PATH STREQUAL "unset")
-    add_definitions(-DQCLASH_DEFAULT_VCORE_PATH="${QCLASH_DEFAULT_VCORE_PATH}")
-endif()
-if(QCLASH_DEFAULT_VASSETS_PATH AND NOT QCLASH_DEFAULT_VASSETS_PATH STREQUAL "unset")
-    add_definitions(-DQCLASH_DEFAULT_VASSETS_PATH="${QCLASH_DEFAULT_VASSETS_PATH}")
-endif()
-
 cmake_policy(SET CMP0072 NEW)
 set(QV_QT_MAJOR_VERSION 6)
 set(QV_QT_MINOR_VERSION 0)
@@ -133,7 +126,7 @@ else()
     add_definitions(-DQCLASH_NO_SINGLEAPPLICATON)
 endif()
 
-add_library(Qvmessocket_baselib STATIC
+add_library(Qclash_baselib STATIC
     ${QCLASH_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
@@ -144,7 +137,7 @@ add_library(Qvmessocket_baselib STATIC
     ${API_PROTO_SRCS}
     )
 
-target_link_libraries(Qvmessocket_baselib
+target_link_libraries(Qclash_baselib
     ${QCLASH_QT_LIBS}
     ${QCLASH_PROTOBUF_LIBRARY}
     ${QCLASH_BACKEND_LIBRARY}
@@ -154,7 +147,7 @@ target_link_libraries(Qvmessocket_baselib
     Threads::Threads
     )
 
-target_include_directories(Qvmessocket_baselib PUBLIC
+target_include_directories(Qclash_baselib PUBLIC
     ${CMAKE_BINARY_DIR}
     ${LibUV_INCLUDE_DIR}
     ${SINGLEAPPLICATION_DIR}
@@ -215,7 +208,7 @@ target_include_directories(Qvmessocket PRIVATE
     )
 
 target_link_libraries(Qvmessocket PUBLIC
-    Qvmessocket_baselib
+    Qclash_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
@@ -226,5 +219,5 @@ elseif(WIN32)
     include(cmake/platforms/windows.cmake)
 endif()
 
-get_target_property(QVMESSOCKET_BASE_LINK_LIBS Qvmessocket_baselib LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_BASE_LINK_LIBS Qclash_baselib LINK_LIBRARIES)
 get_target_property(QVMESSOCKET_EXEC_LINK_LIBS Qvmessocket LINK_LIBRARIES)
