@@ -18,7 +18,7 @@
 #include <windows.h>
 #endif
 
-#ifdef QVMESSOCKET_GUI
+#ifdef QCLASH_GUI
 #include <QApplication>
 #include <QMessageBox>
 const static inline QMap<MessageOpt, QMessageBox::StandardButton> MessageBoxButtonMap //
