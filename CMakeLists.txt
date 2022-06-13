@@ -33,7 +33,7 @@ endif()
 if(WIN32)
     include(cmake/versioninfo/generate_product_version.cmake)
     generate_product_version(
-        QVMESSOCKET_RC
+        QCLASH_RC
         NAME               "Qclash"
         BUNDLE             "clash Project Family"
         ICON               "${CMAKE_SOURCE_DIR}/assets/icons/qclash.ico"
@@ -127,7 +127,7 @@ else()
 endif()
 
 add_library(Qvmessocket_baselib STATIC
-    ${QVMESSOCKET_BASE_SOURCES}
+    ${QCLASH_BASE_SOURCES}
     ${SINGLEAPPLICATION_SOURCES}
     ${QVPLUGIN_INTERFACE_HEADERS}
     ${LIBSEMVER_SOURCES}
@@ -139,8 +139,8 @@ add_library(Qvmessocket_baselib STATIC
 
 target_link_libraries(Qvmessocket_baselib
     ${QCLASH_QT_LIBS}
-    ${QVMESSOCKET_PROTOBUF_LIBRARY}
-    ${QVMESSOCKET_BACKEND_LIBRARY}
+    ${QCLASH_PROTOBUF_LIBRARY}
+    ${QCLASH_BACKEND_LIBRARY}
     ${LibUV_LIBRARIES}
     ${CURL_LIBRARIES}
     ${SINGLEAPPLICATION_LIBRARY}
