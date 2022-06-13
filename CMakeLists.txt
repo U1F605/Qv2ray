@@ -167,23 +167,23 @@ if(_QCLASH_HAS_GUI_INTERNAL_)
     add_definitions(-DQCLASH_GUI)
     include(cmake/qrencode.cmake)
     include(cmake/components/ui.cmake)
-    list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
+    list(APPEND QCLASH_UI_SOURCES ${QVMESSOCKET_UI_COMMON_SOURCES})
     include(src/plugin-interface/QvGUIPluginInterface.cmake)
-    list(APPEND QVMESSOCKET_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
+    list(APPEND QCLASH_UI_SOURCES ${QVGUIPLUGIN_INTERFACE_HEADERS})
     if(QCLASH_USE_QWIDGET)
         add_definitions(-DQCLASH_GUI_QWIDGETS)
         include(cmake/components/ui-widget.cmake)
-        list(APPEND QVMESSOCKET_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
+        list(APPEND QCLASH_UI_SOURCES ${QVMESSOCKET_UI_WIDGET_SOURCES})
         if (QVMESSOCKET_HAS_BUILTIN_THEMES)
             include(3rdparty/uistyles/uistyles.cmake)
-            list(APPEND QVMESSOCKET_QRC_RESOURCES ${UISTYLE_QRCS})
+            list(APPEND QCLASH_QRC_RESOURCES ${UISTYLE_QRCS})
         endif()
         include(cmake/qnodeeditor.cmake)
-        list(APPEND QVMESSOCKET_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
+        list(APPEND QCLASH_QRC_RESOURCES ${QNODEEDITOR_QRC_RESOURCES})
     endif()
 endif()
 
-list(APPEND QVMESSOCKET_QRC_RESOURCES
+list(APPEND QCLASH_QRC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources.qrc
     ${CMAKE_SOURCE_DIR}/resources.new.qrc
     )
@@ -191,9 +191,9 @@ list(APPEND QVMESSOCKET_QRC_RESOURCES
 set(QVMESSOCKET_FULL_SOURCES
     ${QCLASH_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
-    ${QVMESSOCKET_UI_SOURCES}
+    ${QCLASH_UI_SOURCES}
     ${QCLASH_EMBED_TRANSLATION_QRC}
-    ${QVMESSOCKET_QRC_RESOURCES}
+    ${QCLASH_QRC_RESOURCES}
     ${QVMESSOCKET_QM_FILES}
     )
 
