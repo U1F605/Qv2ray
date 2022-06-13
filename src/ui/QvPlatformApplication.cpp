@@ -81,7 +81,7 @@ bool QvPlatformApplication::Initialize()
     }
 #endif
 
-#ifdef QVMESSOCKET_GUI
+#ifdef QCLASH_GUI
 #ifdef Q_OS_LINUX
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setFallbackSessionManagementEnabled(false);
