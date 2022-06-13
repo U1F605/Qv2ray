@@ -197,9 +197,9 @@ set(QVMESSOCKET_FULL_SOURCES
     ${QVMESSOCKET_QM_FILES}
     )
 
-qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+qt6_add_executable(Qclash ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
 
-target_include_directories(Qvmessocket PRIVATE
+target_include_directories(Qclash PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
@@ -207,7 +207,7 @@ target_include_directories(Qvmessocket PRIVATE
     ${Protobuf_INCLUDE_DIRS}
     )
 
-target_link_libraries(Qvmessocket PUBLIC
+target_link_libraries(Qclash PUBLIC
     Qclash_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
@@ -220,4 +220,4 @@ elseif(WIN32)
 endif()
 
 get_target_property(QVMESSOCKET_BASE_LINK_LIBS Qclash_baselib LINK_LIBRARIES)
-get_target_property(QVMESSOCKET_EXEC_LINK_LIBS Qvmessocket LINK_LIBRARIES)
+get_target_property(QVMESSOCKET_EXEC_LINK_LIBS Qclash LINK_LIBRARIES)
