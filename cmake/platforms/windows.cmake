@@ -13,5 +13,5 @@ if(QCLASH_AUTO_DEPLOY)
     set(QVMESSOCKET_QtX_DIR ${Qt6_DIR})
     add_custom_command(TARGET Qclash
         POST_BUILD
-        COMMAND ${QVMESSOCKET_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qvmessocket.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
+        COMMAND ${QVMESSOCKET_QtX_DIR}/../../../bin/windeployqt ${CMAKE_BINARY_DIR}/qclash.exe --compiler-runtime --verbose 2 --dir ${CMAKE_BINARY_DIR}/winqt/)
 endif()
