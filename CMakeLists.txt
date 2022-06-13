@@ -140,7 +140,7 @@ add_library(Qvmessocket_baselib STATIC
 target_link_libraries(Qvmessocket_baselib
     ${QCLASH_QT_LIBS}
     ${QCLASH_PROTOBUF_LIBRARY}
-    ${QVMESSOCKET_BACKEND_LIBRARY}
+    ${QCLASH_BACKEND_LIBRARY}
     ${LibUV_LIBRARIES}
     ${CURL_LIBRARIES}
     ${SINGLEAPPLICATION_LIBRARY}
