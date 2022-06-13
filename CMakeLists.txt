@@ -5,7 +5,7 @@ file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/BUILDVERSION" QCLASH_BUILD_VERSION)
 file(STRINGS "${CMAKE_SOURCE_DIR}/makespec/VERSIONSUFFIX" QCLASH_VERSION_SUFFIX)
 
 set(QCLASH_VERSION_STRING "${QCLASH_VERSION}${QCLASH_VERSION_SUFFIX}")
-project(Qvmessocket)
+project(Qclash)
 
 set(VERSION_LIST ${QCLASH_VERSION})
 string(REPLACE "." ";" VERSION_LIST ${VERSION_LIST})
@@ -208,7 +208,7 @@ target_include_directories(Qvmessocket PRIVATE
     )
 
 target_link_libraries(Qvmessocket PUBLIC
-    Qvmessocket_baselib
+    Qclash_baselib
     ${QNODEEDITOR_LIBRARY}
     ${QVMESSOCKET_QRENCODE_LIBRARY}
     )
