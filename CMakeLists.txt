@@ -188,7 +188,7 @@ list(APPEND QCLASH_QRC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources.new.qrc
     )
 
-set(QVMESSOCKET_FULL_SOURCES
+set(QCLASH_FULL_SOURCES
     ${QCLASH_RC}
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
     ${QCLASH_UI_SOURCES}
@@ -197,7 +197,7 @@ set(QVMESSOCKET_FULL_SOURCES
     ${QVMESSOCKET_QM_FILES}
     )
 
-qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QVMESSOCKET_FULL_SOURCES})
+qt6_add_executable(Qvmessocket ${GUI_TYPE} ${QCLASH_FULL_SOURCES})
 
 target_include_directories(Qvmessocket PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
