@@ -210,7 +210,7 @@ target_include_directories(Qvmessocket PRIVATE
 target_link_libraries(Qvmessocket PUBLIC
     Qclash_baselib
     ${QNODEEDITOR_LIBRARY}
-    ${QVMESSOCKET_QRENCODE_LIBRARY}
+    ${QCLASH_QRENCODE_LIBRARY}
     )
 
 if(UNIX)

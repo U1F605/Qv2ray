@@ -33,15 +33,15 @@ set(QT_QRENCODE_SOURCES
 
 find_package(${QV_QT_LIBNAME} COMPONENTS Core Gui Svg REQUIRED)
 
-set(QVMESSOCKET_QRENCODE_LIBRARY qvmessocket_qrencode)
+set(QCLASH_QRENCODE_LIBRARY qvmessocket_qrencode)
 add_library(qvmessocket_qrencode STATIC ${QT_QRENCODE_SOURCES})
-target_compile_definitions(${QVMESSOCKET_QRENCODE_LIBRARY} PRIVATE
+target_compile_definitions(${QCLASH_QRENCODE_LIBRARY} PRIVATE
     -D__STATIC=static
     -DMAJOR_VERSION=3
     -DMINOR_VERSION=9
     -DMICRO_VERSION=0
     -DVERSION="0.0.0")
-target_link_libraries(${QVMESSOCKET_QRENCODE_LIBRARY}
+target_link_libraries(${QCLASH_QRENCODE_LIBRARY}
     ${QV_QT_LIBNAME}::Core
     ${QV_QT_LIBNAME}::Gui
     ${QV_QT_LIBNAME}::Svg)
