@@ -72,7 +72,7 @@ if(QCLASH_UI_TYPE STREQUAL "QWidget")
 endif()
 
 if(QCLASH_HAS_SINGLEAPPLICATION)
-    set(QVMESSOCKET_SINGLEAPPLICATION_PROVIDER "module" CACHE STRING "SingleApplication Provider")
+    set(QCLASH_SINGLEAPPLICATION_PROVIDER "module" CACHE STRING "SingleApplication Provider")
 endif()
 
 if(QCLASH_USE_QWIDGET)
