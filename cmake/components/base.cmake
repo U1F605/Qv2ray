@@ -1,24 +1,24 @@
 set(QCLASH_BASEDIR_COMPONENTS ${CMAKE_SOURCE_DIR}/src/components)
-set(QVMESSOCKET_BASEDIR_CORE ${CMAKE_SOURCE_DIR}/src/core)
-set(QVMESSOCKET_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
+set(QCLASH_BASEDIR_CORE ${CMAKE_SOURCE_DIR}/src/core)
+set(QCLASH_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
 
 set(QCLASH_BASE_SOURCES
-    ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.cpp
-    ${QVMESSOCKET_BASEDIR_BASE}/QvBaseApplication.hpp
+    ${QCLASH_BASEDIR_BASE}/QvBaseApplication.cpp
+    ${QCLASH_BASEDIR_BASE}/QvBaseApplication.hpp
     ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.cpp
     ${CMAKE_SOURCE_DIR}/src/ui/QvPlatformApplication.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/JsonHelpers.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/CoreObjectModels.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvComplexConfigModels.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvConfigIdentifier.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvCoreSettings.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvRuntimeConfig.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvSafeType.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvSettingsObject.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/models/QvStartupConfig.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/QvBase.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/QvFeatures.hpp
-    ${QVMESSOCKET_BASEDIR_BASE}/QvLog.hpp
+    ${QCLASH_BASEDIR_BASE}/JsonHelpers.hpp
+    ${QCLASH_BASEDIR_BASE}/models/CoreObjectModels.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvComplexConfigModels.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvConfigIdentifier.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvCoreSettings.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvRuntimeConfig.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvSafeType.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvSettingsObject.hpp
+    ${QCLASH_BASEDIR_BASE}/models/QvStartupConfig.hpp
+    ${QCLASH_BASEDIR_BASE}/QvBase.hpp
+    ${QCLASH_BASEDIR_BASE}/QvFeatures.hpp
+    ${QCLASH_BASEDIR_BASE}/QvLog.hpp
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.hpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.cpp
@@ -52,36 +52,36 @@ set(QCLASH_BASE_SOURCES
     ${QCLASH_BASEDIR_COMPONENTS}/route/RouteSchemeIO.hpp
     ${QCLASH_BASEDIR_COMPONENTS}/update/UpdateChecker.cpp
     ${QCLASH_BASEDIR_COMPONENTS}/update/UpdateChecker.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/ConnectionIO.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/ConnectionIO.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/Generation.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/final.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/inbounds.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/outbounds.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/filters.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/routing.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/generation/misc.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/Serialization.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/Serialization.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/ss.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/ssd.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess_new.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.cpp
-    ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.hpp
-    ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsUpgrade.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/ConnectionIO.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/ConnectionIO.hpp
+    ${QCLASH_BASEDIR_CORE}/connection/Generation.hpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/final.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/inbounds.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/outbounds.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/filters.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/routing.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/generation/misc.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/Serialization.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/Serialization.hpp
+    ${QCLASH_BASEDIR_CORE}/connection/serialization/ss.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/serialization/ssd.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/serialization/vmess.cpp
+    ${QCLASH_BASEDIR_CORE}/connection/serialization/vmess_new.cpp
+    ${QCLASH_BASEDIR_CORE}/CoreUtils.cpp
+    ${QCLASH_BASEDIR_CORE}/CoreUtils.hpp
+    ${QCLASH_BASEDIR_CORE}/handler/ConfigHandler.cpp
+    ${QCLASH_BASEDIR_CORE}/handler/ConfigHandler.hpp
+    ${QCLASH_BASEDIR_CORE}/handler/KernelInstanceHandler.cpp
+    ${QCLASH_BASEDIR_CORE}/handler/KernelInstanceHandler.hpp
+    ${QCLASH_BASEDIR_CORE}/handler/RouteHandler.cpp
+    ${QCLASH_BASEDIR_CORE}/handler/RouteHandler.hpp
+    ${QCLASH_BASEDIR_CORE}/kernel/APIBackend.cpp
+    ${QCLASH_BASEDIR_CORE}/kernel/APIBackend.hpp
+    ${QCLASH_BASEDIR_CORE}/kernel/QvKernelABIChecker.cpp
+    ${QCLASH_BASEDIR_CORE}/kernel/QvKernelABIChecker.hpp
+    ${QCLASH_BASEDIR_CORE}/kernel/KernelInteractions.cpp
+    ${QCLASH_BASEDIR_CORE}/kernel/KernelInteractions.hpp
+    ${QCLASH_BASEDIR_CORE}/settings/SettingsBackend.cpp
+    ${QCLASH_BASEDIR_CORE}/settings/SettingsBackend.hpp
+    ${QCLASH_BASEDIR_CORE}/settings/SettingsUpgrade.cpp
     )
