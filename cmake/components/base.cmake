@@ -1,4 +1,4 @@
-set(QVMESSOCKET_BASEDIR_COMPONENTS ${CMAKE_SOURCE_DIR}/src/components)
+set(QCLASH_BASEDIR_COMPONENTS ${CMAKE_SOURCE_DIR}/src/components)
 set(QVMESSOCKET_BASEDIR_CORE ${CMAKE_SOURCE_DIR}/src/core)
 set(QVMESSOCKET_BASEDIR_BASE ${CMAKE_SOURCE_DIR}/src/base)
 
@@ -23,40 +23,35 @@ set(QCLASH_BASE_SOURCES
     ${CMAKE_SOURCE_DIR}/src/utils/HTTPRequestHelper.hpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.cpp
     ${CMAKE_SOURCE_DIR}/src/utils/QvHelpers.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTest.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/translations/QvTranslator.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/translations/QvTranslator.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTestThread.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/LatencyTestThread.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/TCPing.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/TCPing.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/RealPing.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/RealPing.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/DNSBase.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/win/ICMPPing.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/win/ICMPPing.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/ntp/QvNTPClient.hpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/plugins/QvPluginHost.hpp
-    #
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/port/QvPortDetector.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/port/QvPortDetector.hpp
-    #
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.hpp
-    #
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/route/RouteSchemeIO.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/route/RouteSchemeIO.hpp
-    #
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/update/UpdateChecker.cpp
-    ${QVMESSOCKET_BASEDIR_COMPONENTS}/update/UpdateChecker.hpp
-    #
+    ${QCLASH_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/geosite/QvGeositeReader.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/LatencyTest.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/LatencyTest.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/translations/QvTranslator.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/translations/QvTranslator.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/LatencyTestThread.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/LatencyTestThread.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/TCPing.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/TCPing.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/RealPing.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/RealPing.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/DNSBase.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/win/ICMPPing.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/win/ICMPPing.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/latency/unix/ICMPPing.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/ntp/QvNTPClient.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/ntp/QvNTPClient.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/plugins/QvPluginHost.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/plugins/QvPluginHost.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/port/QvPortDetector.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/port/QvPortDetector.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/proxy/QvProxyConfigurator.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/route/RouteSchemeIO.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/route/RouteSchemeIO.hpp
+    ${QCLASH_BASEDIR_COMPONENTS}/update/UpdateChecker.cpp
+    ${QCLASH_BASEDIR_COMPONENTS}/update/UpdateChecker.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/ConnectionIO.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/ConnectionIO.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/Generation.hpp
@@ -72,24 +67,20 @@ set(QCLASH_BASE_SOURCES
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/ssd.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/connection/serialization/vmess_new.cpp
-
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/CoreUtils.hpp
-
     ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/ConfigHandler.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/KernelInstanceHandler.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/handler/RouteHandler.hpp
-
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/APIBackend.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/QvKernelABIChecker.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/kernel/KernelInteractions.hpp
-
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.cpp
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsBackend.hpp
     ${QVMESSOCKET_BASEDIR_CORE}/settings/SettingsUpgrade.cpp
