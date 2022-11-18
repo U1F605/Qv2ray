@@ -32,7 +32,7 @@ jobs:
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
       - name: Setup Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           version: 6.0.0
           arch: ${{ matrix.qtarch }}
